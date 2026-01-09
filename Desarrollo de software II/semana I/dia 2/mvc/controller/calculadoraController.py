@@ -28,5 +28,9 @@ class calculadoraController:
         else:
             print("Opcion invalida")    
 
+        if opcion == 2:            
+            resultado = calculadoraModell.resta(_calculadoraModell)
+            _calculadoraView.mostraResultado("Resta", resultado)
+
 
 

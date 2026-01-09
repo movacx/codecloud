@@ -21,6 +21,7 @@ def principal():
 
     print("\n=== Operaciones en MVC===")
     print("1. Sumar")
+    print("2. Restar")
 
     opcion = int(input("Seleccione una operacion (1--#)"))
 

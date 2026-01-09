@@ -11,3 +11,5 @@ class calculadoraModell:
     #self = this
     def sumar(self):
         return self.datoa + self.datob
+    def resta(self):
+        return self.datoa - self.datob
