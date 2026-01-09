@@ -18,7 +18,7 @@ def principal():
 
     _personaController = personaController()
     modelo_personaModel = _personaController.crearPersona(nombre, edad, genero)
-    
+    _personaController.mostrarDatos(modelo_personaModel)
 
     _calculadoraController = calculadoraController()
     modelo_calculadoraModell = _calculadoraController.agregardatos(datoa, datob)
@@ -32,6 +32,6 @@ def principal():
     _calculadoraController.operaciones(modelo_calculadoraModell, opcion)
     _calculadoraController.presntardatos(modelo_calculadoraModell)
 
-    _personaController.mostrarDatos(modelo_personaModel)
+   
 
 principal()
