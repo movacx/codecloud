@@ -18,4 +18,4 @@ b = 10
 c = 20
 comparacion = a+b < c
 print(comparacion)
-#1:27:00
+#1:27:00 | https://www.youtube.com/watch?v=nKPbfIU442g
