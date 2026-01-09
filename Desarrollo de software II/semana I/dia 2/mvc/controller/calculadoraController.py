@@ -12,5 +12,5 @@ class calculadoraControllesr:
     def agregarDatos(self, datoa, datob):
         _calculadoraModell = calculadoraModell(datoa, datob)
     
-    def prestardatos(self, calculadoraModell):
+    def presentarDatos(self, calculadoraModell):
         calculadoraView.prestardatos(calculadoraModell)

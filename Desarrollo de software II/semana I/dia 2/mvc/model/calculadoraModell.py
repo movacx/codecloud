@@ -3,7 +3,7 @@ class calculadoraModell:
         self.datob=datob
         self.datob=datob
     
-    def prestardatos(self):
+    def presentarDatos(self):
         return "Haciendo operaciones con datoa:", self.datoa, " con datob: ", self.datob
     
     
