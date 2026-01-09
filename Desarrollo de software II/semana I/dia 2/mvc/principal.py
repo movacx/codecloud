@@ -3,34 +3,40 @@
 #Comento hacer un calculadora
 #datoa, datob, resultado
 
-#terminemos----
-
-#llamar el controlador, 
 from controller.calculadoraController import calculadoraController
+from controller.personaController import personaController
 
 def principal():
-#pasar parametros
+
+    nombre = input("Ingrese su nombre: ")
+    edad = int(input("Ingrese su edad: "))
+    genero = input("Ingrese su genero: ")
+
+
     datoa = int(input("Ingresa el datoa: "))
     datob = int(input("Ingresa el datob: "))
 
-    #instancia o declarar la clase una variable
+ 
     _calculadoraController = calculadoraController()
+    _personaController = personaController()
 
-    #creemos el modelo
+   
     modelo_calculadoraModell = _calculadoraController.agregardatos(datoa, datob)
+    modelo_personaModel = _personaController.crearPersona(nombre, edad, genero)
+
+   
+    
 
     print("\n=== Operaciones en MVC===")
     print("1. Sumar")
     print("2. Restar")
-
-    opcion = int(input("Seleccione una operacion (1--#)"))
-
+    print("3. Multiplicar")
+    print("4. Dividir")
+    
+    opcion = int(input("Seleccione una operacion (1-4): "))
     _calculadoraController.operaciones(modelo_calculadoraModell, opcion)
-
-
     _calculadoraController.presntardatos(modelo_calculadoraModell)
 
-    #aca deberia llamar ....
+    _personaController.mostrarDatos(modelo_personaModel)
 
-principal()    
-
+principal()

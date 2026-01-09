@@ -31,6 +31,22 @@ class calculadoraController:
         if opcion == 2:            
             resultado = calculadoraModell.resta(_calculadoraModell)
             _calculadoraView.mostraResultado("Resta", resultado)
+        else:
+            print("Opcion invalida")  
+        if opcion == 1:            
+            resultado = calculadoraModell.multiplicar(_calculadoraModell)
+            _calculadoraView.mostraResultado("multiplicacion", resultado)
+
+        else:
+            print("Opcion invalida")    
+
+        if opcion == 2:            
+            resultado = calculadoraModell.dividir(_calculadoraModell)
+            _calculadoraView.mostraResultado("Division", resultado)
+        else:
+            print("Opcion invalida")  
+            
+        
 
 
 
