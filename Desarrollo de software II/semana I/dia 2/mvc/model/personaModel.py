@@ -5,5 +5,4 @@ class personaModel:
         self.genero = genero
         
     def obtenerDatos(self):
-        # Retorna el string para que la vista lo imprima
         return f"Nombre: {self.nombre}, Edad: {self.edad}, Género: {self.genero}"

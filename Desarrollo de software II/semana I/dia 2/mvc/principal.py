@@ -16,17 +16,12 @@ def principal():
     datoa = int(input("Ingresa el datoa: "))
     datob = int(input("Ingresa el datob: "))
 
- 
-    _calculadoraController = calculadoraController()
     _personaController = personaController()
-
-   
-    modelo_calculadoraModell = _calculadoraController.agregardatos(datoa, datob)
     modelo_personaModel = _personaController.crearPersona(nombre, edad, genero)
-
-   
     
 
+    _calculadoraController = calculadoraController()
+    modelo_calculadoraModell = _calculadoraController.agregardatos(datoa, datob)
     print("\n=== Operaciones en MVC===")
     print("1. Sumar")
     print("2. Restar")

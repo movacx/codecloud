@@ -5,11 +5,11 @@
 
 #como hacemos la conexion, importando
 #     carpeta/archivo
-#import model.calculadoraModell
-from  model.calculadoraModell import calculadoraModell #este se usa cuando es una clase
-import view.calculadoraView as _calculadoraView #este se usa cuando son solo funciones
 
-#calculadoraController.py
+#import model.calculadoraModell
+from model.calculadoraModell import calculadoraModell
+import view.calculadoraView as _calculadoraView
+
 class calculadoraController:
     
     def agregardatos(self, datoa, datob):
@@ -19,34 +19,25 @@ class calculadoraController:
     def presntardatos(self, _calculadoraModell):
         _calculadoraView.presntardatos(_calculadoraModell)
 
+   
     def operaciones(self, _calculadoraModell, opcion):
         resultado = 0
+        
         if opcion == 1:            
-            resultado = calculadoraModell.sumar(_calculadoraModell)
+            resultado = _calculadoraModell.sumar()
             _calculadoraView.mostraResultado("suma", resultado)
 
-        else:
-            print("Opcion invalida")    
-
-        if opcion == 2:            
-            resultado = calculadoraModell.resta(_calculadoraModell)
+        elif opcion == 2:            
+            resultado = _calculadoraModell.resta()
             _calculadoraView.mostraResultado("Resta", resultado)
-        else:
-            print("Opcion invalida")  
-        if opcion == 1:            
-            resultado = calculadoraModell.multiplicar(_calculadoraModell)
-            _calculadoraView.mostraResultado("multiplicacion", resultado)
-
-        else:
-            print("Opcion invalida")    
-
-        if opcion == 2:            
-            resultado = calculadoraModell.dividir(_calculadoraModell)
-            _calculadoraView.mostraResultado("Division", resultado)
-        else:
-            print("Opcion invalida")  
             
-        
+        elif opcion == 3:         
+            resultado = _calculadoraModell.multiplicar()
+            _calculadoraView.mostraResultado("Multiplicacion", resultado)
 
-
-
+        elif opcion == 4:           
+            resultado = _calculadoraModell.dividir()
+            _calculadoraView.mostraResultado("Division", resultado)
+            
+        else:
+            print("Opcion invalida")
