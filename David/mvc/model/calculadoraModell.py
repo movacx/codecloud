@@ -13,3 +13,6 @@ class calculadoraModell:
         return self.datoa + self.datob
     def resta(self):
         return self.datoa - self.datob
+    def multiplicar(self):
+        return self.datoa * self.datob
+    

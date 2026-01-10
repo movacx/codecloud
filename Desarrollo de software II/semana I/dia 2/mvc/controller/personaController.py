@@ -10,3 +10,5 @@ class personaController:
 
     def mostrarDatos(self, modelo_persona):
         _personaView.mostrarDatos(modelo_persona)
+        
+        
