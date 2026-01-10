@@ -16,6 +16,12 @@ print(es_igual_que)
 a = 5
 b = 10
 c = 20
+
 comparacion = a+b < c
 print(comparacion)
-#1:27:00 | https://www.youtube.com/watch?v=nKPbfIU442g
+
+#comparar usuarios
+contraseña_correcta = "123"
+contraseña_escrita = "1233"
+print(contraseña_escrita == contraseña_correcta)
+
