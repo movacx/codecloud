@@ -4,6 +4,7 @@
 # clear()   ->  elimina todos los elementos
 # pop()     ->  elimina un elemento
 # items()   ->  para iterar el diccionario
+#iterar es recorrer los elementos
 
 diccionario = {
     "nombre" : "Fabian",
