@@ -37,7 +37,7 @@ cadena_nueva = cadena1.replace("Hola", "Bienvenido")
 #separar cadenas con la cadena que le pasemos
 cadena_separada = cadena_nueva.split(" ") #crea una lista
 
-print(cadena_separada)
+print(contar_caracteres)
 print(type(cadena_separada))
 
 #2:12:00
