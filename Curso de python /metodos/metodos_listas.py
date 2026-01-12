@@ -30,6 +30,6 @@ segunda_lista.sort()
 segunda_lista.reverse()
 
 #esto es una dupla
-print(dir(("d", 2)))
+print(dir((segunda_lista, 2)))
 
 print(segunda_lista)
