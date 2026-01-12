@@ -12,6 +12,7 @@ def tabla_multiplicar(numero):
     return lista_resultado
 
 
-multiplicando = int(input("¿Cual tabla de multiplicar desea visualizar?: "))
-print(tabla_multiplicar(multiplicando))
+while contador == 0:
+    multiplicando = int(input("¿Cual tabla de multiplicar desea visualizar?: "))
+    print(tabla_multiplicar(multiplicando))
     
