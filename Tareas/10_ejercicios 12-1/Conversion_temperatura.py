@@ -4,6 +4,7 @@ solicitud_temperatura_c = int(input("Ingrese la temperatura en Celsius "))
 convertir_faren = solicitud_temperatura_c*9//5+32
 print(convertir_faren)
 
-solicitud_temperatura_f = int(input("Ingrese la temperatura en fahrenheit "))
-convertir_cels = solicitud_temperatura_f*5/9-32
-print(convertir_cels)
+
+#Se le solicita al usuario que ingrese una temperatura seguidamente cree una variable para que contenga la conversion de c a f y el // es para que no me de
+#numeros inecesarios como esos decimales 95,80 y que quede en 95f
+#osea devuelve un dato int, redondeando ejemplo 12/5 = 2.4 devuelve 2

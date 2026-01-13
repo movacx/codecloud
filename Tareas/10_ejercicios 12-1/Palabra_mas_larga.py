@@ -6,3 +6,5 @@ cantidad_palabras = len(cadena_palabras.split())
 
 print(cadena_palabras.split())
 print(f"La cantidad de caracteres es de {longitud} incluyendo espacios, y la cantidad de palabras ingresadas fue de {cantidad_palabras} palabras")
+
+#sin comentarios 

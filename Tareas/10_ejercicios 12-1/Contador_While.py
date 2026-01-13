@@ -6,4 +6,4 @@ while contador < numero_max:
     contador +=1
     print(contador)
     
-    
+#fue facil de hacer con el while simplemente realice el input lo meto con el while y que vaya sumando uno con el contador y luego se imprime 

@@ -22,4 +22,4 @@ while contador != 3:
         print("Seleccione una opcion valida")
     
     
-    
+#me quedo fino, no hace falta explicacion se entiende muy bien
