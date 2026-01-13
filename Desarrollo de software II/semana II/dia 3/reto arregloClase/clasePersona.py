@@ -37,5 +37,3 @@ edad = input("Ingrese la edad de las personas: ")
 
 insertar(nombre, edad)
 mostrar()
-
-print(lista_personas)
