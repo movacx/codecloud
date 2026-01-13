@@ -6,7 +6,7 @@ class inventario:
         self.almacenamiento = almacenamiento
         self.ram = ram
         self.idMovil = inventario.idMovil
-        
+        inventario.idMovil =+1
         
     def __repr__(self):
          return f"{self.marca} ({self.almacenamiento} Gb)"
@@ -69,7 +69,7 @@ def eliminar(marca):
 ##mostrar
 def mostrar():
    print("Los telefonos ingresados en el sistema: ", lista_inventario)
-   for items in lista_inventario:
+   for items in lista_inventario: 
         print(items.mostrarDato())
         resultadoTemporal = "El nombre es:", items.getMarca()
 
