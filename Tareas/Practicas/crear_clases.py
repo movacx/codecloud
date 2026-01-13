@@ -6,13 +6,19 @@ class inventario:
         self.almacenamiento = almacenamiento
         self.ram = ram
         self.idMovil = inventario.idMovil
-        inventario.idMovil +=1
+        
+        
+    def __repr__(self):
+         return f"{self.marca} ({self.almacenamiento} Gb)"
 
-    
+    def __str__(self):
+        return f"{self.marca} ({self.almacenamiento} Gb)"
+
+
     def mostrarDato(self):
         return f"Marca: {self.marca}", f"Almacenamiento: {self.almacenamiento}", f"Ram: {self.ram},", f"IdMovil: {self.idMovil}"
 
-    
+
     
     #Seccion de gets
     def getMarca(self):
@@ -70,9 +76,10 @@ def mostrar():
     
 agregarInventario("Google Pixel", 128, 16)
 agregarInventario("Iphone", 250, 32)
-print(buscar("Google Pixel"))
+print(buscar("Iphone"))
 
-print(mostrar())
+mostrar()
+
 
 
 
