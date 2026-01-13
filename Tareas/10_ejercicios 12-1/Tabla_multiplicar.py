@@ -11,8 +11,7 @@ def tabla_multiplicar(numero):
         lista_resultado.append(resultado)
     return lista_resultado
 
-
-while contador == 0:
-    multiplicando = int(input("¿Cual tabla de multiplicar desea visualizar?: "))
-    print(tabla_multiplicar(multiplicando))
+multiplicando = int(input("¿Cual tabla de multiplicar desea visualizar?: "))
+print(tabla_multiplicar(multiplicando))
+ 
     
