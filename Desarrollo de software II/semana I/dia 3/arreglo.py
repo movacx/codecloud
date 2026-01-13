@@ -16,4 +16,4 @@ notasEstudiante = [
 #Isaac  [90,85,99]
 #Isabel [94,95,89]
 
-print(nombreVariable)
+
