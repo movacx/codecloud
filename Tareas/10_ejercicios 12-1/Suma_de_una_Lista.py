@@ -4,6 +4,7 @@
 lista_numeros = [1,4,6,8,10] #lo mismo pero mas barato
 
 mostrar_suma = sum(lista_numeros)
-print(mostrar_suma)
+print(lista_numeros)
+print(f"la suma total de todos los numeros dentro de la lista es de {mostrar_suma}")
 
 #el sum es para sumar todos los indices de una lista 
