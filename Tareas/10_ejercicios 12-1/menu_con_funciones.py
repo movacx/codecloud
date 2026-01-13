@@ -1,6 +1,5 @@
 #Implemente un menú con:
     #1. Saludar 2. Sumar dos números 3. Salir
-
 contador = 0
 while contador != 3:
     print("\nMenu Principal",
@@ -20,6 +19,4 @@ while contador != 3:
         break
     else:
         print("Seleccione una opcion valida")
-    
-    
-#me quedo fino, no hace falta explicacion se entiende muy bien
+#me quedo fino, no hace falta explicacion se entiende muy bien, debo de decir que el menu queda en bucle hasta que se pulse el boton 3 para salir
