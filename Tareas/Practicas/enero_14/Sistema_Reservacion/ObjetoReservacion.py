@@ -2,7 +2,7 @@
 
 class Cliente:
 
-    num_reservaciones = 0 
+    num_reservaciones = 1 
 
     #Constructor
     def __init__(self, nombre_cliente, noches, costoPor_noche, tipo_habitacion, costo_total):
@@ -42,20 +42,20 @@ class Cliente:
     Costo total: {self.costo_total}
     -----------------------------"""
     
-#    def mostrarDatos(self):
-#        print(f"""
-#              --------- Factura --------
-#              Tipo de Habitacion: {self.tipo_habitacion}
-#              Costo de habitacion: {self.costoPor_noche}
-#              
-#              Nick: {self.nombre_cliente}
-#              Noches: {self.noches}
-#              Numero Reservacion: {self.numero_reservacion}
-#              
-#              Costo total: {self.costo_total}
-#              -----------------------------
-#              """)
-#    
+    def mostrarDatos(self):
+        print(f"""
+              --------- Factura --------
+              Tipo de Habitacion: {self.tipo_habitacion}
+              Costo de habitacion: {self.costoPor_noche}
+              
+              Nick: {self.nombre_cliente}
+              Noches: {self.noches}
+              Numero Reservacion: {self.numero_reservacion}
+              
+              Costo total: {self.costo_total}
+              -----------------------------
+              """)
+    
     def calcularCosto(self):
         total = self.costoPor_noche * self.noches
         return total

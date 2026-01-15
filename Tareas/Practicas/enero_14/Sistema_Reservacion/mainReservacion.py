@@ -19,6 +19,15 @@ Seleccione una opcion
         manejoReservacion.agregarCliente("Herlin", 2, True)
         continue
     elif opcion == 2:
-
+        buscarId = int(input("Ingrese el numero de reservacion a encontrar al cliente: "))
+        searchName = input("Ingrese el nombre del cliente a encontrar al cliente: ")
+        buscar = manejoReservacion.buscarID(buscarId)
+        searchName = manejoReservacion.buscar(buscarId)
+        print(searchName)
         print(buscar)
+        print(Cliente.mostrarDatos)
         continue
+    
+
+
+

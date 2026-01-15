@@ -17,7 +17,28 @@ def agregarCliente(nombre_cliente, noches, tipo_habitacion):
     arregloClientes.append(addClient) 
     return addClient
     
-def buscarCliente(posicion):
-    posicion =+ 1
-    return arregloClientes[posicion]
+def buscarID(indice):
+    if indice >= 0 and indice < len(arregloClientes):
+        return arregloClientes[indice]
+    else:
+        return "Posicion invalida"
+
+
     
+def buscar(usuarioNombre):
+    indice_encontrado = -1
+    contador = 0
+    
+    for obj_persona in arregloClientes:
+        # 1. Obtenemos el nombre usando el objeto actual del ciclo (obj_persona)
+        # 2. Usamos () porque es una función
+        nombre_actual = obj_persona.getNombre() 
+        
+        # Comparamos
+        if nombre_actual == usuarioNombre:
+            indice_encontrado = contador
+            break 
+        
+        contador = contador + 1
+        
+    return indice_encontrado
