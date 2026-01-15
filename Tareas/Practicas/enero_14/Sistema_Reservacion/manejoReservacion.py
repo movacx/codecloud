@@ -1,7 +1,19 @@
+#La noche costara 23.800 colones habitacion sencilla
+#La noche costara 31.500 colones habitacion doble
 from ObjetoReservacion import Cliente
-
 
 arregloClientes = []
 
-def agregarCliente():
-    for 
+def agregarCliente(nombre_cliente, noches, costoPor_noche, tipo_habitacion, costo_total):
+    
+    if tipo_habitacion == False:
+        costoPor_noche = 23.800
+        costo_total = noches * costoPor_noche
+        addClient = Cliente(nombre_cliente, noches, costoPor_noche, tipo_habitacion, costo_total)
+    else:
+        costoPor_noche = 31.500
+        costo_total = noches * costoPor_noche
+        addClient = Cliente(nombre_cliente, noches, costoPor_noche, tipo_habitacion, costo_total)
+        
+    arregloClientes.append(addClient)
+    
