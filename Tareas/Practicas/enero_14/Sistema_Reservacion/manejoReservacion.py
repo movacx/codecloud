@@ -16,4 +16,3 @@ def agregarCliente(nombre_cliente, noches, costoPor_noche, tipo_habitacion, cost
         addClient = Cliente(nombre_cliente, noches, costoPor_noche, tipo_habitacion, costo_total)
         
     arregloClientes.append(addClient)
-    
