@@ -1,8 +1,6 @@
-# Archivo: modelos.py
-
 class Cliente:
 
-    num_reservaciones = 1 
+    num_reservaciones = 0
 
     #Constructor
     def __init__(self, nombre_cliente, noches, costoPor_noche, tipo_habitacion, costo_total):
@@ -26,10 +24,15 @@ class Cliente:
         return self.tipo_habitacion
     def getCostoTotal(self):
         return self.costo_total
-    def getNumReservacion(self):
-        return self.num_reservaciones
-        
-    def __str__(self):
+    def getNum_reservaciones(self):
+        return self.numero_reservacion
+    
+    #Seccion de Setters
+    def setNombre(self, nuevoNmbre):
+        self.nombre_cliente = nuevoNmbre
+
+    #ToString        
+    def __str__(self): #Equivale al toString()
         return f"""
     --------- Factura --------
     Tipo de Habitacion: {self.tipo_habitacion}
@@ -42,20 +45,10 @@ class Cliente:
     Costo total: {self.costo_total}
     -----------------------------"""
     
-    def mostrarDatos(self):
-        print(f"""
-              --------- Factura --------
-              Tipo de Habitacion: {self.tipo_habitacion}
-              Costo de habitacion: {self.costoPor_noche}
-              
-              Nick: {self.nombre_cliente}
-              Noches: {self.noches}
-              Numero Reservacion: {self.numero_reservacion}
-              
-              Costo total: {self.costo_total}
-              -----------------------------
-              """)
-    
+    #MetodosPropios
+    def mostrarTodos(self):
+        return self.tipo_habitacion, self.costoPor_noche, self.nombre_cliente, self.noches, self.numero_reservacion, self.costo_total
+
     def calcularCosto(self):
         total = self.costoPor_noche * self.noches
         return total
