@@ -2,7 +2,7 @@
 
 class Cliente:
 
-    conteo_reservaciones = 0 
+    num_reservaciones = 0 
 
     #Constructor
     def __init__(self, nombre_cliente, noches, costoPor_noche, tipo_habitacion, costo_total):
@@ -12,8 +12,8 @@ class Cliente:
         self.tipo_habitacion = tipo_habitacion
         self.costo_total = costo_total
         
-        Cliente.conteo_reservaciones += 1
-        self.numero_reservacion = Cliente.conteo_reservaciones
+        Cliente.num_reservaciones += 1
+        self.numero_reservacion = Cliente.num_reservaciones
         
     #Seccion de getters    
     def getNombre(self):
@@ -26,24 +26,37 @@ class Cliente:
         return self.tipo_habitacion
     def getCostoTotal(self):
         return self.costo_total
+    def getNumReservacion(self):
+        return self.num_reservaciones
         
     def __str__(self):
-        return f"Nombre: {self.nombre_cliente} | Total: {self.costo_total}"
+        return f"""
+    --------- Factura --------
+    Tipo de Habitacion: {self.tipo_habitacion}
+    Costo de habitacion: {self.costoPor_noche}
     
-    def mostrarDatos(self):
-        print(f"""
-              --------- Factura --------
-              Tipo de Habitacion: {self.tipo_habitacion}
-              Costo de habitacion: {self.costoPor_noche}
-              
-              Nick: {self.nombre_cliente}
-              Noches: {self.noches}
-              Numero Reservacion: {self.numero_reservacion}
-              
-              Costo total: {self.costo_total}
-              -----------------------------
-              """)
+    Nick: {self.nombre_cliente}
+    Noches: {self.noches}
+    Numero Reservacion: {self.numero_reservacion}
     
+    Costo total: {self.costo_total}
+    -----------------------------"""
+    
+#    def mostrarDatos(self):
+#        print(f"""
+#              --------- Factura --------
+#              Tipo de Habitacion: {self.tipo_habitacion}
+#              Costo de habitacion: {self.costoPor_noche}
+#              
+#              Nick: {self.nombre_cliente}
+#              Noches: {self.noches}
+#              Numero Reservacion: {self.numero_reservacion}
+#              
+#              Costo total: {self.costo_total}
+#              -----------------------------
+#              """)
+#    
     def calcularCosto(self):
         total = self.costoPor_noche * self.noches
         return total
+    
