@@ -1,3 +1,4 @@
+#Herlin Fabian Chavarria Beita C5E187
 class Carro:
     idVehiculo = 0
     def __init__(self, marca,modelo,color,placa ):
@@ -38,7 +39,7 @@ class Carro:
     Identificador: {self.id}"""
         
     def mostrarRegistros(self):
-        return f"Identificador: {self.id}", self.placa, self.marca, self.modelo, self.color
+        return f"Identificador: {self.id}",self.placa, self.marca, self.modelo, self.color
     
     
         
