@@ -3,7 +3,8 @@ import manejoReservacion
 
 contador = 0
 while contador <= 0:
-    print("""
+
+    opcion = int(input("""
 Seleccione una opcion
 1. Agregar una reservacion
 2. Buscar reservacion por nombre
@@ -12,9 +13,8 @@ Seleccione una opcion
 5. Eliminar reservacion
 6. Mostrar listado de reservaciones
 7. Modificar reservacion
-0. Salir""")
-
-    opcion = int(input("input: "))
+0. Salir
+input: """))
     if opcion == 0:
         print("Saliendo....")
         contador = -1
@@ -50,5 +50,6 @@ Seleccione una opcion
         idReservacion = int(input("Ingrese el numero de reservacion del cliente a modificar: "))
         modificacion = input("Ingrese el nuevo nombre asignar: ")
         print(manejoReservacion.modificarCliente(idReservacion, modificacion))
-
+    else:
+        print("Opcion Invalida")
 
