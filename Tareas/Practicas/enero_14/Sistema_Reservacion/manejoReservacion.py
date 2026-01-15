@@ -42,3 +42,15 @@ def buscar(usuarioNombre):
         contador = contador + 1
         
     return indice_encontrado
+
+def buscar_cliente_completo(nombre_buscado):
+    # enumerate nos da 'i' (indice) y 'cliente' (objeto) en cada vuelta
+    for i, cliente in enumerate(arregloClientes):
+        
+        # Comparamos el nombre (usando tu getter)
+        if cliente.getNombre() == nombre_buscado:
+            # ¡MIRA ESTO! Devolvemos las dos cosas separadas por coma
+            return cliente, i 
+            
+    # Si termina el ciclo y no encontró nada, devolvemos None y -1
+    return None, -1
