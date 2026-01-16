@@ -72,7 +72,7 @@ input: """))
                         nuevoProfesor.mostrarDatos()
 
                   elif opcionProfesor == 3:
-                        nuevoProfesor.buscarProfesor("Marcos")
+                        # nuevoProfesor.buscarProfesor("Marcos")
 
                   elif opcionProfesor == 4:
                         
