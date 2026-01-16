@@ -116,7 +116,25 @@ input: """))
                 #VOY AL BAÑO
                  
             elif opcion == 3:
-                  
+                  View.cursosView.gestionProfesor()
+                  opcionCurso = int(input("Input"))
+                  if opcionCurso == 1:
+                        nuevoCurso.agregarCurso("Desarrollo",123,"Mariooo siuuu")
+                        nuevoCurso.agregarCurso("Mates", 2222,"Fabri esta legal")
+                        nuevoCurso.agregarCurso("Bases", 345,"Umanzor")
+                  continue
+
+                  elif opcionCurso == 2:
+                        nuevoCurso.mostrarDatos()
+                        continue
+                  elif opcionCurso == 3:
+                  nuevoCurso.modificarCursos()
+            
+
+                  elif opcion == 4:
+                  buscarCurso = input("Ingrese el nombre del curso a encontrar: ")
+                  nuevoCurso.buscarCurso(buscarCurso)
+                  View.cursosView.modificarCursos()
                   continue
             elif opcion == 4:
                   break
