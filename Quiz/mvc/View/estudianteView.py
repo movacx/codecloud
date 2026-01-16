@@ -19,3 +19,11 @@ def gestionEstudiante():
     5. Eliminar estudiante
     6. Volver
     input: """)
+    
+def MenuModificacion():
+    print(f"""
+            1. Modificar Nombre
+            2. Modificar Edad
+            3. Modificar Grado
+            4. Modificar Correo
+            0. Volver""")

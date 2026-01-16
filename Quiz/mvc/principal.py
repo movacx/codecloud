@@ -27,7 +27,7 @@ input: """))
                   if opcionEstudiantes == 1:
                         nuevoEstudiante.agregarEstudiante("Fabian",22,"Septimo","Herlin.chavarria@gmail.com")
                         nuevoEstudiante.agregarEstudiante("David",19,"Octavo","David.Mora@ucr.ac.cr")
-                        nuevoEstudiante.agregarEstudiante("Joseph",30,"Noveno","Joseph.mora")
+                        nuevoEstudiante.agregarEstudiante("Joseph",30,"Noveno","Joseph.Campos")
                         continue
                   
                   elif opcionEstudiantes == 2:
@@ -39,27 +39,24 @@ input: """))
                   
                   elif opcionEstudiantes == 4:
                         buscarEst = input("Ingrese el nombre del estudiante a encontrar: ")
-            
-                        print(f"""{nuevoEstudiante.buscarEstudiante(buscarEst)}
-            1. Modificar Nombre
-            2. Modificar Edad
-            3. Modificar Grado
-            4. Modificar Correo
-            0. Volver""")
+                        nuevoEstudiante.buscarEstudiante(buscarEst)
+                        View.estudianteView.MenuModificacion()
                         seleccion = int(input("Input: "))
                         if seleccion == 1:
                               nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
-                              
+                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
                               continue
                         elif seleccion == 2:
                               nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
-                              nuevoEstudiante.modificarEstudiante()
+                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
                               continue
                         elif seleccion == 3:
-                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ")
+                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
                               continue
                         elif seleccion == 4:
-                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ")
+                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
                               continue
                         elif seleccion == 0:
                               continue
@@ -67,6 +64,8 @@ input: """))
                               print("Opcion invalida [Valores dentro de 1-4]")
                         
                   elif opcionEstudiantes == 5:
+                        eliminarEstudiante = input("Ingrese el nombre del estudiante a encontrar: ")
+                        nuevoEstudiante.eliminarEstudiante(eliminarEstudiante)
                         continue
                   elif opcionEstudiantes == 6:
                         continue
