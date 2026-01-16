@@ -31,7 +31,13 @@ class Estudiante:
         
     def __str__(self):
         return f"""
-    """
+    Nombre: {self.nombre}
+    Edad: {self.edad}
+    Grado: {self.grado}
+    Correo: {self.correo}"""
+    
+    def mostrarEstudiantes(self):
+        return self.nombre, self.edad, self.grado, self.correo
         
     
     
