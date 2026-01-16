@@ -9,10 +9,3 @@ def mostrarMensaje(mensaje):
     print(mensaje)
 
 
-##Gestion Estudiantes
-
-
-
-      
-      
-    
