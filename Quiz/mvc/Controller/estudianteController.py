@@ -6,11 +6,14 @@ class EstudianteController:
         self.listaEstudiantes = []
         
         
-    #----------------------- AgregarEstudiante ------------------------------------
+    #----------------------- MostrarDatos ------------------------------------
     def mostrarDatos(self):
-        for items in self.listaEstudiantes:
-            vistaEstudiante.mostrarTodos(items.mostrarEstudiantes())
-            
+        if self.listaEstudiantes == None:
+            return "No hay datos"
+        else:
+            for items in self.listaEstudiantes:
+                vistaEstudiante.mostrarTodos(items.mostrarEstudiantes())
+        
             
     #----------------------- AgregarEstudiante ------------------------------------
     def agregarEstudiante(self, nombre, edad, grado, correo):
