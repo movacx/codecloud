@@ -21,20 +21,6 @@ def main():
 input: """))
             
             
-#  Funcionalidades mínimas
-
-#     Registrar estudiante (nombre, edad, grado, correo)
-
-#     Mostrar la lista completa de estudiantes
-
-#     Buscar estudiante por nombre
-
-#     Actualizar información del estudiante
-
-#     Eliminar un estudiante
-            
-            
-            
             if opcion == 1:
                   View.estudianteView.gestionEstudiante()
                   opcionEstudiantes = int(input("input: "))
@@ -50,8 +36,36 @@ input: """))
                   elif opcionEstudiantes == 3:
                         nuevoEstudiante.buscarEstudiante("Fabian")
                         continue
+                  
                   elif opcionEstudiantes == 4:
-                        continue
+                        buscarEst = input("Ingrese el nombre del estudiante a encontrar: ")
+            
+                        print(f"""{nuevoEstudiante.buscarEstudiante(buscarEst)}
+            1. Modificar Nombre
+            2. Modificar Edad
+            3. Modificar Grado
+            4. Modificar Correo
+            0. Volver""")
+                        seleccion = int(input("Input: "))
+                        if seleccion == 1:
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
+                              
+                              continue
+                        elif seleccion == 2:
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
+                              nuevoEstudiante.modificarEstudiante()
+                              continue
+                        elif seleccion == 3:
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
+                              continue
+                        elif seleccion == 4:
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
+                              continue
+                        elif seleccion == 0:
+                              continue
+                        else:
+                              print("Opcion invalida [Valores dentro de 1-4]")
+                        
                   elif opcionEstudiantes == 5:
                         continue
                   elif opcionEstudiantes == 6:
