@@ -7,7 +7,11 @@ def main():
       nuevoControler.agregarEstudiante("David",19,"Materno", "David@gmail.com")
       
       
-      nuevoControler.eliminarEstudiante("Fabian")
+      #nuevoControler.eliminarEstudiante("Fabian")
       print(nuevoControler.mostrarDatos())
+      
+      nuevoControler.modificarEstudiante("Fabian","Joseph",3)
+      print(nuevoControler.mostrarDatos())
+      
       
 print(main())

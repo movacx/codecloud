@@ -5,6 +5,7 @@ class EstudianteController:
     def __init__(self):
         self.listaEstudiantes = []
         
+        
     #----------------------- AgregarEstudiante ------------------------------------
     def mostrarDatos(self):
         for items in self.listaEstudiantes:
@@ -31,4 +32,21 @@ class EstudianteController:
             else:
                 return vistaEstudiante.mostrarMensaje("No se encontro estudiante")
                 
-        
+    #----------------------- ModificarEstudiante -----------------------------------
+    def modificarEstudiante(self, buscarEstudiante, nuevoDato, opcion):
+        for items in self.listaEstudiantes:
+            if items.getNombre() == buscarEstudiante:
+                if opcion == 1:
+                    items.setNombre(nuevoDato)
+                    return vistaEstudiante.mostrarMensaje("Nombre modificado con exito!")
+                elif opcion == 2:
+                    items.setEdad(nuevoDato)
+                    return vistaEstudiante.mostrarMensaje("Edad modificado con exto!")
+                elif opcion == 3:
+                    items.setGrado(nuevoDato)
+                    return vistaEstudiante.mostrarMensaje("Grado modificado con exto!")
+                elif opcion == 4:
+                    items.setCorreo(nuevoDato)
+                    return vistaEstudiante.mostrarMensaje("Correo modificado con exto!")
+            return vistaEstudiante.mostrarMensaje("No se encontro Estudiante")
+                    
