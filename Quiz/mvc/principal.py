@@ -6,15 +6,17 @@ nuevoProfesor = ProfesorController()
 nuevoCurso = CursosController()
 
 
+nuevoCurso.agregarCurso("Info", "d", "d")
+variableTres = nuevoCurso.mostrarDatos()
 
 nuevoEstudiante.agregarEstudiante("Fabian",19,"sexto","XD")
 variable = nuevoEstudiante.mostrarDatos()
 
 nuevoProfesor.agregarProfesor("Irwin", "Profesor", 894785, "iw@fsfas")
 variableDos = nuevoProfesor.mostrarDatos()
-print(variableDos)
-
 print(variable)
+print(variableDos)
+print(variableTres)
 
 
 
