@@ -40,7 +40,6 @@ input: """))
                         
                         elif opcionEstudiantes == 4:
                               buscarEst = input("Ingrese el nombre del estudiante a encontrar: ")
-                              nuevoEstudiante.buscarEstudiante(buscarEst)
                               View.estudianteView.MenuModificacion()
                               seleccion = int(input("Input: "))
                               if seleccion == 1:
