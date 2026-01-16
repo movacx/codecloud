@@ -61,13 +61,36 @@ input: """))
                   
                   continue
             elif opcion == 2:
+<<<<<<< HEAD
                   
+=======
+                  View.profesorView.gestionProfesor()
+                  opcionProfesor = int(input("Input: "))
+                  if opcionProfesor == 1:
+                        nuevoProfesor.agregarProfesor("Marcos",64580060,"marcos123@gmail.com")
+                        nuevoProfesor.agregarProfesor("Irwin",4545334, "irwin456@gmail.com")
+                        nuevoProfesor.agregarProfesor("Matt",989180, "matt056@gmail.com")
+
+                  elif opcionProfesor == 2:
+                        nuevoProfesor.mostrarDatos()
+
+                  elif opcionProfesor == 3:
+                        nuevoProfesor.buscarProfesor("Marcos")
+
+                  elif opcionProfesor == 4:
+                        
+                        nuevoProfesor.eliminarProfesor(nuevoProfesor)
+
+
+>>>>>>> 40bcbb3483a764f07de1286db9cccac1bb6e769e
                   continue
             elif opcion == 3:
                   
                   continue
             elif opcion == 4:
                   break
+
+
             else:
                   print("Opcion Invalida [1-4]")
                   
