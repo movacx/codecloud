@@ -51,9 +51,6 @@ input: """))
                         nuevoEstudiante.buscarEstudiante("Fabian")
                         continue
                   elif opcionEstudiantes == 4:
-<<<<<<< HEAD
-                        continue
-=======
                         buscarEst = input("Ingrese el nombre del estudiante a encontrar: ")
                         nuevoEstudiante.buscarEstudiante(buscarEst)
                         View.estudianteView.MenuModificacion()
@@ -79,7 +76,6 @@ input: """))
                         else:
                               print("Opcion invalida [Valores dentro de 1-4]")
                         
->>>>>>> 6763f8be673ad0494a7195ce9750344e590ef5a9
                   elif opcionEstudiantes == 5:
                         eliminarEstudiante = input("Ingrese el nombre del estudiante a encontrar: ")
                         nuevoEstudiante.eliminarEstudiante(eliminarEstudiante)
@@ -104,7 +100,7 @@ input: """))
                   elif opcionProfesor == 3:
                         # nuevoProfesor.buscarProfesor("Marcos")
 
-                  elif opcionProfesor == 4:
+                  # elif opcionProfesor == 4:
                         
                         nuevoProfesor.eliminarProfesor(nuevoProfesor)
 
