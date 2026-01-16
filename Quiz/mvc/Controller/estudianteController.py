@@ -26,16 +26,27 @@ def eliminarEstudiante(nombreBorrar):
     return -1
 
 #---------------------- Modificar Estudiante --------------------------------
-def modificarEstudiante(nombreBuscar, nuevoDato):
+def modificarEstudiante(nombreBuscar, nuevoDato, opcion):
     usuarioEncontrado = buscarEstudiante(nombreBuscar)
     if usuarioEncontrado:
-        usuarioEncontrado.setNombre(nuevoDato)
-        return "Nombre modificado"
+        if opcion == 1:
+            usuarioEncontrado.setNombre(nuevoDato)
+            return "Nombre modificado"
+        elif opcion == 2:
+            usuarioEncontrado.setEdad(nuevoDato)
+            return "Edad modificado!"
+        elif opcion == 3:
+            usuarioEncontrado.setGrado(nuevoDato)
+            return "Grado modificado!"
+        elif opcion == 4:
+            usuarioEncontrado.setCorreo(nuevoDato)
+            return "Correo modificado!"
+        
     return "No encontrado"
 
-def mostrarDatos(buscarDatos):
+#----------------------- Mostrar Todos los datos -----------------------------
+def mostrarDatos():
     for items in listaEstudiante:
-        if items.getNombre() == buscarDatos:
-            return items.mostrarEstudiantes()
+           print(items.mostrarEstudiantes())
     return -1
     
