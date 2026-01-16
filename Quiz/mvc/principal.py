@@ -11,11 +11,6 @@ nuevoProfesor = ProfesorController()
 nuevoCurso = CursosController()
 
 
-
-
-
-
-
 def main():
       while True:
             opcion = int(input("""
@@ -25,14 +20,51 @@ def main():
 4. Salir 
 input: """))
             
+            
+#  Funcionalidades mínimas
+
+#     Registrar estudiante (nombre, edad, grado, correo)
+
+#     Mostrar la lista completa de estudiantes
+
+#     Buscar estudiante por nombre
+
+#     Actualizar información del estudiante
+
+#     Eliminar un estudiante
+            
+            
+            
             if opcion == 1:
-                  View.cursosView.gestionEstudiante()
+                  View.estudianteView.gestionEstudiante()
                   opcionEstudiantes = int(input("input: "))
+                  if opcionEstudiantes == 1:
+                        nuevoEstudiante.agregarEstudiante("Fabian",22,"Septimo","Herlin.chavarria@gmail.com")
+                        nuevoEstudiante.agregarEstudiante("David",19,"Octavo","David.Mora@ucr.ac.cr")
+                        nuevoEstudiante.agregarEstudiante("Joseph",30,"Noveno","Joseph.mora")
+                        continue
+                  
+                  elif opcionEstudiantes == 2:
+                        nuevoEstudiante.mostrarDatos()
+                        continue
+                  elif opcionEstudiantes == 3:
+                        nuevoEstudiante.buscarEstudiante("Fabian")
+                        continue
+                  elif opcionEstudiantes == 4:
+                        continue
+                  elif opcionEstudiantes == 5:
+                        continue
+                  elif opcionEstudiantes == 6:
+                        continue
+                  else:
+                        print("Opcion invalida")
                   
                   continue
             elif opcion == 2:
+                  
                   continue
             elif opcion == 3:
+                  
                   continue
             elif opcion == 4:
                   break
