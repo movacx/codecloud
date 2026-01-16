@@ -36,6 +36,6 @@ class Profesor:
     Telefono: {self.telefono}
     Correo: {self.correo}"""
     
-    def mostrarEstudiantes(self):
+    def mostrarProfesores(self):
         return self.nombre, self.especialidad, self.telefono, self.correo
         
