@@ -26,14 +26,14 @@ class ProfesorController:
     
     
     #----------------------- Buscar Profesor ------------------------------------
-    def buscarEstudiante(self, buscarNombre):
+    def buscarProfesor(self, buscarNombre):
         for items in self.listaProfesores:
             if items.getNombre() == buscarNombre:
                 vistaProfesor.mostrarUno(items)
                 
                 
-    #----------------------- EliminarEstudiante ------------------------------------
-    def eliminarEstudiante(self, buscarNombre):
+    #----------------------- EliminarProfesor------------------------------------
+    def eliminarProfesor(self, buscarNombre):
         for indice in self.listaProfesores:
             if indice.getNombre() == buscarNombre:
                 self.listaProfesores.remove(indice)
@@ -43,8 +43,8 @@ class ProfesorController:
             
             
                  
-    #----------------------- ModificarEstudiante -----------------------------------
-    def modificarEstudiante(self, buscarProfesor, nuevoDato, opcion):
+    #----------------------- ModificarProfesor -----------------------------------
+    def modificarProfesor(self, buscarProfesor, nuevoDato, opcion):
         for items in self.listaProfesores:
             if items.getNombre() == buscarProfesor:
                 if opcion == 1:
