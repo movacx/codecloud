@@ -1,40 +1,41 @@
-#Nombre del curso, codigo, profesor asignado 
-class Profesor:
-    idProfesor = 0
-    def __init__(self, N, especialidad, telefono, correo):
-        self.nombre = nombre
-        self.especialidad = especialidad
-        self.telefono = telefono
-        self.correo = correo
-        Profesor.idProfesor =+1
-        self.id = Profesor.idProfesor
-        
-    #Getters
-    def getNombre(self):
-        return self.nombre
-    def getEspecialidad(self):
-        return self.especialidad
-    def getTelefono(self):
-        return self.telefono
-    def getCorreo(self):
-        return self.correo
+class Curso: 
     
-    #Setters
-    def setNombre(self, nombre):
-        self.nombre = nombre
-    def setEspecialidad(self, especialidad):
-        self.especialidad = especialidad
-    def setTelefono(self, telefono):
-        self.telefono = telefono
-    def setCorreo(self, correo):
-        self.correo = correo
-        
+    idCurso = 0
+    def __init__(self, nombreCurso,codigo, profesorAsignado):
+        self.nombreCurso = nombreCurso
+        self.codigo = codigo
+        self.profesorAsignado = profesorAsignado
+        Curso.idCurso += 1
+        self.id = Curso.idCurso
+
+    #-----------------------GETS-----------------------#  
+    def getNombreCurso(self):
+        return self.nombreCurso
+    
+    def getCodigo(self):
+        return self.codigo
+    
+    def getProfesorAsignado(self):
+        return self.profesorAsignado 
+    
+    #-----------------------GETS-----------------------#  
+    def setNombreCurso(self,nombreCurso):
+        self.nombreCurso = nombreCurso
+    
+    def setCodigo(self,codigo):
+        self.codigo = codigo
+    
+    def setProfesorAsignado(self,profesorAsignado):
+        self.profesorAsignado = profesorAsignado 
+    
+    #To String
+
     def __str__(self):
         return f"""
-    Nombre: {self.nombre}
-    Especialidad: {self.especialidad}
-    Telefono: {self.telefono}
-    Correo: {self.correo}"""
-    
+    Nombre: {self.nombreCurso}
+    Edad: {self.codigo}
+    Grado:  {self.profesorAsignado}
+    """
+
     def mostrarEstudiantes(self):
-        return self.nombre, self.especialidad, self.telefono, self.correo
+        return self.nombreCurso, self.codigo, self.profesorAsignado
