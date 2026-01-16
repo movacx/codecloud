@@ -9,12 +9,11 @@ def mostrarMensaje(mensaje):
     print(mensaje)
 
 ##Gestion Profesor
-def gestionEstudiante():
+def gestionProfesor():
     print("""
     1. Registrar profesor
     2. Listar profesor
     3. Actualizar profesor
     4. Eliminar profesor
-    5. Volver
     input: """)
 
