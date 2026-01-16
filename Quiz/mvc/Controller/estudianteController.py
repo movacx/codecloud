@@ -15,11 +15,20 @@ class EstudianteController:
     def agregarEstudiante(self, nombre, edad, grado, correo):
         estudianteNuevo = Estudiante(nombre,edad,grado,correo)
         self.listaEstudiantes.append(estudianteNuevo)
-        vistaEstudiante.mostrarMensaje("Agregado Correctamente")
+        return vistaEstudiante.mostrarMensaje("Agregado Correctamente")
     
     def buscarEstudiante(self, buscarNombre):
         for items in self.listaEstudiantes:
             if items.getNombre() == buscarNombre:
                 vistaEstudiante.mostrarUno(items)
-        return -1
+                
+    #----------------------- EliminarEstudiante ------------------------------------
+    def eliminarEstudiante(self, buscarNombre):
+        for indice in self.listaEstudiantes:
+            if indice.getNombre() == buscarNombre:
+                self.listaEstudiantes.remove(indice)
+                return vistaEstudiante.mostrarMensaje("Eliminado Correctamente")
+            else:
+                return vistaEstudiante.mostrarMensaje("No se encontro estudiante")
+                
         
