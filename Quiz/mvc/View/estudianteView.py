@@ -8,7 +8,6 @@ def mostrarUno(estudiante):
 def mostrarMensaje(mensaje):
     print(mensaje)
 
-<<<<<<< HEAD
 
 ##Gestion Estudiantes
 
@@ -16,6 +15,4 @@ def mostrarMensaje(mensaje):
 
       
       
-=======
->>>>>>> 5fabcad96d2beea88c5277c373f1055cfffcebd1
     

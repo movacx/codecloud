@@ -1,4 +1,23 @@
 from Controller.estudianteController import EstudianteController
+from Controller.profesorController import ProfesorController
+nuevoEstudiante = EstudianteController()
+nuevoProfesor = ProfesorController()
+
+nuevoEstudiante.agregarEstudiante("Fabian",19,"sexto","XD")
+variable = nuevoEstudiante.mostrarDatos()
+
+nuevoProfesor.agregarProfesor("Irwin", "Profesor", 894785, "iw@fsfas")
+variableDos = nuevoProfesor.mostrarDatos()
+print(variableDos)
+
+print(variable)
+
+
+
+
+
+
+
 
 
 def gestionEstudiante():
@@ -53,9 +72,3 @@ input: """))
       return " "
             
 print(main())
-
-
-      
-      
-      
-      
