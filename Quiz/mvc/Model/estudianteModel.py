@@ -18,6 +18,8 @@ class Estudiante:
         return self.grado
     def getCorreo(self):
         return self.correo
+    def getIdEstudiante(self):
+        return self.id
     
     #Setters
     def setNombre(self, nombre):
