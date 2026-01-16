@@ -21,22 +21,7 @@ def main():
 input: """))
             
             
-#  Funcionalidades mínimas
-
-#     Registrar estudiante (nombre, edad, grado, correo)
-
-#     Mostrar la lista completa de estudiantes
-
-#     Buscar estudiante por nombre
-
-#     Actualizar información del estudiante
-
-#     Eliminar un estudiante
-            
-            
-            
             if opcion == 1:
-<<<<<<< HEAD
                   while True:
                         View.estudianteView.gestionEstudiante()
                         opcionEstudiantes = int(input("input: "))
@@ -44,30 +29,6 @@ input: """))
                               nuevoEstudiante.agregarEstudiante("Fabian",22,"Septimo","Herlin.chavarria@gmail.com")
                               nuevoEstudiante.agregarEstudiante("David",19,"Octavo","David.Mora@ucr.ac.cr")
                               nuevoEstudiante.agregarEstudiante("Joseph",30,"Noveno","Joseph.Campos")
-=======
-                  View.estudianteView.gestionEstudiante()
-                  opcionEstudiantes = int(input("input: "))
-                  if opcionEstudiantes == 1:
-                        nuevoEstudiante.agregarEstudiante("Fabian",22,"Septimo","Herlin.chavarria@gmail.com")
-                        nuevoEstudiante.agregarEstudiante("David",19,"Octavo","David.Mora@ucr.ac.cr")
-                        nuevoEstudiante.agregarEstudiante("Joseph",30,"Noveno","Joseph.Campos")
-                        continue
-                  
-                  elif opcionEstudiantes == 2:
-                        nuevoEstudiante.mostrarDatos()
-                        continue
-                  elif opcionEstudiantes == 3:
-                        nuevoEstudiante.buscarEstudiante("Fabian")
-                        continue
-                  elif opcionEstudiantes == 4:
-                        buscarEst = input("Ingrese el nombre del estudiante a encontrar: ")
-                        nuevoEstudiante.buscarEstudiante(buscarEst)
-                        View.estudianteView.MenuModificacion()
-                        seleccion = int(input("Input: "))
-                        if seleccion == 1:
-                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
-                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
->>>>>>> 8f93057a135c3b68ffa7627d8e0a6828dce7c27f
                               continue
                         
                         elif opcionEstudiantes == 2:
@@ -114,6 +75,7 @@ input: """))
                         
                         
             elif opcion == 2:
+                  
                   View.profesorView.gestionProfesor()
                   opcionProfesor = int(input("Input: "))
                   if opcionProfesor == 1:
@@ -125,9 +87,9 @@ input: """))
                         nuevoProfesor.mostrarDatos()
 
                   elif opcionProfesor == 3:
-                        # nuevoProfesor.buscarProfesor("Marcos")
+                        nuevoProfesor.buscarProfesor("Marcos")
 
-                  # elif opcionProfesor == 4:
+                  elif opcionProfesor == 4:
                         
                         nuevoProfesor.eliminarProfesor(nuevoProfesor)
                   continue
