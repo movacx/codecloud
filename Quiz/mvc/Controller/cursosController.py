@@ -15,19 +15,16 @@ class CursosController:
                 vistaCursos.mostrarTodos(items.mostrarCursos())
         
             
-    #----------------------- AgregarEstudiante ------------------------------------
-    def agregarEstudiante(self, nombreCurso,codigo, profesorAsignado):
+    #----------------------- AgregarCursos ------------------------------------
+    def agregarCurso(self, nombreCurso,codigo, profesorAsignado):
         nuevoCurso = Curso(nombreCurso,codigo, profesorAsignado)
         self.listaCursos.append(nuevoCurso)
         return vistaCursos.mostrarMensaje("Agregado Correctamente")
+
     
     
-    
-    
-    
-    
-    
-    def buscarEstudiante(self, buscarCurso):
+     #----------------------- BuscarCursos ------------------------------------
+    def buscarCursos(self, buscarCurso):
         for items in self.listaCursos:
             if items.getNombreCurso() == buscarCurso:
                 vistaCursos.mostrarUno(items)
@@ -35,16 +32,8 @@ class CursosController:
                 
                 
                 
-                
-                
-                
-                
-                
-                
-                
-                
     #----------------------- EliminarEstudiante ------------------------------------
-    def eliminarEstudiante(self, buscarCurso):
+    def eliminarCursos(self, buscarCurso):
         for indice in self.listaCursos:
             if indice.getNombreCurso() == buscarCurso:
                 self.listaCursos.remove(indice)
@@ -54,27 +43,8 @@ class CursosController:
                 
                 
                 
-                
-                
-                
-                
-                
-                
-                
-    def setNombreCurso(self,nombreCurso):
-        self.nombreCurso = nombreCurso
-    
-    def setCodigo(self,codigo):
-        self.codigo = codigo
-    
-    def setProfesorAsignado(self,profesorAsignado):
-        self.profesorAsignado = profesorAsignado 
-                
-                
-                
-                
     #----------------------- ModificarEstudiante -----------------------------------
-    def modificarEstudiante(self, buscarCurso, nuevoDato, opcion):
+    def modificarCursos(self, buscarCurso, nuevoDato, opcion):
         for items in self.listaCursos:
             if items.getNombreCurso() == buscarCurso:
                 if opcion == 1:
