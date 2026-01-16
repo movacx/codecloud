@@ -41,7 +41,7 @@ input: """))
                   if opcionEstudiantes == 1:
                         nuevoEstudiante.agregarEstudiante("Fabian",22,"Septimo","Herlin.chavarria@gmail.com")
                         nuevoEstudiante.agregarEstudiante("David",19,"Octavo","David.Mora@ucr.ac.cr")
-                        nuevoEstudiante.agregarEstudiante("Joseph",30,"Noveno","Joseph.mora")
+                        nuevoEstudiante.agregarEstudiante("Joseph",30,"Noveno","Joseph.Campos")
                         continue
                   
                   elif opcionEstudiantes == 2:
@@ -51,8 +51,38 @@ input: """))
                         nuevoEstudiante.buscarEstudiante("Fabian")
                         continue
                   elif opcionEstudiantes == 4:
+<<<<<<< HEAD
                         continue
+=======
+                        buscarEst = input("Ingrese el nombre del estudiante a encontrar: ")
+                        nuevoEstudiante.buscarEstudiante(buscarEst)
+                        View.estudianteView.MenuModificacion()
+                        seleccion = int(input("Input: "))
+                        if seleccion == 1:
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
+                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
+                              continue
+                        elif seleccion == 2:
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ") 
+                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
+                              continue
+                        elif seleccion == 3:
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ")
+                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
+                              continue
+                        elif seleccion == 4:
+                              nuevoDato = input("Ingrese el nuevo dato a registrar: ")
+                              nuevoEstudiante.modificarEstudiante(buscarEst,nuevoDato,seleccion)
+                              continue
+                        elif seleccion == 0:
+                              continue
+                        else:
+                              print("Opcion invalida [Valores dentro de 1-4]")
+                        
+>>>>>>> 6763f8be673ad0494a7195ce9750344e590ef5a9
                   elif opcionEstudiantes == 5:
+                        eliminarEstudiante = input("Ingrese el nombre del estudiante a encontrar: ")
+                        nuevoEstudiante.eliminarEstudiante(eliminarEstudiante)
                         continue
                   elif opcionEstudiantes == 6:
                         continue
