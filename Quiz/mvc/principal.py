@@ -61,9 +61,6 @@ input: """))
                   
                   continue
             elif opcion == 2:
-<<<<<<< HEAD
-                  
-=======
                   View.profesorView.gestionProfesor()
                   opcionProfesor = int(input("Input: "))
                   if opcionProfesor == 1:
@@ -82,7 +79,6 @@ input: """))
                         nuevoProfesor.eliminarProfesor(nuevoProfesor)
 
 
->>>>>>> 40bcbb3483a764f07de1286db9cccac1bb6e769e
                   continue
             elif opcion == 3:
                   
