@@ -1,2 +1,3 @@
-#import model.calculadoraModell
-from Model.profesorModel import Profesor
+
+from Model.estudianteModel import Estudiante
+import View.estudianteView as _calculadoraView
