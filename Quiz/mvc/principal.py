@@ -1,7 +1,11 @@
 from Controller.estudianteController import EstudianteController
 from Controller.profesorController import ProfesorController
+from Controller.cursosController import CursosController
 nuevoEstudiante = EstudianteController()
 nuevoProfesor = ProfesorController()
+nuevoCurso = CursosController()
+
+
 
 nuevoEstudiante.agregarEstudiante("Fabian",19,"sexto","XD")
 variable = nuevoEstudiante.mostrarDatos()

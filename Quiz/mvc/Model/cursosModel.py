@@ -37,5 +37,5 @@ class Curso:
     Grado:  {self.profesorAsignado}
     """
 
-    def mostrarEstudiantes(self):
+    def mostrarCursos(self):
         return self.nombreCurso, self.codigo, self.profesorAsignado
