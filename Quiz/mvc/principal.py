@@ -4,6 +4,8 @@ from Controller.estudianteController import EstudianteController
 def main():
       nuevoControler = EstudianteController()
       nuevoControler.agregarEstudiante("Fabian",22,"Sexto Grado", "FabianBeita31@gmail.com")
-      print(nuevoControler)
-
+      nuevoControler.agregarEstudiante("David",19,"Materno", "David@gmail.com")
+      print(nuevoControler.mostrarDatos())
+      
+      nuevoControler.buscarEstudiante("Fabian")
 print(main())
