@@ -15,6 +15,7 @@ def gestionProfesor():
     2. Listar profesor
     3. Actualizar profesor
     4. Eliminar profesor
+    5. Volver
     input: """)
 
 def MenuModificacion():

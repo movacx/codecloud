@@ -110,6 +110,8 @@ input: """))
 
                         elif opcionProfesor == 4:
                               nuevoProfesor.eliminarProfesor("Irwin")
+                        elif opcionProfesor == 5:
+                              break
                         else:
                               print("Opcion invalida")
 
@@ -157,6 +159,7 @@ input: """))
             
 
             elif opcion == 4:
+                  print("Saliendo del sistema")
                   break
 
 
