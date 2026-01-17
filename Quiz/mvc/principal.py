@@ -21,7 +21,6 @@ def main():
 4. Salir 
 input: """))
             
-            
             if opcion == 1:
                   while True:
                         View.estudianteView.gestionEstudiante()
