@@ -35,7 +35,7 @@ input: """))
                               nuevoEstudiante.mostrarDatos()
                               continue
                         elif opcionEstudiantes == 3:
-                              nuevoEstudiante.buscarEstudiante("Fabian")
+                              nuevoEstudiante.buscarEstudiante("Herlin")
                               continue
                         
                         elif opcionEstudiantes == 4:
