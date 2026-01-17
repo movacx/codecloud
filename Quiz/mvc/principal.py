@@ -35,7 +35,8 @@ input: """))
                               nuevoEstudiante.mostrarDatos()
                               continue
                         elif opcionEstudiantes == 3:
-                              nuevoEstudiante.buscarEstudiante("Herlin")
+                              buscarEstudiante = input("Ingrese el nombre a buscar: ")
+                              nuevoEstudiante.buscarEstudiante(buscarEstudiante)
                               continue
                         
                         elif opcionEstudiantes == 4:
