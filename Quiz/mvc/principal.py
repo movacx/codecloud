@@ -75,6 +75,7 @@ input: """))
                         
             elif opcion == 2:
                  while True:
+                        
                         View.profesorView.gestionProfesor()
                         opcionProfesor = int(input("Input: "))
                         if opcionProfesor == 1:
