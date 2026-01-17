@@ -112,50 +112,31 @@ input: """))
                               nuevoProfesor.eliminarProfesor("Irwin")
                         else:
                               print("Opcion invalida")
-
+                   
+                #VOY AL BAÑO
+                 
             elif opcion == 3:
-                  while True:
-                        View.cursosView.gestionCursos()
-                        opcionCursos= int(input("Input:"))
-                        if opcionCursos == 1:
-                              nuevoCurso.agregarCurso("Mates",1111,"Fabri")
-                              nuevoCurso.agregarCurso("Desa",1211,"Mario")
-                              nuevoCurso.agregarCurso("Bases",1311,"Uma")
-                              continue
-                        elif opcionCursos == 2:
-                              nuevoCurso.mostrarDatos()
-                              continue
+                  View.cursosView.gestionProfesor()
+                  opcionCurso = int(input("Input"))
+                  if opcionCurso == 1:
+                        nuevoCurso.agregarCurso("Desarrollo",123,"Mariooo siuuu")
+                        nuevoCurso.agregarCurso("Mates", 2222,"Fabri esta legal")
+                        nuevoCurso.agregarCurso("Bases", 345,"Umanzor")
+                        continue
+                  
 
-                        elif opcionCursos == 3:
-                              cursoModificar = input("Ingrese el curso que desea modificar: ")
-                              View.cursosView.MenuModificacion()
-                              opcionModificar = int(input("Input: "))
-                              if opcionModificar ==1:
-                                    nuevoDato = input("Ingrese un nuevo dato: ")
-                                    nuevoCurso.modificarCursos(cursoModificar,nuevoDato,opcionModificar)
-                                    
-                              elif opcionModificar == 2:
-                                    nuevoDato = input("Ingrese un nuevo Codigo: ")
-                                    nuevoCurso.modificarCursos(cursoModificar,nuevoDato,opcionModificar)
-                              
-                              elif opcionModificar == 3:
-                                    nuevoDato = input("Ingrese un nuevo Profe: ")
-                                    nuevoCurso.modificarCursos(cursoModificar,nuevoDato,opcionModificar)
-                                    
-                              else:
-                                    print("Opcion invalida...")
-
-                        elif opcionCursos == 4:
-                              cursoEliminar=input("Que curso desea borrar: ")
-                              nuevoCurso.eliminarCursos(cursoEliminar)
-                              continue
-                        elif opcionCursos == 5:
-
-                              break
-                        else:
-                              print("Opcion invalida")
+                  elif opcionCurso == 2:
+                        nuevoCurso.mostrarDatos()
+                        continue
+                  elif opcionCurso == 3:
+                  nuevoCurso.modificarCursos()
             
 
+                  elif opcion == 4:
+                  buscarCurso = input("Ingrese el nombre del curso a encontrar: ")
+                  nuevoCurso.buscarCurso(buscarCurso)
+                  View.cursosView.modificarCursos()
+                  continue
             elif opcion == 4:
                   break
 
