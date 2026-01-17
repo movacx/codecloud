@@ -27,7 +27,7 @@ input: """))
                         View.estudianteView.gestionEstudiante()
                         opcionEstudiantes = int(input("input: "))
                         if opcionEstudiantes == 1:
-                              nuevoEstudiante.agregarEstudiante("Fabian",22,"Septimo","Herlin.chavarria@gmail.com")
+                              nuevoEstudiante.agregarEstudiante("Herlin",22,"Septimo","Herlin.chavarria@gmail.com")
                               nuevoEstudiante.agregarEstudiante("David",19,"Octavo","David.Mora@ucr.ac.cr")
                               nuevoEstudiante.agregarEstudiante("Joseph",30,"Noveno","Joseph.Campos")
                               continue
