@@ -76,7 +76,6 @@ input: """))
                         
             elif opcion == 2:
                  while True:
-                        
                         View.profesorView.gestionProfesor()
                         opcionProfesor = int(input("Input: "))
                         if opcionProfesor == 1:
@@ -110,7 +109,8 @@ input: """))
                                     continue
 
                         elif opcionProfesor == 4:
-                              nuevoProfesor.eliminarProfesor("Irwin")
+                              eliminarProfesor = input("Ingrese el nombre del profesor a eliminar: ")
+                              nuevoProfesor.eliminarProfesor(eliminarProfesor)
                         else:
                               print("Opcion invalida")
                    
