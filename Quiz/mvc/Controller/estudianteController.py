@@ -1,3 +1,8 @@
+#Participantes: 
+#Herlin Fabian Chavarria Beita C5E187
+#Joseph Campos C4D660
+#David Mora Gomez C5H441
+
 from Model.estudianteModel import Estudiante
 import View.estudianteView as vistaEstudiante
 

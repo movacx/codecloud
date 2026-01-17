@@ -1,3 +1,8 @@
+#Participantes: 
+#Herlin Fabian Chavarria Beita C5E187
+#Joseph Campos C4D660
+#David Mora Gomez C5H441
+
 from Model.profesorModel import Profesor
 import View.profesorView as vistaProfesor
 
@@ -50,10 +55,10 @@ class ProfesorController:
                     return vistaProfesor.mostrarMensaje("Nombre modificado con exito!")
                 elif opcion == 2:
                     items.setEspecialidad(nuevoDato)
-                    return vistaProfesor.mostrarMensaje("Edad modificado con exto!")
+                    return vistaProfesor.mostrarMensaje("Especialidad modificado con exto!")
                 elif opcion == 3:
                     items.setTelefono(nuevoDato)
-                    return vistaProfesor.mostrarMensaje("Grado modificado con exto!")
+                    return vistaProfesor.mostrarMensaje("Telefono modificado con exto!")
                 elif opcion == 4:
                     items.setCorreo(nuevoDato)
                     return vistaProfesor.mostrarMensaje("Correo modificado con exto!")

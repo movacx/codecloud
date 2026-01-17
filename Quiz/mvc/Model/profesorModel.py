@@ -1,4 +1,8 @@
-#nombre, especialidad, telefono, correo
+#Participantes: 
+#Herlin Fabian Chavarria Beita C5E187
+#Joseph Campos C4D660
+#David Mora Gomez C5H441
+
 class Profesor:
     idProfesor = 0
     def __init__(self, nombre, especialidad, telefono, correo):
