@@ -11,6 +11,7 @@ nuevoProfesor = ProfesorController()
 nuevoCurso = CursosController()
 
 
+
 def main():
       while True:
             opcion = int(input("""
@@ -64,7 +65,7 @@ input: """))
                                     print("Opcion invalida [Valores dentro de 1-4]")
                               
                         elif opcionEstudiantes == 5:
-                              eliminarEstudiante = input("Ingrese el nombre del estudiante a encontrar: ")
+                              eliminarEstudiante = input("Ingrese el nombre del estudiante a eliminar: ")
                               nuevoEstudiante.eliminarEstudiante(eliminarEstudiante)
                               continue
                         elif opcionEstudiantes == 6:
