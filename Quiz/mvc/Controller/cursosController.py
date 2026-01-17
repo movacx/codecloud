@@ -39,7 +39,7 @@ class CursosController:
                 self.listaCursos.remove(indice)
                 return vistaCursos.mostrarMensaje("Eliminado Correctamente")
             else:
-                return vistaCursos.mostrarMensaje("No se encontro estudiante")
+                return vistaCursos.mostrarMensaje("No se encontro curso")
                 
                 
                 
@@ -52,9 +52,9 @@ class CursosController:
                     return vistaCursos.mostrarMensaje("Nombre modificado con exito!")
                 elif opcion == 2:
                     items.setCodigo(nuevoDato)
-                    return vistaCursos.mostrarMensaje("Edad modificado con exto!")
+                    return vistaCursos.mostrarMensaje("Codigo modificado con exto!")
                 elif opcion == 3:
                     items.setProfesorAsignado(nuevoDato)
-                    return vistaCursos.mostrarMensaje("Grado modificado con exto!")
-            return vistaCursos.mostrarMensaje("No se encontro Estudiante")
+                    return vistaCursos.mostrarMensaje("Profesor cambiado con exito!")
+            return vistaCursos.mostrarMensaje("No se encontro Curso")
                     

@@ -17,3 +17,10 @@ def gestionProfesor():
     4. Eliminar profesor
     input: """)
 
+def MenuModificacion():
+    print(f"""
+            1. Modificar Nombre
+            2. Modificar Especialidad
+            3. Modificar Telefono
+            4. Modificar Correo
+            0. Volver""")

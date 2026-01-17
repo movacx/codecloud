@@ -74,24 +74,46 @@ input: """))
                         
                         
             elif opcion == 2:
-                  
-                  View.profesorView.gestionProfesor()
-                  opcionProfesor = int(input("Input: "))
-                  if opcionProfesor == 1:
-                        nuevoProfesor.agregarProfesor("Marcos",64580060,"marcos123@gmail.com")
-                        nuevoProfesor.agregarProfesor("Irwin",4545334, "irwin456@gmail.com")
-                        nuevoProfesor.agregarProfesor("Matt",989180, "matt056@gmail.com")
+                 while True:
+                        View.profesorView.gestionProfesor()
+                        opcionProfesor = int(input("Input: "))
+                        if opcionProfesor == 1:
+                              nuevoProfesor.agregarProfesor("Marcos","ProfeHumanidades",64580060,"marcos123@gmail.com")
+                              nuevoProfesor.agregarProfesor("Irwin","ProfeIngles",4545334,"irwin456@gmail.com")
+                              nuevoProfesor.agregarProfesor("Matt","ProfeProgra",989180,"matt056@gmail.com")
 
-                  elif opcionProfesor == 2:
-                        nuevoProfesor.mostrarDatos()
+                        elif opcionProfesor == 2:
+                              nuevoProfesor.mostrarDatos()
 
-                  elif opcionProfesor == 3:
-                        nuevoProfesor.buscarProfesor("Marcos")
+                        elif opcionProfesor == 3:
+                              buscarProfesor = input("Digitie el profesor que desea modificar: ")
+                              View.estudianteView.MenuModificacion()
+                              seleccion = int(input("Input: "))
 
-                  elif opcionProfesor == 4:
-                        
-                        nuevoProfesor.eliminarProfesor(nuevoProfesor)
-                  continue
+                              if seleccion == 1: 
+                                    nuevoDato = input("Ingrese el nuevo dato a registrar: ")
+                                    nuevoProfesor.modificarProfesor(buscarProfesor,nuevoDato,seleccion)
+                                    continue
+                              elif seleccion == 2: 
+                                    nuevoDato = input("Ingrese el nuevo dato a registrar: ")
+                                    nuevoProfesor.modificarProfesor(buscarProfesor,nuevoDato,seleccion)
+                                    continue
+                              elif seleccion == 3:
+                                    nuevoDato = input("Ingrese el nuevo dato a registrar: ")
+                                    nuevoProfesor.modificarProfesor(buscarProfesor,nuevoDato,seleccion)
+                                    continue
+                              elif seleccion == 4: 
+                                    nuevoDato = input("Ingrese el nuevo dato a modificar")
+                                    nuevoProfesor.modificarProfesor(buscarProfesor,nuevoDato,seleccion)
+                                    continue
+
+                        elif opcionProfesor == 4:
+                              nuevoProfesor.eliminarProfesor("Irwin")
+                        else:
+                              print("Opcion invalida")
+                   
+                
+                 
             elif opcion == 3:
                   
                   continue

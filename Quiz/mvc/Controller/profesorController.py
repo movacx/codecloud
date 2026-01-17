@@ -39,10 +39,8 @@ class ProfesorController:
                 self.listaProfesores.remove(indice)
                 return vistaProfesor.mostrarMensaje("Eliminado Correctamente")
             else:
-                return vistaProfesor.mostrarMensaje("No se encontro estudiante")
+                return vistaProfesor.mostrarMensaje("No se encontro profesor")
             
-            
-                 
     #----------------------- ModificarProfesor -----------------------------------
     def modificarProfesor(self, buscarProfesor, nuevoDato, opcion):
         for items in self.listaProfesores:
