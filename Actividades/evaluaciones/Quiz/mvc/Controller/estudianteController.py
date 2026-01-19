@@ -36,7 +36,7 @@ class EstudianteController:
         for indice in self.listaEstudiantes:
             if indice.getNombre() == buscarNombre:
                 self.listaEstudiantes.remove(indice)
-                return vistaEstudiante.mostrarMensaje("Eliminado Correctamente")
+                
             else:
                 return vistaEstudiante.mostrarMensaje("No se encontro estudiante")
                 

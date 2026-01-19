@@ -43,7 +43,6 @@ class CursosController:
         for indice in self.listaCursos:
             if indice.getNombreCurso() == buscarCurso:
                 self.listaCursos.remove(indice)
-                return vistaCursos.mostrarMensaje("Eliminado Correctamente")
             else:
                 return vistaCursos.mostrarMensaje("No se encontro curso")
                 
