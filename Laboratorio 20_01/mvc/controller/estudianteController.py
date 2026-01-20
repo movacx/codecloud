@@ -16,11 +16,9 @@ class EstudianteController:
             return vistaEstudiante.mostrarMensaje("No hay datos")
         else:
             for item in self.listaEstudiantes:
-                # Usamos el mostrarDatos() que ya devuelve el string formateado
                 vistaEstudiante.mostrarTodos(item.mostrarDatos())
         
     #----------------------- AgregarEstudiante ------------------------------------
-    # OJO: Se agregaron los parametros nuevos del PDF
     def agregarEstudiante(self, nombre, apellidos, edad, telefono, direccion, fechaNacimiento, grado, correo):
         estudianteNuevo = Estudiante(nombre, apellidos, edad, telefono, direccion, fechaNacimiento, grado, correo)
         self.listaEstudiantes.append(estudianteNuevo)
@@ -33,8 +31,7 @@ class EstudianteController:
             if item.getNombre() == buscarNombre:
                 vistaEstudiante.mostrarUno(item.mostrarDatos())
                 encontrado = True
-                break # Importante romper el ciclo si lo encuentra
-        
+                break
         if not encontrado:
             vistaEstudiante.mostrarMensaje("No se encontró estudiante con ese nombre")
                 
@@ -44,8 +41,6 @@ class EstudianteController:
             if item.getNombre() == buscarNombre:
                 self.listaEstudiantes.remove(item)
                 return vistaEstudiante.mostrarMensaje("Eliminado Correctamente")
-        
-        # El mensaje de error va FUERA del for (si termina el ciclo y no lo halló)
         return vistaEstudiante.mostrarMensaje("No se encontro estudiante")
                 
     #----------------------- ModificarEstudiante -----------------------------------
@@ -56,7 +51,6 @@ class EstudianteController:
                     item.setNombre(nuevoDato)
                     return vistaEstudiante.mostrarMensaje("Nombre modificado con exito!")
                 elif opcion == 2:
-                    # Recuerda castear a int si es edad
                     item.setEdad(int(nuevoDato))
                     return vistaEstudiante.mostrarMensaje("Edad modificada con exito!")
                 elif opcion == 3:
@@ -65,7 +59,5 @@ class EstudianteController:
                 elif opcion == 4:
                     item.setCorreo(nuevoDato)
                     return vistaEstudiante.mostrarMensaje("Correo modificado con exito!")
-                
-                # Puedes agregar mas opciones para Apellidos, Telefono, etc.
                 
         return vistaEstudiante.mostrarMensaje("No se encontro Estudiante para modificar")

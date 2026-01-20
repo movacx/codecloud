@@ -8,9 +8,7 @@ from view.comunesView import mostrarMensaje, mostrarTodos, mostrarUno
 
 def gestionEstudiante():
     print("""
-    ==============================
        GESTIÓN DE ESTUDIANTES
-    ==============================
     1. Registrar estudiante
     2. Listar estudiantes
     3. Buscar estudiante

@@ -19,7 +19,6 @@ class ProfesorController:
                 vistaProfesor.mostrarTodos(item.mostrarDatos())
             
     #----------------------- Agregar Profesor ------------------------------------
-    # OJO: Se agregaron los parametros nuevos del PDF
     def agregarProfesor(self, nombre, apellidos, especialidad, telefono, direccion, fechaNacimiento, correo):
         profesorNuevo = Profesor(nombre, apellidos, especialidad, telefono, direccion, fechaNacimiento, correo)
         self.listaProfesores.append(profesorNuevo)
@@ -43,7 +42,6 @@ class ProfesorController:
             if item.getNombre() == buscarNombre:
                 self.listaProfesores.remove(item)
                 return vistaProfesor.mostrarMensaje("Eliminado Correctamente")
-        
         return vistaProfesor.mostrarMensaje("No se encontro profesor")
             
     #----------------------- ModificarProfesor -----------------------------------

@@ -7,7 +7,6 @@ def mostrarMensaje(mensaje):
     print(f"\n>> {mensaje}")
 
 def mostrarTodos(objeto_formateado):
-    # Imprime directamente el texto que viene del model.mostrarDatos()
     print(objeto_formateado)
 
 def mostrarUno(objeto_formateado):

@@ -8,9 +8,6 @@ class Persona:
         self.fechaNacimiento = fechaNacimiento
         self.correo = correo
         
-
-
-
     # Getters
     def getNombre(self):
         return self.nombre

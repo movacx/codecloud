@@ -39,11 +39,9 @@ class CursosController:
     #----------------------- EliminarCursos ------------------------------------
     def eliminarCursos(self, buscarCurso):
         for item in self.listaCursos:
-            # Usamos getNombreCurso() porque la clase Curso no hereda de Persona
             if item.getNombreCurso() == buscarCurso:
                 self.listaCursos.remove(item)
                 return vistaCursos.mostrarMensaje("Eliminado Correctamente")
-        
         return vistaCursos.mostrarMensaje("No se encontro curso")
                 
     #----------------------- ModificarCursos -----------------------------------
