@@ -1,38 +1,29 @@
-def mostrarTodos(estudianteObjeto):
-    print(estudianteObjeto)
-    
-def mostrarUno(estudiante):
-    print(estudiante)    
+#Participantes: 
+#Herlin Fabian Chavarria Beita C5E187
+#Joseph Campos C4D660
+#David Mora Gomez C5H441
 
-def mostrarMensaje(mensaje):
-    print(f" {mensaje}")
+# Importamos lo común
+from view.comunesView import mostrarMensaje, mostrarTodos, mostrarUno
 
-
-
-    def mostrarMensajes(opcion, dato):
-        if opcion == 1:
-            print(dato)
-
-        elif opcion == 2:
-            print(f" {mensaje}")
-        
-
-def gestionEstudiante():
+def gestionProfesor():
     print("""
-    --- GESTIÓN DE ESTUDIANTES ---
-    1. Registrar estudiante
-    2. Listar estudiantes
-    3. Buscar estudiante
-    4. Actualizar estudiante
-    5. Eliminar estudiante
-    6. Volver al Menú Principal
+    ==============================
+       GESTIÓN DE PROFESORES
+    ==============================
+    1. Registrar profesor
+    2. Listar profesores
+    3. Actualizar profesor
+    4. Eliminar profesor
+    5. Volver al Menú Principal
     """)
-    
+
 def MenuModificacion():
     print("""
-            1. Modificar Nombre
-            2. Modificar Edad
-            3. Modificar Grado
-            4. Modificar Correo
-            0. Cancelar
+    --- MODIFICAR PROFESOR ---
+    1. Modificar Nombre
+    2. Modificar Especialidad
+    3. Modificar Teléfono
+    4. Modificar Correo
+    0. Cancelar
     """)

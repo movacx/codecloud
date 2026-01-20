@@ -1,15 +1,16 @@
-def mostrarTodos(profeObjeto):
-    print(profeObjeto)
-    
-def mostrarUno(profe):
-    print(profe)    
+#Participantes: 
+#Herlin Fabian Chavarria Beita C5E187
+#Joseph Campos C4D660
+#David Mora Gomez C5H441
 
-def mostrarMensaje(mensaje):
-    print(f" {mensaje}")
+# Importamos lo común
+from view.comunesView import mostrarMensaje, mostrarTodos, mostrarUno
 
 def gestionProfesor():
     print("""
-    --- GESTIÓN DE PROFESORES ---
+    ==============================
+       GESTIÓN DE PROFESORES
+    ==============================
     1. Registrar profesor
     2. Listar profesores
     3. Actualizar profesor
@@ -19,9 +20,10 @@ def gestionProfesor():
 
 def MenuModificacion():
     print("""
-            1. Modificar Nombre
-            2. Modificar Especialidad
-            3. Modificar Teléfono
-            4. Modificar Correo
-            0. Cancelar
+    --- MODIFICAR PROFESOR ---
+    1. Modificar Nombre
+    2. Modificar Especialidad
+    3. Modificar Teléfono
+    4. Modificar Correo
+    0. Cancelar
     """)
