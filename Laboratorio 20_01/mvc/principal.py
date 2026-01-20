@@ -3,16 +3,15 @@
 #Joseph Campos C4D660
 #David Mora Gomez C5H441
 
-from Controller.estudianteController import EstudianteController
-from Controller.profesorController import ProfesorController
-from Controller.cursosController import CursosController
+from controller.estudianteController import EstudianteController
 
 
 
 nuevoEstudiante = EstudianteController()
-nuevoProfesor = ProfesorController()
-nuevoCurso = CursosController()
-
+nuevoEstudiante.agregarObjeto("Fabian", "Chavarria", 22, 61131721, "cocalPuntarenas", "19/5/2003", "1A", "Herlin.Chavarria")
+nuevoEstudiante.buscarObjeto("Fabian")
+nuevoEstudiante.eliminarEstudiante("Fabian")
+nuevoEstudiante.eliminarEstudiante("David")
 
 
 def main():

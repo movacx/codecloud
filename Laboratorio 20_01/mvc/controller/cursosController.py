@@ -1,6 +1,6 @@
 from model.cursosModel import Curso
 
-class EstudianteController:
+class CursoController:
     def __init__(self):
         self.lista = []
     
@@ -9,3 +9,6 @@ class EstudianteController:
         for items in self.lista:
             print(items.mostrarDatos())
     
+    #-----------------Agregar Objeto----------------------------
+    def agregarObjeto(self):
+        
