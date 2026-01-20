@@ -8,7 +8,7 @@ from view.comunesView import mostrarMensaje, mostrarTodos, mostrarUno
 
 def gestionProfesor():
     print("""
-       GESTIÓN DE PROFESORES
+       --GESTIÓN DE PROFESORES--
     1. Registrar profesor
     2. Listar profesores
     3. Actualizar profesor
