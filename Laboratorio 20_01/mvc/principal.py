@@ -8,9 +8,8 @@ from controller.estudianteController import EstudianteController
 
 
 nuevoEstudiante = EstudianteController()
-nuevoEstudiante.agregarObjeto("Fabian", "Chavarria", 22, 61131721, "cocalPuntarenas", "19/5/2003", "1A", "Herlin.Chavarria")
-nuevoEstudiante.buscarObjeto("Fabian")
-nuevoEstudiante.eliminarEstudiante("Fabian")
+nuevoEstudiante.agregarEstudiante("Fabian", "Chavarria", 22, 61131721, "cocalPuntarenas", "19/5/2003", "1A", "Herlin.Chavarria")
+nuevoEstudiante.buscarEstudiante("Fabian")
 nuevoEstudiante.eliminarEstudiante("David")
 
 
