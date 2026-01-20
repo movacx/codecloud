@@ -8,9 +8,7 @@ from view.comunesView import mostrarMensaje, mostrarTodos, mostrarUno
 
 def gestionCursos():
     print("""
-    ==============================
          GESTIÓN DE CURSOS
-    ==============================
     1. Crear Curso
     2. Listar Cursos
     3. Modificar Curso
