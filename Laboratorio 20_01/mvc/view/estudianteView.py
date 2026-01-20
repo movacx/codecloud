@@ -7,6 +7,16 @@ def mostrarUno(estudiante):
 def mostrarMensaje(mensaje):
     print(f" {mensaje}")
 
+
+
+    def mostrarMensajes(opcion, dato):
+        if opcion == 1:
+            print(dato)
+
+        elif opcion == 2:
+            print(f" {mensaje}")
+        
+
 def gestionEstudiante():
     print("""
     --- GESTIÓN DE ESTUDIANTES ---
