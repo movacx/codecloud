@@ -11,26 +11,20 @@ import view.estudianteView
 import view.profesorView
 import view.cursosView
 
-# Instancias
 nuevoEstudiante = EstudianteController()
 nuevoProfesor = ProfesorController()
 nuevoCurso = CursosController()
 
 def main():
     while True:
-        print("\n===============================")
         print("   SISTEMA DE GESTIÓN ESCOLAR")
-        print("===============================")
         print("1. Gestión de Estudiantes")
         print("2. Gestión de Profesores")
         print("3. Gestión de Cursos")
         print("4. Salir")
-        
         opcionMenuPrincipal = int(input("Ingrese una opción: "))
-        
-        # =========================================================
+
         # GESTIÓN DE ESTUDIANTES
-        # =========================================================
         if opcionMenuPrincipal == 1:
             while True:
                 view.estudianteView.gestionEstudiante()
@@ -38,7 +32,6 @@ def main():
                 
                 if opcionEstudiantes == 1:
                     print("\n--- REGISTRO DE ESTUDIANTE ---")
-                    # Pedimos los datos uno por uno con variables claras
                     nombreEstudiante = input("Nombre: ")
                     apellidosEstudiante = input("Apellidos: ")
                     edadEstudiante = int(input("Edad: "))
@@ -47,8 +40,6 @@ def main():
                     fechaNacimientoEst = input("Fecha Nacimiento (DD/MM/AAAA): ")
                     gradoEstudiante = input("Grado: ")
                     correoEstudiante = input("Correo: ")
-                    
-                    # Llamamos al controlador con todos los datos
                     nuevoEstudiante.agregarEstudiante(nombreEstudiante, apellidosEstudiante, edadEstudiante, telefonoEstudiante, direccionEstudiante, fechaNacimientoEst, gradoEstudiante, correoEstudiante)
                 
                 elif opcionEstudiantes == 2:
@@ -72,13 +63,11 @@ def main():
                     nuevoEstudiante.eliminarEstudiante(eliminarEst)
                     
                 elif opcionEstudiantes == 6:
-                    break # Salir del while de estudiantes
+                    break 
                 else:
                     print("Opción inválida")
 
-        # =========================================================
         # GESTIÓN DE PROFESORES
-        # =========================================================
         elif opcionMenuPrincipal == 2:
             while True:
                 view.profesorView.gestionProfesor()
@@ -117,9 +106,7 @@ def main():
                 else:
                     print("Opción inválida")
 
-        # =========================================================
         # GESTIÓN DE CURSOS
-        # =========================================================
         elif opcionMenuPrincipal == 3:
             while True:
                 view.cursosView.gestionCursos()
@@ -154,9 +141,7 @@ def main():
                 else:
                     print("Opción inválida")
 
-        # =========================================================
         # SALIR
-        # =========================================================
         elif opcionMenuPrincipal == 4:
             print("Saliendo del sistema...")
             break
