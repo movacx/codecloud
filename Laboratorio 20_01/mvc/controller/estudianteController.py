@@ -5,5 +5,3 @@ class EstudianteController:
         self.lista = []
     
     #------------------Mostrar Datos----------------------------
-    def mostrarDatos(self):
-        
