@@ -1,4 +1,4 @@
-from model.estudianteModel import Estudiante
+from model.cursosModel import Curso
 
 class EstudianteController:
     def __init__(self):
@@ -8,5 +8,4 @@ class EstudianteController:
     def mostrarDatos(self):
         for items in self.lista:
             print(items.mostrarDatos())
-    
     
