@@ -1,0 +1,65 @@
+#Participantes: 
+#Herlin Fabian Chavarria Beita C5E187
+#Joseph Campos C4D660
+#David Mora Gomez C5H441
+
+
+from Model.cursosModel import Curso
+import View.cursosView as vistaCursos
+
+class CursosController:
+    def __init__(self):
+        self.listaCursos = []
+        
+        
+    #----------------------- MostrarDatos ------------------------------------
+    def mostrarDatos(self):
+        if self.listaCursos == None:
+            return "No hay datos"
+        else:
+            for items in self.listaCursos:
+                vistaCursos.mostrarTodos(items.mostrarCursos())
+        
+            
+    #----------------------- AgregarCursos ------------------------------------
+    def agregarCurso(self, nombreCurso,codigo, profesorAsignado):
+        nuevoCurso = Curso(nombreCurso,codigo, profesorAsignado)
+        self.listaCursos.append(nuevoCurso)
+        return vistaCursos.mostrarMensaje("Agregado Correctamente")
+
+    
+    
+     #----------------------- BuscarCursos ------------------------------------
+    def buscarCursos(self, buscarCurso):
+        for items in self.listaCursos:
+            if items.getNombreCurso() == buscarCurso:
+                vistaCursos.mostrarUno(items)
+                
+                
+                
+                
+    #----------------------- EliminarEstudiante ------------------------------------
+    def eliminarCursos(self, buscarCurso):
+        for indice in self.listaCursos:
+            if indice.getNombreCurso() == buscarCurso:
+                self.listaCursos.remove(indice)
+            else:
+                return vistaCursos.mostrarMensaje("No se encontro curso")
+                
+                
+                
+    #----------------------- ModificarEstudiante -----------------------------------
+    def modificarCursos(self, buscarCurso, nuevoDato, opcion):
+        for items in self.listaCursos:
+            if items.getNombreCurso() == buscarCurso:
+                if opcion == 1:
+                    items.setNombreCurso(nuevoDato)
+                    return vistaCursos.mostrarMensaje("Nombre modificado con exito!")
+                elif opcion == 2:
+                    items.setCodigo(nuevoDato)
+                    return vistaCursos.mostrarMensaje("Codigo modificado con exto!")
+                elif opcion == 3:
+                    items.setProfesorAsignado(nuevoDato)
+                    return vistaCursos.mostrarMensaje("Profesor cambiado con exito!")
+            return vistaCursos.mostrarMensaje("No se encontro Curso")
+                    
