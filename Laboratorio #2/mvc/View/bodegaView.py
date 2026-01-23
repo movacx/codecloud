@@ -1,4 +1,4 @@
-def mostrarMenu()
+def mostrarMenu():
 	print("""
 === Sistema de Bodega ===
 1. Gestión de Productos
@@ -6,3 +6,6 @@ def mostrarMenu()
 3. Reportes
 4. Salir
 """)
+	
+def mostrarMensaje(mensaje):
+	print(mensaje)
