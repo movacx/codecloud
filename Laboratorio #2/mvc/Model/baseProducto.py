@@ -100,3 +100,4 @@ eliminarProductos(2)
 
 print("Lista final:")
 mostrarProductos()
+

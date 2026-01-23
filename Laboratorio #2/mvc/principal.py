@@ -19,4 +19,4 @@ while True:
 			vista.mostrarMensaje("Opcion Invalida")
 		
 	except ValueError:
-		print("Hola mundo")
+		print("Solo se aceptan numeros")
