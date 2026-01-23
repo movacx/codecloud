@@ -1,6 +1,5 @@
 class Productos:
 	
-	idProducto = 0
 	def __init__(self, codigoUnico,nombre, Categoria,precio,stock,cantidad, tipoMoviento, fecha):
 		self.codigoUnico = codigoUnico
 		self.nombre = nombre
@@ -37,6 +36,7 @@ class Productos:
 	
 	def getFecha(self):
 		self.fecha
+		
 	#Setters
 	def setCodigoUnico(self, codigoUnico):
 		self.codigoUnico = codigoUnico
