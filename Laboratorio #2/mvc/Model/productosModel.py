@@ -41,3 +41,7 @@ class Productos:
 	
 	def setStock(self, stock):
 		self.stock = stock
+		
+	
+	def mostrarDatos(self):
+		return f" Codigo : {self.codigoUnico} Nombre: {self.nombre} Categoria: {self.categoria} Precio: {self.precio} Stock: {self.stock}"
