@@ -12,25 +12,25 @@ ARCHIVO = os.path.join(BASE_DIR, 'csv', 'productos.csv')
 
 #'csv/productos.csv'
 
-def guardarPersona(id, nombre, edad):
+def guardarProductos(codigoUnico, nombre, categoria, precio, stock):
     #open    (src, atributos, lectura, systemaenco)
     with open(ARCHIVO, "a", newline="", encoding="utf-8") as archivoparaguardar:
               writer = csv.writer(archivoparaguardar)
               
-              writer.writerow([id, nombre, edad])
+              writer.writerow([codigoUnico, nombre, categoria, precio, stock])
               
               print("Se guardaron datos")
               
  
  
-def mostrarPersonas():
+def mostrarProductos():
     with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoparaleer:
         reader = csv.reader(archivoparaleer)
         
         for item in reader:
             print(item)
             
-def mostrarPersonasId(id):
+def mostrarProductoId(codigoUnico):
     with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoparaleer:
         reader = csv.reader(archivoparaleer)
         
@@ -39,8 +39,8 @@ def mostrarPersonasId(id):
                 return item           
 
 
-def modificarPersonas(id, nombre, edad):
-   # print(id, nombre, edad)
+def modificarProducto(codigoUnico, nombre, categoria, precio, stock):
+   # print(codigoUnico, nombre, categoria, precio, stock)
     arregloVacio = []
     
     with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoparaleer:
@@ -57,12 +57,12 @@ def modificarPersonas(id, nombre, edad):
         writer = csv.writer(archivoparaescribir)
         writer.writerows(arregloVacio)
   
-    print("actualizo la persona")   
+    print("actualizo el producto")   
     #print(arregloVacio)
 
 
 
-def eliminarPersonas(id):
+def eliminarProductos(id):
    # print(id, nombre, edad)
     arregloVacio = []
     
@@ -77,12 +77,12 @@ def eliminarPersonas(id):
         writer = csv.writer(archivoparaescribir)
         writer.writerows(arregloVacio)
   
-    print("Elimino la persona")   
+    print("Elimino el producto")   
     #print(arregloVacio)
 
-print(mostrarPersonasId(3))
-#guardarPersona(3, "Isaac", 21)
-modificarPersonas(3, "Alberto", 11)
-print(mostrarPersonasId(3))
-eliminarPersonas(2)
-mostrarPersonas()
+print(mostrarProductoId((3))
+#guar(3, "Isaac", 21)
+modificarProductos(3, "Alberto", 11)
+print(mostrarProductoId(3))
+eliminarProductos((2)
+mostrarProductos()
