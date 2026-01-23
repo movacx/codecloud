@@ -2,87 +2,101 @@ import sys
 
 import os
 
-sys.stdout.reconfigure(encoding="utf-8")
-
 import csv
+
+sys.stdout.reconfigure(encoding="utf-8")
 
 BASE_DIR = os.path.dirname(__file__)
 
-ARCHIVO = os.path.join(BASE_DIR, 'csv', 'productos.csv')
+FOLDER = os.path.join(BASE_DIR, 'csv')
 
-#'csv/productos.csv'
+ARCHIVO = os.path.join(FOLDER, 'productos.csv')
 
-def guardarProductos(codigoUnico, nombre, categoria, precio, stock):
-    #open    (src, atributos, lectura, systemaenco)
+def guardarProducto(codigoUnico, nombre, categoria, precio, stock):
+    
     with open(ARCHIVO, "a", newline="", encoding="utf-8") as archivoparaguardar:
-              writer = csv.writer(archivoparaguardar)
-              
-              writer.writerow([codigoUnico, nombre, categoria, precio, stock])
-              
-              print("Se guardaron datos")
-              
- 
- 
+        
+        writer = csv.writer(archivoparaguardar)
+        writer.writerow([codigoUnico, nombre, categoria, precio, stock])
+        
+        print(f"Producto {nombre} guardado exitosamente.")
+
 def mostrarProductos():
+    
     with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoparaleer:
+        
         reader = csv.reader(archivoparaleer)
         
         for item in reader:
             print(item)
-            
-def mostrarProductoId(codigoUnico):
-    with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoparaleer:
-        reader = csv.reader(archivoparaleer)
-        
-        for item in reader:
-            if item[0] == str(id):
-                return item           
 
+def mostrarProductoId(codigoUnico):
+    
+    with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoparaleer:
+        
+        reader = csv.reader(archivoparaleer)
+       
+        for item in reader:
+            if item[0] == str(codigoUnico):
+                return item
+        return "No encontrado"
 
 def modificarProducto(codigoUnico, nombre, categoria, precio, stock):
-   # print(codigoUnico, nombre, categoria, precio, stock)
     arregloVacio = []
+    encontrado = False
     
     with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoparaleer:
+        
         reader = csv.reader(archivoparaleer)
         
         for item in reader:
-            if item[0] == str(id):
-                item[1] = nombre
-                item[2] = edad
+            if item[0] == str(codigoUnico):
                 
+                item = [codigoUnico, nombre, categoria, precio, stock]
+                encontrado = True
             arregloVacio.append(item)
             
-    with open(ARCHIVO, "w", newline="", encoding="utf-8") as archivoparaescribir:
-        writer = csv.writer(archivoparaescribir)
-        writer.writerows(arregloVacio)
-  
-    print("actualizo el producto")   
-    #print(arregloVacio)
+    if encontrado:
+        with open(ARCHIVO, "w", newline="", encoding="utf-8") as archivoparaescribir:
+            
+            writer = csv.writer(archivoparaescribir)
+            writer.writerows(arregloVacio)
+        
+        print(f"Producto {codigoUnico} actualizado.")
+    else:
+        print("Producto no encontrado para modificar.")
 
-
-
-def eliminarProductos(id):
-   # print(id, nombre, edad)
+def eliminarProductos(codigoUnico):
     arregloVacio = []
-    
+
     with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoparaleer:
+        
         reader = csv.reader(archivoparaleer)
         
         for item in reader:
-            if item[0] != str(id):                               
+            if item[0] != str(codigoUnico):                                
                 arregloVacio.append(item)
             
     with open(ARCHIVO, "w", newline="", encoding="utf-8") as archivoparaescribir:
+        
         writer = csv.writer(archivoparaescribir)
         writer.writerows(arregloVacio)
-  
-    print("Elimino el producto")   
-    #print(arregloVacio)
+    
+    print(f"Eliminado el producto: {codigoUnico}")
 
-print(mostrarProductoId((3))
-#guar(3, "Isaac", 21)
-modificarProductos(3, "Alberto", 11)
-print(mostrarProductoId(3))
-eliminarProductos((2)
+
+guardarProducto(2, "sonido", "Peri", 250, 10)
+guardarProducto(3, "compu", "Peri", 100, 20)
+
+
+print("Buscando  3:", mostrarProductoId(3))
+
+
+modificarProducto(3, "compu", "Peri", 400, 5)
+
+
+eliminarProductos(2)
+
+
+print("Lista final:")
 mostrarProductos()
