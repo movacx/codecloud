@@ -10,3 +10,17 @@ class Productos:
 		Productos.idProducto += 1
 		self.id = Productos.idProducto
 	
+	def getCodigoUnico(self)
+	return self.codigoUnico
+
+        def getNombre(self)
+        return self.nombre
+    
+    def getNombre(self)
+        return self.cateroti
+    def getNombre(self)
+        return self.nombre
+    def getNombre(self)
+        return self.nombre
+    def getNombre(self)
+        return self.nombre
