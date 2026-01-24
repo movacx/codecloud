@@ -1,6 +1,6 @@
 class Productos:
 	
-	def __init__(self, codigoUnico,nombre, Categoria,precio,stock,cantidad, tipoMoviento, fecha):
+	def __init__(self, codigoUnico,nombre, categoria,precio,stock,cantidad, tipoMoviento, fecha):
 		self.codigoUnico = codigoUnico
 		self.nombre = nombre
 		self.categoria = categoria
