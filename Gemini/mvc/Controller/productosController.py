@@ -19,7 +19,6 @@ class ProductosController:
         return f"Producto registrado con ID {nuevoId}"
 
     def listarProductos(self):
-        # Llama directamente al print de baseProducto
         baseProducto.listarProductos()
 
     def actualizarProducto(self, id, nombre, categoria, precio, stock):
