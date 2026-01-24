@@ -10,7 +10,7 @@ class ProductosController:
         if int(stock) < 0:
             return "Error: Stock invalido"
         
-        # Generar ID automatico basado en la cantidad de productos actuales
+        #Se genera un ID
         listaActual = baseProducto.listarProductos()
         nuevoId = len(listaActual) + 1
         
