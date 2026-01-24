@@ -1,5 +1,4 @@
-from Model.inventarioModel import Inventario
-from Model.productosModel import Productos
+import View.productosView as vistaProductos
 import View.bodegaView as vista
 
 
@@ -8,7 +7,7 @@ while True:
 		vista.mostrarMenu()
 		opcion = int(input("Input: "))
 		if opcion == 1:
-			continue
+			print(vistaProductos.menuProductos())
 		elif opcion == 2:
 			continue
 		elif opcion == 3:
