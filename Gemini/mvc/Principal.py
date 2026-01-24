@@ -1,10 +1,3 @@
-import sys
-import os
-
-# Parche para rutas
-rutaProyecto = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(rutaProyecto)
-
 # Imports de Controladores (Clases)
 from Controller.productosController import ProductosController
 from Controller.inventarioController import InventarioController
