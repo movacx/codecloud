@@ -7,6 +7,7 @@ while True:
 		vista.mostrarMenu()
 		opcion = int(input("Input: "))
 		if opcion == 1:
+			print("Hola mundo")
 			continue
 		elif opcion == 2:
 			continue
