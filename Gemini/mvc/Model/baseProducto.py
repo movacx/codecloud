@@ -1,8 +1,9 @@
 import sys
 import os
-import csv
 
 sys.stdout.reconfigure(encoding = "utf-8")
+
+import csv
 
 BASE_DIR = os.path.dirname(__file__)
 ARCHIVO = os.path.join(BASE_DIR, "CSV", "productos.csv")
