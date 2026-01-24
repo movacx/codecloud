@@ -1,5 +1,5 @@
-def mostrarMensaje(mensaje):
-    print(mensaje)
-    
-def mostrarDatos(dato):
-    print(f"{dato}")
+from Controller import inventarioController as controller
+
+def menuInventario():
+    print("1. Entrada")
+    print("2. Salida")

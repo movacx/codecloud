@@ -1,5 +1,8 @@
-def mostrarMensaje(mensaje):
-    print(mensaje)
-    
-def mostrarDatos(dato):
-    print(f"{dato}")
+from Controller import productosController as controller
+
+def menuProductos():
+    print("1.Registrar")
+    print("2.Listar")
+    print("3.Modificar")
+    print("4.Eliminar")
+

@@ -13,6 +13,7 @@ def guardarProducto(id, nombre, categoria, precio, stock):
 	
 	with open(ARCHIVO, "a", newline="", encoding= "utf-8") as archivoParaGuardar:
 		writer = csv.writer(archivoParaGuardar)
+		writer.writerow([id, nombre, categoria, precio, stock])
 		
 	print ("Se guardaron los productos")
 	
@@ -26,8 +27,8 @@ def listarProductos():
 	
 #Buscar por ID
 def buscarProductoId(id):
-	with open(ARCHIVO, "r", encoding = "utf-8") as archivoparaleer:
-		reader = csv.reader(archivoParaLeer)
+	with open(ARCHIVO, "r", encoding = "utf-8") as archivoParaleer:
+		reader = csv.reader(archivoParaleer)
 	
 		for item in reader:
 			if item[0] == str(id):
@@ -47,25 +48,29 @@ def modificarProducto(id, nombre, categoria, precio, stock):
 				item[3] = precio
 				item[4] = stock
 			
-		arrregloVacio.append(item)
+		arregloVacio.append(item)
 		
 		with open(ARCHIVO, "w", nenewline="", encoding= "utf-8") as archivoParaEscribir:
 			writer = writer.writerrow(arregloVacio)				
 
 
 #Eliminar producto
-def eliminarProducto(id):
-	arregloVacio = [ ]
+def eliminarProductos(id):
+   #Print(id, nombre, edad)
+    arregloVacio = [] #Datos temporales
     
-	with open(ARCHIVO, "r", encoding="utf-8") as archivoParaLeer:
-		reader = csv.reader(archivoParaLeer)
-	
-		for item in reader:
-			if item[0] != str(id):
-				arregloVacio.append(item)
-				
-	with open(ARCHIVO, "w", newline="", encoding="utf-8") as archivo:
-			csv.writer(archivo).writerows(productos)
+    with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoParaLeer:
+        reader = csv.reader(archivoParaLeer)
+        
+        for item in reader:
+            if item[0] != str(id):                               
+                arregloVacio.append(item)
+            
+    with open(ARCHIVO, "w", newline="", encoding="utf-8") as archivoParaEscribir:
+        writer = csv.writer(archivoParaEscribir)
+        writer.writerows(arregloVacio)
+
+    print("Elimino la persona")   
 
 
 
