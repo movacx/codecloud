@@ -63,7 +63,7 @@ def eliminarProducto(id):
 		for item in reader:
 			if item[0] != str(id):
 				arregloVacio.append(item)
-
+				
 	with open(ARCHIVO, "w", newline="", encoding="utf-8") as archivo:
 			csv.writer(archivo).writerows(productos)
 

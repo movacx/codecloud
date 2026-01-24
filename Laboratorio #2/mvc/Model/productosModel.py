@@ -9,6 +9,7 @@ class Producto:
         self.stock = stock
         Producto.idProducto += 1
         self.id = Producto.idProducto
+        
 #Getters
 def getNombre(self):
     return self.nombre
