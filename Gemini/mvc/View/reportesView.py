@@ -1,23 +1,23 @@
 def menuReportes():
-    print("\n--- REPORTES ---")
+    print("\nReportes")
     print("1. Por Categoria")
     print("2. Bajo Stock")
     print("3. Historial")
     print("4. Volver")
 
 def mostrarReporteCategoria(lista):
-    print("\n--- REPORTE CATEGORIA ---")
+    print("\nReporte por Categoria")
     for item in lista:
-        print(f"Cat: {item[2]} | {item[1]} | Stock: {item[4]}")
+        print(f"Catidad: {item[2]} | {item[1]} | Stock: {item[4]}")
 
 def mostrarReporteBajoStock(lista):
-    print("\n--- BAJO STOCK ---")
+    print("\nBajos de Stock")
     if not lista:
         print("No hay alertas.")
     for item in lista:
-        print(f"ALERTA ID {item[0]}: {item[1]} (Stock: {item[4]})")
+        print(f"Alerta id {item[0]}: {item[1]} (Stock: {item[4]})")
 
 def mostrarHistorial(lista):
-    print("\n--- HISTORIAL ---")
+    print("\nHistorial")
     for item in lista:
-        print(f"{item[3]} | {item[1]} | Cant: {item[2]} (ID Prod: {item[0]})")
+        print(f"{item[3]} | {item[1]} | Cantidad: {item[2]} (Id Productos: {item[0]})")

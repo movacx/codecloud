@@ -1,4 +1,3 @@
-# Hereda logica de baseProducto e inventarioModel
 from Model import baseProducto
 from Model import inventarioModel
 

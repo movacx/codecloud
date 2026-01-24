@@ -1,5 +1,5 @@
 def menuProductos():
-    print("\n--- GESTION PRODUCTOS ---")
+    print("\nGestor de productos")
     print("1. Registrar")
     print("2. Listar")
     print("3. Modificar")

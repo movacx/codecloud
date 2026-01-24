@@ -13,7 +13,7 @@ def guardarMovimiento(id, tipo, cantidad, fecha):
         writer = csv.writer(archivoParaGuardar)
         writer.writerow([id, tipo, cantidad, fecha]) 
         
-    print("Datos guardados correctamente en historial")
+    print("Datos guardados correctamente en historial ")
         
 def listarMovimientos():
     lista = []
