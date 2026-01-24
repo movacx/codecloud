@@ -21,7 +21,7 @@ def main():
             View.bodegaView.mostrarMenu()
             opcionPrincipal = int(input("Input: "))
 
-            # --- 1. GESTION DE PRODUCTOS---
+            # 1. Gestor productos
             if opcionPrincipal == 1:
                 while True:
                     View.productosView.menuProductos()
@@ -39,11 +39,11 @@ def main():
                         View.bodegaView.mostrarMensaje(mensaje)
 
                     elif opcionProductos == 2:
-                        print("\n--- LISTA DE PRODUCTOS ---")
+                        print("\nLista de productos")
                         nuevoControladorProducto.listarProductos()
 		     # Modificar
                     elif opcionProductos == 3: 
-                        idBuscar = input("ID a modificar: ")
+                        idBuscar = input("Id a modificar: ")
                         nom = input("Nuevo Nombre: ")
                         cat = input("Nueva Categoria: ")
                         prec = input("Nuevo Precio: ")
@@ -53,7 +53,7 @@ def main():
                         View.bodegaView.mostrarMensaje(mensaje)
 		     # Eliminar
                     elif opcionProductos == 4:
-                        idEliminar = input("ID a eliminar: ")
+                        idEliminar = input("Id a eliminar: ")
                         mensaje = nuevoControladorProducto.eliminarProducto(idEliminar)
                         View.bodegaView.mostrarMensaje(mensaje)
 		     # Volver
@@ -62,21 +62,21 @@ def main():
                     else:
                         print("Opcion invalida")
 
-            # --- 2. GESTION DE INVENTARIO ---
+            #2. Gestor de inventario
             elif opcionPrincipal == 2:
                 while True:
                     View.inventarioView.menuInventario()
                     opcionInv = int(input("Input: "))
 		    # Entrada
                     if opcionInv == 1:
-                        idProd = input("ID Producto: ")
+                        idProd = input("Id Producto: ")
                         cant = input("Cantidad: ")
                         fecha = input("Fecha: ")
                         mensaje = nuevoControladorInventario.registrarEntrada(idProd, cant, fecha)
                         View.bodegaView.mostrarMensaje(mensaje)
 		    # Salida
                     elif opcionInv == 2: 
-                        idProd = input("ID Producto: ")
+                        idProd = input("Id Producto: ")
                         cant = input("Cantidad: ")
                         fecha = input("Fecha: ")
                         mensaje = nuevoControladorInventario.registrarSalida(idProd, cant, fecha)
@@ -87,7 +87,7 @@ def main():
                     else:
                         print("Opcion invalida")
 
-            # --- 3. REPORTES ---
+            # Reportes
             elif opcionPrincipal == 3:
                 while True:
                     View.reportesView.menuReportes()
@@ -118,7 +118,7 @@ def main():
                 print("Opcion Invalida [1-4]")
 
         except ValueError:
-            print("Error: Ingrese solo numeros")
+            print("Error Ingrese solo numeros")
 
 if __name__ == "__main__":
     main()
