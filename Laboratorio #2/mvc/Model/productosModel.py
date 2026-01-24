@@ -1,15 +1,14 @@
 class Producto:
-    
-    
+
     idProducto = 0 
-    def __init__(self,  nombre, categoria, precio, stock):
+
+    def __init__(self, nombre, categoria, precio, stock):
         self.nombre = nombre
         self.categoria = categoria
         self.precio = precio
         self.stock = stock
-		Producto.idProducto += 1
-		self.id = Producto.idProducto
-	
+        Producto.idProducto += 1
+        self.id = Producto.idProducto
 #Getters
 def getNombre(self):
     return self.nombre
@@ -22,6 +21,7 @@ def getPrecio(self):
 
 def getStock(self):
     return self.stock
+
 #Setters
 def setNombre(self, nombre):
     self.nombre = nombre
@@ -34,4 +34,3 @@ def setPrecio(self, precio):
     
 def setStock(self, stock):
     self.stock = stock
-
