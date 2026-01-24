@@ -1,7 +1,7 @@
 import sys
 import os
 
-sys.stdout.reconfigured(enconding = "utf-8")
+sys.stdout.reconfigure(enconding = "utf-8")
 
 import csv 
 
