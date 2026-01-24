@@ -1,3 +1,8 @@
+#Participantes: 
+#Herlin Fabian Chavarria Beita C5E187
+#Joseph Campos C4D660
+#David Mora Gomez C5H441
+
 # Imports de Controladores (Clases)
 from Controller.productosController import ProductosController
 from Controller.inventarioController import InventarioController
