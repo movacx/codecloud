@@ -1,11 +1,15 @@
 class Reserva:    
+    
+    contadorId =1
+    
     def __init__(self, numero_habitacion, id_huesped, fecha_entrada, fecha_salida):
-
+        
         self.numero_habitacion = numero_habitacion
         self.id_huesped, = id_huesped,    
         self.id = Estudiante.contadorIdEstudiante
         self.fecha_entrada, = fecha_entrada   
-        self.fecha_salida, = fecha_salida    
+        self.fecha_salida, = fecha_salida
+        Reserva.contadorId +=1
              
 #get
     def getNumero_Habitacion(self):
