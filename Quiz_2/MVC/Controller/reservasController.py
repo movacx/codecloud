@@ -6,9 +6,9 @@ class  ReservaController:
     def __init__(self):
         pass
     
-    def registrarReserva(nombre,telefono):
+    def registrarReserva(numero_habitacion, id_huesped, fecha_entrada, fecha_salida):
 
-        nuevaReserva = ReservaModelModel(0,nombre,telefono)
+        nuevaReserva = ReservaModel(numero_habitacion, id_huesped, fecha_entrada, fecha_salida)
         manejoReserva.agregarListado(nuevaReserva)
 
 
