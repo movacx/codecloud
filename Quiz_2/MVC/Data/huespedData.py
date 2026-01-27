@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 
-#from Model.huespedModel import HuespedModel
+from Model.huespedModel import HuespedModel
 
 sys.stdout.reconfigure(encoding = "utf-8")
 
@@ -108,7 +108,37 @@ def modificarLista(id, HuespedModel):
 		return encontrado
 	else:
 		return encontrado
+
+#--------------------------------------------------------------------------------------------------#
+
+def eliminarLista(id):
+	if not os.path.exists(ARCHIVO):
+		return []
+	
+	encontrado = True
+	arregloLista = []
+
+	with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivo_para_leer:
+		reader = csv.reader(archivo_para_leer)
 		
+		for lista in reader:
+			if lista:
+				try:
+					if int(lista[0]) != int(id):
+						arregloLista.append(lista)
+						encontrado = True
+				except ValueError:
+					return None
+	
+	if encontrado == True:
+		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivo_para_sobreEscribir:
+			writer = csv.writer(archivo_para_sobreEscribir)
+			writer.writerow(arregloLista)
+		return encontrado
+	else:
+		return encontrado
+
+
 		
 
 	
