@@ -1,5 +1,5 @@
 def mostrarMensaje(mensaje):
-	print(mensaje)
-	
+    print(mensaje)
+
 def mostrarDatos(dato):
-	return (f"{dato}")
+    print(f"{dato}")

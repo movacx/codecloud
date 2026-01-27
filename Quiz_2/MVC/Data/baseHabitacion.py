@@ -49,7 +49,7 @@ def listarHabitaciones():
 		reader = csv.reader(archivoParaLeer)
 		
 		for item in reader:
-			listaVacia.appends(items)
+			listaVacia.append(item)
 			
 	return listaVacia
 
@@ -90,7 +90,7 @@ def modificarEstado(id, estado):
 						arregloVacio.append(item)
 				except ValueError:
 					arregloVacio.append(item)
-			return "No hay ninguna habitacion agregada"
+		return "No hay ninguna habitacion agregada"
 	
 	with open(ARCHIVO, "w", newline= "", encoding= "utf-8") as archivoParaEscribir:
 		writer = csv.writer(archivoParaEscribir)
@@ -99,7 +99,33 @@ def modificarEstado(id, estado):
 	
 	
 #Ordenar por precio (usar Bubble Sort o sort())
+def ordenarPrecio():
+    listaHabitaciones = listarHabitaciones()
+    listaTemporalOrden = []
 
+    for item in listaHabitaciones:
+        listaTemporalOrden.append([
+            float(item[3]),  # precio primero
+            item[0],
+            item[1],
+            item[2],
+            item[4]
+        ])
+
+    listaTemporalOrden.sort()
+
+    listaHabitacionesOrdenadas = []
+
+    for item in listaTemporalOrden:
+        listaHabitacionesOrdenadas.append([
+            item[1],
+            item[2],
+            item[3],
+            item[0],
+            item[4]
+        ])
+
+    return listaHabitacionesOrdenadas
 
 
 
