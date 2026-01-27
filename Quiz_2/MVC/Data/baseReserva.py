@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 
-#from Model.reservaModel import ReservaModel
+from Model.reservaModel import ReservaModel
 
 sys.stdout.reconfigure(encoding = "utf-8")
 
@@ -76,4 +76,4 @@ def searchName(nombre):
 		
 #--------------------------------------------------------------------------------------------------#
 
-def modificarLista(id, ReservaModel)
+
