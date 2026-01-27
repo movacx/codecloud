@@ -66,7 +66,7 @@ def searchName(nombre):
 		
 		for lista in reader:
 			if lista:
-				nombre_en_csv = lista[2].strip().lower()
+				nombre_en_csv = lista[1].strip().lower()
 				nombre_a_buscar = nombre.strip().lowe()
 				
 				if nombre_en_csv == nombre_a_buscar:
@@ -75,8 +75,41 @@ def searchName(nombre):
 	return nombreEncontrado
 		
 #--------------------------------------------------------------------------------------------------#
-
-def modificarLista(id, HuespedModel)
+#modifica id,nombre,telefono(no lo pide el quiz lo hago para practicar)
+def modificarLista(id, HuespedModel): 
+	if not os.path.exists(ARCHIVO):
+		return []
+	
+	encontrado = False
+	arregloVacio = []
+	
+	with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivo_para_copiar:
+		reader = csv.reader(archivo_para_copiar)
+		
+		for lista in reader:
+			if lista:
+				
+				try:
+					if int(lista[0]) == int(id):
+						HuespedModel.setId(id)
+						lista = HuespedModel.importarToCsv()
+						arregloVacio.append(lista)
+						encontrado = True
+					else:
+						arregloVacio.append(lista)
+													
+				except ValueError:
+					arregloVacio.append(lista)
+					
+	if encontrado == True:		
+		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivo_para_modificiar:
+			writer = csv.writer(archivo_para_modificiar)
+			writer.writerow(arregloVacio)
+		return encontrado
+	else:
+		return encontrado
+		
+		
 
 	
 	
