@@ -1,8 +1,8 @@
-class  ReservaController:
-    import View.reservaView as vista
+import View.reservaView as vista
 from Model.reservaModel import ReservaModel
-class HuespedesController:
 
+class  ReservaController:
+    
     def __init__(self):
         pass
     
