@@ -1,4 +1,4 @@
-class Reserva:    
+class ReservaModel:    
     
     contadorId =1
     
