@@ -14,9 +14,10 @@ class HabitacionController:
 		
 		
 	def listarHabitaciones(self):
-		
 		mostrarTodos = baseHabitacion.listarHabitaciones()
+		
 		if not mostrarTodos:
 			vista.mostrarMensaje("Error no se encontraron datos")
 			return
-		return vista.mostrarDatos(mostrarTodos)
+		
+	

@@ -67,13 +67,30 @@ def searchName(nombre):
 		for lista in reader:
 			if lista:
 				nombre_en_csv = lista[1].strip().lower()
-				nombre_a_buscar = nombre.strip().lowe()
+				nombre_a_buscar = nombre.strip().lower()
 				
 				if nombre_en_csv == nombre_a_buscar:
 					nombreEncontrado.append(lista)
 					
 	return nombreEncontrado
 		
+#--------------------------------------------------------------------------------------------------#
+
+def searchId(id):
+	if not os.path.exists(ARCHIVO):
+		return []
+	
+	listaVacia = []
+	
+	with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivo_para_leer:
+		reader = csv.reader(archivo_para_leer)
+
+		for lista in reader:
+			if lista:
+				if int(lista[0]) == int(lista):
+					listaVacia.append(lista)
+
+	return listaVacia
 #--------------------------------------------------------------------------------------------------#
 #modifica id,nombre,telefono(no lo pide el quiz lo hago para practicar)
 def modificarLista(id, HuespedModel): 

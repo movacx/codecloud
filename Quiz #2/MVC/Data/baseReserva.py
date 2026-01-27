@@ -67,7 +67,7 @@ def searchName(nombre):
 		for lista in reader:
 			if lista:
 				nombre_en_csv = lista[2].strip().lower()
-				nombre_a_buscar = nombre.strip().lowe()
+				nombre_a_buscar = nombre.strip().lower()
 				
 				if nombre_en_csv == nombre_a_buscar:
 					nombreEncontrado.append(lista)
