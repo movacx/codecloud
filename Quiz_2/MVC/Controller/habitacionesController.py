@@ -1,6 +1,8 @@
 import View.habitacionesView as vista
 import Data.baseHabitacion as baseHabitacion
-from Model.HabitacionModel import Habitacion
+#from Model.HabitacionModel import Habitacion
+from Model.habitacionModel import Habitacion
+
 class HabitacionController:
 	
 	def __init__(self):

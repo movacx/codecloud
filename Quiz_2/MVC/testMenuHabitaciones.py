@@ -1,4 +1,6 @@
 from Controller.habitacionesController import HabitacionController
+import View.huespedesView as vista
+
 
 def main():
 	baseHabitaciones = HabitacionController()
@@ -10,8 +12,8 @@ def main():
 		if op ==1:
 			numero = input("Numero: " )
 			tipo = input("Tipo de habitacion: ")
-			precio: input("Precio: ")
-			estado: input("Estado: ")
+			precio = int(input("Precio: ")) #precio: input("Precio: ") 
+			estado = input("Estado: ") #estado: input("Estado: ")
 			baseHabitaciones.registrarHabitacion(numero, tipo, precio, estado)
 		elif op == 2:
 			pass
@@ -25,7 +27,7 @@ def main():
 			cerrar = False
 			break
 		else:
-			vista,mostrarMensaje("Opcion invalida")
+			vista.mostrarMensaje("Opcion invalida") #vista,mostrarMensaje("Opcion invalida")
 			
 if __name__ == "__main__":
 	main()
