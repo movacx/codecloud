@@ -41,5 +41,5 @@ class Reserva:
 
 #Metodo poliformismo
 #   
-    def mostrandoDatos(self):
+    def mostrar_info(self):
         return f"ID : {self.id_huesped}, {self.numero_habitacion}, {self.fecha_entrada}, {self.fecha_salida}"
