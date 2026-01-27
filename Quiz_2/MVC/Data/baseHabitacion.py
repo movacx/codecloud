@@ -90,8 +90,7 @@ def modificarEstado(id, estado):
 						arregloVacio.append(item)
 				except ValueError:
 					arregloVacio.append(item)
-			arregloVacio = item
-		return "No hay ninguna habitacion agregada"
+			return "No hay ninguna habitacion agregada"
 	
 	with open(ARCHIVO, "w", newline= "", encoding= "utf-8") as archivoParaEscribir:
 		writer = csv.writer(archivoParaEscribir)
