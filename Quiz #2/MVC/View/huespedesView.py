@@ -1,9 +1,6 @@
 def mostrarMensaje(mensaje):
     print(mensaje)
 
-def mostrarDatos(dato):
-    print(f"{dato}")
-
 def mostrarListados(arreglo):
     print('\nID | Nombre          ')
     
@@ -12,3 +9,5 @@ def mostrarListados(arreglo):
             print(f'{lista[0]}  | {lista[1]}     {lista[2]}')
             print('‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾') #alt+shit+u ocido asi 203e enter en linux, windows alt 8254
 
+def fileNoFound():
+    print('No se encontraron datos! Error al cargar el archivo\n')

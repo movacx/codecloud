@@ -4,10 +4,9 @@ def main():
     manejoHuespedes = HuespedesController()
 
     cerrar = True
-    
     while cerrar:
         try:
-            print('1.add|2.List|3.Search|4.Modify|4.Delete|0.Salir')
+            print('1.add |2.List |3.Search |4.Modify |5.Delete |0.Salir')
             op = int(input('Input: '))
             if op == 1:
                 nom = input('nombre: ')
@@ -22,11 +21,17 @@ def main():
                 manejoHuespedes.buscarHuesped(nombre_buscar)
                 pass
             elif op == 4:
+                id = int(input('Id: '))
                 nom = input('nombre: ')
                 cell = int(input('telefono: '))
-                manejoHuespedes.buscarHuesped(nom,cell)
+                manejoHuespedes.modificarHuesped(id,nom,cell)
+                pass
+            elif op == 5:
+                id = int(input('Id: '))
+                manejoHuespedes.eliminarHuesped(id)
                 pass
             elif op == 0:
+                vista.mostrarMensaje('Saliendo..')
                 cerrar = False
                 break
             else:
