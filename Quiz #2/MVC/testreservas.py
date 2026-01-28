@@ -1,5 +1,5 @@
 from Controller.reservasController import ReservasController
-import View.huespedesView as vista # O View.reservasView si ya creaste el especifico
+import View.huespedesView as vista 
 
 def menuReservas():
     baseReserva = ReservasController()
@@ -13,8 +13,8 @@ def menuReservas():
                 try:
                     hab = int(input('Numero Habitacion: '))
                     hue = int(input('Id Huesped: '))
-                    ent = input('Fecha Entrada (YYYY-MM-DD): ')
-                    sal = input('Fecha Salida (YYYY-MM-DD): ')
+                    ent = input('Fecha Entrada: ')
+                    sal = input('Fecha Salida: ')
                     baseReserva.crear_reserva(hab, hue, ent, sal)
                 except ValueError:
                     vista.mostrarMensaje("Error: Habitacion y Huesped deben ser numeros")
@@ -32,7 +32,6 @@ def menuReservas():
                 hue = int(input('Nuevo Id Huesped: '))
                 ent = input('Nueva Entrada: ')
                 sal = input('Nueva Salida: ')
-
                 baseReserva.modificar_reserva(id_reserva, hab, hue, ent, sal)
 
             elif op == 5:
