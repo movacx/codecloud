@@ -125,7 +125,7 @@ def menuHuespedes():
 
 #-------------------------------------------[MENU DE Reservas!]----------------------------------------------------------------#
 def menuReservas():
-      baseReservas = ReservasController()
+      baseReserva = ReservasController()
       cerrar = True
       while cerrar:
           try:
@@ -136,14 +136,14 @@ def menuReservas():
                 id_huesped = int(input('Id huesped: '))
                 fecha_entrada = input('Fecha entrada (YYYY-MM-DD): ')
                 fecha_salida = input('Fecha salida (YYYY-MM-DD): ')
-                baseReservas.crear_reserva(id_habitacion, id_huesped, fecha_entrada, fecha_salida)
+                baseReserva.crear_reserva(id_habitacion, id_huesped, fecha_entrada, fecha_salida)
                 pass
             elif op == 2:
-                baseReservas.listar_reservas()
+                baseReserva.listar_reservas()
                 pass
             elif op == 3:
                 id_reserva = int(input('Id reserva: '))
-                baseReservas.buscar_reserva(id_reserva)
+                baseReserva.buscar_reserva(id_reserva)
                 pass
             elif op == 4:
                 id_reserva = int(input('Id reserva: '))
@@ -151,11 +151,11 @@ def menuReservas():
                 id_huesped = int(input('Id huesped: '))
                 fecha_entrada = input('Fecha entrada (YYYY-MM-DD): ')
                 fecha_salida = input('Fecha salida (YYYY-MM-DD): ')
-                baseReservas.modificar_reserva(id_reserva, id_habitacion, id_huesped, fecha_entrada, fecha_salida)
+                baseReserva.modificar_reserva(id_reserva, id_habitacion, id_huesped, fecha_entrada, fecha_salida)
                 pass
             elif op == 5:
                 id_reserva = int(input('Id reserva: '))
-                baseReservas.eliminar_reserva(id_reserva)
+                baseReserva.eliminar_reserva(id_reserva)
                 pass
             elif op == 0:
                 vista.mostrarMensaje("Saliendo..")
