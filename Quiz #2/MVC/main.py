@@ -14,8 +14,7 @@ def main():
             1. Gestión de Habitaciones
             2. Gestión de Huéspedes
             3. Gestión de Reservas
-            4. Reportes
-            5. Salir
+            4. Salir
             """)
 
         op = input("Seleccione: ")
@@ -28,18 +27,14 @@ def main():
             menuReservas()
 
         elif op == "4":
-            pass
-
-        elif op == "5":
             break
         else:
             vista.mostrarMensaje('opcion invalida')
 
-
-#|-Menus
-#|Habitaciones = David mora
-#|Huespedes = Herlin Chavarria
-#|Reservas = Joseph Campos
+#|-Particiones-
+#|Habitaciones = David mora C5H441
+#|Huespedes = Herlin Chavarria C5E187
+#|Reservas = Joseph Campos C4D660
 
 #-------------------------------------------[MENU DE HABITACIONES!]----------------------------------------------------------------#
 def menuHabitaciones():
@@ -127,7 +122,7 @@ def menuReservas():
     cerrar = True
     while cerrar:
         try:
-            
+            print('\n--- GESTIÓN DE RESERVAS ---')
             print('1.Add | 2.List | 3.Search | 4.Modify | 5.Delete | 0.Salir')
             op = int(input('Input: '))
 

@@ -54,3 +54,27 @@ class ReservasController:
         else:
             vista.mostrarMensaje("Error al eliminar.")
 #--------------------------------------------------------------------------------------------------#
+    def buscar_reserva(self, id_reserva):
+        # Busamos en la base
+        dato = baseReserva.buscarReservaPorId(id_reserva)
+        
+        if not dato:
+            vista.fileNoFound()
+            return
+
+        # Metemos el dato en una lista [] para que vista.mostrarListados lo imprima bien
+        vista.mostrarListados([dato])
+
+    def modificar_reserva(self, id_reserva, habitacion, huesped, entrada, salida):
+        # Verificamos si existe
+        if not baseReserva.buscarReservaPorId(id_reserva):
+            vista.mostrarMensaje("Error: La reserva no existe.")
+            return
+
+        # Llamamos a modificar en Data (baseReserva tiene que tener modificarReserva)
+        exito = baseReserva.modificarReserva(id_reserva, habitacion, huesped, entrada, salida)
+        
+        if exito:
+            vista.mostrarMensaje("Reserva modificada correctamente.")
+        else:
+            vista.mostrarMensaje("Error al modificar.")
