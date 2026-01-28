@@ -2,7 +2,7 @@ from Model.reservaModel import Reserva
 import View.reservaView as vista
 
 import Data.baseReserva as baseReserva
-import Data.baseHabitacion as baseHabitacion
+import Data.baseHabitacion as baseHabitacion 
 import Data.huespedData as baseHuesped 
 
 class ReservasController:
