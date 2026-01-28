@@ -30,7 +30,7 @@ def registrarHabitacion(Habitacion):
 	idQuemado = validarUltimoId()
 	ultimoId = idQuemado + 1
 	
-	Habitacion.setId(ultimoId)
+	Habitacion.setIde(ultimoId)
 	
 	with open(ARCHIVO, "a", newline="", encoding = "utf-8") as archivoParaGuardar:
 		writer = csv.writer(archivoParaGuardar)
@@ -69,33 +69,34 @@ def buscarHabitacionId(id):
 	return habitacionEncontrada
 
 #Cambiar estado “Disponible/Ocupada”
-def modificarEstado(id, estado):
+def modificar(id, estado): 
 	if not os.path.exists(ARCHIVO):
-		return 0
+		return []
 	
-	encontrado = False 
-	arregloVacio = [ ] 
-	with open(ARCHIVO, "r", newline= "", encoding= "utf-8") as archivoParaLeer:
+	encontrado = False
+	arregloVacio = []
+	
+	with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivoParaLeer:
 		reader = csv.reader(archivoParaLeer)
 		
 		for item in reader:
 			if item:
-				try:
-					if int(item[0]) != int(id):
-						item[4] = estado
+				
+					if int(item[0]) == int(id):
+						item[4] = estado 
 						arregloVacio.append(item)
+						encontrado = True
 					else:
 						arregloVacio.append(item)
-				except ValueError:
-					arregloVacio.append(item)
-		return "No hay ninguna habitacion agregada"
-	
-	with open(ARCHIVO, "w", newline= "", encoding= "utf-8") as archivoParaEscribir:
-		writer = csv.writer(archivoParaEscribir)
-		writer.writerows(arregloVacio)
-		return "Estado modificado"
-	
-	
+													
+	if encontrado == True:		
+		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivoParaEscribir:
+			writer = csv.writer(archivoParaEscribir)
+			writer.writerows(arregloVacio)
+		return encontrado
+	else:
+		return encontrado
+		
 #Ordenar por precio (usar Bubble Sort o sort())
 def ordenarPrecio():
     listaHabitaciones = listarHabitaciones()
@@ -108,7 +109,7 @@ def ordenarPrecio():
             item[1],
             item[2],
             item[4]
-        ])
+        ]) 
 
     listaTemporalOrden.sort()
 
@@ -124,6 +125,30 @@ def ordenarPrecio():
         ])
 
     return listaHabitacionesOrdenadas
+
+def eliminarHabitacion(idHabitacion):
+	if not os.path.exists(ARCHIVO):
+		return [ ]
+	
+	arregloVacio = [ ]
+	encontrado = False
+	with open(ARCHIVO, "r", newline= "", encoding = "utf-8") as archivoParaLeer:
+		reader = csv.reader(archivoParaLeer)
+		
+		for item in reader:
+			if int(item[0]) != int(idHabitacion):
+				arregloVacio.append(item)
+				encontrado = False
+			else:
+				encontrado = True
+	if encontrado == True:
+		with open(ARCHIVO,"w", newline="", encoding = "utf-8") as archivoParaEscribir:
+			writer = csv.writer(archivoParaEscribir)
+			writer.writerows(arregloVacio)
+			return encontrado
+	else:
+		return encontrado
+					
 
 
 
