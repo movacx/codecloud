@@ -21,15 +21,13 @@ def validarUltimoId():
 
 		for item in reader:
 			if item:
-				if int(item[0]) > int(id):
+				if int(item[0]) > ultimoId:
 					ultimoId = int(item[0])
 			
 	return ultimoId	
 #Registrar habitaciones
 def registrarHabitacion(Habitacion):
-	if not os.path.exists(ARCHIVO):
-		return 0
-	idQuemado = verificarUltimoId()
+	idQuemado = validarUltimoId()
 	ultimoId = idQuemado + 1
 	
 	Habitacion.setId(ultimoId)
