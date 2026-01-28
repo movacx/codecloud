@@ -29,7 +29,7 @@ def validarUltimoId():
 def registrarHabitacion(Habitacion):
 	if not os.path.exists(ARCHIVO):
 		return 0
-	idQuemado = verificarUltimoId()
+	idQuemado = validarUltimoId()
 	ultimoId = idQuemado + 1
 	
 	Habitacion.setId(ultimoId)

@@ -9,9 +9,10 @@ class HabitacionController:
 		pass
 	
 	def registrarHabitacion(self, numero, tipo, precio, estado):
+		
 		nuevaHabitacion = Habitacion(0, numero, tipo, precio, estado)
 		baseHabitacion.registrarHabitacion(nuevaHabitacion)
-		
+		return "Agregado con exito"
 		
 	def listarHabitaciones(self):
 		mostrarTodos = baseHabitacion.listarHabitaciones()
