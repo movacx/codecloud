@@ -15,10 +15,11 @@ def main():
 			precio = int(input("Precio: ")) #precio: input("Precio: ") 
 			estado = input("Estado: ") #estado: input("Estado: ")
 			baseHabitaciones.registrarHabitacion(numero, tipo, precio, estado)
+			
 		elif op == 2:
 			baseHabitaciones.listarHabitaciones()
 		elif op ==3:
-			pass
+			baseHabitaciones.imprimir("Hola")
 		elif op == 4:
 			pass
 		elif op ==5:
