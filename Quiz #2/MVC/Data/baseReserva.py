@@ -36,9 +36,8 @@ def registrarReservacion(Reserva):
 		writer = csv.writer(archivoParaGuardar)
 		writer.writerow(Reserva.importarToCsv())
 		
-
 #Listar habitaciones
-def listarHabitaciones():
+def listarReservas():
 	if not os.path.exists(ARCHIVO):
 		return 0 
 	listaVacia = [ ]
@@ -68,8 +67,8 @@ def buscarHabitacionId(id):
 					habitacionEncontrada.append(item)
 	return habitacionEncontrada
 
-#Cambiar estado “Disponible/Ocupada”
-def modificar(id, estado): 
+#Cambiar estado Ocupada”
+def modificarEstado(id): 
 	if not os.path.exists(ARCHIVO):
 		return []
 	
@@ -83,7 +82,7 @@ def modificar(id, estado):
 			if item:
 				
 					if int(item[0]) == int(id):
-						item[4] = estado 
+						item[4] = "Ocupado" 
 						arregloVacio.append(item)
 						encontrado = True
 					else:
@@ -96,37 +95,8 @@ def modificar(id, estado):
 		return encontrado
 	else:
 		return encontrado
-		
-#Ordenar por precio (usar Bubble Sort o sort())
-def ordenarPrecio():
-    listaHabitaciones = listarHabitaciones()
-    listaTemporalOrden = []
 
-    for item in listaHabitaciones:
-        listaTemporalOrden.append([
-            float(item[3]),  # precio primero
-            item[0],
-            item[1],
-            item[2],
-            item[4]
-        ]) 
-
-    listaTemporalOrden.sort()
-
-    listaHabitacionesOrdenadas = []
-
-    for item in listaTemporalOrden:
-        listaHabitacionesOrdenadas.append([
-            item[1],
-            item[2],
-            item[3],
-            item[0],
-            item[4]
-        ])
-
-    return listaHabitacionesOrdenadas
-
-def eliminarHabitacion(idHabitacion):
+def eliminarReservacion(idReserva):
 	if not os.path.exists(ARCHIVO):
 		return [ ]
 	
@@ -136,7 +106,7 @@ def eliminarHabitacion(idHabitacion):
 		reader = csv.reader(archivoParaLeer)
 		
 		for item in reader:
-			if int(item[0]) != int(idHabitacion):
+			if int(item[0]) != int(idReserva):
 				arregloVacio.append(item)
 				encontrado = False
 			else:
