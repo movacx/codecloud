@@ -8,7 +8,7 @@ class HabitacionController:
 	def __init__(self):
 		pass
 	
-	def registrarHabitacion(self,numero, tipo, precio, estado):
+	def registrarHabitacion(self, numero, tipo, precio, estado):
 		nuevaHabitacion = Habitacion(0, numero, tipo, precio, estado)
 		baseHabitacion.registrarHabitacion(nuevaHabitacion)
 		
@@ -20,4 +20,5 @@ class HabitacionController:
 			vista.mostrarMensaje("Error no se encontraron datos")
 			return
 		
-	
+	def imprimir(self,dato):
+		vista.mostrarMensaje(dato)

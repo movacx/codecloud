@@ -6,8 +6,8 @@ from Model.habitacionModel import Habitacion
 
 sys.stdout.reconfigure(encoding = "utf-8")
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ARCHIVO = os.path.abspath(os.path.join(BASE_DIR, "csv", "habitacion.csv"))
+BASE_DIR = os.path.dirname(__file__)
+ARCHIVO = os.path.join(BASE_DIR, "csv", "habitacion.csv")
 
 #ValidarUltimoID
 def validarUltimoId():
