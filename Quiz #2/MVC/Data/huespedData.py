@@ -67,13 +67,30 @@ def searchName(nombre):
 		for lista in reader:
 			if lista:
 				nombre_en_csv = lista[1].strip().lower()
-				nombre_a_buscar = nombre.strip().lowe()
+				nombre_a_buscar = nombre.strip().lower()
 				
 				if nombre_en_csv == nombre_a_buscar:
 					nombreEncontrado.append(lista)
 					
 	return nombreEncontrado
 		
+#--------------------------------------------------------------------------------------------------#
+
+def searchId(id):
+	if not os.path.exists(ARCHIVO):
+		return []
+	
+	listaVacia = []
+	
+	with open(ARCHIVO, 'r', newline='',encoding='utf-8') as archivo_para_leer:
+		reader = csv.reader(archivo_para_leer)
+
+		for lista in reader:
+			if lista:
+				if int(lista[0]) == int(lista):
+					listaVacia.append(lista)
+
+	return listaVacia
 #--------------------------------------------------------------------------------------------------#
 #modifica id,nombre,telefono(no lo pide el quiz lo hago para practicar)
 def modificarLista(id, HuespedModel): 
@@ -89,26 +106,22 @@ def modificarLista(id, HuespedModel):
 		for lista in reader:
 			if lista:
 				
-				try:
 					if int(lista[0]) == int(id):
 						HuespedModel.setId(id)
-						lista = HuespedModel.importarToCsv()
-						arregloVacio.append(lista)
+						nuevo_dato = HuespedModel.importarToCsv()
+						arregloVacio.append(nuevo_dato)
 						encontrado = True
 					else:
 						arregloVacio.append(lista)
 													
-				except ValueError:
-					arregloVacio.append(lista)
-					
 	if encontrado == True:		
 		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivo_para_modificiar:
 			writer = csv.writer(archivo_para_modificiar)
-			writer.writerow(arregloVacio)
+			writer.writerows(arregloVacio)
 		return encontrado
 	else:
 		return encontrado
-
+	
 #--------------------------------------------------------------------------------------------------#
 
 def eliminarLista(id):
@@ -133,7 +146,7 @@ def eliminarLista(id):
 	if encontrado == True:
 		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivo_para_sobreEscribir:
 			writer = csv.writer(archivo_para_sobreEscribir)
-			writer.writerow(arregloLista)
+			writer.writerows(arregloLista)
 		return encontrado
 	else:
 		return encontrado

@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 
-#from Model.reservaModel import ReservaModel
+from Model.reservaModel import ReservaModel
 
 sys.stdout.reconfigure(encoding = "utf-8")
 
@@ -67,7 +67,7 @@ def searchName(nombre):
 		for lista in reader:
 			if lista:
 				nombre_en_csv = lista[2].strip().lower()
-				nombre_a_buscar = nombre.strip().lowe()
+				nombre_a_buscar = nombre.strip().lower()
 				
 				if nombre_en_csv == nombre_a_buscar:
 					nombreEncontrado.append(lista)
@@ -76,4 +76,4 @@ def searchName(nombre):
 		
 #--------------------------------------------------------------------------------------------------#
 
-def modificarLista(id, ReservaModel)
+
