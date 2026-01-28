@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 
-#from Model.habitacionModel import Habitacion
+from Model.habitacionModel import Habitacion
 
 sys.stdout.reconfigure(encoding = "utf-8")
 
@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.abspath(os.path.join(BASE_DIR, "csv", "habitacion.csv"))
 
 #ValidarUltimoID
-def validarUltimoId(id):
+def validarUltimoId():
 	if not os.path.exists(ARCHIVO):
 		return 0
 	
@@ -21,12 +21,12 @@ def validarUltimoId(id):
 
 		for item in reader:
 			if item:
-				if int(item[0]) == int(id):
+				if int(item[0]) > int(id):
 					ultimoId = int(item[0])
 			
 	return ultimoId	
 #Registrar habitaciones
-def registrarHabitacion(id,Habitacion):
+def registrarHabitacion(Habitacion):
 	if not os.path.exists(ARCHIVO):
 		return 0
 	idQuemado = verificarUltimoId()

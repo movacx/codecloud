@@ -10,7 +10,7 @@ class HabitacionController:
 	
 	def registrarHabitacion(self,numero, tipo, precio, estado):
 		nuevaHabitacion = Habitacion(0, numero, tipo, precio, estado)
-		baseHabitacion.agregarListado(nuevaHabitacion)
+		baseHabitacion.registrarHabitacion(nuevaHabitacion)
 		
 		
 	def listarHabitaciones(self):

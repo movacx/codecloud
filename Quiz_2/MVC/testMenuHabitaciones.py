@@ -10,7 +10,7 @@ def main():
 		print("1.agregar/2.Listar/3.Buscar/4.Cambiar estado/5.Ordenado por precio")
 		op = int(input("Input: "))
 		if op ==1:
-			numero = input("Numero: " )
+			numero = input("Numero de habitacion: " )
 			tipo = input("Tipo de habitacion: ")
 			precio = int(input("Precio: ")) #precio: input("Precio: ") 
 			estado = input("Estado: ") #estado: input("Estado: ")
