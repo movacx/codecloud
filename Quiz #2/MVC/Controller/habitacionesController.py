@@ -10,3 +10,9 @@ class HabitacionesController:
         nuevo_registro = HabitacionModel(0,numero, tipo, precio, estado)
         base.registrarHabitacion(nuevo_registro)
         vista.mostrarMensaje("Agregado correctamente")
+
+
+    def listarHabitacion(self):
+        mostrarTodos = base.listarTodos()
+        if not mostrarTodos:
+            return vista.mostrarMensaje("No hay ninguna habitacion")

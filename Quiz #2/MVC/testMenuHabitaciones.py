@@ -1,9 +1,9 @@
-from Controller.habitacionesController import HabitacionController
+from Controller.habitacionesController import HabitacionesController
 import View.huespedesView as vista
 
 
 def main():
-	baseHabitaciones = HabitacionController()
+	baseHabitaciones = HabitacionesController()
 	
 	cerrar = True
 	while cerrar:
