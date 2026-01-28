@@ -16,7 +16,7 @@ def main():
 			estado = input("Estado: ") #estado: input("Estado: ")
 			baseHabitaciones.registrarHabitacion(numero, tipo, precio, estado)
 		elif op == 2:
-			pass
+			baseHabitaciones.listarHabitaciones()
 		elif op ==3:
 			pass
 		elif op == 4:
