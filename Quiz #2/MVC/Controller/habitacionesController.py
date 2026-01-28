@@ -5,6 +5,8 @@ class HabitacionesController:
     
     def __init__(self):
         pass
-
-    def test(self, data):
-        vista.mostrarMensaje(data)
+    
+    def registrarHabitacion(self,numero, tipo, precio, estado):
+        nuevo_registro = HabitacionModel(0,numero, tipo, precio, estado)
+        base.registrarHabitacion(nuevo_registro)
+        vista.mostrarMensaje("Agregado correctamente")

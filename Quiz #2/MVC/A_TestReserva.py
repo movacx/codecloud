@@ -36,7 +36,11 @@ def main():
                 cerrar = False
                 break
             elif op == 11:
-                manejoHabitacion.test('hola')
+                numero = int(input('Numero: '))
+                tipo = input('Tipo: ')
+                precio = int(input('Precio'))
+                estado = input('Estado: ')
+                manejoHabitacion.registrarHabitacion(numero,tipo,precio,estado)
 
                 pass
             else:
