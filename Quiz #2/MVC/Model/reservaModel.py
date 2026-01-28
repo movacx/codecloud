@@ -1,47 +1,19 @@
-class ReservaModel:
+class Reserva:
+    contador_id = 1
 
-    contadorId = 1
+    def __init__(self, numero_habitacion, id_huesped, fecha_entrada, fecha_salida, id_reserva=False):
+        if id_reserva is False:
+            self.id_reserva = Reserva.contador_id
+            Reserva.contador_id += 1
+        else:
+            self.id_reserva = int(id_reserva)
+            if self.id_reserva >= Reserva.contador_id:
+                Reserva.contador_id = self.id_reserva + 1
 
-    def __init__(self, numero_habitacion, id_huesped, fecha_entrada, fecha_salida):
         self.numero_habitacion = numero_habitacion
         self.id_huesped = id_huesped
         self.fecha_entrada = fecha_entrada
-        self.fecha_salida = fecha_salida 
-        self.idReserva = ReservaModel.contadorId
-        ReservaModel.contadorId += 1
+        self.fecha_salida = fecha_salida
 
-
-#get
-    def getNumero_habitacion(self):
-        return self.numero_habitacion
-    
-    def getId_huesped(self):
-        return self.id_huesped
-    
-    def getFecha_entrada(self):
-        return self.fecha_entrada
-    
-    def getFecha_salida(self):
-        return self.fecha_salida    
-
-    def getIdReserva(self):
-        return self.idReserva
-             
-#set
-
-    def setNumero_habitacion(self, numero_habitacion):
-        self.numero_habitacion = numero_habitacion
-    
-    def setId_huesped(self, id_huesped):
-        self.id_huesped = id_huesped
-
-    def setFecha_entrada(self, fecha_entrada):
-        self.fecha_entrada = fecha_entrada
-        
-    def setFecha_salida(self, fecha_salida):
-        self.fecha_salida = fecha_salida        
-
-#Metodo poliformismo
-#   
     def mostrar_info(self):
-        return f"id: {self.idReserva} id_huesped: { self.id_huesped } fecha_entrada: { self.fecha_entrada }  fecha_salida: { self.fecha_salida } " 
+        return f"Reservacion numero{self.id_reserva} Habitacion: {self.numero_habitacion} Huesped Id: {self.id_huesped} {self.fecha_entrada}  {self.fecha_salida}"
