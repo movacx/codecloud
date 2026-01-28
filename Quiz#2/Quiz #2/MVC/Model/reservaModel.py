@@ -1,19 +1,12 @@
-class Reserva:
+from Model.huespedModel import HuespedModel
+class Reserva(HuespedModel):
     contador_id = 1
+    def __init__(self,id,numeroHabitacion,idHuesped, fechaEntrada, fechaSalida):
+        super().__init__(idHuesped)
+        self.id = id
+        self.numeroHabitacion = numeroHabitacion
+        self.fechaEntrada = fechaEntrada
+        self.fechaSalida = fechaSalida
 
-    def __init__(self, numero_habitacion, id_huesped, fecha_entrada, fecha_salida, id_reserva=False):
-        if id_reserva is False:
-            self.id_reserva = Reserva.contador_id
-            Reserva.contador_id += 1
-        else:
-            self.id_reserva = int(id_reserva)
-            if self.id_reserva >= Reserva.contador_id:
-                Reserva.contador_id = self.id_reserva + 1
-
-        self.numero_habitacion = numero_habitacion
-        self.id_huesped = id_huesped
-        self.fecha_entrada = fecha_entrada
-        self.fecha_salida = fecha_salida
-
-    def mostrar_info(self):
-        return f"Reservacion numero{self.id_reserva} Habitacion: {self.numero_habitacion} Huesped Id: {self.id_huesped} {self.fecha_entrada}  {self.fecha_salida}"
+    def mostrarInfo(self):
+        return f"Id reservacion: {self.id} Reservacion numero: {self.numeroHabitacion} Huesped Id: {self.idHuesped} Fecha de entrada: {self.fechaEntrada} Fecha de salida:  {self.fechaSalida}"
