@@ -87,7 +87,7 @@ def searchId(id):
 
 		for lista in reader:
 			if lista:
-				if int(lista[0]) == int(lista):
+				if int(lista[0]) == int(id):
 					listaVacia.append(lista)
 
 	return listaVacia

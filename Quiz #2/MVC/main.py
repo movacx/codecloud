@@ -4,7 +4,9 @@ import View.huespedesView as vista
 #Imports Huespedes
 from Controller.huespedesController import HuespedesController
 import View.huespedesView as vista
-
+#IMports Reservas
+from Controller.reservasController import ReservasController
+import View.huespedesView as vista
 
 
 
@@ -27,7 +29,7 @@ def main():
             menuHuespedes()
 
         elif op == "3":
-            pass
+            menuReservas()
 
         elif op == "4":
             pass

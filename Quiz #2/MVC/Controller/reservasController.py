@@ -1,42 +1,68 @@
-from Data.baseReserva import guardar_reservas, cargar_reservas
 from Model.reservaModel import Reserva
+import Data.baseReserva as baseReserva
+
+# Imports para validaciones
+import Data.baseHabitacion as baseHabitacion
+import Data.huespedData as baseHuesped 
+
+# Importamos la vista ajustada
+import View.reservaView as vista
 
 class ReservasController:
 
-    def __init__(self, habitacionesController, huespedesController):
-        self.reservas = cargar_reservas()
-        self.habitacionesController = habitacionesController
-        self.huespedesController = huespedesController
+    def __init__(self):
+        pass
 
     def crear_reserva(self, numero_habitacion, id_huesped, fecha_entrada, fecha_salida):
-        habitacion = self.habitacionesController.buscar_habitacion(numero_habitacion)
-        if habitacion is None:
-            return "Habitacion no existe"
+        # 1. Validar Habitacion
+        habitacion = baseHabitacion.buscarHabitacionId(numero_habitacion)
+        if not habitacion:
+            vista.mostrarMensaje("Error: La habitación no existe.")
+            return
 
-        if habitacion.estado != "Disponible":
-            return "Habitacion no disponible"
+        # 2. Validar Disponibilidad
+        datosHab = habitacion[0]
+        if datosHab[4].strip() == "Ocupada":
+            vista.mostrarMensaje("Error: Habitación OCUPADA.")
+            return
 
-        huesped = self.huespedesController.buscar_huesped_por_id(id_huesped)
-        if huesped is None:
-            return "Huesped no existe"
+        # 3. Validar Huesped (Si existe huespedData)
+        if not baseHuesped.searchId(id_huesped): # Asegurate que searchId exista en huespedData
+             vista.mostrarMensaje("Error: El huésped no existe.")
+             return
 
-        nueva = Reserva(numero_habitacion, id_huesped, fecha_entrada, fecha_salida)
-        self.reservas.append(nueva)
+        # 4. Crear Reserva (ID 0 porque se autocalcula)
+        nuevaReserva = Reserva(0, numero_habitacion, id_huesped, fecha_entrada, fecha_salida)
+        baseReserva.registrarReserva(nuevaReserva)
 
-        self.habitacionesController.cambiar_estado(numero_habitacion, "Ocupada")
-        guardar_reservas(self.reservas)
+        # 5. Ocupar Habitacion
+        baseHabitacion.modificar(numero_habitacion, "Ocupada")
 
-        return "Reserva creada correctamente"
+        vista.mostrarMensaje("Reserva creada y Habitación ocupada.")
 
     def listar_reservas(self):
-        return self.reservas
+        lista = baseReserva.listarReservas()
+        
+        if not lista:
+            vista.fileNoFound()
+            return
+
+        # Llamamos a la vista que imprime las 5 columnas
+        vista.mostrarListados(lista)
 
     def eliminar_reserva(self, id_reserva):
-        for rows in self.reservas:
-            if rows.id_reserva == id_reserva:
-                self.habitacionesController.cambiar_estado(rows.numero_habitacion, "Disponible")
-                self.reservas.remove(rows)
-                guardar_reservas(self.reservas)
-                return "Reserva eliminada"
+        # 1. Buscar para saber que habitacion liberar
+        datos = baseReserva.buscarReservaPorId(id_reserva)
+        if not datos:
+            vista.fileNoFound()
+            return
+            
+        num_hab = datos[1]
 
-        return "Reserva no encontrada"
+        # 2. Eliminar
+        if baseReserva.eliminarReserva(id_reserva):
+            # 3. Liberar
+            baseHabitacion.modificar(num_hab, "Disponible")
+            vista.mostrarMensaje(f"Reserva eliminada. Habitación {num_hab} liberada.")
+        else:
+            vista.mostrarMensaje("Error al eliminar.")

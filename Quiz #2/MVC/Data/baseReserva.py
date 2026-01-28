@@ -1,128 +1,86 @@
 import os
 import sys
 import csv
-
 from Model.reservaModel import Reserva
 
-sys.stdout.reconfigure(encoding = "utf-8")
+sys.stdout.reconfigure(encoding="utf-8")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ARCHIVO = os.path.join(BASE_DIR, "csv", "reservas.csv")
+# Asegurate de crear la carpeta csv si no existe
+ARCHIVO = os.path.join(BASE_DIR, "csv", "reservaData.csv")
 
-#ValidarUltimoID
+# --- Validar Ultimo ID ---
 def validarUltimoId():
-	if not os.path.exists(ARCHIVO):
-		return 0
-	
-	ultimoId = 0
-	
-	with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoParaLeer:
-		reader = csv.reader(archivoParaLeer)
+    if not os.path.exists(ARCHIVO):
+        return 0
+    
+    ultimoId = 0
+    with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoParaLeer:
+        reader = csv.reader(archivoParaLeer)
+        for item in reader:
+            if item:
+                if int(item[0]) > ultimoId:
+                    ultimoId = int(item[0])
+    return ultimoId
 
-		for item in reader:
-			if item:
-				if int(item[0]) > ultimoId:
-					ultimoId = int(item[0])
-			
-	return ultimoId	
-#Registrar reservaciones
-def registrarReservacion(Reserva):
-	idQuemado = validarUltimoId()
-	ultimoId = idQuemado + 1
-	
-	Reserva.setIde(ultimoId)
-	
-	with open(ARCHIVO, "a", newline="", encoding = "utf-8") as archivoParaGuardar:
-		writer = csv.writer(archivoParaGuardar)
-		writer.writerow(Reserva.importarToCsv())
-		
-#Listar habitaciones
+# --- Registrar Reserva ---
+def registrarReserva(reservaObjeto):
+    # Generamos ID automatico
+    idQuemado = validarUltimoId()
+    ultimoId = idQuemado + 1
+    
+    # Asignamos el ID al objeto (tu modelo tiene self.id)
+    reservaObjeto.id = ultimoId
+    
+    # Guardamos
+    with open(ARCHIVO, "a", newline="", encoding="utf-8") as archivoParaGuardar:
+        writer = csv.writer(archivoParaGuardar)
+        writer.writerow(reservaObjeto.importarToCsv())
+
+# --- Listar Reservas ---
 def listarReservas():
-	if not os.path.exists(ARCHIVO):
-		return 0 
-	listaVacia = [ ]
-	
-	with open(ARCHIVO, "r", newline= "", encoding= "utf-8") as archivoParaLeer:
-		reader = csv.reader(archivoParaLeer)
-		
-		for item in reader:
-			listaVacia.append(item)
-			
-	return listaVacia
+    if not os.path.exists(ARCHIVO):
+        return []
+    
+    listaReservas = []
+    with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoParaLeer:
+        reader = csv.reader(archivoParaLeer)
+        for item in reader:
+            listaReservas.append(item)
+    return listaReservas
 
-#Buscar por número
-def buscarHabitacionId(id):
-	if not os.path.exists(ARCHIVO):
-		return 0
-	
-	encontrado = False 
-	reservacionEncontrada = [ ]
-	with open(ARCHIVO, "r", newline="", encoding= "utf-8") as archivoParaLeer:
-		reader = csv.reader(archivoParaLeer)
-		
-		for item in reader:
-			if item:
-				if int(item[0]) == int(id):
-					encontrado = True 
-					reservacionEncontrada.append(item)
-	return reservacionEncontrada
+# --- Buscar Reserva por ID (IMPORTANTE PARA ELIMINAR Y LIBERAR) ---
+def buscarReservaPorId(idReserva):
+    if not os.path.exists(ARCHIVO):
+        return None
+    
+    with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoParaLeer:
+        reader = csv.reader(archivoParaLeer)
+        for item in reader:
+            if item and int(item[0]) == int(idReserva):
+                return item # Retorna la lista con los datos
+    return None
 
-#Cambiar estado de habitacion a Ocupada”
-def modificarEstado(id): 
-	if not os.path.exists(ARCHIVO):
-		return []
-	
-	encontrado = False
-	arregloVacio = []
-	
-	with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivoParaLeer:
-		reader = csv.reader(archivoParaLeer)
-		
-		for item in reader:
-			if item:
-				
-					if int(item[0]) == int(id):
-						item[4] = "Ocupado" 
-						arregloVacio.append(item)
-						encontrado = True
-					else:
-						arregloVacio.append(item)
-													
-	if encontrado == True:		
-		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivoParaEscribir:
-			writer = csv.writer(archivoParaEscribir)
-			writer.writerows(arregloVacio)
-		return encontrado
-	else:
-		return encontrado
-
-#Eliminar reservacion
-def eliminarReservacion(idReserva):
-	if not os.path.exists(ARCHIVO):
-		return [ ]
-	
-	arregloVacio = [ ]
-	encontrado = False
-	with open(ARCHIVO, "r", newline= "", encoding = "utf-8") as archivoParaLeer:
-		reader = csv.reader(archivoParaLeer)
-		
-		for item in reader:
-			if int(item[0]) != int(idReserva):
-				arregloVacio.append(item)
-				encontrado = False
-			else:
-				encontrado = True
-	if encontrado == True:
-		with open(ARCHIVO,"w", newline="", encoding = "utf-8") as archivoParaEscribir:
-			writer = csv.writer(archivoParaEscribir)
-			writer.writerows(arregloVacio)
-			return encontrado
-	else:
-		return encontrado
-					
-
-
-
-	
-	
-	
+# --- Eliminar Reserva ---
+def eliminarReserva(idReserva):
+    if not os.path.exists(ARCHIVO):
+        return False
+    
+    arregloVacio = []
+    encontrado = False
+    
+    with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoParaLeer:
+        reader = csv.reader(archivoParaLeer)
+        for item in reader:
+            if item:
+                if int(item[0]) != int(idReserva):
+                    arregloVacio.append(item)
+                else:
+                    encontrado = True
+                
+    if encontrado:
+        with open(ARCHIVO, "w", newline="", encoding="utf-8") as archivoParaEscribir:
+            writer = csv.writer(archivoParaEscribir)
+            writer.writerows(arregloVacio)
+            
+    return encontrado
