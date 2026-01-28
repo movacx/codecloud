@@ -99,7 +99,7 @@ def ordenarPrecio():
 
     for item in listaHabitaciones:
         listaTemporalOrden.append([
-            float(item[3]),  # precio primero
+            float(item[3]), 
             item[0],
             item[1],
             item[2],

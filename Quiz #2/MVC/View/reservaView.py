@@ -2,7 +2,6 @@ def mostrarMensaje(mensaje):
     print(mensaje)
 
 def mostrarListados(arreglo):
-    # Encabezado para 5 columnas
     print('\nID  | Habitación | Huésped | Entrada      | Salida')
     print('-' * 60)
     
