@@ -1,10 +1,7 @@
-#Imports Habitaciones
 from Controller.habitacionesController import HabitacionesController
 import View.huespedesView as vista
-#Imports Huespedes
 from Controller.huespedesController import HuespedesController
 import View.huespedesView as vista
-#IMports Reservas
 from Controller.reservasController import ReservasController
 import View.huespedesView as vista
 

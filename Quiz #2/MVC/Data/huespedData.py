@@ -92,7 +92,6 @@ def searchId(id):
 
 	return listaVacia
 #--------------------------------------------------------------------------------------------------#
-#modifica id,nombre,telefono(no lo pide el quiz lo hago para practicar)
 def modificarLista(id, HuespedModel): 
 	if not os.path.exists(ARCHIVO):
 		return []

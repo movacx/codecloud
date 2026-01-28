@@ -9,7 +9,6 @@ sys.stdout.reconfigure(encoding = "utf-8")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.join(BASE_DIR, "csv", "habitacionData.csv")
 
-#ValidarUltimoID
 def validarUltimoId():
 	if not os.path.exists(ARCHIVO):
 		return 0
@@ -25,7 +24,7 @@ def validarUltimoId():
 					ultimoId = int(item[0])
 			
 	return ultimoId	
-#Registrar habitaciones
+
 def registrarHabitacion(Habitacion):
 	idQuemado = validarUltimoId()
 	ultimoId = idQuemado + 1
@@ -37,7 +36,6 @@ def registrarHabitacion(Habitacion):
 		writer.writerow(Habitacion.importarToCsv())
 		
 
-#Listar habitaciones
 def listarHabitaciones():
 	if not os.path.exists(ARCHIVO):
 		return 0 
@@ -51,7 +49,6 @@ def listarHabitaciones():
 			
 	return listaVacia
 
-#Buscar por número
 def buscarHabitacionId(id):
 	if not os.path.exists(ARCHIVO):
 		return 0
@@ -68,7 +65,6 @@ def buscarHabitacionId(id):
 					habitacionEncontrada.append(item)
 	return habitacionEncontrada
 
-#Cambiar estado “Disponible/Ocupada”
 def modificar(id, estado): 
 	if not os.path.exists(ARCHIVO):
 		return []
@@ -97,7 +93,6 @@ def modificar(id, estado):
 	else:
 		return encontrado
 		
-#Ordenar por precio (usar Bubble Sort o sort())
 def ordenarPrecio():
     listaHabitaciones = listarHabitaciones()
     listaTemporalOrden = []
@@ -149,9 +144,3 @@ def eliminarHabitacion(idHabitacion):
 	else:
 		return encontrado
 					
-
-
-
-	
-	
-	
