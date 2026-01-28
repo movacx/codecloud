@@ -1,6 +1,3 @@
-
-
-
 from Controller.habitacionesController import HabitacionesController
 from Controller.huespedesController import HuespedesController
 from Controller.reservasController import ReservasController
