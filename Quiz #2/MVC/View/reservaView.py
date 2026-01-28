@@ -1,11 +1,13 @@
-class ReservaView:
+def mostrarMensaje(mensaje):
+    print(mensaje)
 
-    def mostrar_reservas(self, reservas):
-        if not reservas:
-            print("No hay reservas registradas")
-        else:
-            for rows in reservas:
-                print(rows.mostrar_info())
+def fileNoFound():
+    print('No se encontraron datos! Error al cargar el archivo\n')
 
-    def mostrar_mensaje(self, mensaje):
-        print(mensaje)
+def mostrarListados(arreglo):
+    print('\nID | Nombre          ')
+    
+    for lista in arreglo:
+        if arreglo:
+            print(f'{lista[0]}  | {lista[1]}     {lista[2]}')
+            print('‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾') #alt+shit+u+203e enter en linux, windows alt 8254
