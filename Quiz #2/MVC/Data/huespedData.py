@@ -7,7 +7,7 @@ from Model.huespedModel import HuespedModel
 sys.stdout.reconfigure(encoding = "utf-8")
 
 dir_name = os.path.dirname(os.path.abspath((__file__)))
-ARCHIVO = os.path.join(dir_name,'csv','huespedData.csv')
+ARCHIVO = os.path.join(dir_name,'csv','reportesData.csv')
 
 #--------------------------------------------------------------------------------------------------#
 
