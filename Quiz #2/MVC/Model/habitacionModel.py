@@ -1,4 +1,4 @@
-class Habitacion:
+class HabitacionModel:
 	
 	def __init__(self,id, numero, tipo, precio, estado):
 		self.id = id

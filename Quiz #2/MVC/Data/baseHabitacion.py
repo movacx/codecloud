@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 
-from Model.habitacionModel import Habitacion
+from Model.habitacionModel import HabitacionModel
 
 sys.stdout.reconfigure(encoding = "utf-8")
 

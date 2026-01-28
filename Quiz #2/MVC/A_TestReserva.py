@@ -1,8 +1,9 @@
 from Controller.huespedesController import HuespedesController
+from Controller.habitacionesController import HabitacionesController
 import View.huespedesView as vista
 def main():
     manejoHuespedes = HuespedesController()
-
+    manejoHabitacion = HabitacionesController()
     cerrar = True
     while cerrar:
         try:
@@ -34,6 +35,10 @@ def main():
                 vista.mostrarMensaje('Saliendo..')
                 cerrar = False
                 break
+            elif op == 11:
+                manejoHabitacion.test('hola')
+
+                pass
             else:
                 vista.mostrarMensaje("Opcion invalida")
         except ValueError:
