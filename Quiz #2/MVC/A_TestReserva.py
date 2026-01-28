@@ -1,5 +1,5 @@
 from Controller.huespedesController import HuespedesController
-from Controller.habitacionesController import HabitacionesController
+#from Controller.habitacionesController import HabitacionesController
 import View.huespedesView as vista
 def main():
     manejoHuespedes = HuespedesController()

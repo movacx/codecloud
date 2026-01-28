@@ -7,28 +7,39 @@ def main():
 	
 	cerrar = True
 	while cerrar:
-		print("1.agregar/2.Listar/3.Buscar/4.Cambiar estado/5.Ordenado por precio")
-		op = int(input("Input: "))
-		if op ==1:
-			numero = input("Numero de habitacion: " )
-			tipo = input("Tipo de habitacion: ")
-			precio = int(input("Precio: ")) #precio: input("Precio: ") 
-			estado = input("Estado: ") #estado: input("Estado: ")
-			baseHabitaciones.registrarHabitacion(numero, tipo, precio, estado)
-			
-		elif op == 2:
-			baseHabitaciones.listarHabitaciones()
-		elif op ==3:
-			baseHabitaciones.imprimir("Hola")
-		elif op == 4:
-			pass
-		elif op ==5:
-			pass
-		elif op == 0:
-			cerrar = False
-			break
-		else:
-			vista.mostrarMensaje("Opcion invalida") #vista,mostrarMensaje("Opcion invalida")
+		try:
+			print("1.agregar/2.Listar/3.Buscar/4.Cambiar estado/5.Ordenado por precio/6.Eliminar Habitacion")
+			op = int(input("Input: "))
+			print("--------------------------------------------------")
+			if op ==1:
+				numero = input("Numero de habitacion: " )
+				tipo = input("Tipo de habitacion: ")
+				precio = int(input("Precio: ")) #precio: input("Precio: ") 
+				estado = input("Estado: ") #estado: input("Estado: ")
+				baseHabitaciones.registrarHabitacion(numero, tipo, precio, estado)
+				
+			elif op == 2:
+				baseHabitaciones.listarHabitacion()
+			elif op ==3:
+				idHabitacion= int(input("Digite el ID de la habitacion: "))
+				baseHabitaciones.buscarHabitacionId(idHabitacion)
+			elif op == 4:
+				idHabitacion = int(input("Digite el ID de la habitacion a modificar el estado: "))
+				estado = input("¿A que estado desea cambiar la habitacion?\n")
+				baseHabitaciones.modificarEstado(idHabitacion, estado)
+				pass
+			elif op ==5:
+				baseHabitaciones.ordenarPorPrecio()
+			elif op == 6:
+				idHabitacion = int(input("Digite el ID de la habitacion a eliminar: "))
+				baseHabitaciones.eliminarHabitacion(idHabitacion)
+			elif op == 0:
+				cerrar = False
+				break
+			else:
+				vista.mostrarMensaje("Opcion invalida") #vista,mostrarMensaje("Opcion invalida")
+		except ValueError:
+			vista.mostrarMensaje('-----------------------------------------\nIngrese opciones validas [0-5]\n-----------------------------------------')
 			
 if __name__ == "__main__":
 	main()
