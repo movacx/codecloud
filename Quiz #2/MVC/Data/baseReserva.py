@@ -56,7 +56,7 @@ def buscarHabitacionId(id):
 		return 0
 	
 	encontrado = False 
-	habitacionEncontrada = [ ]
+	reservacionEncontrada = [ ]
 	with open(ARCHIVO, "r", newline="", encoding= "utf-8") as archivoParaLeer:
 		reader = csv.reader(archivoParaLeer)
 		
@@ -64,10 +64,10 @@ def buscarHabitacionId(id):
 			if item:
 				if int(item[0]) == int(id):
 					encontrado = True 
-					habitacionEncontrada.append(item)
-	return habitacionEncontrada
+					reservacionEncontrada.append(item)
+	return reservacionEncontrada
 
-#Cambiar estado Ocupada”
+#Cambiar estado de habitacion a Ocupada”
 def modificarEstado(id): 
 	if not os.path.exists(ARCHIVO):
 		return []

@@ -11,6 +11,7 @@ class HabitacionModel:
 		return self.ide
 	def setIde(self, ide):
 		self.ide = ide
+		
 	def importarToCsv(self):
 		return ([self.ide, self.numero, self.tipo, self.precio, self.estado])
 	
