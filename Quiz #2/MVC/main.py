@@ -50,7 +50,7 @@ def menuHabitaciones():
 	cerrar = True
 	while cerrar:
 		try:
-			print("1.agregar/2.Listar/3.Buscar/4.Cambiar estado/5.Ordenado por precio/6.Eliminar Habitacion")
+			print("1.agregar/2.Listar/3.Buscar/4.Cambiar estado/5.Ordenado por precio/6.Eliminar Habitacion/0.Salir")
 			op = int(input("Input: "))
 			print("--------------------------------------------------")
 			if op ==1:
