@@ -96,6 +96,7 @@ def modificarEstado(id):
 	else:
 		return encontrado
 
+#Eliminar reservacion
 def eliminarReservacion(idReserva):
 	if not os.path.exists(ARCHIVO):
 		return [ ]
