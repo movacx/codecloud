@@ -1,9 +1,7 @@
 from Controller.huespedesController import HuespedesController
-#from Controller.habitacionesController import HabitacionesController
 import View.huespedesView as vista
-def main():
+def menuHuespedes():
     manejoHuespedes = HuespedesController()
-    manejoHabitacion = HabitacionesController()
     cerrar = True
     while cerrar:
         try:
@@ -35,14 +33,7 @@ def main():
                 vista.mostrarMensaje('Saliendo..')
                 cerrar = False
                 break
-            elif op == 11:
-                numero = int(input('Numero: '))
-                tipo = input('Tipo: ')
-                precio = int(input('Precio'))
-                estado = input('Estado: ')
-                manejoHabitacion.registrarHabitacion(numero,tipo,precio,estado)
 
-                pass
             else:
                 vista.mostrarMensaje("Opcion invalida")
         except ValueError:

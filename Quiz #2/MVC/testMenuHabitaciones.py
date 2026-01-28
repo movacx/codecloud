@@ -2,7 +2,7 @@ from Controller.habitacionesController import HabitacionesController
 import View.huespedesView as vista
 
 
-def main():
+def menuHabitaciones():
 	baseHabitaciones = HabitacionesController()
 	
 	cerrar = True
@@ -42,6 +42,6 @@ def main():
 			vista.mostrarMensaje('-----------------------------------------\nIngrese opciones validas [0-5]\n-----------------------------------------')
 			
 if __name__ == "__main__":
-	main()
+	menuHabitaciones()
 		
 		
