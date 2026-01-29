@@ -1,1 +1,4 @@
-asda
+def mostrarMensaje(mensaje):
+    print(mensaje)
+    
+    
