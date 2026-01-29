@@ -1,5 +1,6 @@
 class Reserva:
 	def __init__(self,id, numeroCancha, idSocio, fecha, horaInicio, horaFin):
+		self.id = id
 		self. numeroCancha = numenumeroCancha
 		self.idSocio = idSocio
 		self.fecha = fecha
