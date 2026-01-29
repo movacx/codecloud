@@ -23,18 +23,51 @@ def validarUltimoId():
 
 #---------------------------------------------------------------------------------------------#
 #Registrar reserva
-def registrarReserva(Reserva):
+def registrarReserva(objetoReserva):
 	idQuemado = validarUltimoId()
 	ultimoId = idQuemado +1 
 	
-	Reserva.setId(ultimoId)
+	objetoReserva.setId(ultimoId)
 	
-	with open(ARCHIVO, "a" , newline="", enconding = "utf-8") as archivoParaGuardar
-	writer = csv.writer(archivoParaGuardar)
-	writer.writerow(archivoParaGuardar)
+	with open(ARCHIVO, "a" , newline="", enconding = "utf-8") as archivoParaGuardar:
+		writer = csv.writer(archivoParaGuardar)
+		writer.writerow(objetoReserva.importToCsv())
 #---------------------------------------------------------------------------------------------#
+#Listar reservas
+def listarReservas():
+	if not os.path.exists(ARCHIVO):
+		return [ ]
+	arregloVacio = [ ] 
+	with open(ARCHIVO, "r", newline="", encoding = "utf-8") as archivoParaLeer:
+		reader = csv.reader(archivoParaLeer)
+		
+		for item in reader:
+			arregloVacio .append(item)
+			
+	return arregloVacio 
+#---------------------------------------------------------------------------------------------#
+#Modificar reserva
+def eliminarReserva(id):
+	if not os.path.exists(ARCHIVO):
+		return [ ]
 	
+	arregloVacio = [ ]
+	encontrado = False
 	
-	
-				
-	
+	with open(ARCHIVO, "r", newline= "", encoding= "utf-8") as archivoParaLeer:
+		reader = csv.reader(archivoParaLeer)
+		
+		for item in reader:
+			if int(item[0]) != int(id):
+				arregloVacio.append(item)
+			else:
+				encontrado = True
+			
+	if encontrado == True:
+		with open(ARCHIVO, "w", newline= "" , encoding = "utf-8") as archivoParaEscribir:
+			writer = csv.writer(arcarchivoParaEscribir)
+			writer.writerows(arregloVacio)
+			return True
+	else:
+		return False
+#---------------------------------------------------------------------------------------------#	
