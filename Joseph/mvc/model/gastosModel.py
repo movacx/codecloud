@@ -8,7 +8,7 @@ class GastoModel:
         self.fecha=fecha
     
     def setId(self, nuevoId):   
-        self.id=nuevoId
+        self.id = nuevoId
     
     def getId(self):
         return self.id
