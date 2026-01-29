@@ -2,9 +2,9 @@ import View.gastosView as vista
 import Data.baseGastos as base
 from Model.gastosModel import Gastos
 
-class gastosController:
+class GastosController:
 	
-	def __init__():
+	def __init__(self):
 		pass
 		
 #--------------------------------------------------------------------------------------------------#
@@ -16,4 +16,25 @@ class gastosController:
 		base.guardarGastos(nuevoGasto)
 		vista.mostrarMensaje("Guardado con exito")
 #--------------------------------------------------------------------------------------------------#
-#
+#Listar Gastos
+	def listarGastos(self):
+		gastos = base.listarObjeto()
+		for item in gastos:
+			print(item)
+#--------------------------------------------------------------------------------------------------#
+#Ver total
+	def verTotal(self):
+		total = 0
+		gastos = base.listarObjeto()
+		for item in gastos:
+			total += item[2]
+		return total
+#--------------------------------------------------------------------------------------------------#
+#Eliminar Gastos 
+			
+		
+		
+		
+			
+			
+			

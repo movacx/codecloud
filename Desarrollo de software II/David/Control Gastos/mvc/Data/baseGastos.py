@@ -10,10 +10,10 @@ ARCHIVO = os.path.join(BASE_DIR, "csv" , "gatos.csv")
 #Validar el ultimo ID
 def validarUltimoId():
 	if not os.path.exists(ARCHIVO):
-		return [ ]
+		return 0
 	ultimoId = 0
 	
-	with open(ARCHIVO, "r" , newline= "", encoding = "utf-8") as arhcivoParaLeer:
+	with open(ARCHIVO, "r" , newline= "", encoding = "utf-8") as archivoParaLeer:
 		reader = csv.reader(archivoParaLeer)
 		
 		for item in reader:
@@ -24,17 +24,17 @@ def validarUltimoId():
 #---------------------------------------------------------------------------------------------------------					
 #Guardar gastos
 def guardarGastos(Gastos):
-	idQuemado = validarUltimoId()
-	ultimoId = idQuemado +1
+	ultimoId = validarUltimoId()
+	nuevoId = ultimoId  +1
 	
-	Gastos.setId(ultimoId)
+	Gastos.setId(nuevoId)
 	
 	with open(ARCHIVO, "a", newline= "", encoding = "utf-8") as archivoParaLeer:
-		writer = csv.writer(arcarchivoParaLeer)
-		writer.writerows(archivoParaLeer)
+		writer = csv.writer(archivoParaLeer)
+		writer.writerow(Gastos.importToCsv())
 #---------------------------------------------------------------------------------------------------------
 #Listar gastos
-def listarGastos():
+def listarObjeto():
 	if not os.path.exists(ARCHIVO):
 		return [ ]
 	arregloVacio = [ ]
@@ -56,7 +56,7 @@ def eliminarGastos(id):
 	with open(ARCHIVO, "r", newline="", encoding= "utf-8") as archivoParaLeer:
 		reader = csv.reader(archivoParaLeer)
 		
-		for item in reader
+		for item in reader:
 			if int(item[0]) != int(id):
 				arregloVacio.append(item)
 			else:
