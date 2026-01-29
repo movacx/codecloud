@@ -10,6 +10,7 @@ import csv
 base_dir = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.join(base_dir,'csv','registroGastos.csv')
 
+
 #‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾#
 def validarUltimoId():
     if not os.path.exists(ARCHIVO):
@@ -23,6 +24,7 @@ def validarUltimoId():
             if lista:
                 if int(lista[0]) > ultimoId:
                     ultimoId = int(lista[0])
+                    
     return ultimoId
 
 #‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾#
