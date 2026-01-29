@@ -1,9 +1,13 @@
-
-
 def main():
     
     while True:
-        opcion= int(input("1 registrar n/ 2 listar 3 eliminar 4 total gastado" ))
+        opcion= int(input('''=== SISTEMA DE CENTRO DEPORTIVO AQUAFIT ===
+1. 
+2. 
+3. 
+4. Reportes
+5. Salir''' ))
+        if opcion ==1:
             pass
         elif opcion== 2:
             pass

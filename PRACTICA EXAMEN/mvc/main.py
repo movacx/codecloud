@@ -1,25 +1,20 @@
-from controller.gastoController import GastoController
-
 def main():
-    manejoGasto=GastoController()
     
     while True:
-        opcion= int(input("1 registrar n/ 2 listar 3 eliminar 4 total gastado" ))
+        opcion= int(input('''=== SISTEMA DE CENTRO DEPORTIVO AQUAFIT ===
+1. Gestionar Canchas
+2. Gestionar Socios
+3. Gestionar Reservas
+4. Reportes
+5. Salir''' ))
         if opcion ==1:
-            descripcion= input("Descripcio: ")
-            monto= int(input("monto: "))
-            categoria= input("categoria: ")
-            fecha= input("fecha: ")
-            manejoGasto.registrarGasto(descripcion, monto, categoria, fecha)
             pass
         elif opcion== 2:
-            manejoGasto.listar()
+            pass
         elif opcion == 3:
-            id=int(input("ingrese id a eliminar: "))
-            manejoGasto.eliminar(id)   
+            pass
         elif opcion == 4:
-            total=manejoGasto.totalGastado()
-            print("El total gastado es: ",total)
+            pass
                 
             
         
