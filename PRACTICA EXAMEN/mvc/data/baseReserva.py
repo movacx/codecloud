@@ -9,7 +9,7 @@ ARCHIVO = os.path.join(BASE_DIR, "csv", "reserva.csv")
 
 #Validar ultimoId
 def validarUltimoId():
-	if not os.path.eexists(ARCHIVO):
+	if not os.path.exists(ARCHIVO):
 		return 0 
 	ultimoId = 0
 	with open(ARCHIVO, "r", nenewline= "", encoding= "utf-8") as archivoParaLeer:
@@ -31,7 +31,8 @@ def registrarReserva(Reserva):
 	
 	with open(ARCHIVO, "a" , newline="", enconding = "utf-8") as archivoParaGuardar
 	writer = csv.writer(archivoParaGuardar)
-	writer.writerows(archivoParaGuardar)
+	writer.writerow(archivoParaGuardar)
+#---------------------------------------------------------------------------------------------#
 	
 	
 	
