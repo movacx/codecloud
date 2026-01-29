@@ -28,6 +28,9 @@ def registrarListado(objetoGasto):
         writer.writerow(objetoGasto.importToCsv())
                 
 def listarTodos():
+    if not os.path.exists(ARCHIVO):
+        return []
+    
     arregloVacio=[]
     with open(ARCHIVO, "r", newline="",encoding="utf-8")as archivoParaLeer:
         reader=csv.reader(archivoParaLeer)

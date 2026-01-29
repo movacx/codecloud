@@ -13,6 +13,8 @@ class GastoController:
         
     def listar(self):
         arreglo=data.listarTodos()
+        if not arreglo:
+            print("No se encontraron datos ")
         for items in arreglo:
             print(items)
             
@@ -20,4 +22,13 @@ class GastoController:
     def eliminar(self, id):
         arregloEliminar=[]
         arregloEliminar=data.eliminarGasto(id)
+        
+#-----------------------------------------------------------------------
+        
+    def totalGastado(self):
+        total=0
+        arreglo=data.listarTodos()
+        for items in arreglo:
+            total += int(items[2])
+        return total
         
