@@ -14,6 +14,10 @@ def main():
             pass
         elif opcion== 2:
             manejoGasto.listar()
+        elif opcion == 3:
+            id=int(input("ingrese id a eliminar: "))
+                
+            manejoGasto.eliminar(id)
         
 if __name__=="__main__":
     main()
