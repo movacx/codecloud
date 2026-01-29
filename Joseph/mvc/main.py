@@ -4,7 +4,7 @@ def main():
     manejoGasto=GastoController()
     
     while True:
-        opcion= int(input("1 registrar n/ 2 listar"))
+        opcion= int(input("1 registrar n/ 2 listar 3 eliminar" ))
         if opcion ==1:
             descripcion= input("Descripcio: ")
             monto= int(input("monto: "))

@@ -13,6 +13,8 @@ class GastoController:
         
     def listar(self):
         arreglo=data.listarTodos()
+        if not arreglo:
+            print("No se encontraron datos ")
         for items in arreglo:
             print(items)
             
