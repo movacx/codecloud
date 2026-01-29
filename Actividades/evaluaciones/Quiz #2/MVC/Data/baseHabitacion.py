@@ -133,7 +133,6 @@ def eliminarHabitacion(idHabitacion):
 		for item in reader:
 			if int(item[0]) != int(idHabitacion):
 				arregloVacio.append(item)
-				encontrado = False
 			else:
 				encontrado = True
 	if encontrado == True:
