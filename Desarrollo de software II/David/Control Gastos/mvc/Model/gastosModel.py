@@ -1,6 +1,6 @@
 class Gastos:
 	def __init__(self, id, descripcion, monto, categoria, fecha):
-		self.id = id
+		self.ide = id
 		self.descripcion = descripcion
 		self.monto = monto
 		self.categoria = categoria
