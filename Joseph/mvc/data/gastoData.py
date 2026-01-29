@@ -14,12 +14,13 @@ def validarUltimoId():
         reader=csv.reader(archivoParaLeer)
         for items in reader:
             if int(items[0])> ultimoId:
-                ultimoId=items[0]
+                ultimoId=int(items[0])
     return ultimoId
 
 def registrarListado(objetoGasto):
     ultimoId=validarUltimoId()
     nuevoId=ultimoId+1
+    objetoGasto.setId(nuevoId)
     with open(ARCHIVO,"a",newline="",encoding="utf-8")as nuevoRegistro:
         writer=csv.writer(nuevoRegistro)
         writer.writerow(objetoGasto.importToCsv())
@@ -31,3 +32,23 @@ def listarTodos():
         for items in reader:
             arregloVacio.append(items)
     return arregloVacio
+
+def eliminarGasto(id):
+    arregloVacio=[]
+    bloqueo=True
+    with open(ARCHIVO, "r", newline="",encoding="utf-8")as archivoParaLeer:
+        reader=csv.reader(archivoParaLeer)
+        for items in reader:
+            if int(items[0])!=int(id):
+                arregloVacio.append(items)
+                bloqueo = False
+                
+    if bloqueo == True:
+        return True
+    else:
+        with open(ARCHIVO, "w", newline="", encoding="utf-8")as archivoParaModificar:
+            writer=csv.writer(archivoParaModificar)
+            writer.writerows(arregloVacio)
+            return False
+                
+                
