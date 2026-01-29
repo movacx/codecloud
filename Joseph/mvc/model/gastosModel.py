@@ -1,0 +1,16 @@
+class GastoModel:
+
+    def __init__(self, id, descripcion, monto, categoria, fecha):
+        self.id=id
+        self.descripcion=descripcion
+        self.monto=monto
+        self.categoria=categoria
+        self.fecha=fecha
+    
+    def setId(self, nuevoId):   
+        self.id = nuevoId
+    
+    def getId(self):
+        return self.id
+    def importToCsv(self):
+        return([self.id, self.descripcion, self.monto, self.categoria, self.fecha])

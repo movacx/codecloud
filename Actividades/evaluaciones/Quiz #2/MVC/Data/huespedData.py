@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 
-from Model.huespedModel import HuespedModel
+
 
 sys.stdout.reconfigure(encoding = "utf-8")
 
@@ -138,11 +138,11 @@ def eliminarLista(id):
 				try:
 					if int(lista[0]) != int(id):
 						arregloLista.append(lista)
-						encontrado = True
+						encontrado = False
 				except ValueError:
 					return None
 	
-	if encontrado == True:
+	if encontrado == False:
 		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivo_para_sobreEscribir:
 			writer = csv.writer(archivo_para_sobreEscribir)
 			writer.writerows(arregloLista)
