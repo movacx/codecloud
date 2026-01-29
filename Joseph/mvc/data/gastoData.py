@@ -2,6 +2,8 @@ import os
 import sys
 import csv
 
+from model.gastosModel import GastoModel
+
 dir_data= os.path.dirname(__file__)#MVC/DATA/gastoData.py
 ARCHIVO=os.path.join(dir_data,"csv","RegistroGasto.csv")
 #dir_data/csv/registroGasto.csv
