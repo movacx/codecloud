@@ -24,5 +24,10 @@ def registrarListado(objetoGasto):
         writer=csv.writer(nuevoRegistro)
         writer.writerow(objetoGasto.importToCsv())
                 
-    
-    
+def listarTodos():
+    arregloVacio=[]
+    with open(ARCHIVO, "r", newline="",encoding="utf-8")as archivoParaLeer:
+        reader=csv.reader(archivoParaLeer)
+        for items in reader:
+            arregloVacio.append(items)
+    return arregloVacio

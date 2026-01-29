@@ -12,5 +12,8 @@ def main():
             fecha= input("fecha: ")
             manejoGasto.registrarGasto(descripcion, monto, categoria, fecha)
             pass
+        elif opcion== 2:
+            manejoGasto.listar()
+        
 if __name__=="__main__":
     main()
