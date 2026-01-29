@@ -1,7 +1,7 @@
 class GastosModel:
     
     def __init__(self, ide, descripcion, monto, categoria, fecha):
-        self.id = ide
+        self.ide = ide
         self.descripcion = descripcion
         self.monto = monto
         self.categoria = categoria
@@ -14,4 +14,4 @@ class GastosModel:
         self.ide = nuevoId
     
     def importTocsv(self):
-        return ([self.id, self.descripcion, self.monto,self.categoria,self.fecha])
+        return ([self.ide, self.descripcion, self.monto,self.categoria,self.fecha])

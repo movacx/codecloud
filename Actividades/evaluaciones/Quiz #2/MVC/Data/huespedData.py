@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 
-from Model.huespedModel import HuespedModel
+
 
 sys.stdout.reconfigure(encoding = "utf-8")
 
