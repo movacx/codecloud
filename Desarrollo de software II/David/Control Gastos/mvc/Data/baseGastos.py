@@ -49,7 +49,7 @@ def listarObjeto():
 #---------------------------------------------------------------------------------------------------------				
 #Eliminar gastos
 def eliminarGastos(id):
-	if not os.path.exists(ARARCHIVO):
+	if not os.path.exists(ARCHIVO):
 		return [ ]
 	arregloVacio = [ ]
 	encontrado = False 
@@ -64,13 +64,12 @@ def eliminarGastos(id):
 
 	if encontrado == True:
 		with open(ARCHIVO, "w", newline="", encoding = "utf-8") as archivoParaEscribir:
-			writer = csv.writer(arcarchivoParaEscribir)
-			writer.writerows(aarregloVacio)
-			return arregloVacio
+			writer = csv.writer(archivoParaEscribir)
+			writer.writerows(arregloVacio)
+			return True
 	else:
-		return encontrado
-					
-			
+		return False
+#---------------------------------------------------------------------------------------------------------					
 					
 		
 					
