@@ -23,3 +23,12 @@ class GastoController:
         arregloEliminar=[]
         arregloEliminar=data.eliminarGasto(id)
         
+#-----------------------------------------------------------------------
+        
+    def totalGastado(self):
+        total=0
+        arreglo=data.listarTodos()
+        for items in arreglo:
+            total += int(items[2])
+        return total
+        
