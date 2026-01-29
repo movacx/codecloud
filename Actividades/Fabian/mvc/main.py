@@ -1,19 +1,28 @@
-from controller.gastoController import GastoController
+import view.gastoView as vista
 
 def main():
-    manejoGasto=GastoController()
-    
-    while True:
-        opcion= int(input("1 registrar n/ 2 listar"))
-        if opcion ==1:
-            descripcion= input("Descripcio: ")
-            monto= int(input("monto: "))
-            categoria= input("categoria: ")
-            fecha= input("fecha: ")
-            manejoGasto.registrarGasto(descripcion, monto, categoria, fecha)
-            pass
-        elif opcion== 2:
-            manejoGasto.listar()
-        
-if __name__=="__main__":
+    x = True
+
+    while x:
+        try:
+            vista.mostrarMenu()
+            op = int(input('input: '))
+            
+            if op == 1:
+                pass
+            elif op == 2:
+                pass
+            elif op == 3:
+                pass
+            elif op == 4:
+                pass
+            else:
+                vista.mostrarMensaje('Opcion invalida')
+        except ValueError:
+            vista.mostrarMensaje('Caracteres no validos')
+
+if __name__ == '__main__':
     main()
+        
+        
+        
