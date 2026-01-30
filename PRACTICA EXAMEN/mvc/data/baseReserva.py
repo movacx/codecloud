@@ -37,7 +37,7 @@ def registrarReserva(objetoReserva):
 def listarReservas():
 	if not os.path.exists(ARCHIVO):
 		return [ ]
-	arregloVacio = [ ] 
+	arregloVacio = [ ]
 	with open(ARCHIVO, "r", newline="", encoding = "utf-8") as archivoParaLeer:
 		reader = csv.reader(archivoParaLeer)
 		
