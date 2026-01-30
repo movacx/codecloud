@@ -9,6 +9,7 @@ sys.stdout.reconfigure(encoding = "utf-8")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.join(BASE_DIR, "csv", "habitacionData.csv")
 
+#-----------------------------------------------------------------------------------------#
 def validarUltimoId():
 	if not os.path.exists(ARCHIVO):
 		return 0
@@ -24,7 +25,7 @@ def validarUltimoId():
 					ultimoId = int(item[0])
 			
 	return ultimoId	
-
+#-----------------------------------------------------------------------------------------#
 def registrarHabitacion(Habitacion):
 	idQuemado = validarUltimoId()
 	ultimoId = idQuemado + 1
@@ -35,7 +36,7 @@ def registrarHabitacion(Habitacion):
 		writer = csv.writer(archivoParaGuardar)
 		writer.writerow(Habitacion.importarToCsv())
 		
-
+#-----------------------------------------------------------------------------------------#
 def listarHabitaciones():
 	if not os.path.exists(ARCHIVO):
 		return 0 
@@ -48,7 +49,7 @@ def listarHabitaciones():
 			listaVacia.append(item)
 			
 	return listaVacia
-
+#-----------------------------------------------------------------------------------------#
 def buscarHabitacionId(id):
 	if not os.path.exists(ARCHIVO):
 		return 0
@@ -64,7 +65,7 @@ def buscarHabitacionId(id):
 					encontrado = True 
 					habitacionEncontrada.append(item)
 	return habitacionEncontrada
-
+#-----------------------------------------------------------------------------------------#
 def modificar(id, estado): 
 	if not os.path.exists(ARCHIVO):
 		return []
@@ -92,7 +93,34 @@ def modificar(id, estado):
 		return encontrado
 	else:
 		return encontrado
+
+#-----------------------------------------------------------------------------------------#	
+
+def eliminarHabitacion(idHabitacion):
+	if not os.path.exists(ARCHIVO):
+		return [ ]
+	
+	arregloVacio = [ ]
+	encontrado = False
+	with open(ARCHIVO, "r", newline= "", encoding = "utf-8") as archivoParaLeer:
+		reader = csv.reader(archivoParaLeer)
 		
+		for item in reader:
+			if int(item[0]) != int(idHabitacion):
+				arregloVacio.append(item)
+			else:
+				encontrado = True
+	if encontrado == True:
+		with open(ARCHIVO,"w", newline="", encoding = "utf-8") as archivoParaEscribir:
+			writer = csv.writer(archivoParaEscribir)
+			writer.writerows(arregloVacio)
+			return encontrado
+	else:
+		return encontrado
+
+
+#-----------------------------------------------------------------------------------------#	
+
 def ordenarPrecio():
     listaHabitaciones = listarHabitaciones()
     listaTemporalOrden = []
@@ -121,25 +149,7 @@ def ordenarPrecio():
 
     return listaHabitacionesOrdenadas
 
-def eliminarHabitacion(idHabitacion):
-	if not os.path.exists(ARCHIVO):
-		return [ ]
-	
-	arregloVacio = [ ]
-	encontrado = False
-	with open(ARCHIVO, "r", newline= "", encoding = "utf-8") as archivoParaLeer:
-		reader = csv.reader(archivoParaLeer)
-		
-		for item in reader:
-			if int(item[0]) != int(idHabitacion):
-				arregloVacio.append(item)
-			else:
-				encontrado = True
-	if encontrado == True:
-		with open(ARCHIVO,"w", newline="", encoding = "utf-8") as archivoParaEscribir:
-			writer = csv.writer(archivoParaEscribir)
-			writer.writerows(arregloVacio)
-			return encontrado
-	else:
-		return encontrado
+#-----------------------------------------------------------------------------------------#	
+
+
 					
