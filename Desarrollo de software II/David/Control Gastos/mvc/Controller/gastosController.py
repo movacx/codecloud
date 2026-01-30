@@ -10,6 +10,7 @@ class GastosController:
 #--------------------------------------------------------------------------------------------------#
 #Guardar gasto
 	def guardarGasto(self, descripcion, monto, categoria, fecha):
+		#Instancia 
 		nuevoGasto = Gastos(0, descripcion, monto, categoria, fecha)
 		
 		

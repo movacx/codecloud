@@ -36,13 +36,13 @@ def registrarReserva(objetoReserva):
 #Listar reservas
 def listarReservas():
 	if not os.path.exists(ARCHIVO):
-		return [ ]
+		return [ ] 
 	arregloVacio = [ ]
 	with open(ARCHIVO, "r", newline="", encoding = "utf-8") as archivoParaLeer:
 		reader = csv.reader(archivoParaLeer)
 		
 		for item in reader:
-			arregloVacio .append(item)
+			arregloVacio.append(item)
 			
 	return arregloVacio 
 #---------------------------------------------------------------------------------------------#

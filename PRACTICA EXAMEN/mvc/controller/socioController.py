@@ -13,6 +13,8 @@ class SocioController:
         objetoSocio = Socio(0,nombre, telefono)
         registrar = baseSocio.registrarSocio(objetoSocio)
         vista.mostrarMensaje("Agregado con exito")
+#-------------------------------------------------------------------------#       
+
         
 
 

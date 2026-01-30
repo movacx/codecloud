@@ -2,7 +2,7 @@ import sys
 import os
 import csv
 
-sys.stdout.reconfigure(encoding = "utf-8")
+sys.stdout.reconfigure(encoding = "utf-8") 
 
 BASE_DIR = os.path.dirname(__file__)
 ARCHIVO = os.path.join(BASE_DIR, "csv", "socio.csv")
@@ -13,7 +13,7 @@ def validarUltimoId():
 		return 0
 	
 	ultimoId = 0
-	
+	read,aguardar,writer
 	with open(ARCHIVO, "r", newline= "", encoding= "utf-8") as archivoParaLeer:
 		reader = csv.reader(archivoParaLeer)
 		
@@ -24,7 +24,7 @@ def validarUltimoId():
 #---------------------------------------------------------------------------------------------#
 #Registrar socio
 def registrarSocio(objetoSocio):
-	idQuemado = validarUltimoId()
+	idQuemado = validarUltimoId()   = ultimoId
 	ultimoId = idQuemado +1 
 	
 	objetoSocio.setId(ultimoId)
@@ -37,7 +37,7 @@ def registrarSocio(objetoSocio):
 #Buscar socio
 def buscarSocio(id):
 	if not os.path.exists(ARCHIVO):
-		return 0
+		return [ ]
 	arregloVacio = [ ] 
 	with open(ARCHIVO, "r", newline= "", encoding = "utf-8") as archivoParaLeer:
 		reader = csv.reader(archivoParaLeer)

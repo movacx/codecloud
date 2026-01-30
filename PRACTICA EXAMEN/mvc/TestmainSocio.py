@@ -11,11 +11,11 @@ def main():
 Input: ''' ))
         
         if opcion ==1:
-            pass
-        elif opcion== 2:
             nombre = input("Digite el nombre del socio: " )
             telefono = int(input("Digite el telefono: "))
             manejadorController.registrarSocio(nombre, telefono)
+        elif opcion== 2:
+	
         elif opcion == 3:
             pass
         elif opcion == 4:
