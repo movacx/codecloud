@@ -1,6 +1,9 @@
-from Model.socioModel import Socio
-import View.socioView as vista
-import Data.baseSocio as baseSocio
+#from Model.socioModel import Socio
+from model.socioModel import Socio
+import view.socioView as vista
+#import View.socioView as vista
+#import Data.baseSocio as baseSocio
+import data.baseSocio as base
 
 class SocioController:
     
