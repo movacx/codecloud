@@ -28,7 +28,7 @@ def addList(objeto_cancha):
 
 #‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
-def searhList():
+def searchList():
     lista = []
     
     with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivo_para_copiar:
