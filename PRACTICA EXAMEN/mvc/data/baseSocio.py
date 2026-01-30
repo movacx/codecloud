@@ -29,9 +29,9 @@ def registrarSocio(objetoSocio):
 	
 	objetoSocio.setId(ultimoId)
 	
-	with open(ARCHIVO, "a" , newline="", enconding = "utf-8") as archivoParaGuardar:
+	with open(ARCHIVO, "a" , newline="", encoding = "utf-8") as archivoParaGuardar:
 		writer = csv.writer(archivoParaGuardar)
-		writer.writerow(objetoReserva.importToCsv())
+		writer.writerow(objetoSocio.importToCsv())
 		
 #---------------------------------------------------------------------------------------------#		
 #Buscar socio
@@ -59,7 +59,6 @@ def listarSocios():
 		
 		for item in reader:
 			arregloVacio .append(item)
-			
 	return arregloVacio 		
 		
 	

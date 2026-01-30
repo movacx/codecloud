@@ -9,8 +9,8 @@ class Socio:
 		return self.id
 	
 	def setId(self, id):
-		self.id = iid
+		self.id = id
 #---------------------------------------------------------------------------------------------#		
 	#ImportToCsv
-	def importToCsv():
-		return  ([self.nombre, self.telefono])
+	def importToCsv(self):
+		return  ([self.id, self.nombre, self.telefono])

@@ -8,3 +8,5 @@ def imprimirListados(arreglo):
         print(f'{items[0]:<8}|{items[1]:<15}|{items[2]:<10}|{items[3]:<12}')
     print('___________________________________________________')
         
+def mostrarDato(dato):
+	return(dato)

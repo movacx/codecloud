@@ -8,7 +8,8 @@ def main():
 4. 
 5. Salir''' ))
         if opcion ==1:
-            pass
+		
+			   
         elif opcion== 2:
             pass
         elif opcion == 3:
