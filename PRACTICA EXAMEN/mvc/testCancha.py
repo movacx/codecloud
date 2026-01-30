@@ -7,8 +7,7 @@ def main():
         opcion= int(input('''=== SISTEMA DE CENTRO DEPORTIVO AQUAFIT ===
     1. Agregar Cancha
     2. Listar Canchas
-    3. 
-    5. Salir
+    0. Salir
 input: ''' ))
         if opcion ==1:
             numero = int(input('numero: '))
@@ -20,10 +19,8 @@ input: ''' ))
         elif opcion== 2:
             registroCancha.listarCanchas()
             pass
-        elif opcion == 3:
-            pass
-        elif opcion == 4:
-            pass
+        elif opcion == 0:
+            break
                 
             
         
