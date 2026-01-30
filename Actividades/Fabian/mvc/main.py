@@ -27,6 +27,11 @@ def main():
                 ide = int(input('Id:'))
                 manejo_gastos.eliminarGasto(ide)
                 pass
+            elif op == 5:
+                manejo_gastos.ordenar()
+                pass
+            elif op == 6:
+                manejo_gastos.ordenarMayor()
             else:
                 vista.mostrarMensaje('Opcion invalida')
         except ValueError:

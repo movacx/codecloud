@@ -43,7 +43,7 @@ class GastosController:
         
         for items in almacen_datos:
             if items:
-                total = items[2]
+                total += items[2]
         
         return vista.mostrarMensaje(f'Total gastado: {total}')
     
@@ -53,8 +53,13 @@ class GastosController:
         return datos_eliminados
         
                 
+    def ordenar(self):
+        lista = file_csv.ordenarPrecios()
+        vista.mostrarListados(lista)
         
-        
+    def ordenarMayor(self):
+        lista= file_csv.ordenarPreciosMayor()
+        vista.mostrarListados(lista)
         
         
         

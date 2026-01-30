@@ -3,7 +3,9 @@ def mostrarMenu():
 1. Registrar Gasto
 2. Ver Gastos(Tabla)
 3. ver total Gastado
-4. Eliminar Gasto''')
+4. Eliminar Gasto
+5. Mostrar precios ordenados
+6. Ordenar por mayor''')
     
 def mostrarMensaje(mensaje):
     print(mensaje)

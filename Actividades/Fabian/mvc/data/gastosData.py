@@ -64,24 +64,72 @@ def deleteList(id):
     with open(ARCHIVO, 'r', newline = '', encoding = 'utf-8') as archivo_para_copiar:
         reader = csv.reader(archivo_para_copiar)
         
-        for item in reader:
-            if int(item[0]) != int(id):
-                arregloVacio.append(item)
-                encontrado = True
+        for items in reader:
+            if items:
+                if int(items[0]) == int(id):
+                    encontrado = True
+                else:
+                    arregloVacio.append(items)
                 
     if encontrado:
         with open(ARCHIVO, 'w', newline = '', encoding = 'utf-8') as archivo_para_modificar:
             writer = csv.writer(archivo_para_modificar)
             writer.writerows(arregloVacio)
-            return encontrado
+            return True
         
     else:
-        return encontrado
+        return False
                 
-                
+#‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾#
+def ordenarPrecios():
+    listaGastos = searhList()
+    listaOrdenadaTemporalmente = []
     
+    for items in listaGastos:
+        listaOrdenadaTemporalmente.append([
+            float(items[2]),
+            items[0],
+            items[1],
+            items[3],
+            items[4]])
+        
+    listaOrdenadaTemporalmente.sort()
+    listaDefinitiva = []
     
+    for items in listaOrdenadaTemporalmente:
+        listaDefinitiva.append([
+            items[1],
+            items[2],
+            items[0],
+            items[3],
+            items[4]])
     
+    return listaDefinitiva
+    
+def ordenarPreciosMayor():
+    lista = searhList()
+    listaOrdenada = []
+    
+    for items in lista:
+        listaOrdenada.append([
+            float(items[2]),
+            items[0],
+            items[1],
+            items[3],
+            items[4]])
+        
+        listaOrdenada.sort(reverse=True)
+        listaDefinitiva = []
+        
+        for items in listaOrdenada:
+            listaDefinitiva.append([
+                items[1],
+                items[2],
+                items[0],
+                items[3],
+                items[4]])
+    return listaDefinitiva
+                        
     
     
     
