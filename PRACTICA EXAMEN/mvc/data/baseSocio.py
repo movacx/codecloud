@@ -25,6 +25,7 @@ def validarUltimoId():
 #Registrar socio
 def registrarSocio(objetoSocio):
 	#idQuemado = validarUltimoId()   = ultimoId
+	idQuemado = validarUltimoId()
 	ultimoId = idQuemado +1 
 	
 	objetoSocio.setId(ultimoId)
