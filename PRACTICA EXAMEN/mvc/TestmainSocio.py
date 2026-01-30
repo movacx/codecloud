@@ -1,6 +1,4 @@
-#from Controller.socioController import SocioController
 from controller.socioController import SocioController
-#import View.socioView as vista
 import view.socioView as vista
 def main():
     manejadorController = SocioController()

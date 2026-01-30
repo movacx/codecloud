@@ -1,6 +1,6 @@
-from Model.reservaModel import Reserva
-import View.reservaView as vista
-import Data.baseReserva as base
+from model.reservaModel import Reserva
+import view.reservaView as vista
+import data.baseReserva as base
 
 class ReservaController:
 	
