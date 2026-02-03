@@ -35,32 +35,31 @@ def guardarError(errorTexto):
 	except Exception as nombreError.
 	print("fError fatal al guardar logs {nombreError} ")
 #-----------------------------------------------------------------------------------------#
-	def cargar():
-	
-
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-#-----------------------------------------------------------------------------------------#
+def cargar():
+	try:
+             if not os.path.exists(LogFile):
+                return
+            with open(ARCHIVO, "r", encoding="utf-8") as file:
+                reader = csv.reader(file)
+                for numero, tipo, precio, estado in reader:
+                    self.habitaciones.append(Habitacion(numero, tipo, precio, estado))
+           
+        except Exception as nombreError:
+            self.guardarError(f"Error cargando los datos de la habitacion {nombreError}")
+            vista.mensaje( f"(X) Error cargando los datos de la habitacion")
+#-----------------------------------------------------------------------------------------#           
 def registrarHabitacion(Habitacion):
-	idQuemado = validarUltimoId()
-	ultimoId = idQuemado + 1
-	
-	Habitacion.setIde(ultimoId)
-	
-	with open(ARCHIVO, "a", newline="", encoding = "utf-8") as archivoParaGuardar:
-		writer = csv.writer(archivoParaGuardar)
-		writer.writerow(Habitacion.importarToCsv())
+	try:
+		idQuemado = validarUltimoId()
+		ultimoId = idQuemado + 1
+		
+		Habitacion.setIde(ultimoId)
+		
+		with open(ARCHIVO, "a", newline="", encoding = "utf-8") as archivoParaGuardar:
+			writer = csv.writer(archivoParaGuardar)
+			writer.writerow(Habitacion.importarToCsv())
+	except Exception as nombreError.
+		print("fError fatal al guardar logs {nombreError} ")
 		
 #-----------------------------------------------------------------------------------------#
 def listarHabitaciones():
