@@ -172,6 +172,8 @@ def menuReservas():
             
 #-------------------------------------------[MENU DE Reportes!]----------------------------------------------------------------#
 def menuReportes():
+    baseHabitaciones = HabitacionesController()
+    baseReserva = ReservasController()
     cerrar = True
     while cerrar:
         try:
@@ -179,12 +181,12 @@ def menuReportes():
             print('1.Reportes de habitaciones disponibles | 2.Reporte de habitaciones ocupadas  | 3.Reporte de reservas activas | 0.Salir')
             op = int(input('Input: '))
             
-            elif op == 1:
-                
+            if op == 1:
+                baseHabitaciones.listarHabitacion()
             elif op == 2:
-                
-            elif op == 3:
-            
+                baseHabitaciones.listarHabitacion()
+            elif op == 3: 
+                baseReserva.listar_reservas()
             elif op == 0:
                 vista.mostrarMensaje("Saliendo..")
                 cerrar = False
