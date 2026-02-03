@@ -1,155 +1,227 @@
 import os
 import sys
 import csv
+from datetime import datetime
 
-
-
-sys.stdout.reconfigure(encoding = "utf-8")
+sys.stdout.reconfigure(encoding="utf-8")
 
 dir_name = os.path.dirname(os.path.abspath((__file__)))
-ARCHIVO = os.path.join(dir_name,'csv','huespedData.csv')
+ARCHIVO = os.path.join(dir_name, 'csv', 'huespedData.csv')
+
+LOG_DIR = os.path.join(dir_name, 'log') 
+logFile = os.path.join(LOG_DIR, 'logfile.txt')
+
+#-----------------------------------------------------------------------------------------
+
+def guardarError(errorTexto):
+    try:
+    
+        if not os.path.exists(LOG_DIR):
+            os.makedirs(LOG_DIR)
+
+        fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        mensaje = f'{fecha} ===> {errorTexto}\n'
+        
+        with open(logFile, 'a', encoding='utf-8') as file:
+            file.write(mensaje) # Correcto: .write (sin r)
+
+    except Exception as nombreError:
+       
+        print(f'Error CRÍTICO al guardar el log: {nombreError}')
 
 #--------------------------------------------------------------------------------------------------#
 
 def verificarUltimoId():
-	if not os.path.exists(ARCHIVO):
-		return 0
-	
-	ultimoId = 0
-	
-	with open(ARCHIVO,'r', newline='',encoding='utf-8') as archivo_para_leer:
-		reader = csv.reader(archivo_para_leer)
-		
-		for lista in reader:
-			if lista:
-				if int(lista[0]) > ultimoId:
-					ultimoId = int(lista[0])
-	return ultimoId
+    if not os.path.exists(ARCHIVO):
+        return 0
+    
+    ultimoId = 0
+    
+    with open(ARCHIVO, 'r', newline='', encoding='utf-8') as archivo_para_leer:
+        reader = csv.reader(archivo_para_leer)
+        
+        for lista in reader:
+            if lista:
+                try:
+                    
+                    id_actual = int(lista[0])
+                    if id_actual > ultimoId:
+                        ultimoId = id_actual
+                except ValueError:
+                    continue 
+                    
+    return ultimoId
 
 #--------------------------------------------------------------------------------------------------#
 
 def agregarListado(HuespedModel):
-	id_quemado = verificarUltimoId()
-	ultimoId = id_quemado + 1
-	
-	HuespedModel.setId(ultimoId)
-	
-	with open(ARCHIVO, 'a', newline='',encoding='utf-8') as archivo_para_agregar:
-		writer = csv.writer(archivo_para_agregar)
-		writer.writerow(HuespedModel.importarToCsv())
+    try:
+        id_quemado = verificarUltimoId()
+        ultimoId = id_quemado + 1
+        HuespedModel.setId(ultimoId)
+        
+        with open(ARCHIVO, 'a', newline='', encoding='utf-8') as archivo_para_agregar:
+            writer = csv.writer(archivo_para_agregar)
+            writer.writerow(HuespedModel.importarToCsv())
+            return True 
+
+    except Exception as nombreError: 
+        guardarError(f'Error al cargar los datos: {nombreError}')
+        return False
 
 #--------------------------------------------------------------------------------------------------#
 
 def listarTodos():
-	if not os.path.exists(ARCHIVO):
-		return []
-	
-	copiarLista = []
-	with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivo_para_leer:
-		reader = csv.reader(archivo_para_leer)
-		for lista in reader:
-			if lista:
-				copiarLista.append(lista)
-				
-	return copiarLista
+    try:
+        if not os.path.exists(ARCHIVO):
+            return []
+        
+        copiarLista = []
+        with open(ARCHIVO, 'r', newline='', encoding='utf-8') as archivo_para_leer:
+            reader = csv.reader(archivo_para_leer)
+            for lista in reader:
+                if lista:
+                    copiarLista.append(lista)
+                    
+        return copiarLista
+    
+    except Exception as nombreError:
+        guardarError(f'Error al mostrar los datos: {nombreError}')
+        return []
 
 #--------------------------------------------------------------------------------------------------#
 
 def searchName(nombre):
-	if not os.path.exists(ARCHIVO):
-		return []
-	
-	nombreEncontrado = []
-	
-	with open(ARCHIVO, 'r', newline='',encoding='utf-8') as archivo_para_leer:
-		reader = csv.reader(archivo_para_leer)
-		
-		for lista in reader:
-			if lista:
-				nombre_en_csv = lista[1].strip().lower()
-				nombre_a_buscar = nombre.strip().lower()
-				
-				if nombre_en_csv == nombre_a_buscar:
-					nombreEncontrado.append(lista)
-					
-	return nombreEncontrado
-		
+    try:
+        if not os.path.exists(ARCHIVO):
+            return []
+        
+        nombreEncontrado = []
+        
+        with open(ARCHIVO, 'r', newline='', encoding='utf-8') as archivo_para_leer:
+            reader = csv.reader(archivo_para_leer)
+            
+            for lista in reader:
+                if lista:
+                    nombre_en_csv = lista[1].strip().lower()
+                    nombre_a_buscar = nombre.strip().lower()
+                    
+                    if nombre_en_csv == nombre_a_buscar:
+                        nombreEncontrado.append(lista)
+                        
+        return nombreEncontrado
+    
+    except Exception as nombreError:
+        guardarError(f'Error al buscar el dato: {nombreError}')
+        return []
+    
+
+#--------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------#
 
 def searchId(id):
-	if not os.path.exists(ARCHIVO):
-		return []
-	
-	listaVacia = []
-	
-	with open(ARCHIVO, 'r', newline='',encoding='utf-8') as archivo_para_leer:
-		reader = csv.reader(archivo_para_leer)
+    try:
+        if not os.path.exists(ARCHIVO):
+            return []
+        
+        listaEncontrada = []
+        
+        with open(ARCHIVO, 'r', newline='', encoding='utf-8') as archivo_para_leer:
+            reader = csv.reader(archivo_para_leer)
 
-		for lista in reader:
-			if lista:
-				if int(lista[0]) == int(id):
-					listaVacia.append(lista)
+            for lista in reader:
+                if lista:
+                  
+                    try:
+                        if int(lista[0]) == int(id):
+                            listaEncontrada.append(lista)
+                    except ValueError:
+                        continue 
 
-	return listaVacia
+        return listaEncontrada
+
+    except Exception as nombreError:
+        guardarError(f'Error al buscar por ID: {nombreError}')
+        return []
+
 #--------------------------------------------------------------------------------------------------#
+
 def modificarLista(id, HuespedModel): 
-	if not os.path.exists(ARCHIVO):
-		return []
-	
-	encontrado = False
-	arregloVacio = []
-	
-	with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivo_para_copiar:
-		reader = csv.reader(archivo_para_copiar)
-		
-		for lista in reader:
-			if lista:
-				
-					if int(lista[0]) == int(id):
-						HuespedModel.setId(id)
-						nuevo_dato = HuespedModel.importarToCsv()
-						arregloVacio.append(nuevo_dato)
-						encontrado = True
-					else:
-						arregloVacio.append(lista)
-													
-	if encontrado == True:		
-		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivo_para_modificiar:
-			writer = csv.writer(archivo_para_modificiar)
-			writer.writerows(arregloVacio)
-		return encontrado
-	else:
-		return encontrado
-	
+    try:
+        if not os.path.exists(ARCHIVO):
+            return False 
+        
+        encontrado = False
+        arregloVacio = []
+        
+        with open(ARCHIVO, 'r', newline='', encoding='utf-8') as archivo_para_copiar:
+            reader = csv.reader(archivo_para_copiar)
+            
+            for lista in reader:
+                if lista:
+                    try:
+                        
+                        if int(lista[0]) == int(id):
+                            HuespedModel.setId(id) 
+                            nuevo_dato = HuespedModel.importarToCsv()
+                            arregloVacio.append(nuevo_dato)
+                            encontrado = True
+                        else:
+                           
+                            arregloVacio.append(lista)
+                    except ValueError:
+                        arregloVacio.append(lista) 
+                                                        
+       
+        if encontrado:      
+            with open(ARCHIVO, 'w', newline='', encoding='utf-8') as archivo_para_modificiar:
+                writer = csv.writer(archivo_para_modificiar)
+                writer.writerows(arregloVacio)
+            return True
+        else:
+            return False
+
+    except Exception as nombreError:
+        guardarError(f'Error al modificar la lista: {nombreError}')
+        return False
+    
 #--------------------------------------------------------------------------------------------------#
 
 def eliminarLista(id):
-	if not os.path.exists(ARCHIVO):
-		return []
-	
-	encontrado = True
-	arregloLista = []
+    try:
+        if not os.path.exists(ARCHIVO):
+            return False
+        
+        encontrado = False 
+        arregloLista = []
 
-	with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivo_para_leer:
-		reader = csv.reader(archivo_para_leer)
-		
-		for lista in reader:
-			if lista:
-				try:
-					if int(lista[0]) != int(id):
-						arregloLista.append(lista)
-						encontrado = False
-				except ValueError:
-					return None
-	
-	if encontrado == False:
-		with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivo_para_sobreEscribir:
-			writer = csv.writer(archivo_para_sobreEscribir)
-			writer.writerows(arregloLista)
-		return encontrado
-	else:
-		return encontrado
+        with open(ARCHIVO, 'r', newline='', encoding='utf-8') as archivo_para_leer:
+            reader = csv.reader(archivo_para_leer)
+            
+            for lista in reader:
+                if lista:
+                    try:
+                        
+                        if int(lista[0]) == int(id):
+                            encontrado = True 
+                          
+                        else:
+                            arregloLista.append(lista) 
+                    except ValueError:
+                        arregloLista.append(lista)
+        
+      
+        if encontrado:
+            with open(ARCHIVO, 'w', newline='', encoding='utf-8') as archivo_para_sobreEscribir:
+                writer = csv.writer(archivo_para_sobreEscribir)
+                writer.writerows(arregloLista)
+            return True
+        else:
+            return False
 
+    except Exception as nombreError:
+        guardarError(f'Error al eliminar de la lista: {nombreError}')
+        return False
 
 		
 
