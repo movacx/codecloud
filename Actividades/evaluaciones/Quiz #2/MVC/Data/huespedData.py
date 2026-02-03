@@ -5,31 +5,20 @@ from datetime import datetime
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-dir_name = os.path.dirname(os.path.abspath((__file__)))
+dir_name = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.join(dir_name, 'csv', 'huespedData.csv')
-
-LOG_DIR = os.path.join(dir_name, 'log') 
-logFile = os.path.join(LOG_DIR, 'logfile.txt')
-
-#-----------------------------------------------------------------------------------------
+logFile = os.path.join(dir_name, 'log', 'logfile.txt')
 
 def guardarError(errorTexto):
     try:
-    
-        if not os.path.exists(LOG_DIR):
-            os.makedirs(LOG_DIR)
-
         fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         mensaje = f'{fecha} ===> {errorTexto}\n'
         
         with open(logFile, 'a', encoding='utf-8') as file:
-            file.write(mensaje) # Correcto: .write (sin r)
+            file.write(mensaje) 
 
     except Exception as nombreError:
-       
-        print(f'Error CRÍTICO al guardar el log: {nombreError}')
-
-#--------------------------------------------------------------------------------------------------#
+        print(f'Error critico en log: {nombreError}')
 
 def verificarUltimoId():
     if not os.path.exists(ARCHIVO):
@@ -43,7 +32,6 @@ def verificarUltimoId():
         for lista in reader:
             if lista:
                 try:
-                    
                     id_actual = int(lista[0])
                     if id_actual > ultimoId:
                         ultimoId = id_actual
@@ -51,8 +39,6 @@ def verificarUltimoId():
                     continue 
                     
     return ultimoId
-
-#--------------------------------------------------------------------------------------------------#
 
 def agregarListado(HuespedModel):
     try:
@@ -68,8 +54,6 @@ def agregarListado(HuespedModel):
     except Exception as nombreError: 
         guardarError(f'Error al cargar los datos: {nombreError}')
         return False
-
-#--------------------------------------------------------------------------------------------------#
 
 def listarTodos():
     try:
@@ -88,8 +72,6 @@ def listarTodos():
     except Exception as nombreError:
         guardarError(f'Error al mostrar los datos: {nombreError}')
         return []
-
-#--------------------------------------------------------------------------------------------------#
 
 def searchName(nombre):
     try:
@@ -114,10 +96,6 @@ def searchName(nombre):
     except Exception as nombreError:
         guardarError(f'Error al buscar el dato: {nombreError}')
         return []
-    
-
-#--------------------------------------------------------------------------------------------------#
-#--------------------------------------------------------------------------------------------------#
 
 def searchId(id):
     try:
@@ -131,7 +109,6 @@ def searchId(id):
 
             for lista in reader:
                 if lista:
-                  
                     try:
                         if int(lista[0]) == int(id):
                             listaEncontrada.append(lista)
@@ -143,8 +120,6 @@ def searchId(id):
     except Exception as nombreError:
         guardarError(f'Error al buscar por ID: {nombreError}')
         return []
-
-#--------------------------------------------------------------------------------------------------#
 
 def modificarLista(id, HuespedModel): 
     try:
@@ -160,19 +135,16 @@ def modificarLista(id, HuespedModel):
             for lista in reader:
                 if lista:
                     try:
-                        
                         if int(lista[0]) == int(id):
                             HuespedModel.setId(id) 
                             nuevo_dato = HuespedModel.importarToCsv()
                             arregloVacio.append(nuevo_dato)
                             encontrado = True
                         else:
-                           
                             arregloVacio.append(lista)
                     except ValueError:
                         arregloVacio.append(lista) 
                                                         
-       
         if encontrado:      
             with open(ARCHIVO, 'w', newline='', encoding='utf-8') as archivo_para_modificiar:
                 writer = csv.writer(archivo_para_modificiar)
@@ -185,8 +157,6 @@ def modificarLista(id, HuespedModel):
         guardarError(f'Error al modificar la lista: {nombreError}')
         return False
     
-#--------------------------------------------------------------------------------------------------#
-
 def eliminarLista(id):
     try:
         if not os.path.exists(ARCHIVO):
@@ -201,16 +171,13 @@ def eliminarLista(id):
             for lista in reader:
                 if lista:
                     try:
-                        
                         if int(lista[0]) == int(id):
                             encontrado = True 
-                          
                         else:
                             arregloLista.append(lista) 
                     except ValueError:
                         arregloLista.append(lista)
         
-      
         if encontrado:
             with open(ARCHIVO, 'w', newline='', encoding='utf-8') as archivo_para_sobreEscribir:
                 writer = csv.writer(archivo_para_sobreEscribir)
@@ -222,12 +189,3 @@ def eliminarLista(id):
     except Exception as nombreError:
         guardarError(f'Error al eliminar de la lista: {nombreError}')
         return False
-
-		
-
-	
-	
-				
-	
-
-				

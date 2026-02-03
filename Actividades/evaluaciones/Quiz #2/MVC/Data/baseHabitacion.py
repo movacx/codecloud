@@ -2,189 +2,203 @@ import os
 import sys
 import csv
 from datetime import datetime
+from Model.habitacionModel import HabitacionModel
 
-#from Model.habitacionModel import HabitacionModel
-
-sys.stdout.reconfigure(encoding = "utf-8")
+sys.stdout.reconfigure(encoding="utf-8")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.join(BASE_DIR, "csv", "habitacionData.csv")
-LogFile = os.path.join(BASE_DIR, "log", "errores.txt")
-#-----------------------------------------------------------------------------------------#
-def validarUltimoId():
-	if not os.path.exists(ARCHIVO):
-		return 0
-	
-	ultimoId = 0
-	
-	with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoParaLeer:
-		reader = csv.reader(archivoParaLeer)
+logFile = os.path.join(BASE_DIR, "log", "logfile.txt")
 
-		for item in reader:
-			if item:
-				if int(item[0]) > ultimoId:
-					ultimoId = int(item[0])
-			
-	return ultimoId	
-#-----------------------------------------------------------------------------------------#
 def guardarError(errorTexto):
-	try:
-		fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-		with open(LogFile, "a", newline= "", encoding= "utf-8") as file:
-			file.write("f{fecha} --> {errorTexto}\n")
-	except Exception as nombreError:
-		guardarError(f"Error fatal al guardar logs {nombreError} ")
+    try:
+        fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        mensaje = f'{fecha} ===> {errorTexto}\n'
         
-#-----------------------------------------------------------------------------------------#
-def cargar():
-	try:
-		if not os.path.exists(LogFile):
-			return
-		with open(ARCHIVO, "r", encoding="utf-8") as file:
-			reader = csv.reader(file)
-			for numero, tipo, precio, estado in reader:
-				self.habitaciones.append(Habitacion(numero, tipo, precio, estado))
-           
-	except Exception as nombreError:
-		guardarError(f"Error fatal al guardar logs {nombreError} ")
-#-----------------------------------------------------------------------------------------#           
+        with open(logFile, 'a', encoding='utf-8') as file:
+            file.write(mensaje) 
+
+    except Exception as nombreError:
+        print(f'Error critico en log: {nombreError}')
+
+def validarUltimoId():
+    if not os.path.exists(ARCHIVO):
+        return 0
+    
+    ultimoId = 0
+    
+    with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoParaLeer:
+        reader = csv.reader(archivoParaLeer)
+
+        for item in reader:
+            if item:
+                try:
+                    id_actual = int(item[0])
+                    if id_actual > ultimoId:
+                        ultimoId = id_actual
+                except ValueError:
+                    continue
+            
+    return ultimoId 
+
 def registrarHabitacion(Habitacion):
-	try:
-		idQuemado = validarUltimoId()
-		ultimoId = idQuemado + 1
-		
-		Habitacion.setIde(ultimoId)
-		
-		with open(ARCHIVO, "a", newline="", encoding = "utf-8") as archivoParaGuardar:
-			writer = csv.writer(archivoParaGuardar)
-			writer.writerow(Habitacion.importarToCsv())
-	except Exception as nombreError:
-		guardarError(f"Error fatal al guardar logs {nombreError} ")
-#-----------------------------------------------------------------------------------------#
+    try:
+        idQuemado = validarUltimoId()
+        ultimoId = idQuemado + 1
+        
+        Habitacion.setIde(ultimoId)
+        
+        with open(ARCHIVO, "a", newline="", encoding = "utf-8") as archivoParaGuardar:
+            writer = csv.writer(archivoParaGuardar)
+            writer.writerow(Habitacion.importarToCsv())
+            return True
+
+    except Exception as nombreError:
+        guardarError(f'Error al registrar habitacion: {nombreError}')
+        return False
+        
 def listarHabitaciones():
-	try:
-		if not os.path.exists(ARCHIVO):
-			return 0 
-		listaVacia = [ ]
-		
-		with open(ARCHIVO, "r", newline= "", encoding= "utf-8") as archivoParaLeer:
-			reader = csv.reader(archivoParaLeer)
-			
-			for item in reader:
-				listaVacia.append(item)
-				
-		return listaVacia
-	except Exception as nombreError:
-		guardarError("fError fatal al listar habitaciones {nombreError} ")
-#-----------------------------------------------------------------------------------------#
+    try:
+        if not os.path.exists(ARCHIVO):
+            return []
+        
+        listaVacia = []
+        
+        with open(ARCHIVO, "r", newline= "", encoding= "utf-8") as archivoParaLeer:
+            reader = csv.reader(archivoParaLeer)
+            
+            for item in reader:
+                if item:
+                    listaVacia.append(item)
+                
+        return listaVacia
+
+    except Exception as nombreError:
+        guardarError(f'Error al listar habitaciones: {nombreError}')
+        return []
+
 def buscarHabitacionId(id):
-	try:
-		if not os.path.exists(ARCHIVO):
-			return 0
-		
-		encontrado = False 
-		habitacionEncontrada = [ ]
-		with open(ARCHIVO, "r", newline="", encoding= "utf-8") as archivoParaLeer:
-			reader = csv.reader(archivoParaLeer)
-			
-			for item in reader:
-				if item:
-					if int(item[0]) == int(id):
-						encontrado = True 
-						habitacionEncontrada.append(item)
-		return habitacionEncontrada
-	except Exception as nombreError:
-		guardarError("fError fatal al buscar habitaciones {nombreError} ")
-#-----------------------------------------------------------------------------------------#
-def modificar(id, estado):
-	try:
-		if not os.path.exists(ARCHIVO):
-			return []
-		
-		encontrado = False
-		arregloVacio = []
-		
-		with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivoParaLeer:
-			reader = csv.reader(archivoParaLeer)
-			
-			for item in reader:
-				if item:
-					
-						if int(item[0]) == int(id):
-							item[4] = estado 
-							arregloVacio.append(item)
-							encontrado = True
-						else:
-							arregloVacio.append(item)
-														
-		if encontrado == True:		
-			with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivoParaEscribir:
-				writer = csv.writer(archivoParaEscribir)
-				writer.writerows(arregloVacio)
-			return encontrado
-		else:
-			return encontrado
-	except Exception as nombreError:
-		guardarError("fError fatal al modificar habitaciones {nombreError} ")
+    try:
+        if not os.path.exists(ARCHIVO):
+            return []
+        
+        habitacionEncontrada = []
+        with open(ARCHIVO, "r", newline="", encoding= "utf-8") as archivoParaLeer:
+            reader = csv.reader(archivoParaLeer)
+            
+            for item in reader:
+                if item:
+                    try:
+                        if int(item[0]) == int(id):
+                            habitacionEncontrada.append(item)
+                    except ValueError:
+                        continue
+        return habitacionEncontrada
 
-#-----------------------------------------------------------------------------------------#	
+    except Exception as nombreError:
+        guardarError(f'Error al buscar habitacion por ID: {nombreError}')
+        return []
+
+def modificar(id, estado): 
+    try:
+        if not os.path.exists(ARCHIVO):
+            return False
+        
+        encontrado = False
+        arregloVacio = []
+        
+        with open(ARCHIVO,'r',newline='',encoding='utf-8') as archivoParaLeer:
+            reader = csv.reader(archivoParaLeer)
+            
+            for item in reader:
+                if item:
+                    try:
+                        if int(item[0]) == int(id):
+                            item[4] = estado
+                            arregloVacio.append(item)
+                            encontrado = True
+                        else:
+                            arregloVacio.append(item)
+                    except ValueError:
+                        arregloVacio.append(item)
+                                                        
+        if encontrado:      
+            with open(ARCHIVO,'w',newline='',encoding='utf-8') as archivoParaEscribir:
+                writer = csv.writer(archivoParaEscribir)
+                writer.writerows(arregloVacio)
+            return True
+        else:
+            return False
+
+    except Exception as nombreError:
+        guardarError(f'Error al modificar estado habitacion: {nombreError}')
+        return False
+
 def eliminarHabitacion(idHabitacion):
-	try:
-		if not os.path.exists(ARCHIVO):
-			return [ ]
-		
-		arregloVacio = [ ]
-		encontrado = False
-		with open(ARCHIVO, "r", newline= "", encoding = "utf-8") as archivoParaLeer:
-			reader = csv.reader(archivoParaLeer)
-			
-			for item in reader:
-				if int(item[0]) != int(idHabitacion):
-					arregloVacio.append(item)
-				else:
-					encontrado = True
-		if encontrado == True:
-			with open(ARCHIVO,"w", newline="", encoding = "utf-8") as archivoParaEscribir:
-				writer = csv.writer(archivoParaEscribir)
-				writer.writerows(arregloVacio)
-				return encontrado
-		else:
-			return encontrado
-	except  Exception as nombreError:
-		guardarError("fError fatal al modificar habitaciones {nombreError} ")
+    try:
+        if not os.path.exists(ARCHIVO):
+            return False
+        
+        arregloVacio = []
+        encontrado = False
 
+        with open(ARCHIVO, "r", newline= "", encoding = "utf-8") as archivoParaLeer:
+            reader = csv.reader(archivoParaLeer)
+            
+            for item in reader:
+                if item:
+                    try:
+                        if int(item[0]) == int(idHabitacion):
+                            encontrado = True
+                        else:
+                            arregloVacio.append(item)
+                    except ValueError:
+                        arregloVacio.append(item)
 
-#-----------------------------------------------------------------------------------------#	
+        if encontrado:
+            with open(ARCHIVO,"w", newline="", encoding = "utf-8") as archivoParaEscribir:
+                writer = csv.writer(archivoParaEscribir)
+                writer.writerows(arregloVacio)
+            return True
+        else:
+            return False
+
+    except Exception as nombreError:
+        guardarError(f'Error al eliminar habitacion: {nombreError}')
+        return False
 
 def ordenarPrecio():
-    listaHabitaciones = listarHabitaciones()
-    listaTemporalOrden = []
+    try:
+        listaHabitaciones = listarHabitaciones()
+        listaTemporalOrden = []
 
-    for item in listaHabitaciones:
-        listaTemporalOrden.append([
-            float(item[3]), 
-            item[0],
-            item[1],
-            item[2],
-            item[4]
-        ]) 
+        for item in listaHabitaciones:
+            try:
+                listaTemporalOrden.append([
+                    float(item[3]),
+                    item[0],
+                    item[1],
+                    item[2],
+                    item[4]
+                ]) 
+            except ValueError:
+                continue
 
-    listaTemporalOrden.sort()
+        listaTemporalOrden.sort()
 
-    listaHabitacionesOrdenadas = []
+        listaHabitacionesOrdenadas = []
 
-    for item in listaTemporalOrden:
-        listaHabitacionesOrdenadas.append([
-            item[1],
-            item[2],
-            item[3],
-            item[0],
-            item[4]
-        ])
+        for item in listaTemporalOrden:
+            listaHabitacionesOrdenadas.append([
+                item[1],
+                item[2],
+                item[3],
+                item[0],
+                item[4]
+            ])
 
-    return listaHabitacionesOrdenadas
+        return listaHabitacionesOrdenadas
 
-#-----------------------------------------------------------------------------------------#	
-
-
-					
+    except Exception as nombreError:
+        guardarError(f'Error al ordenar habitaciones: {nombreError}')
+        return []
