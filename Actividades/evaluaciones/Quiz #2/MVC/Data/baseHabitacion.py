@@ -3,7 +3,7 @@ import sys
 import csv
 from datetime import datetime
 
-from Model.habitacionModel import HabitacionModel
+#from Model.habitacionModel import HabitacionModel
 
 sys.stdout.reconfigure(encoding = "utf-8")
 
@@ -29,25 +29,24 @@ def validarUltimoId():
 #-----------------------------------------------------------------------------------------#
 def guardarError(errorTexto):
 	try:
-		fecha = datatime.now().strftime("%Y-%m-%d %H:%M:%S")
+		fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 		with open(LogFile, "a", newline= "", encoding= "utf-8") as file:
 			file.write("f{fecha} --> {errorTexto}\n")
 	except Exception as nombreError:
-    guardarError(f"Error fatal al guardar logs {nombreError} ")
+		guardarError(f"Error fatal al guardar logs {nombreError} ")
         
 #-----------------------------------------------------------------------------------------#
 def cargar():
 	try:
-             if not os.path.exists(LogFile):
-                return
-            with open(ARCHIVO, "r", encoding="utf-8") as file:
-                reader = csv.reader(file)
-                for numero, tipo, precio, estado in reader:
-                    self.habitaciones.append(Habitacion(numero, tipo, precio, estado))
+		if not os.path.exists(LogFile):
+			return
+		with open(ARCHIVO, "r", encoding="utf-8") as file:
+			reader = csv.reader(file)
+			for numero, tipo, precio, estado in reader:
+				self.habitaciones.append(Habitacion(numero, tipo, precio, estado))
            
-        except Exception as nombreError:
-            self.guardarError(f"Error cargando los datos de la habitacion {nombreError}")
-            vista.mensaje( f"(X) Error cargando los datos de la habitacion")
+	except Exception as nombreError:
+		guardarError(f"Error fatal al guardar logs {nombreError} ")
 #-----------------------------------------------------------------------------------------#           
 def registrarHabitacion(Habitacion):
 	try:
@@ -59,8 +58,8 @@ def registrarHabitacion(Habitacion):
 		with open(ARCHIVO, "a", newline="", encoding = "utf-8") as archivoParaGuardar:
 			writer = csv.writer(archivoParaGuardar)
 			writer.writerow(Habitacion.importarToCsv())
-	except Exception as nombreError.
-		guardarError("fError fatal al registrar habitacion {nombreError} ")
+	except Exception as nombreError:
+		guardarError(f"Error fatal al guardar logs {nombreError} ")
 #-----------------------------------------------------------------------------------------#
 def listarHabitaciones():
 	try:
@@ -75,7 +74,7 @@ def listarHabitaciones():
 				listaVacia.append(item)
 				
 		return listaVacia
-	except Exception as nombreError.
+	except Exception as nombreError:
 		guardarError("fError fatal al listar habitaciones {nombreError} ")
 #-----------------------------------------------------------------------------------------#
 def buscarHabitacionId(id):
@@ -125,7 +124,7 @@ def modificar(id, estado):
 			return encontrado
 		else:
 			return encontrado
-	except Exception as nombreError.
+	except Exception as nombreError:
 		guardarError("fError fatal al modificar habitaciones {nombreError} ")
 
 #-----------------------------------------------------------------------------------------#	
@@ -151,7 +150,7 @@ def eliminarHabitacion(idHabitacion):
 				return encontrado
 		else:
 			return encontrado
-	except  Exception as nombreError.
+	except  Exception as nombreError:
 		guardarError("fError fatal al modificar habitaciones {nombreError} ")
 
 
