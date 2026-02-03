@@ -34,7 +34,7 @@ def guardarError(errorTexto):
 			file.write("f{fecha} --> {errorTexto}\n")
 			
 	except Exception as nombreError:
-	guardarError("fError fatal al guardar logs {nombreError} ")
+        guardarError("fError fatal al guardar logs {nombreError} ")
 #-----------------------------------------------------------------------------------------#
 def cargar():
 	try:
