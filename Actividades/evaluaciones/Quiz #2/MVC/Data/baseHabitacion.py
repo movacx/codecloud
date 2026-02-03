@@ -32,9 +32,9 @@ def guardarError(errorTexto):
 		fecha = datatime.now().strftime("%Y-%m-%d %H:%M:%S")
 		with open(LogFile, "a", newline= "", encoding= "utf-8") as file:
 			file.write("f{fecha} --> {errorTexto}\n")
-			
 	except Exception as nombreError:
-        guardarError("fError fatal al guardar logs {nombreError} ")
+    guardarError(f"Error fatal al guardar logs {nombreError} ")
+        
 #-----------------------------------------------------------------------------------------#
 def cargar():
 	try:
