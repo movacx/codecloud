@@ -169,7 +169,25 @@ def menuReservas():
 
         except ValueError:
             vista.mostrarMensaje("Ingrese opciones validas [0-5]\n")
+            
+#-------------------------------------------[MENU DE Reportes!]----------------------------------------------------------------#
+def menuReportes():
+    cerrar True
+    while cerrar:
+        try:
+            print('\n--- GESTIÓN DE REPORTES ---')
+            print('1.Reportes de habitaciones disponibles | 2.Reporte de habitaciones ocupadas   | 3.Reporte de reservas activas | 0.Salir')
 
+            elif op == 0:
+                vista.mostrarMensaje("Saliendo..")
+                cerrar = False
+                break
+
+            else:
+                vista.mostrarMensaje("Opcion invalida")
+
+        except ValueError:
+            vista.mostrarMensaje("Ingrese opciones validas [0-3]\n")
 #-------------------------------------------[Fin!]----------------------------------------------------------------#
 
 if __name__ == "__main__":
