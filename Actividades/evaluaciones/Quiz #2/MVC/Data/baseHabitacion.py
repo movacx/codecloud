@@ -60,7 +60,7 @@ def registrarHabitacion(Habitacion):
 			writer = csv.writer(archivoParaGuardar)
 			writer.writerow(Habitacion.importarToCsv())
 	except Exception as nombreError.
-		print("fError fatal al guardar logs {nombreError} ")
+		guardarError("fError fatal al guardar logs {nombreError} ")
 		
 #-----------------------------------------------------------------------------------------#
 def listarHabitaciones():
