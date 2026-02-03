@@ -172,12 +172,19 @@ def menuReservas():
             
 #-------------------------------------------[MENU DE Reportes!]----------------------------------------------------------------#
 def menuReportes():
-    cerrar True
+    cerrar = True
     while cerrar:
         try:
             print('\n--- GESTIÓN DE REPORTES ---')
-            print('1.Reportes de habitaciones disponibles | 2.Reporte de habitaciones ocupadas   | 3.Reporte de reservas activas | 0.Salir')
-
+            print('1.Reportes de habitaciones disponibles | 2.Reporte de habitaciones ocupadas  | 3.Reporte de reservas activas | 0.Salir')
+            op = int(input('Input: '))
+            
+            elif op == 1:
+                
+            elif op == 2:
+                
+            elif op == 3:
+            
             elif op == 0:
                 vista.mostrarMensaje("Saliendo..")
                 cerrar = False
