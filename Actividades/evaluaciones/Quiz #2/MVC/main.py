@@ -14,7 +14,8 @@ def main():
             1. Gestión de Habitaciones
             2. Gestión de Huéspedes
             3. Gestión de Reservas
-            4. Salir
+            4. Reportes Basicos
+            5. Salir
             """)
 
         op = input("Seleccione: ")
@@ -25,8 +26,11 @@ def main():
 
         elif op == "3":
             menuReservas()
-
+            
         elif op == "4":
+            menuReportes()
+
+        elif op == "5":
             break
         else:
             vista.mostrarMensaje('opcion invalida')
