@@ -8,7 +8,7 @@ sys.stdout.reconfigure(encoding = "utf-8")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.join(BASE_DIR, "csv", "habitacionData.csv")
-
+LogFile = os.path.join(BASE_DIR, "log", "errores.txt")
 #-----------------------------------------------------------------------------------------#
 def validarUltimoId():
 	if not os.path.exists(ARCHIVO):
@@ -25,6 +25,32 @@ def validarUltimoId():
 					ultimoId = int(item[0])
 			
 	return ultimoId	
+#-----------------------------------------------------------------------------------------#
+def guardarError(errorTexto):
+	try:
+		fecha = datatime.now().strftime("%Y-%m-%d %H:%M:%S")
+		with open(LogFile, "a", newline= "", encoding= "utf-8") as file
+			file.write("f{fecha} --> {errorTexto}\n")
+			
+	except Exception as nombreError.
+	print("fError fatal al guardar logs {nombreError} ")
+#-----------------------------------------------------------------------------------------#
+	def cargar():
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
 #-----------------------------------------------------------------------------------------#
 def registrarHabitacion(Habitacion):
 	idQuemado = validarUltimoId()
