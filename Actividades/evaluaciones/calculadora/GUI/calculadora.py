@@ -78,7 +78,7 @@ datoResultado.grid(row=3, column=1, padx=1, pady=1)
 
 #-----------------------------------------------
 
-#+       -          /            *
+#
 
 tkGUI.Button(ventanaGUI, text="Sumar", command=sumar).grid(row=4, column=0)
 
@@ -90,7 +90,6 @@ tkGUI.Button(ventanaGUI, text="Multiplicar", command=sumar).grid(row=4, column=2
 
 #-----------------------------------------------
 
-#raiz    !         potencia
 
  
 
