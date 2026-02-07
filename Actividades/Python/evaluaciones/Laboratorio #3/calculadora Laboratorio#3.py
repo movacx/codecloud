@@ -91,4 +91,5 @@ tkGUI.Button(ventanaGUI, text = "Dividir", command = dividir).grid(row = 2, colu
 tkGUI.Button(ventanaGUI, text = "Factorial", command = calcularFactorial).grid(row = 4, column = 0)
 tkGUI.Button(ventanaGUI, text = "Raiz", command = calcularRaiz).grid(row = 2, column = 2)
 tkGUI.Button(ventanaGUI, text = "Elevar al cuadrado", command = elevarNumeroCuadrado).grid(row = 3, column = 2)
+
 ventanaGUI.mainloop( )
