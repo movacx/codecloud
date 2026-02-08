@@ -12,12 +12,8 @@ panel.grid(row=6,column=0, columnspan=2)
 ventana.columnconfigure(0, weight = 0)
 ventana.columnconfigure(1, weight = 1)
 
-
-
-
 #================================= [ Configuracion del titulo ] #================================= 
 tkGUI.Label(ventana, text = 'Registro Estudiantes', font = ('Arial', 14)).grid(row = 0, column = 0, columnspan = 2, sticky = 'ew', pady = 20)
-
 
 #================================= [ Configuracion de labels ] #================================= 
 tkGUI.Label(ventana, text = 'Nombre:', font = ('Arial', 14)).grid(row = 1, column = 0, sticky = 'w', padx = 10)
@@ -39,7 +35,6 @@ promedio_txt = tkGUI.Entry(ventana, width = 40)
 promedio_txt.grid(row=4,column=1,sticky='ew',ipady=5, padx = (1,100))
 
 #================================= [ Configuracion de botones] #=================================
-
 
 guardar_btn = tkGUI.Button(panel, text = 'Guardar', width = 10).grid(row = 0, column = 0, padx = 5)
 buscar_btn = tkGUI.Button(panel, text = 'Buscar', width = 10).grid(row=0,column=1, padx = 5)
