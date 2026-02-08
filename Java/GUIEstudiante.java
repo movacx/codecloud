@@ -15,17 +15,14 @@ public class GUIEstudiante extends JFrame
 	public GUIEstudiante()
 	{
 		super("Ventana");
-		
 		lblCarnet = new JLabel("Carnet:");					
 		lblNombre = new JLabel("Nombre:");					
 		lblCarrera = new JLabel("Carrera:");					
 		lblPromedio = new JLabel("Promedio:");				
-		
 		txtCarnet = new JTextField();					
 		txtNombre = new JTextField();				
 		txtCarrera = new JTextField();					
 		txtPromedio = new JTextField();
-		
 		btnGuardar = new JButton("Guardar");					
 		btnBuscar = new JButton("Buscar");				
 		btnModificar = new JButton("Modificar");					
@@ -34,7 +31,6 @@ public class GUIEstudiante extends JFrame
 		btnSalir = new JButton("Salir");				
 
 		setLayout(null); /* set.bounds(horizontal, vertical, alto, largo);*/
-		
 		lblCarnet.setBounds(30,10,150,30);					
 		lblNombre.setBounds(30,50,150,30);				
 		lblCarrera.setBounds(30,95,150,30);					
@@ -69,6 +65,11 @@ public class GUIEstudiante extends JFrame
 		add(btnLimpiar);
 		add(btnSalir);
 		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setSize(600,400);
+		setVisible(true);
+
 		btnGuardar.addActionListener(manejador);
 		btnBuscar.addActionListener(manejador);
 		btnModificar.addActionListener(manejador);
@@ -76,10 +77,7 @@ public class GUIEstudiante extends JFrame
 		btnLimpiar.addActionListener(manejador);
 		btnSalir.addActionListener(manejador);
 		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);
-		setSize(600,400);
-		setVisible(true);
+
 		
 	}
 	
