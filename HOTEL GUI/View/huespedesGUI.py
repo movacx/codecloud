@@ -13,9 +13,7 @@ class HuespedGUI:
         
     def formularioCrear(self):
         # Fila 0: ID (Solo lectura/informativo)
-        tk.Label(self.frame_contenedor, text="ID Huésped:").grid(row=0, column=0, sticky="e", pady=5)
-        self.lbl_id_autogenerado = tk.Label(self.frame_contenedor, text="Pendiente de asignar...", fg="blue")
-        self.lbl_id_autogenerado.grid(row=0, column=1, sticky="w", pady=5)
+
         
         # Fila 1: Nombre Completo
         tk.Label(self.frame_contenedor, text="Nombre del Huésped:").grid(row=1, column=0, sticky="e", pady=5)

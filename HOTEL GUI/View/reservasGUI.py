@@ -12,9 +12,7 @@ class ReservaGUI:
         self.formularioCrear()
         
     def formularioCrear(self):
-        tk.Label(self.frame_contenedor, text="Folio de Reserva:").grid(row=0, column=0, sticky="e", pady=5)
-        self.lbl_folio_reserva = tk.Label(self.frame_contenedor, text="000-NEW", font=("Arial", 9, "bold"))
-        self.lbl_folio_reserva.grid(row=0, column=1, sticky="w", pady=5)
+
         
         tk.Label(self.frame_contenedor, text="Numero Habitacion:").grid(row=1, column=0, sticky="e", pady=5)
         self.ent_asig_habitacion = tk.Entry(self.frame_contenedor)
