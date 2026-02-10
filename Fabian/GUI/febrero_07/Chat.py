@@ -91,14 +91,7 @@ class MuestrarioWidgetsGrid(tk.Tk):
         self.combo.current(0)
         self.combo.grid(row=12, column=0, sticky="ew") # sticky="ew" para que llene el ancho
 
-    def _crear_menu_bar(self):
-        barra_menu = tk.Menu(self)
-        self.config(menu=barra_menu)
-        menu_archivo = tk.Menu(barra_menu, tearoff=0)
-        menu_archivo.add_command(label="Nuevo")
-        menu_archivo.add_separator()
-        menu_archivo.add_command(label="Salir", command=self.quit)
-        barra_menu.add_cascade(label="8. Menú", menu=menu_archivo)
+
 
     def accion_boton(self):
         info = self.entrada.get()

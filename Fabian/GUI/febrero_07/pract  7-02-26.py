@@ -46,4 +46,3 @@ salir_btn = tkGUI.Button(panel, text = 'Salir', width = 10).grid(row=0,column=5,
 #================================= [ Mostrar la ventana ] #================================= 
 ventana.mainloop()
 
-
