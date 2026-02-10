@@ -84,12 +84,3 @@ tkGUI.Button(nuevo_contenedor, text = '(=)', font = font_sans, width = 3).grid(r
 
 #Mostrar la ventana
 ventana.mainloop()
-
-# def _crear_menu_bar(self):
-#     barra_menu = tk.Menu(self)
-#     self.config(menu=barra_menu)
-#     menu_archivo = tk.Menu(barra_menu, tearoff=0)
-#     menu_archivo.add_command(label="Nuevo")
-#     menu_archivo.add_separator()
-#     menu_archivo.add_command(label="Salir", command=self.quit)
-#     barra_menu.add_cascade(label="8. Menú", menu=menu_archivo)
