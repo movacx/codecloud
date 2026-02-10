@@ -1,7 +1,7 @@
 import tkinter as tk
 
-class ReportesGUI:
-    def __init__(self, mainHuesped)
+class ReservasGUI:
+    def __init__(self, mainReservas)
     self.baseMainGUI = FormularioGUI.Toplevel(baseMainGUI)
-        self.baseMainGUI.title("Reportes Base")
+        self.baseMainGUI.title("Reservas Base")
         self.baseMainGUI.geometry("900x950")
