@@ -44,10 +44,12 @@ class calculadora:
         #Establecer TextArea
         self.pantalla_historial = textArea.ScrolledText(self.contenedor, height = 15, width = 40, bg= 'dimgray')
         self.pantalla_historial.grid(row=0, column=0, sticky='ew')
+        self.pantalla_historial.config(state='disabled') 
 
         
         self.input_texto = tk.Entry(self.contenedor, width = 1)
         self.input_texto.grid(row=1, column=0, sticky='ew', ipady=8, padx = 5)
+        self.input_texto.config(state = 'disabled')
 
     def pad(self):
 
@@ -79,9 +81,17 @@ class calculadora:
 
 
     def actualizar_pantalla(self, texto):
+        self.input_texto.config(state = 'normal')
         self.input_texto.delete(0, tk.END)
         self.input_texto.insert(0, texto)
+        self.input_texto.config(state = 'readonly') #Nota: Es casi que lo mismo que disabled sinembargo la diferencia es que readonly bloquea el campo de texto pero no lo pone gris.
 
-    def mostrar_historial(self, texto):
-        self.pantalla_historial.insert(tk.END, texto + '\n')
-        self.pantalla_historial.inser(tk.END)
+    def agregar_al_historial(self, texto):
+        # 1. DESBLOQUEAR
+        self.pantalla_historial.config(state='normal')
+        
+        self.pantalla_historial.insert(tk.END, texto + "\n")
+        self.pantalla_historial.see(tk.END)
+        
+        # 3. BLOQUEAR OTRA VEZ
+        self.pantalla_historial.config(state='disabled')

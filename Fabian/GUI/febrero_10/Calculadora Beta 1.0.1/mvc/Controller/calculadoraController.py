@@ -90,7 +90,7 @@ class Controller:
 
             imprimir = f'{self.num_guardado} + {segundo_numero} = {resultado}'
 
-            self.GUI.mostrar_historial(imprimir)
+            self.GUI.agregar_al_historial(imprimir)
 
         elif matchButton == 'C':
             self.texto_actual = ''
