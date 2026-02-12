@@ -4,7 +4,7 @@ from datetime import datetime
 
 dir_data = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.abspath(os.path.join(dir_data, 'csv', 'historial.csv'))
-LOG = os.path.abspath(os.path.join(dir_data, 'Logs', 'log.csv'))
+LOG = os.path.abspath(os.path.join(dir_data, 'Logs', 'log.txt'))
 
 class Data:
     def __init__(self):
