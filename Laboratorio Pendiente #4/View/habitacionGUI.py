@@ -8,6 +8,8 @@ class HabitacionGUI:
         self.ventanaHija.geometry("700x300")
      
         self.manejoController = habitacionesController
+
+
         self.frameContenedor = tk.Frame(self.ventanaHija)
         self.frameContenedor.grid(row=0, column=0, padx=20, pady=20)
         
@@ -54,13 +56,18 @@ class HabitacionGUI:
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white")
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
         
+
+
+
 def main():
-	root = tk.Tk()
+	root = tk.Tk() #ventana padre = root | como si fuera la ventana del main
 	app = HabitacionGUI(root, None )
 	root.mainloop()
 	
+
+
 if __name__ == "__main__":
-	main()
+    main()
 	
 	
 
