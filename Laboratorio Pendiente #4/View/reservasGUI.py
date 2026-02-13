@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from tkinter import ttk
 class ReservaGUI:
     def __init__(self, ventana_padre, controller):
         self.manejoController=controller
@@ -11,6 +11,7 @@ class ReservaGUI:
         self.frame_contenedor.grid(row=0, column=0, padx=20, pady=20)
         
         self.formularioCrear()
+        self.table()
         
     def formularioCrear(self):
 
@@ -37,7 +38,7 @@ class ReservaGUI:
         
     def table(self):
         self.columnas = ["id", "numeroHabitacion", "idHuesped", "fechaEntrada", "fechaSalida",]
-        self.tabla = ttk.Treeview(self.contenedor, columns= self.columnas, show="headings" )
+        self.tabla = ttk.Treeview(self.frame_contenedor, columns= self.columnas, show="headings" )
         
 
         for items in self.columnas:
