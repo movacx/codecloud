@@ -1,7 +1,8 @@
 import tkinter as tk
 
 class ReservaGUI:
-    def __init__(self, ventana_padre):
+    def __init__(self, ventana_padre, controller):
+        self.manejoController=controller
         self.ventana_hija = tk.Toplevel(ventana_padre)
         self.ventana_hija.title("Gestion de Reservaciones")
         self.ventana_hija.geometry("400x350")

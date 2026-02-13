@@ -23,16 +23,3 @@ class ReportesGUI:
         barra_menu.add_cascade(label="Menu de Reportes", menu=self.menu_desplegable)
         
         self.ventana.config(menu=barra_menu)
-
-def main():
-    root = tk.Tk()
-    root.title("Ventana Principal")
-    root.geometry("300x200")
-    
-    btn = tk.Button(root, text="Abrir Reportes", command=lambda: ReportesGUI(root,None))
-    btn.pack(pady=50)
-    
-    root.mainloop()
-
-if __name__ == '__main__':
-    main()
