@@ -1,7 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox
 
 class HuespedGUI:
+
     def __init__(self, root, controller):
         self.manejoController = controller
         self.ventanaHuesped = tk.Toplevel(root)
@@ -27,7 +29,7 @@ class HuespedGUI:
         separador = ' '
         tk.Label(self.contenedor, text="Nombre del Huesped:").grid(row=1, column=0, sticky="e", pady=5)
         tk.Label(self.contenedor, text="Telefono de Contacto:").grid(row=2, column=0, sticky="e", pady=5)
-        tk.Label(self.contenedor, text= separador).grid(row=4, column=1, sticky="e", pady=5)
+        tk.Label(self.contenedor, text= separador).grid(row=4, column=1)
 
     def entry(self):
         self.ent_nombre_huesped = tk.Entry(self.contenedor, width=25)
@@ -37,7 +39,7 @@ class HuespedGUI:
         self.ent_telefono_huesped.grid(row=2, column=1, pady=5, columnspan = 3,sticky = 'ew')
 
     def buttons(self):
-       tk.Button(self.contenedor, text="Registrar Huesped").grid(row=3, column = 0)
+       tk.Button(self.contenedor, text="Registrar Huesped", command = lambda: self.manejoController.agregarHuesped()).grid(row=3, column = 0)
        tk.Button(self.contenedor, text="Buscar Huesped").grid(row=3, column = 1, sticky = 'ew')
        tk.Button(self.contenedor, text="Limpiar").grid(row=3, column = 2, sticky = 'ew')
 
@@ -53,11 +55,17 @@ class HuespedGUI:
 
 #=================================================================================================================#
 
+    def mostrarMensajes(self, mensaje):
+        messagebox.showinfo('Dialog', f'{mensaje}')
+    
+    def cargarDatos(self, id, nombre, telefono):
+        self.tabla.insert('', tk.END, values=(id, nombre, telefono))
 
-def main():
-    root = tk.Tk()
-    app = HuespedGUI(root, None)
-    root.mainloop()
 
-if __name__ == '__main__':
-    main()
+# def main():
+#     root = tk.Tk()
+#     app = HuespedGUI(root, None)
+#     root.mainloop()
+
+# if __name__ == '__main__':
+#     main()
