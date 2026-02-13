@@ -1,7 +1,7 @@
 from View.huespedesGUI import HuespedGUI
 from Model.huespedModel import HuespedModel
 import Data.huespedData as data
-
+from tkinter import messagebox
 
 class HuespedController:
 
@@ -12,7 +12,7 @@ class HuespedController:
 
     def botonClickeado(self, boton):
          if boton == 'x':
-              print('el usuario toco un boton')
+              print('Hola mundo')
 
 
     def obtenerId(self):
