@@ -1,12 +1,7 @@
 import tkinter as tk
-from View.storeGUI import StoreGUI
 from View.loginGUI import VentanaLogin
 
 def main():
-
-    
-
-
     root = tk.Tk()
     app = VentanaLogin(root, None)
     root.mainloop()

@@ -7,8 +7,9 @@ class VentanaLogin:
     def __init__(self, root, controller):
         #====================== [Referenciar el controller =====================
         self.manejoController = controller
+        self.root = root
         #====================== [Establecer Ventana] =====================
-        self.ventana = root
+        self.ventana = tk.Toplevel(root)
         self.ventana.title('Login Intelek')
         self.ventana.geometry('1080x720')
         self.ventana.configure(bg = "#0D5577")
@@ -37,10 +38,13 @@ class VentanaLogin:
 
 
     def Buttons(self):
-        ingresarBtn = tk.Button(self.contenedor, text = 'Crear Cuenta', font = sans9, fg = 'white', bg = "#4E5052").grid(row = 4, column = 0, pady = 20)
-        olvidePassBtn = tk.Button(self.contenedor, text = 'Ingresar', font = sans9, ).grid(row = 4, column = 1, padx = (30,0))
-        registrarsebtn = tk.Button(self.contenedor, text = 'Olvide mi contraseña', font = sans9, fg = 'white', bg = "#820909").grid(row = 4, column = 2, columnspan = 2, padx = (10,0))
+        ingresarBtn = tk.Button(self.contenedor, text = 'Crear Cuenta', font = sans9, fg = 'white', bg = "#4E5052", bd=0).grid(row = 4, column = 0, pady = 20)
+        olvidePassBtn = tk.Button(self.contenedor, text = 'Ingresar', font = sans9, bd = 0).grid(row = 4, column = 1, padx = (30,0))
+        registrarsebtn = tk.Button(self.contenedor, text = 'Olvide mi contraseña', font = sans9, fg = 'white', bg = "#820909", bd=0).grid(row = 4, column = 2, columnspan = 2, padx = (10,0))
+        #command = lambda: storeGUI.Tienda(self.root, None) 
 #bg="#2C3E50", fg="white"
+
+
 def main():
     root = tk.Tk()
     app = VentanaLogin(root, None)
