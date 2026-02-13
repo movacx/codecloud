@@ -1,43 +1,62 @@
 import tkinter as tk
+from tkinter import ttk
 
 class HuespedGUI:
-    def __init__(self, ventana_padre):
-        self.ventana_hija = tk.Toplevel(ventana_padre)
-        self.ventana_hija.title("Registro de Huespedes")
-        self.ventana_hija.geometry("500x400")
-        
-        self.frame_contenedor = tk.Frame(self.ventana_hija)
-        self.frame_contenedor.grid(row=0, column=0, padx=20, pady=20)
-        
-        self.formularioCrear()
+    def __init__(self, root, controller):
+        self.manejoController = controller
+        self.ventanaHuesped = tk.Toplevel(root)
+        self.ventanaHuesped.title("Registro de Huespedes")
+        self.ventanaHuesped.geometry("600x500")
+        self.ventanaHuesped.columnconfigure(0, weight = 1)
         
 
+        self.contenedor = tk.Frame(self.ventanaHuesped)
+        self.contenedor.grid(row=0, column=0, padx=20, pady=20, sticky = 'nswe')
+        self.contenedor.columnconfigure(0, weight = 0)
+        self.contenedor.columnconfigure(1, weight = 1)
+        self.contenedor.columnconfigure(2, weight = 0)
+        self.contenedor.rowconfigure(5, weight = 1)
+        
+        self.labels()
+        self.entry()
+        self.buttons()
+        self.table()
+        
+#=========================================[ FIN CONSTRUCTOR ]==============================================#
     def labels(self):
-        tk.Label(self.frame_contenedor, text="Nombre del Huesped:").grid(row=1, column=0, sticky="e", pady=5)
+        separador = ' '
+        tk.Label(self.contenedor, text="Nombre del Huesped:").grid(row=1, column=0, sticky="e", pady=5)
+        tk.Label(self.contenedor, text="Telefono de Contacto:").grid(row=2, column=0, sticky="e", pady=5)
+        tk.Label(self.contenedor, text= separador).grid(row=4, column=1, sticky="e", pady=5)
 
     def entry(self):
-        self.ent_nombre_huesped = tk.Entry(self.frame_contenedor, width=25)
-        self.ent_nombre_huesped.grid(row=1, column=1, pady=5)
+        self.ent_nombre_huesped = tk.Entry(self.contenedor, width=25)
+        self.ent_nombre_huesped.grid(row=1, column=1, pady=5, columnspan = 3, sticky = 'ew')
 
-    def buttons():
-        pass
+        self.ent_telefono_huesped = tk.Entry(self.contenedor, width=25)
+        self.ent_telefono_huesped.grid(row=2, column=1, pady=5, columnspan = 3,sticky = 'ew')
 
-    def formularioCrear(self):
+    def buttons(self):
+       tk.Button(self.contenedor, text="Registrar Huesped").grid(row=3, column = 0)
+       tk.Button(self.contenedor, text="Buscar Huesped").grid(row=3, column = 1, sticky = 'ew')
+       tk.Button(self.contenedor, text="Limpiar").grid(row=3, column = 2, sticky = 'ew')
+
+    def table(self):
+        self.columnas = ['id', 'nombre', 'precio']
+        self.tabla = ttk.Treeview(self.contenedor, columns= self.columnas, show="headings" )
         
 
-        
-        # Fila 2: Teléfono de Contacto
-        tk.Label(self.frame_contenedor, text="Telefono de Contacto:").grid(row=2, column=0, sticky="e", pady=5)
-        self.ent_telefono_huesped = tk.Entry(self.frame_contenedor, width=25)
-        self.ent_telefono_huesped.grid(row=2, column=1, pady=5)
+        for items in self.columnas:
+            self.tabla.heading(items, text = items.capitalize())
+            self.tabla.column(items, width=100)
+        self.tabla.grid(row=5, column=0, columnspan=3,sticky='nwse')
 
-        # Botón de acción
-        self.btn_registrar = tk.Button(self.frame_contenedor, text="Registrar Huesped", bg="#2196F3", fg="white")
-        self.btn_registrar.grid(row=3, columnspan=2, pady=15, ipadx=10)
+#=================================================================================================================#
+
 
 def main():
     root = tk.Tk()
-    app = HuespedGUI(root)
+    app = HuespedGUI(root, None)
     root.mainloop()
 
 if __name__ == '__main__':
