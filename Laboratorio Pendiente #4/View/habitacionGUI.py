@@ -53,4 +53,14 @@ class HabitacionGUI:
         #Listar Habitaciones
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white")
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
+        
+def main():
+	root = tk.Tk()
+	app = HabitacionGUI(root, None )
+	root.mainloop()
+	
+if __name__ == "__main__":
+	main()
+	
+	
 
