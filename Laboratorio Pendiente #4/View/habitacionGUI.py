@@ -37,8 +37,9 @@ class HabitacionGUI:
         self.comboboxEstadoHabitacion.grid(row=3, column=1, pady=5)
 
         #Guardar habitacion
-        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white", command=lambda: self.manejoController.registrarHabitacion())
+        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white", command=lambda: self.manejoController.botonClick("x"))
         self.btnGuardarHabitacion.grid(row=4, column = 0, pady=15, ipadx=1)
+        
         
         #Buscar habitacion
         self.btnBuscarHabitacion = tk.Button(self.frameContenedor, text ="Buscar Habitacion", bg = "#4CAF50", fg="white")
@@ -55,6 +56,8 @@ class HabitacionGUI:
         #Listar Habitaciones
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white")
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
+        
+        
         
 
 
