@@ -39,7 +39,7 @@ class HuespedGUI:
         self.ent_telefono_huesped.grid(row=2, column=1, pady=5, columnspan = 3,sticky = 'ew')
 
     def buttons(self):
-       tk.Button(self.contenedor, text="Registrar Huesped", command = lambda: self.manejoController.agregarHuesped()).grid(row=3, column = 0)
+       tk.Button(self.contenedor, text="Registrar Huesped", command = lambda: self.manejoController.botonClickeado('x')).grid(row=3, column = 0)
        tk.Button(self.contenedor, text="Buscar Huesped").grid(row=3, column = 1, sticky = 'ew')
        tk.Button(self.contenedor, text="Limpiar").grid(row=3, column = 2, sticky = 'ew')
 
