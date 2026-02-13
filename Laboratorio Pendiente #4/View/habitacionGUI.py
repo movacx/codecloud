@@ -2,19 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 
 class HabitacionGUI:
-<<<<<<< HEAD
     def __init__(self, ventanaPadre, habitacionesController):
         self.ventanaHija = tk.Toplevel(ventanaPadre)
         self.ventanaHija.title("Mantenimiento de Habitaciones")
         self.ventanaHija.geometry("700x300")
-=======
-    def __init__(self, ventana_padre):
-        
-        self.ventana_hija = tk.Toplevel(ventana_padre)
-        self.ventana_hija.title("Mantenimiento de Habitaciones")
-        self.ventana_hija.geometry("350x300")
->>>>>>> 5da4d2745ce45ec343fa8168bda6d3d1c8f8aec3
-        
+     
         self.manejoController = habitacionesController
         self.frameContenedor = tk.Frame(self.ventanaHija)
         self.frameContenedor.grid(row=0, column=0, padx=20, pady=20)
@@ -46,7 +38,6 @@ class HabitacionGUI:
         self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white")
         self.btnGuardarHabitacion.grid(row=4, column = 0, pady=15, ipadx=1)
         
-<<<<<<< HEAD
         #Buscar habitacion
         self.btnBuscarHabitacion = tk.Button(self.frameContenedor, text ="Buscar Habitacion", bg = "#4CAF50", fg="white")
         self.btnBuscarHabitacion.grid(row=5, column=0, pady=15, ipadx=1)
@@ -62,12 +53,4 @@ class HabitacionGUI:
         #Listar Habitaciones
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white")
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
-        
 
-=======
-        self.btn_guardar = tk.Button(self.frame_contenedor, text="Guardar Habitación", bg="#4CAF50", fg="white")
-        self.btn_guardar.grid(row=4, columnspan=2, pady=15, ipadx=10)
-
-
-    #BARMENU
->>>>>>> 5da4d2745ce45ec343fa8168bda6d3d1c8f8aec3
