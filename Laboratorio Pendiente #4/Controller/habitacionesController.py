@@ -1,12 +1,12 @@
-import View.habitacionesView as vista
+from View.HabitacionGUI as vista
 from Model.habitacionModel import HabitacionModel
 import Data.baseHabitacion as base
-
+import tkinter as tk
 
 class HabitacionesController:
 
-    def __init__(self):
-        pass
+    def __init__(self,root):
+        self.ventana = tk.TopLevel()
 
 #--------------------------------------------------------------------------------------------------#
 
