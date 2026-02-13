@@ -16,7 +16,6 @@ class HabitacionGUI:
         self.formularioCrear()
         
     def formularioCrear(self):
-        
         tk.Label(self.frameContenedor, text="Numero de Habitación:").grid(row=0, column=0, sticky="e", pady=5)
         self.entradaNumeroHabitacion = tk.Entry(self.frameContenedor)
         self.entradaNumeroHabitacion.grid(row=0, column=1, pady=5)
@@ -37,7 +36,7 @@ class HabitacionGUI:
         self.comboboxEstadoHabitacion.grid(row=3, column=1, pady=5)
 
         #Guardar habitacion
-        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white", command=lambda: self.manejoController.botonClick("x"))
+        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white", command=lambda: self.manejoController.registrarHabitacion())
         self.btnGuardarHabitacion.grid(row=4, column = 0, pady=15, ipadx=1)
         
         
@@ -57,20 +56,23 @@ class HabitacionGUI:
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white")
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
         
+
+
         
         
 
 
 
 def main():
-	root = tk.Tk() #ventana padre = root | como si fuera la ventana del main
-	app = HabitacionGUI(root, None )
-	root.mainloop()
-	
+    root = tk.Tk() #ventana padre = root | como si fuera la ventana del main
+    app = HabitacionGUI(root, None )
+    root.mainloop()
+    
 
 
 if __name__ == "__main__":
     main()
-	
-	
+    
+    
+
 
