@@ -2,7 +2,8 @@ import tkinter as tk
 from tkinter import Menu
 
 class ReportesGUI:
-    def __init__(self, baseMainGUI):
+    def __init__(self, baseMainGUI, controller):
+        self.manejoController = controller
         self.ventana = tk.Toplevel(baseMainGUI)
         self.ventana.title("Reportes Base")
         self.ventana.geometry("900x950")
@@ -28,7 +29,7 @@ def main():
     root.title("Ventana Principal")
     root.geometry("300x200")
     
-    btn = tk.Button(root, text="Abrir Reportes", command=lambda: ReportesGUI(root))
+    btn = tk.Button(root, text="Abrir Reportes", command=lambda: ReportesGUI(root,None))
     btn.pack(pady=50)
     
     root.mainloop()
