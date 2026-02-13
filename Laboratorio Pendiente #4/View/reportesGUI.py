@@ -2,7 +2,8 @@ import tkinter as tk
 from tkinter import Menu
 
 class ReportesGUI:
-    def __init__(self, baseMainGUI):
+    def __init__(self, baseMainGUI, controller):
+        self.manejoController = controller
         self.ventana = tk.Toplevel(baseMainGUI)
         self.ventana.title("Reportes Base")
         self.ventana.geometry("900x950")
@@ -22,16 +23,3 @@ class ReportesGUI:
         barra_menu.add_cascade(label="Menu de Reportes", menu=self.menu_desplegable)
         
         self.ventana.config(menu=barra_menu)
-
-def main():
-    root = tk.Tk()
-    root.title("Ventana Principal")
-    root.geometry("300x200")
-    
-    btn = tk.Button(root, text="Abrir Reportes", command=lambda: ReportesGUI(root))
-    btn.pack(pady=50)
-    
-    root.mainloop()
-
-if __name__ == '__main__':
-    main()

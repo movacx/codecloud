@@ -1,7 +1,5 @@
 import tkinter as tk
-import Data.baseHabitacion
-import Data.baseReserva
-import Data.huespedData
+import Data.baseHabitacion as habitacion
 
 from View.reportesGUI import ReportesGUI
 from tkinter import messagebox

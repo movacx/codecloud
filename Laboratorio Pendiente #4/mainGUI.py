@@ -1,6 +1,9 @@
 import tkinter as tkGUI
 from Controller.fileHuespedController import HuespedController
 from Controller.fileHabitacionController import HabitacionController
+from Controller.fileReportesController import ReportesController
+from View.reservasGUI import ReservaGUI
+
 def main():
     root = tkGUI.Tk() #VENTANA PADRE MAIN LA CUAL SE VA A DISTRIBUIR A LOS HIJOS -> HABITACION,HUESPED,REPORTES,RESERVAS
     
@@ -13,8 +16,9 @@ def main():
     contenedor.place(anchor='center', relx=0.5, rely=0.5)
 
     tkGUI.Button(contenedor, text='Huéspedes', font=('Arial', 14), width=25, command = lambda: HuespedController(root)).grid(row=1, column=0, padx=10, pady=10, ipady=10)
-    tkGUI.Button(contenedor, text='Reportes', font=('Arial', 14), width=25).grid(row=1, column=1, padx=10, pady=10, ipady=10)
+    tkGUI.Button(contenedor, text='Reportes', font=('Arial', 14), width=25,command = lambda: ReportesController(root)).grid(row=1, column=1, padx=10, pady=10, ipady=10)
     tkGUI.Button(contenedor, text='Habitaciones', font=('Arial', 14), width=25, command = lambda: HabitacionController(root)).grid(row=2, column=0, padx=10, pady=10, ipady=10)
+    tkGUI.Button(contenedor, text='Reservas', font=('Arial', 14), width=25, command = lambda: ReservaGUI(root,None)).grid(row=2, column=1, padx=10, pady=10, ipady=10)
 
 
 
