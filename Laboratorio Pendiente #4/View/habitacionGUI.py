@@ -3,6 +3,7 @@ from tkinter import ttk
 
 class HabitacionGUI:
     def __init__(self, ventana_padre):
+        
         self.ventana_hija = tk.Toplevel(ventana_padre)
         self.ventana_hija.title("Mantenimiento de Habitaciones")
         self.ventana_hija.geometry("350x300")
@@ -37,3 +38,6 @@ class HabitacionGUI:
         
         self.btn_guardar = tk.Button(self.frame_contenedor, text="Guardar Habitación", bg="#4CAF50", fg="white")
         self.btn_guardar.grid(row=4, columnspan=2, pady=15, ipadx=10)
+
+
+    #BARMENU
