@@ -37,7 +37,7 @@ class HabitacionGUI:
         self.comboboxEstadoHabitacion.grid(row=3, column=1, pady=5)
 
         #Guardar habitacion
-        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white")
+        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white", command=lambda: self.manejoController.registrarHabitacion())
         self.btnGuardarHabitacion.grid(row=4, column = 0, pady=15, ipadx=1)
         
         #Buscar habitacion
