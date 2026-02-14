@@ -19,6 +19,7 @@ class HabitacionController():
 		self.manejoData.registrarHabitacion(nuevoRegistro)
 		
 		
+		
 	def obtenerUltimoId(self):
 		ultimoId = self.manejoData.validarUltimoId()
 		return ultimoId

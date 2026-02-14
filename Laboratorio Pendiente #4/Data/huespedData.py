@@ -71,7 +71,7 @@ def listarTodos():
     
     except Exception as nombreError:
         guardarError(f'Error al mostrar los datos: {nombreError}')
-        return []
+        return False
 
 def searchName(nombre):
     try:
@@ -157,7 +157,7 @@ def modificarLista(id, HuespedModel):
         guardarError(f'Error al modificar la lista: {nombreError}')
         return False
     
-def eliminarLista(id):
+def eliminarLista(nombre):
     try:
         if not os.path.exists(ARCHIVO):
             return False
@@ -171,7 +171,7 @@ def eliminarLista(id):
             for lista in reader:
                 if lista:
                     try:
-                        if int(lista[0]) == int(id):
+                        if str(lista[1]) == str(nombre):
                             encontrado = True 
                         else:
                             arregloLista.append(lista) 

@@ -30,6 +30,10 @@ class ReservaGUI:
         self.tabla()
         self.barMenu()
 
+        self.manejoController.errorLogs(None)
+
+
+
 
     def separador(self, fila, columna):
         self.vacio = tk.Label(self.contenedor, text= ' ').grid(row = fila, column = columna)
