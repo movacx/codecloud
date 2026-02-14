@@ -1,10 +1,27 @@
 import tkinter as tk
 from tkinter import ttk
+<<<<<<< HEAD
 from tkinter import messagebox
 from tkinter import Menu
 font = 'Arial, 12'
 
 class ReservaGUI:
+=======
+class ReservaGUI:
+    def __init__(self, ventana_padre, controller):
+        self.manejoController=controller
+        self.ventana_hija = tk.Toplevel(ventana_padre)
+        self.ventana_hija.title("Gestion de Reservaciones")
+        self.ventana_hija.geometry("400x350")
+        
+        self.frame_contenedor = tk.Frame(self.ventana_hija)
+        self.frame_contenedor.grid(row=0, column=0, padx=20, pady=20)
+        
+        self.formularioCrear()
+        self.table()
+        
+    def formularioCrear(self):
+>>>>>>> 53a7dc5c8f467026e56bd6056e1535c97e48619d
 
     def __init__(self, root, controller):
         self.manejoController = controller
@@ -14,6 +31,7 @@ class ReservaGUI:
         self.ventana.geometry('1070x600')
         self.ventana.title('Reservas')
 
+<<<<<<< HEAD
         self.ventana.columnconfigure(0, weight = 1)
         #========= Establecer contenedores =============
 
@@ -97,3 +115,18 @@ class ReservaGUI:
         self.barraMenu.add_cascade(label="Menu de Reportes", menu=self.menuDesplegable)
         
         self.ventana.config(menu=self.barraMenu)
+=======
+        self.btn_confirmar = tk.Button(self.frame_contenedor, text="Confirmar Reservacion", bg="#FF9800", fg="white")
+        self.btn_confirmar.grid(row=5, columnspan=2, pady=15, ipadx=10)
+        
+        
+    def table(self):
+        self.columnas = ["id", "numeroHabitacion", "idHuesped", "fechaEntrada", "fechaSalida",]
+        self.tabla = ttk.Treeview(self.frame_contenedor, columns= self.columnas, show="headings" )
+        
+
+        for items in self.columnas:
+            self.tabla.heading(items, text = items.capitalize())
+            self.tabla.column(items, width=100)
+        self.tabla.grid(row=5, column=0, columnspan=3,sticky='nwse')
+>>>>>>> 53a7dc5c8f467026e56bd6056e1535c97e48619d

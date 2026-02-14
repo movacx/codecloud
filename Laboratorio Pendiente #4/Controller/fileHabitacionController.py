@@ -2,6 +2,7 @@ import tkinter as tkGUI
 from tkinter import messagebox
 from View.habitacionGUI import HabitacionGUI
 import Data.baseHabitacion as data
+from Model.habitacionModel import HabitacionModel
 
 class HabitacionController():
 	def __init__(self, root):
@@ -9,9 +10,18 @@ class HabitacionController():
 		self.GUI = HabitacionGUI(root,self)
 		self.manejoData = data
 
-	def registrarHabitacion():
-		pass
-
+	def registrarHabitacion(self):
+		numero =self.GUI.entradaNumeroHabitacion.get()
+		tipo = self.GUI.comboboxTipoHabitacion.get()
+		precio = self.GUI.entradaPrecioHabitacion.get()
+		estado = self.GUI.comboboxEstadoHabitacion.get()
+		nuevoRegistro= HabitacionModel(self.obtenerUltimoId(),numero,tipo,precio,estado)
+		self.manejoData.registrarHabitacion(nuevoRegistro)
+		
+		
+	def obtenerUltimoId(self):
+		ultimoId = self.manejoData.validarUltimoId()
+		return ultimoId
 	def ListarHabitacion():
 		pass
 		
@@ -33,6 +43,6 @@ class HabitacionController():
 	def botonClick(self, boton):
 		if boton == "x":
 			print("El usuario dio click")
-			#showinfo.tk.messagebox("Prueba" , "El usuario clickeo un boton")
+			messagebox.showinfo("Prueba" , "El usuario clickeo un boton")
 		
 			
