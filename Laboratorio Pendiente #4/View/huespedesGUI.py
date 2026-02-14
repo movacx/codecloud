@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
+from tkinter import Menu
 
 class HuespedGUI:
 
@@ -23,6 +24,7 @@ class HuespedGUI:
         self.entry()
         self.buttons()
         self.table()
+        self.menuBar()
         
 #=========================================[ FIN CONSTRUCTOR ]==============================================#
     def labels(self):
@@ -39,12 +41,13 @@ class HuespedGUI:
         self.ent_telefono_huesped.grid(row=2, column=1, pady=5, columnspan = 3,sticky = 'ew')
 
     def buttons(self):
-       tk.Button(self.contenedor, text="Registrar Huesped", command = lambda: self.manejoController.botonClickeado('x')).grid(row=3, column = 0)
+       tk.Button(self.contenedor, text="Registrar Huesped", command = lambda: self.manejoController.agregarHuesped()).grid(row=3, column = 0)
        tk.Button(self.contenedor, text="Buscar Huesped").grid(row=3, column = 1, sticky = 'ew')
        tk.Button(self.contenedor, text="Limpiar").grid(row=3, column = 2, sticky = 'ew')
 
+
     def table(self):
-        self.columnas = ['id', 'nombre', 'precio']
+        self.columnas = ['id', 'nombre', 'telefono']
         self.tabla = ttk.Treeview(self.contenedor, columns= self.columnas, show="headings" )
         
 
@@ -53,13 +56,32 @@ class HuespedGUI:
             self.tabla.column(items, width=100)
         self.tabla.grid(row=5, column=0, columnspan=3,sticky='nwse')
 
+
+    def cargarDatos(self, id, nombre, telefono):
+        self.tabla.insert('', tk.END, values=(id, nombre, telefono))
+
+
 #=================================================================================================================#
 
     def mostrarMensajes(self, mensaje):
         messagebox.showinfo('Dialog', f'{mensaje}')
     
-    def cargarDatos(self, id, nombre, telefono):
-        self.tabla.insert('', tk.END, values=(id, nombre, telefono))
+
+    
+    def menuBar(self):
+        #Paso 1 se asigna la barra a que frame o ventana ira.
+        self.barra = tk.Menu(self.ventanaHuesped)
+        #Paso 2 se asignan los items desplegables a la barra.
+        self.file = tk.Menu(self.barra, tearoff = 0)
+        #Paso 3 se asignan los botones por decirlo de cierta manera..
+        self.file.add_command(label = 'Reporte1')
+        self.file.add_command(label = 'Reporte2')
+        self.file.add_command(label = 'Reporte3')
+        self.file.add_separator()
+        #Paso 4 Ahora se añade (add_cascade) a la barra
+        self.barra.add_cascade(label = 'Archivo', menu = self.file)
+        #PPaso 5: Decirle a la ventana que use esta barra
+        self.ventanaHuesped.config(menu = self.barra)
 
 
 # def main():

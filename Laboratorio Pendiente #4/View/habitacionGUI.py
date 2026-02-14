@@ -57,8 +57,6 @@ class HabitacionGUI:
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white")
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
         
-        
-        
 
 
 

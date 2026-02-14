@@ -4,22 +4,28 @@ from tkinter import Menu
 class ReportesGUI:
     def __init__(self, baseMainGUI, controller):
         self.manejoController = controller
+        #Construir Ventana
         self.ventana = tk.Toplevel(baseMainGUI)
         self.ventana.title("Reportes Base")
         self.ventana.geometry("900x950")
         
-        barra_menu = tk.Menu(self.ventana)
         
+
+        #Llamados de funciones
+        self.barMenu()
         
-        self.menu_desplegable = tk.Menu(barra_menu, tearoff=0)
+    def barMenu(self):
+        #instancia del Barmenu
+        self.barraMenu = tk.Menu(self.ventana)
+
+        self.menuDesplegable = tk.Menu(self.barraMenu, tearoff=0)
         
+        self.menuDesplegable.add_command(label="Reportes de habitaciones disponibles")
+        self.menuDesplegable.add_command(label="Reportes de habitaciones ocupadas")
+        self.menuDesplegable.add_command(label="Reportes de reservaciones activas")
+        self.menuDesplegable.add_separator()
+        self.menuDesplegable.add_command(label="Salir", command=self.ventana.destroy)
         
-        self.menu_desplegable.add_command(label="Reportes de habitaciones disponibles")
-        self.menu_desplegable.add_command(label="Reportes de habitaciones ocupadas")
-        self.menu_desplegable.add_command(label="Reportes de reservaciones activas")
-        self.menu_desplegable.add_separator()
-        self.menu_desplegable.add_command(label="Salir", command=self.ventana.destroy)
+        self.barraMenu.add_cascade(label="Menu de Reportes", menu=self.menuDesplegable)
         
-        barra_menu.add_cascade(label="Menu de Reportes", menu=self.menu_desplegable)
-        
-        self.ventana.config(menu=barra_menu)
+        self.ventana.config(menu=self.barraMenu)
