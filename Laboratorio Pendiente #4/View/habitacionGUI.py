@@ -56,25 +56,18 @@ class HabitacionGUI:
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white")
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
         
-<<<<<<< HEAD
-=======
-
-
-        
-        
->>>>>>> 53a7dc5c8f467026e56bd6056e1535c97e48619d
 
 
 
-def main():
-    root = tk.Tk() #ventana padre = root | como si fuera la ventana del main
-    app = HabitacionGUI(root, None )
-    root.mainloop()
+# def main():
+#     root = tk.Tk() #ventana padre = root | como si fuera la ventana del main
+#     app = HabitacionGUI(root, None )
+#     root.mainloop()
     
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
     
     
 
