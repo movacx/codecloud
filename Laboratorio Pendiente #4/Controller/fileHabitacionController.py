@@ -10,7 +10,6 @@ class HabitacionController():
         self.ventana = root
         self.GUI = HabitacionGUI(root, self)
         self.manejoData = data
-        
     def obtenerUltimoId(self):
         ultimoId = self.manejoData.validarUltimoId()
         return ultimoId
@@ -24,9 +23,10 @@ class HabitacionController():
         self.manejoData.registrarHabitacion(nuevoRegistro)
     
     def listarHabitacion(self):
-        pass
+        self.manejoData.listarHabitaciones()
+    
         
     def botonClick(self, boton):
         if boton == "x":
             print ("El usuario dio click")
-            messagebox.showinfo("Prueba", "El usuario clickeo un boton") 
+            messagebox.showinfo("Prueba", "El usuario clickeo un boton")
