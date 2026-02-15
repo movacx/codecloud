@@ -1,6 +1,6 @@
 import tkinter as tkGUI
 from tkinter import messagebox
-from View.fileHabitacionGUI import HabitacionGUI
+from View.habitacionGUI import HabitacionGUIz
 import Data.baseHabitacion as data
 from Model.habitacionModel import HabitacionModel
 
@@ -9,7 +9,11 @@ class HabitacionController():
 		self.ventana = root
 		self.GUI = HabitacionGUI(root,self)
 		self.manejoData = data
-
+		
+    def obtenerUltimoId(self):
+		ultimoId = self.manejoData.validarUltimoId()
+		return ultimoId
+	
 	def registrarHabitacion(self):
 		numero =self.GUI.entradaNumeroHabitacion.get()
 		tipo = self.GUI.comboboxTipoHabitacion.get()
@@ -17,14 +21,9 @@ class HabitacionController():
 		estado = self.GUI.comboboxEstadoHabitacion.get()
 		nuevoRegistro= HabitacionModel(self.obtenerUltimoId(),numero,tipo,precio,estado)
 		self.manejoData.registrarHabitacion(nuevoRegistro)
-		
-		
-		
-	def obtenerUltimoId(self):
-		ultimoId = self.manejoData.validarUltimoId()
-		return ultimoId
-	def ListarHabitacion():
-		pass
+	
+	def ListarHabitacion(self):
+        self.manejoData.listarHabitaciones()
 		
 	
 	def buscarHabitacion():
