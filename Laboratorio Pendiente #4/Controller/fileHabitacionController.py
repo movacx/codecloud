@@ -10,6 +10,7 @@ class HabitacionController():
         self.ventana = root
         self.GUI = HabitacionGUI(root, self)
         self.manejoData = data
+        
     def obtenerUltimoId(self):
         ultimoId = self.manejoData.validarUltimoId()
         return ultimoId
