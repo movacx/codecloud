@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 
 #Variables GLobales
 separador = ' '
@@ -98,6 +98,14 @@ class ReporteeGUI:
     def cargarReservas(self, arreglo):
         for items in arreglo:
             self.tablaReservas.insert('', tk.END, values = (items[0], items[1], items[2], items[3], items[4]))
+
+    #=============================================================================================================================================#
+
+    #Dialogos de errores
+
+    def errorMessage(self, mensaje):
+        messagebox.showerror('Error!', f'{mensaje}', parent = self.ventanaReportes)
+        print(f'Hubo un error! {mensaje}')
 
 # def main():
 #     root = tk.Tk()

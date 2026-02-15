@@ -14,3 +14,5 @@
 2026-02-14 16:22:08 ===> IN | AGREGAR |: name 'HuesedModel' is not defined
 2026-02-14 16:23:49 ===> IN | AGREGAR |: name 'HuesedModel' is not defined
 2026-02-14 16:25:26 ===> IN | AGREGAR |: name 'HuesedModel' is not defined
+2026-02-14 22:21:43 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 22:21:43 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
