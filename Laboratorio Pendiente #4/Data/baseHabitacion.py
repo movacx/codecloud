@@ -89,7 +89,7 @@ def buscarHabitacionId(id):
             for item in reader:
                 if item:
                     try:
-                        if int(item[0]) == int(id):
+                        if int(item[1]) == int(id):
                             habitacionEncontrada.append(item)
                     except ValueError:
                         continue
@@ -148,7 +148,7 @@ def eliminarHabitacion(idHabitacion):
             for item in reader:
                 if item:
                     try:
-                        if int(item[0]) == int(idHabitacion):
+                        if int(item[1]) == int(idHabitacion):
                             encontrado = True
                         else:
                             arregloVacio.append(item)

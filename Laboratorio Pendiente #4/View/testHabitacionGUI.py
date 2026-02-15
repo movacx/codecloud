@@ -28,8 +28,8 @@ class HabitacionGUI:
         self.busquedalista = ttk.Combobox(self.ventanaHabitacion, values = (self.listaHabitacion), state = 'readonly')
         self.busquedalista.grid(row = 11, column = 1, sticky = 'nswe')
         
-        
-        
+    
+
         
         
       #numero, tipo, precio, estado  
@@ -74,11 +74,11 @@ class HabitacionGUI:
         tk.Button(self.ventanaHabitacion, text = 'Guardar', command = lambda: self.manejoController.registrarHabitacion()).grid(row = 8, column = 0, sticky = 'nswe')
         tk.Button(self.ventanaHabitacion, text = 'Mostrar Registros', command = lambda: self.manejoController.imprimirHabitaciones()).grid(row = 8, column = 1, sticky = 'nswe')
         tk.Button(self.ventanaHabitacion, text = 'Modificar').grid(row = 8, column = 2, sticky = 'nswe')
-        tk.Button(self.ventanaHabitacion, text = 'Eliminar').grid(row = 9, column = 0, sticky = 'nswe')
-        tk.Button(self.ventanaHabitacion, text = 'Guardar').grid(row = 9, column = 1, sticky = 'nswe')
-        tk.Button(self.ventanaHabitacion, text = 'Limpiar').grid(row = 9, column = 2, sticky = 'nswe')
+        tk.Button(self.ventanaHabitacion, text = 'Eliminar', command = lambda : self.manejoController.eliminarHabitacion()).grid(row = 9, column = 0, columnspan=2, sticky = 'nswe')
+        #tk.Button(self.ventanaHabitacion, text = 'Guardar').grid(row = 9, column = 1, sticky = 'nswe')
+        tk.Button(self.ventanaHabitacion, text = 'Limpiar', command=lambda: self.manejoController.limpiarInputs()).grid(row = 9, column = 2, sticky = 'nswe')
         self.separador(10,0)
-        tk.Button(self.ventanaHabitacion, text = 'Filtrar').grid(row = 11, column = 2, sticky = 'nswe')
+        tk.Button(self.ventanaHabitacion, text = 'Filtrar', command = lambda: self.manejoController.accionFiltrado()).grid(row = 11, column = 2, sticky = 'nswe')
         self.separador(12,0)
         
     def table(self):
@@ -92,6 +92,14 @@ class HabitacionGUI:
         for items in arreglo:
             self.tabla.insert('', tk.END, value = (items[1], items[2], items[3], items[4]))
             print(items)
+        
+    def limpiarCampos(self):
+        self.numHabitacionTxt.delete(0, tk.END)
+        self.precioTxt.delete(0, tk.END)
+        
+    def limpiarTabla(self):
+        for items in self.tabla.get_children():
+            self.tabla.delete(items)
         
     def errorMessage(self, error):
         messagebox.showerror('Error!', f'{error}', parent = self.ventanaHabitacion)

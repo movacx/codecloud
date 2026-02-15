@@ -7,7 +7,7 @@ class HabitacionController:
         self.GUI = HabitacionGUI(root, self)
         self.ventana = root
         
-    
+    #----------------------------------------------------------------------------------------------#
     def savelog(self, nombreError):
         try:
             
@@ -16,8 +16,7 @@ class HabitacionController:
         except Exception as error:
             print(f'No se pudo establecer la coneccion con log.txt >> data + controller = {error}')
             
-            #ide, numero, tipo, precio, estado
-            
+    #----------------------------------------------------------------------------------------------# 
     def ultimoId(self):
         try:
             
@@ -25,9 +24,10 @@ class HabitacionController:
             return ultimoId
         
         except Exception as error:
-            self.GUI.errorMessage(f'Hubo un error, valide logfile para mas informacion! {error}')
+            self.GUI.errorMessage(f'Hubo un error, valide logfile para mas informacion!')
             self.savelog(error)
-    
+            
+    #----------------------------------------------------------------------------------------------#
     def registrarHabitacion(self):
         try:
             ultimaPosicion = self.ultimoId()
@@ -39,47 +39,78 @@ class HabitacionController:
             nuevaHabitacion = HabitacionModel(ultimaPosicion, numeroHabitacion, tipoHab, precio, estado)
             exito = data.registrarHabitacion(nuevaHabitacion)
             
-            
-            
             if exito:
                 self.GUI.mostrarMensaje('Exito al guardar!')
             else:
                 self.GUI.errorMessage('Hubo un error interno, valide el logfile')
-                
             
         except Exception as error:
-            self.GUI.errorMessage(f'No se pudo registrar la Habitacion. \nvalide logfile para mas informacion! {error}')
+            self.GUI.errorMessage(f'No se pudo registrar la Habitacion. \nvalide logfile para mas informacion!')
             self.savelog(error)
-            
+    #----------------------------------------------------------------------------------------------#   
     def imprimirHabitaciones(self):
         try:
-
+            self.GUI.limpiarTabla()
             arreglo = data.listarHabitaciones()
             self.GUI.mostrarRegistros(arreglo)
 
         except Exception as error:
             self.savelog(error)
-            self.GUI.errorMessage(f'No se pudo mostrar la informacion. \nvalide logfile para saber mas! {error}')
-
+            self.GUI.errorMessage(f'No se pudo mostrar la informacion. \nvalide logfile para saber mas!')
+            
+            
+    #-----------------------------------Recargar el filtrado de busqueda---------------------------#
+    #Parte 1
     def filtrado(self):
-        #-----------------------------------Recargar el filtrado de busqueda---------------------------#
-        registroHabitaciones = data.listarHabitaciones()
-        
-        listaHabitaciones = []
-        
-        for items in registroHabitaciones:
-            listaHabitaciones.append(items[1])
+        try:
+
+            registroHabitaciones = data.listarHabitaciones()
             
-        return listaHabitaciones
-    
-    def AccionFiltrado(self):
-        arreglo = data.listarHabitaciones()
-    
-    
+            listaHabitaciones = []
             
+            for items in registroHabitaciones:
+                listaHabitaciones.append(items[1])
+                
+            return listaHabitaciones
+
+        except Exception as error:
+            self.savelog(error)
+            self.GUI.errorMessage(f'No se pudo recargar las habitaciones \nvalide logfile para saber mas!')
+
+    #Parte 2
+    def accionFiltrado(self):
+        try:
+            
+            habitacionSeleccionada = self.GUI.busquedalista.get()
+            arreglo = data.buscarHabitacionId(habitacionSeleccionada)
+            self.GUI.limpiarTabla()
+            self.GUI.mostrarRegistros(arreglo)
+            
+            
+            
+        except Exception as error:
+            self.GUI.errorMessage(f'No se pudo recargar las habitaciones \nvalide logfile para saber mas!')
+            self.savelog(error)
+        
+    #----------------------------------------------------------------------------------------------#
+        
+    def limpiarInputs(self):
+        try:
+            
+            self.GUI.limpiarCampos()
+            self.GUI.limpiarTabla()
+            
+        except Exception as error:
+            self.savelog(error)
+            self.GUI.errorMessage(f'Error interno. No se ha podido limpiar los campos. \nPara mas informacion revisa el logfile')
+
+            
+    #----------------------------------------------------------------------------------------------#
     
+    def eliminarHabitacion(self):
+        seleccion = self.GUI.busquedalista.get()
+        habitacion = self.GUI.numHabitacionTxt.get()
+        
+        data.eliminarHabitacion(habitacion)
+        
     
-        
-        
-        
-        
