@@ -7,7 +7,7 @@ class HabitacionGUI:
     def __init__(self, ventanaPadre, habitacionesController):
         self.ventanaHija = tk.Toplevel(ventanaPadre)
         self.ventanaHija.title("Mantenimiento de Habitaciones")
-        self.ventanaHija.geometry("750x350")
+        self.ventanaHija.geometry("1000x550")
      
         self.manejoController = habitacionesController
 
@@ -56,7 +56,7 @@ class HabitacionGUI:
         for items in self.columnas:
             self.tabla.heading(items, text = items.capitalize())
             self.tabla.column(items, width=100)
-            self.tabla.grid(row=1, column=4, columnspan=3,sticky='nwse')
+            self.tabla.grid(row=6, column=4, columnspan=3,sticky='nwse')
 
 
 
