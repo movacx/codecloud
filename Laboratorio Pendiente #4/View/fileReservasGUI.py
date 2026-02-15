@@ -28,9 +28,8 @@ class ReservaGUI:
         self.entry()
         self.buttons()
         self.tabla()
-        self.barMenu()
 
-        self.manejoController.errorLogs(None)
+        
 
 
 
@@ -85,18 +84,3 @@ class ReservaGUI:
     def mostrarMensaje(self, mensaje):
         messagebox.showinfo('Dialog', f'{mensaje}')
 
-    def barMenu(self):
-        #instancia del Barmenu
-        self.barraMenu = tk.Menu(self.ventana)
-
-        self.menuDesplegable = tk.Menu(self.barraMenu, tearoff=0)
-        
-        self.menuDesplegable.add_command(label="Reportes de habitaciones disponibles")
-        self.menuDesplegable.add_command(label="Reportes de habitaciones ocupadas")
-        self.menuDesplegable.add_command(label="Reportes de reservaciones activas")
-        self.menuDesplegable.add_separator()
-        self.menuDesplegable.add_command(label="Salir", command=self.ventana.destroy)
-        
-        self.barraMenu.add_cascade(label="Menu de Reportes", menu=self.menuDesplegable)
-        
-        self.ventana.config(menu=self.barraMenu)
