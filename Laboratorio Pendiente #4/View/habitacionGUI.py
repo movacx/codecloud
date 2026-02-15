@@ -51,7 +51,7 @@ class HabitacionGUI:
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
 
     def table(self):
-        self.columnas = ['id', 'nombre', 'telefono']
+        self.columnas = ["ID", "Numero", "Tipo", "Precio", "Estado"]
         self.tabla = ttk.Treeview(self.frameContenedor, columns= self.columnas, show="headings" )
         for items in self.columnas:
             self.tabla.heading(items, text = items.capitalize())
