@@ -1,4 +1,4 @@
-from View.huespedesGUI import HuespedGUI
+from View.fileHuespedesGUI import HuespedGUI
 from Model.huespedModel import HuespedModel
 import Data.huespedData as data
 from tkinter import messagebox

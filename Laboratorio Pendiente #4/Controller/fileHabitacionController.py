@@ -22,8 +22,8 @@ class HabitacionController():
 		nuevoRegistro= HabitacionModel(self.obtenerUltimoId(),numero,tipo,precio,estado)
 		self.manejoData.registrarHabitacion(nuevoRegistro)
 	
-	def ListarHabitacion():
-		self.manejoData.listarHabitaciones()
+	def ListarHabitacion(self):
+        self.manejoData.listarHabitaciones()
 		
 	
 	def buscarHabitacion():

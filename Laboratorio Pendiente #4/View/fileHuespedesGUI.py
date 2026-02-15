@@ -8,6 +8,8 @@ class HuespedGUI:
     def __init__(self, root, controller):
         self.manejoController = controller
         self.ventanaHuesped = tk.Toplevel(root)
+
+        
         self.ventanaHuesped.title("Registro de Huespedes")
         self.ventanaHuesped.geometry("1070x600")
         self.ventanaHuesped.columnconfigure(0, weight = 1)
