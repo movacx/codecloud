@@ -24,22 +24,9 @@ class HabitacionGUI:
         
 
         self.listaHabitacion = self.manejoController.filtrado()
+        
         self.busquedalista = ttk.Combobox(self.ventanaHabitacion, values = (self.listaHabitacion), state = 'readonly')
         self.busquedalista.grid(row = 11, column = 1, sticky = 'nswe')
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
         
         
         
