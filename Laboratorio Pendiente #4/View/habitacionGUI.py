@@ -7,7 +7,7 @@ class HabitacionGUI:
     def __init__(self, ventanaPadre, habitacionesController):
         self.ventanaHija = tk.Toplevel(ventanaPadre)
         self.ventanaHija.title("Mantenimiento de Habitaciones")
-        self.ventanaHija.geometry("700x300")
+        self.ventanaHija.geometry("750x350")
      
         self.manejoController = habitacionesController
 
@@ -15,7 +15,10 @@ class HabitacionGUI:
         self.frameContenedor = tk.Frame(self.ventanaHija)
         self.frameContenedor.grid(row=0, column=0, padx=20, pady=20)
         
-        self.formularioCrear()
+        self.labels()
+        self.entry()
+        self.button()
+        self.table()
 #=========================================[ FIN CONSTRUCTOR ]==============================================#
         
     def labels(self):
@@ -46,40 +49,19 @@ class HabitacionGUI:
         self.btnEliminarHabitacion.grid(row=5, column= 1)
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white")
         self.btnListarHabitaciones.grid(row = 5 , column= 3)
-        
-        
+
     def table(self):
-	self.columnas = ["ID, Numero, Tipo, Precio, Estado"]
-	self.tabla ==tk.TreeView(self.contenedor, columns = self.columns, show="headings" )
-	
-	
-	
-	
-	
-	
-	
-	
-	
-    def menuBar(self):
-	self.barra = tk.Menu(self.ventanaHabitacion)
-	
-        
-        #Paso 1 se asigna la barra a que frame o ventana ira.
-        self.barra = tk.Menu(self.ventanaHuesped)
-        #Paso 2 se asignan los items desplegables a la barra.
-        self.file = tk.Menu(self.barra, tearoff = 0)
-        #Paso 3 se asignan los botones por decirlo de cierta manera..
-        self.file.add_command(label = 'Reporte1')
-        self.file.add_command(label = 'Reporte2')
-        self.file.add_command(label = 'Reporte3')
-        self.file.add_separator()
-        #Paso 4 Ahora se añade (add_cascade) a la barra
-        self.barra.add_cascade(label = 'Archivo', menu = self.file)
-        #PPaso 5: Decirle a la ventana que use esta barra
-        self.ventanaHuesped.config(menu = self.barra)
+        self.columnas = ['id', 'nombre', 'telefono']
+        self.tabla = ttk.Treeview(self.frameContenedor, columns= self.columnas, show="headings" )
+        for items in self.columnas:
+            self.tabla.heading(items, text = items.capitalize())
+            self.tabla.column(items, width=100)
+            self.tabla.grid(row=1, column=4, columnspan=3,sticky='nwse')
 
 
-        
+
+
+
         
 
 
@@ -95,6 +77,8 @@ if __name__ == "__main__":
     main()
     
     
+
+
 
 
 
