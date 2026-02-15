@@ -1,6 +1,6 @@
 import tkinter as tkGUI
 from tkinter import messagebox
-from View.habitacionGUI import HabitacionGUI
+from View.fileHabitacionGUI import HabitacionGUI
 import Data.baseHabitacion as data
 from Model.habitacionModel import HabitacionModel
 
