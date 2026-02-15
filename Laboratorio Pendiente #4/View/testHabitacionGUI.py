@@ -53,6 +53,9 @@ class HabitacionGUI:
         self.precioTxt = tk.Entry(self.ventanaHabitacion)
         self.precioTxt.grid(row = 4, column = 1, sticky = 'nswe')
         
+        self.numHabitacionTxt = tk.Entry(self.ventanaHabitacion)
+        self.numHabitacionTxt.grid(row = 0, column = 1, sticky = 'nswe')
+        
     def botones(self):
         self.separador(5,0)
         tk.Button(self.ventanaHabitacion, text = 'Guardar').grid(row = 6, column = 0, sticky = 'nswe')

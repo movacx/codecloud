@@ -13,4 +13,5 @@ class HabitacionController:
         except Exception as error:
             print(f'No se pudo establecer la coneccion con log.txt >> data + controller = {error}')
             
-    def registrarHabitacion
+    def registrarHabitacion(self):
+        pass
