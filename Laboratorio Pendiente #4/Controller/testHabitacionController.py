@@ -55,7 +55,6 @@ class HabitacionController:
         try:
 
             arreglo = data.listarHabitaciones()
-            self.GUI.listaHabitaciones.append(arreglo[1])
             self.GUI.mostrarRegistros(arreglo)
 
         except Exception as error:
@@ -69,10 +68,16 @@ class HabitacionController:
         listaHabitaciones = []
         
         for items in registroHabitaciones:
-            listaHabitaciones.append(items[2])
+            listaHabitaciones.append(items[1])
             
         return listaHabitaciones
+    
+    def AccionFiltrado(self):
+        arreglo = data.listarHabitaciones()
+    
+    
             
+    
     
         
         
