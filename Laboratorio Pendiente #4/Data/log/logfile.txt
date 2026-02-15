@@ -36,3 +36,26 @@
 2026-02-14 23:30:30 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
 2026-02-15 09:04:12 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
 2026-02-15 09:04:12 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 14:49:07 ===> expected integer but got ""
+2026-02-15 14:49:11 ===> expected integer but got ""
+2026-02-15 14:50:02 ===> Treeview.insert() missing 1 required positional argument: 'index'
+2026-02-15 14:52:10 ===> list index out of range
+2026-02-15 14:53:12 ===> list index out of range
+2026-02-15 14:54:01 ===> list index out of range
+2026-02-15 14:54:11 ===> list index out of range
+2026-02-15 14:54:17 ===> list index out of range
+2026-02-15 14:54:51 ===> list index out of range
+2026-02-15 14:57:28 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:57:33 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:57:35 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:57:37 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:58:22 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:58:51 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:58:55 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:59:33 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 15:01:29 ===> list index out of range
+2026-02-15 15:02:17 ===> list index out of range
+2026-02-15 15:02:29 ===> list index out of range
+2026-02-15 15:35:40 ===> 'Combobox' object has no attribute 'append'
+2026-02-15 15:35:50 ===> 'Combobox' object has no attribute 'append'
+2026-02-15 15:37:32 ===> 'Combobox' object has no attribute 'append'
