@@ -30,3 +30,7 @@
 2026-02-15 01:14:20 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
 2026-02-15 01:14:24 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
 2026-02-15 01:14:24 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 23:29:55 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 23:29:55 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 23:30:30 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 23:30:30 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
