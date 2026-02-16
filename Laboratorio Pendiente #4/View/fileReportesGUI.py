@@ -21,9 +21,7 @@ class ReporteeGUI:
         self.btn_enviar.grid(row=0, column=2, padx=5)
 
     def tablas(self, opcion):
-        if hasattr(self, 'tablaHuespedes'): self.tablaHuespedes.destroy()
-        if hasattr(self, 'tablaHabitaciones'): self.tablaHabitaciones.destroy()
-        if hasattr(self, 'tablaReservas'): self.tablaReservas.destroy()
+
 
         if opcion == 1:
             self.huespedes()
