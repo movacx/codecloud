@@ -86,7 +86,7 @@ class HabitacionController:
     #Parte 2
     def accionFiltrado(self):
         try:
-            
+            #Nota para recargar las listas de busquedas tiene que cerrar la ventana de habitacion y volverla abrir para que la lista se recargue no logre hacerlo este es mi limite
             habitacionSeleccionada = self.GUI.busquedalista.get()
             arreglo = data.buscarHabitacionId(habitacionSeleccionada)
             self.GUI.limpiarTabla()
@@ -114,15 +114,31 @@ class HabitacionController:
     #----------------------------------------------------------------------------------------------#
     
     def eliminarHabitacion(self):
-        seleccion = self.GUI.busquedalista.get()
-        habitacion = self.GUI.numHabitacionTxt.get()
-        
-        data.eliminarHabitacion(seleccion)
-        
+        try:
+
+            seleccion = self.GUI.busquedalista.get()
+            habitacion = self.GUI.numHabitacionTxt.get()
+            exito = data.eliminarHabitacion(seleccion)
+            if exito:
+                self.GUI.mostrarMensaje('Borrado exitosamentne!')
+            else:
+                self.GUI.mostrarMensaje('No se pudo eliminar, valide los campos o la informacion seleccionada!')   
+
+        except Exception as error:
+            self.savelog(error)
+            self.GUI.errorMessage('Hubo un error. Para mas informacion valide el logfile')
+     
     #----------------------------------------------------------------------------------------------#
     def modificarHabitacion(self):
-        seleccion = self.GUI.busquedalista.get()
-        estado = self.GUI.estadoHabitacioncbx.get()
-        data.modificar(seleccion, estado)
+        try:
+
+            seleccion = self.GUI.busquedalista.get()
+            estado = self.GUI.estadoHabitacioncbx.get()
+            data.modificar(seleccion, estado)
+
+        except Exception as error:
+            self.savelog(error)
+            self.GUI.errorMessage('Hubo un error. Para mas informacion valide el logfile')
+
         
     
