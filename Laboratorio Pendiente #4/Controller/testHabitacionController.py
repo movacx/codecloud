@@ -111,6 +111,12 @@ class HabitacionController:
         seleccion = self.GUI.busquedalista.get()
         habitacion = self.GUI.numHabitacionTxt.get()
         
-        data.eliminarHabitacion(habitacion)
+        data.eliminarHabitacion(seleccion)
+        
+    #----------------------------------------------------------------------------------------------#
+    def modificarHabitacion(self):
+        seleccion = self.GUI.busquedalista.get()
+        estado = self.GUI.estadoHabitacioncbx.get()
+        data.modificar(seleccion, estado)
         
     

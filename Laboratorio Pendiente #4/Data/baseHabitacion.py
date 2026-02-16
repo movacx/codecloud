@@ -113,7 +113,7 @@ def modificar(id, estado):
             for item in reader:
                 if item:
                     try:
-                        if int(item[0]) == int(id):
+                        if int(item[1]) == int(id):
                             item[4] = estado
                             arregloVacio.append(item)
                             encontrado = True

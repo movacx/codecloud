@@ -73,7 +73,7 @@ class HabitacionGUI:
         self.separador(5,0)
         tk.Button(self.ventanaHabitacion, text = 'Guardar', command = lambda: self.manejoController.registrarHabitacion()).grid(row = 8, column = 0, sticky = 'nswe')
         tk.Button(self.ventanaHabitacion, text = 'Mostrar Registros', command = lambda: self.manejoController.imprimirHabitaciones()).grid(row = 8, column = 1, sticky = 'nswe')
-        tk.Button(self.ventanaHabitacion, text = 'Modificar').grid(row = 8, column = 2, sticky = 'nswe')
+        tk.Button(self.ventanaHabitacion, text = 'Modificar', command = lambda: self.manejoController.modificarHabitacion()).grid(row = 8, column = 2, sticky = 'nswe')
         tk.Button(self.ventanaHabitacion, text = 'Eliminar', command = lambda : self.manejoController.eliminarHabitacion()).grid(row = 9, column = 0, columnspan=2, sticky = 'nswe')
         #tk.Button(self.ventanaHabitacion, text = 'Guardar').grid(row = 9, column = 1, sticky = 'nswe')
         tk.Button(self.ventanaHabitacion, text = 'Limpiar', command=lambda: self.manejoController.limpiarInputs()).grid(row = 9, column = 2, sticky = 'nswe')
