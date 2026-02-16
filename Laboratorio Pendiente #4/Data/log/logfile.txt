@@ -62,3 +62,5 @@
 2026-02-15 15:55:35 ===> 'HabitacionGUI' object has no attribute 'listaHabitaciones'
 2026-02-15 15:55:40 ===> 'HabitacionGUI' object has no attribute 'listaHabitaciones'
 2026-02-15 20:47:03 ===> [Errno 22] Invalid argument
+2026-02-15 20:56:05 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 20:56:05 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'

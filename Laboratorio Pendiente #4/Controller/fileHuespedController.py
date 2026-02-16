@@ -35,9 +35,16 @@ class HuespedController:
         try:
             nombre = self.vista.ent_nombre_huesped.get()
             telefono = self.vista.ent_telefono_huesped.get()
-            nuevoRegistro = HuespedModel(self.obtenerId(), nombre, telefono)
-            exito = data.agregarListado(nuevoRegistro)
-            self.vista.cargarNuevoDato(self.obtenerId(), nombre, telefono)
+
+            if not nombre or telefono:
+                self.vista.mostrarMensajes('Debe de completar los campos antes de guardar')
+            else:
+                if not telefono:
+                    self.vista.mostrarMensajes('Debe de completar los campos antes de guardar')
+                else:
+                    nuevoRegistro = HuespedModel(self.obtenerId(), nombre, telefono)
+                    exito = data.agregarListado(nuevoRegistro)
+                    self.vista.cargarNuevoDato(self.obtenerId(), nombre, telefono)
 
         except Exception as error:
             self.errorLogs(f'IN | AGREGAR |: {error}')

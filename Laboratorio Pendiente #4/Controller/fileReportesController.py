@@ -28,7 +28,7 @@ class ReportesController:
             if opcionSeleccionada == 'Huespedes':
                 try:
                     arregloHuesped = huesped.listarTodos()
-                    self.vista.tasblas(1)
+                    self.vista.tablas(1)
                     self.vista.cargarHuespedes(arregloHuesped)
                 except Exception as error:
                     self.vista.errorMessage(f'Hubo un error, no se puede mostrar la tabla. \nPara mas informacion: /data/log/logfile.txt')
