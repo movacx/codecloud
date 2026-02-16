@@ -23,10 +23,7 @@ class HabitacionGUI:
         self.table()
         
 
-        self.listaHabitacion = self.manejoController.filtrado()
-        
-        self.busquedalista = ttk.Combobox(self.ventanaHabitacion, values = (self.listaHabitacion), state = 'readonly')
-        self.busquedalista.grid(row = 11, column = 1, sticky = 'nswe')
+
         
     
 
@@ -54,6 +51,14 @@ class HabitacionGUI:
         
     def combobox(self):
         
+
+        self.listaHabitacion = self.manejoController.filtrado()
+        
+        self.busquedalista = ttk.Combobox(self.ventanaHabitacion, values = (self.listaHabitacion), state = 'readonly')
+        self.busquedalista.grid(row = 11, column = 1, sticky = 'nswe')
+
+
+
         listaTipoHabitacion = ['Sencilla', 'Doble']
         self.tipoHabitacioncbx = ttk.Combobox(self.ventanaHabitacion, values = (listaTipoHabitacion), state = 'readonly')
         self.tipoHabitacioncbx.grid(row = 2, column = 1, sticky = 'nswe')
