@@ -7,7 +7,7 @@ from View.fileReservasGUI import ReservaGUI
 def main():
     try:
         root = tkGUI.Tk()
-        root.geometry('200x100')
+        root.geometry('300x200')
         root.title('Condominios Costa Mar')
 
         contenedor = tkGUI.Frame(root)
