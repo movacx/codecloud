@@ -75,15 +75,7 @@ class HabitacionGUI:
         self.entradaNumeroHabitacion.delete(0,tk.END)
         self.entradaPrecioHabitacion.delete(0,tk.END)
         
-def main():
-    root = tk.Tk() #ventana padre = root | como si fuera la ventana del main
-    app = HabitacionGUI(root, None )
-    root.mainloop()
-    
 
-
-if __name__ == "__main__":
-    main()
     
     
 
