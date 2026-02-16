@@ -30,19 +30,25 @@ class HabitacionController:
     #----------------------------------------------------------------------------------------------#
     def registrarHabitacion(self):
         try:
+            
+            
+            
+            
             ultimaPosicion = self.ultimoId()
             numeroHabitacion = self.GUI.numHabitacionTxt.get()
             tipoHab = self.GUI.tipoHabitacioncbx.get()
             precio = self.GUI.precioTxt.get()
             estado = self.GUI.estadoHabitacioncbx.get()
-            
-            nuevaHabitacion = HabitacionModel(ultimaPosicion, numeroHabitacion, tipoHab, precio, estado)
-            exito = data.registrarHabitacion(nuevaHabitacion)
-            
-            if exito:
-                self.GUI.mostrarMensaje('Exito al guardar!')
+            if not numeroHabitacion:
+                self.GUI.errorMessage("Debe ingresar un numero de habitacion para continuar")
             else:
-                self.GUI.errorMessage('Hubo un error interno, valide el logfile')
+                nuevaHabitacion = HabitacionModel(ultimaPosicion, numeroHabitacion, tipoHab, precio, estado)
+                exito = data.registrarHabitacion(nuevaHabitacion)
+            
+                if exito:
+                    self.GUI.mostrarMensaje('Exito al guardar!')
+                else:
+                    self.GUI.errorMessage('Hubo un error interno, valide el logfile')
             
         except Exception as error:
             self.GUI.errorMessage(f'No se pudo registrar la Habitacion. \nvalide logfile para mas informacion!')

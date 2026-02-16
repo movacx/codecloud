@@ -1,6 +1,6 @@
 import tkinter as tkGUI
 from tkinter import messagebox
-from View.fileHabitacionGUI import HabitacionGUI
+from View.habitacionGUI import HabitacionGUI
 import Data.baseHabitacion as data
 from Model.habitacionModel import HabitacionModel
 
@@ -9,22 +9,40 @@ class HabitacionController():
     def __init__(self, root):
         self.ventana = root
         self.GUI = HabitacionGUI(root, self)
-        self.manejoData = data
         
     def obtenerUltimoId(self):
-        ultimoId = self.manejoData.validarUltimoId()
+        ultimoId = data.validarUltimoId()
         return ultimoId
     
-    def registrarHabitacion(self):
+    def guardarHabitacion(self):
         numero = self.GUI.entradaNumeroHabitacion.get()
         tipo = self.GUI.comboboxTipoHabitacion.get()
-        precio = self.GUI.entradaPrecioHabitacion()
+        precio = self.GUI.entradaPrecioHabitacion.get()
         estado = self.GUI.comboboxEstadoHabitacion.get()
         nuevoRegistro = HabitacionModel(self.obtenerUltimoId(), numero, tipo, precio, estado)
-        self.manejoData.registrarHabitacion(nuevoRegistro)
+        data.registrarHabitacion(nuevoRegistro)
     
     def listarHabitacion(self):
-        self.manejoData.listarHabitaciones()
+        arreglo = data.listarHabitaciones()
+        self.GUI.actualizarTabla(arreglo)
+        
+        
+    def buscarHabitacion(self):
+        numero = self.GUI.entradaNumeroHabitacion.get()
+        encontrado = data.buscarHabitacionId(numero)
+        self.GUI.actualizarTabla(encontrado)
+        
+        
+    def modificarHabitacion(self):
+        seleccion = self.GUI.entradaNumeroHabitacion.get()
+        estado = self.GUI.comboboxEstadoHabitacion.get()
+        data.modificar(seleccion, estado) 
+            
+    def eliminarHabitacion(self):
+        numeroEliminar = self.GUI.entradaNumeroHabitacion.get()
+        habitacionEliminar = data.eliminarHabitacion(numeroEliminar)
+        messagebox.showinfo("Info", "Modificado correctamente")
+        
     
         
     def botonClick(self, boton):

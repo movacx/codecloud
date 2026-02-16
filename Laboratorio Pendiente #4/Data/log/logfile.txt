@@ -61,3 +61,4 @@
 2026-02-15 15:37:32 ===> 'Combobox' object has no attribute 'append'
 2026-02-15 15:55:35 ===> 'HabitacionGUI' object has no attribute 'listaHabitaciones'
 2026-02-15 15:55:40 ===> 'HabitacionGUI' object has no attribute 'listaHabitaciones'
+2026-02-15 20:47:03 ===> [Errno 22] Invalid argument
