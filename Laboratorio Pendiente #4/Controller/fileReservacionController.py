@@ -10,74 +10,56 @@ class ReservaController:
         self.vista = ReservaGUI(root, self)
 
     def crearReserva(self):
-        try:
-            numeroHabitacion = self.vista.numeroHabitacion.get()
-            idHuesped = self.vista.idHuesped.get()
-            fechaEntrada = self.vista.fechaEntrada.get()
-            fechaSalida = self.vista.fechaSalida.get()
+        estadoo = 'ocupado'
+        numeroHabitacion = self.vista.numeroHabitacion.get()
+        idHuesped = self.vista.idHuesped.get()
+        fechaEntrada = self.vista.fechaEntrada.get()
+        fechaSalida = self.vista.fechaSalida.get()
 
-            if not numeroHabitacion or not idHuesped or not fechaEntrada or not fechaSalida:
-                self.vista.mostrarMensaje('Debe completar todos los campos')
-                return
+        huespedEncontrado = dataHuesped.searchId(idHuesped)
 
-            huespedEncontrado = dataHuesped.searchId(idHuesped)
-            if not huespedEncontrado:
-                self.vista.mostrarMensaje('El huesped no existe')
-                return
+        habitacionEncontrada = dataHabitacion.buscarHabitacionId(numeroHabitacion)
 
-            habitacionEncontrada = dataHabitacion.buscarHabitacionId(numeroHabitacion)
-            if not habitacionEncontrada:
-                self.vista.mostrarMensaje('La habitacion no existe')
-                return
 
-            estadoHabitacion = habitacionEncontrada[0][4]
-            if estadoHabitacion != "Disponible":
-                self.vista.mostrarMensaje("La habitacion no esta disponible")
-                return
+        #id, numeroHabitacion, idHuesped, fechaEntrada, fechaSalida
+        nuevaReserva = Reserva(0, numeroHabitacion, idHuesped, fechaEntrada, fechaSalida)
+        dataReserva.registrarReserva(nuevaReserva)
 
-            nuevaReserva = Reserva(0, numeroHabitacion, idHuesped, fechaEntrada, fechaSalida)
-            dataReserva.registrarReserva(nuevaReserva)
+        dataHabitacion.modificar(numeroHabitacion, "Ocupada")
 
-            dataHabitacion.modificar(numeroHabitacion, "Ocupada")
+        self.vista.mostrarMensaje("Reserva creada correctamente")
+        self.verReservas()
 
-            self.vista.mostrarMensaje("Reserva creada correctamente")
-            self.verReservas()
 
-        except Exception as error:
-            self.vista.mostrarMensaje(f"Error al crear reserva: {error}")
 
     def verReservas(self):
         try:
             arreglo = dataReserva.listarReservas()
-            self.vista.limpiarTabla()
-            self.vista.cargarListaReservas(arreglo)
+            # self.vista.limpiarTabla()
+            self.vista.mostrarRegistros(arreglo)
         except Exception as error:
             self.vista.mostrarMensaje(f"Error al cargar reservas: {error}")
 
     def eliminarReserva(self):
-        try:
-            idReserva = self.vista.obtenerIdReservaSeleccionada()
-            if not idReserva:
-                self.vista.mostrarMensaje("Seleccione una reserva en la tabla")
-                return
+        # try:
+        numHabitacion = self.vista.numeroHabitacion.get()
+        if not numHabitacion:
+            self.vista.mostrarMensaje("Debe de llenar el campo de num Habitacion")
+            return
 
-            reservaEncontrada = dataReserva.buscarReservaPorId(idReserva)
-            if not reservaEncontrada:
-                self.vista.mostrarMensaje("Reserva no existe")
-                return
+        # reservaEncontrada = dataReserva.buscarReservaPorId(idReserva)
+        # if not reservaEncontrada:
+        #     self.vista.mostrarMensaje("Reserva no existe")
+        #     return
 
-            numeroHabitacion = reservaEncontrada[0][1]
+        # numeroHabitacion = reservaEncontrada[0][1]
 
-            dataReserva.eliminarReserva(idReserva)
-            dataHabitacion.modificar(numeroHabitacion, "Disponible")
-
-
+        dataReserva.eliminarReserva(numHabitacion)
+        dataHabitacion.modificar(numHabitacion, "Disponible")
 
 
+        self.vista.mostrarMensaje("Reserva eliminada y habitacion liberada")
+        # self.verReservas()
 
-
-            self.vista.mostrarMensaje("Reserva eliminada y habitacion liberada")
-            self.verReservas()
-
-        except Exception as error:
-            self.vista.mostrarMensaje(f"Error al eliminar reserva: {error}")
+        # except Exception as error:
+        #     self.vista.mostrarMensaje(f"Error al eliminar reserva: {error}")

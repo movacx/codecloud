@@ -72,3 +72,30 @@
 2026-02-16 19:03:42 ===> IN | CARGAR |: 'HuespedGUI' object has no attribute 'entradaNumeroHabitacion'
 2026-02-16 19:05:08 ===> IN | CARGAR |: 'HuespedGUI' object has no attribute 'limpiarTabla'
 2026-02-16 19:07:39 ===> IN | CARGAR |: 'HuespedGUI' object has no attribute 'limpiarTabla'
+2026-02-16 22:32:59 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:37:20 ===> Dentro del case Habitaciones: list index out of range
+2026-02-16 22:37:20 ===> Dentro del case Habitaciones: list index out of range
+2026-02-16 22:37:29 ===> Dentro del case Habitaciones: list index out of range
+2026-02-16 22:37:29 ===> Dentro del case Habitaciones: list index out of range
+2026-02-16 22:38:19 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:38:31 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:44:12 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:45:10 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:48:09 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:48:20 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:50:53 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:51:39 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:51:39 ===> Error al modificar estado habitacion: list index out of range
+2026-02-16 22:54:05 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:54:15 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:55:06 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:55:06 ===> Error al modificar estado habitacion: list index out of range
+2026-02-16 22:55:42 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:55:47 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 22:58:09 ===> Dentro del case Habitaciones: list index out of range
+2026-02-16 22:58:09 ===> Dentro del case Habitaciones: list index out of range
+2026-02-16 22:59:03 ===> Dentro del case Habitaciones: list index out of range
+2026-02-16 22:59:03 ===> Dentro del case Habitaciones: list index out of range
+2026-02-16 23:08:59 ===> Error al modificar estado habitacion: list index out of range
+2026-02-16 23:12:06 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 23:12:06 ===> Error al modificar estado habitacion: list index out of range

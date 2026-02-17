@@ -48,6 +48,10 @@ class ReservaGUI:
 
     def cargarDatos(self, id, nHabitacion, idHuesped, entrada, salida):
         self.tablee.insert('', tk.END, values = (id, nHabitacion, idHuesped, entrada, salida))
+
+    def mostrarRegistros(self, arreglo):
+        for items in arreglo:
+            self.tablee.insert('', tk.END, values = (items[1], items[2], items[3], items[4]))
     
     def mostrarMensaje(self, mensaje):
         messagebox.showinfo('Dialog', f'{mensaje}')

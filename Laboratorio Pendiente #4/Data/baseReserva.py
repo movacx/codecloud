@@ -111,7 +111,7 @@ def eliminarReserva(idReserva):
             for item in reader:
                 if item:
                     try:
-                        if int(item[0]) == int(idReserva):
+                        if int(item[1]) == int(idReserva):
                             encontrado = True
                         else:
                             arregloVacio.append(item)

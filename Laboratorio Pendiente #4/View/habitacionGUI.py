@@ -55,7 +55,7 @@ class HabitacionGUI:
         self.btnLimpiarTabla.grid(row = 10 , column= 5)
 
     def table(self):
-        self.columnas = ["ID", "Numero", "Tipo", "Precio", "Estado"]
+        self.columnas = ["Numero", "Tipo", "Precio", "Estado"]
         self.tabla = ttk.Treeview(self.frameContenedor, columns= self.columnas, show="headings" )
         for items in self.columnas:
             self.tabla.heading(items, text = items.capitalize())
@@ -65,7 +65,7 @@ class HabitacionGUI:
             
     def actualizarTabla(self, arreglo):
         for item in arreglo:
-            self.tabla.insert("",tk.END,value=(item[0], item[1], item[2], item[3], item[4]))
+            self.tabla.insert("",tk.END,value=(item[1], item[2], item[3], item[4]))
             
             print(item)
             
