@@ -1,53 +1,51 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import Menu
+
 
 class HabitacionGUI:
     def __init__(self, ventanaPadre, habitacionesController):
         self.ventanaHija = tk.Toplevel(ventanaPadre)
         self.ventanaHija.title("Mantenimiento de Habitaciones")
-        self.ventanaHija.geometry("700x300")
-        
+        self.ventanaHija.geometry("1000x550")
+     
         self.manejoController = habitacionesController
+
+
         self.frameContenedor = tk.Frame(self.ventanaHija)
         self.frameContenedor.grid(row=0, column=0, padx=20, pady=20)
         
-        self.formularioCrear()
+        self.labels()
+        self.entry()
+        self.button()
+        self.table()
+#=========================================[ FIN CONSTRUCTOR ]==============================================#
         
-    def formularioCrear(self):
-        
+    def labels(self):
         tk.Label(self.frameContenedor, text="Numero de Habitación:").grid(row=0, column=0, sticky="e", pady=5)
+        tk.Label(self.frameContenedor, text="Tipo de Habitacion:").grid(row=1, column=0, sticky="e", pady=5)
+        tk.Label(self.frameContenedor, text="Precio por Noche:").grid(row=2, column=0, sticky="e", pady=5)
+        tk.Label(self.frameContenedor, text="Estado de Habitacion:").grid(row=3, column=0, sticky="e", pady=5)
+        
+    def entry(self):
         self.entradaNumeroHabitacion = tk.Entry(self.frameContenedor)
         self.entradaNumeroHabitacion.grid(row=0, column=1, pady=5)
-        
-        
-        tk.Label(self.frameContenedor, text="Tipo de Habitacion:").grid(row=1, column=0, sticky="e", pady=5)
-        self.comboboxTipoHabitacion = ttk.Combobox(self.frameContenedor, values=["Sencilla", "Doble", "Suite"], state="readonly")
-        self.comboboxTipoHabitacion.grid(row=1, column=1, pady=5)
-        
-        
-        tk.Label(self.frameContenedor, text="Precio por Noche:").grid(row=2, column=0, sticky="e", pady=5)
         self.entradaPrecioHabitacion = tk.Entry(self.frameContenedor)
         self.entradaPrecioHabitacion.grid(row=2, column=1, pady=5)
-        
-        
-        tk.Label(self.frameContenedor, text="Estado de Habitacion:").grid(row=3, column=0, sticky="e", pady=5)
+        #ComboBox
+        self.comboboxTipoHabitacion = ttk.Combobox(self.frameContenedor, values=["Sencilla", "Doble", "Suite"], state="readonly")
+        self.comboboxTipoHabitacion.grid(row=1, column=1, pady=5)
         self.comboboxEstadoHabitacion = ttk.Combobox(self.frameContenedor, values=["Disponible", "Ocupada"], state="readonly")
         self.comboboxEstadoHabitacion.grid(row=3, column=1, pady=5)
-
-        #Guardar habitacion
-        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white")
+        
+    def button(self):
+        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Registrar Habitación", command=lambda: self.manejoController.guardarHabitacion())
         self.btnGuardarHabitacion.grid(row=4, column = 0, pady=15, ipadx=1)
-        
-        #Buscar habitacion
-        self.btnBuscarHabitacion = tk.Button(self.frameContenedor, text ="Buscar Habitacion", bg = "#4CAF50", fg="white")
+        self.btnBuscarHabitacion = tk.Button(self.frameContenedor, text ="Buscar Habitacion", command = lambda: self.manejoController.buscarHabitacion())
         self.btnBuscarHabitacion.grid(row=5, column=0, pady=15, ipadx=1)
-        
-        #Modificar habitacion
-        self.btnModificarHabitacion = tk.Button(self.frameContenedor, text ="Modificar Habitacion", bg= "#4CAF50", fg="white")
+        self.btnModificarHabitacion = tk.Button(self.frameContenedor, text ="Modificar Estado", command = lambda: self.manejoController.modificarEstadoHabitacion())
         self.btnModificarHabitacion.grid(row=4, column=1, pady=15, ipadx=1)
-        
-        #Eliminar habitacion
-        self.btnEliminarHabitacion= tk.Button(self.frameContenedor, text= "Eliminar Habitacion", bg=  "#4CAF50", fg="white")
+        self.btnEliminarHabitacion= tk.Button(self.frameContenedor, text= "Eliminar Habitacion", command = lambda: self.manejoController.eliminarHabitacion())
         self.btnEliminarHabitacion.grid(row=5, column= 1)
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", command = lambda: self.manejoController.listarHabitacion())
         self.btnListarHabitaciones.grid(row = 5 , column= 2)
@@ -57,7 +55,7 @@ class HabitacionGUI:
         self.btnLimpiarTabla.grid(row = 10 , column= 5)
 
     def table(self):
-        self.columnas = ["Numero", "Tipo", "Precio", "Estado"]
+        self.columnas = ["ID", "Numero", "Tipo", "Precio", "Estado"]
         self.tabla = ttk.Treeview(self.frameContenedor, columns= self.columnas, show="headings" )
         for items in self.columnas:
             self.tabla.heading(items, text = items.capitalize())
@@ -66,15 +64,10 @@ class HabitacionGUI:
             
             
     def actualizarTabla(self, arreglo):
-<<<<<<< HEAD
      for item in arreglo:
       if len(item) >= 5:
        self.tabla.insert("",tk.END,values=(item[0], item[1], item[2], item[3], item[4]))
        print(item)
-=======
-        for item in arreglo:
-            self.tabla.insert("",tk.END,value=(item[1], item[2], item[3], item[4]))
->>>>>>> 0f5c2b857cda8ea99836cb8c7b4a7b991f32fc0b
             
             
     
@@ -88,6 +81,7 @@ class HabitacionGUI:
 
     
     
+
 
 
 
