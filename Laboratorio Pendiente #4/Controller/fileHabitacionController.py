@@ -22,10 +22,10 @@ class HabitacionController():
         nuevoRegistro = HabitacionModel(0, numero, tipo, precio, estado)
         data.registrarHabitacion(nuevoRegistro)
         
-    def ordenarHabitacionPrecio(self):
-	arreglo = data.ordenarPrecio()
-	self.GUI.limpiarTabla()
-	self.GUI.actualizarTabla(arreglo)
+    #def ordenarHabitacionPrecio(self):
+	#arreglo = data.ordenarPrecio()
+	#self.GUI.limpiarTabla()
+	#self.GUI.actualizarTabla(arreglo)
     
     def listarHabitacion(self):
         arreglo = data.listarHabitaciones()

@@ -8,11 +8,8 @@ from View.fileReservasGUI import ReservaGUI
 def main():
     try:
         root = tkGUI.Tk()
-<<<<<<< HEAD
         root.geometry('500x550')
-=======
         root.geometry('300x200')
->>>>>>> f6de4929d5e4d73eaef0c331bc7f6c1ad2fbf35c
         root.title('Condominios Costa Mar')
 
         contenedor = tkGUI.Frame(root)
