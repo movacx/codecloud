@@ -6,7 +6,7 @@ class ReporteeGUI:
         self.manejoController = controller
         self.ventanaReportes = tk.Toplevel(root)
         self.ventanaReportes.title("Reportes")
-        self.ventanaReportes.geometry('300x300')
+        self.ventanaReportes.geometry("900x500")
         
         self.lbl_info = tk.Label(self.ventanaReportes, text='Seleccione una opcion: ')
         self.lbl_info.grid(row=0, column=0, padx=10, pady=10, sticky="w")

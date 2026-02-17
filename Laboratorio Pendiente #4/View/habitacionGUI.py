@@ -39,17 +39,19 @@ class HabitacionGUI:
         self.comboboxEstadoHabitacion.grid(row=3, column=1, pady=5)
         
     def button(self):
-        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Guardar Habitación", bg="#4CAF50", fg="white", command=lambda: self.manejoController.guardarHabitacion())
+        self.btnGuardarHabitacion = tk.Button(self.frameContenedor, text="Registrar Habitación", command=lambda: self.manejoController.guardarHabitacion())
         self.btnGuardarHabitacion.grid(row=4, column = 0, pady=15, ipadx=1)
-        self.btnBuscarHabitacion = tk.Button(self.frameContenedor, text ="Buscar Habitacion", bg = "#4CAF50", fg="white", command = lambda: self.manejoController.buscarHabitacion())
+        self.btnBuscarHabitacion = tk.Button(self.frameContenedor, text ="Buscar Habitacion", command = lambda: self.manejoController.buscarHabitacion())
         self.btnBuscarHabitacion.grid(row=5, column=0, pady=15, ipadx=1)
-        self.btnModificarHabitacion = tk.Button(self.frameContenedor, text ="Modificar Habitacion", bg= "#4CAF50", fg="white", command = lambda: self.manejoController.modificarHabitacion())
+        self.btnModificarHabitacion = tk.Button(self.frameContenedor, text ="Modificar Estado", command = lambda: self.manejoController.modificarHabitacion())
         self.btnModificarHabitacion.grid(row=4, column=1, pady=15, ipadx=1)
-        self.btnEliminarHabitacion= tk.Button(self.frameContenedor, text= "Eliminar Habitacion", bg=  "#4CAF50", fg="white", command = lambda: self.manejoController.eliminarHabitacion())
+        self.btnEliminarHabitacion= tk.Button(self.frameContenedor, text= "Eliminar Habitacion", command = lambda: self.manejoController.eliminarHabitacion())
         self.btnEliminarHabitacion.grid(row=5, column= 1)
-        self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", bg = "#4CAF50", fg="white", command = lambda: self.manejoController.listarHabitacion())
-        self.btnListarHabitaciones.grid(row = 5 , column= 3)
-        self.btnLimpiarTabla = tk.Button(self.frameContenedor, text = "Limpiar", bg = "#4CAF50", fg="white", command = lambda: self.limpiarTabla())
+        self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", command = lambda: self.manejoController.listarHabitacion())
+        self.btnListarHabitaciones.grid(row = 5 , column= 2)
+        self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Ordenar por precio", command = lambda: self.manejoController.ordenarHabitacionPrecio())
+        self.btnListarHabitaciones.grid(row=4, column=2)
+        self.btnLimpiarTabla = tk.Button(self.frameContenedor, text = "Limpiar", command = lambda: self.limpiarTabla())
         self.btnLimpiarTabla.grid(row = 10 , column= 5)
 
     def table(self):

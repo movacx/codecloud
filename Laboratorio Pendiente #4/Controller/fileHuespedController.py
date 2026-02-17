@@ -30,33 +30,28 @@ class HuespedController:
             self.vista.messageError(error)
             print()
 
-
     def agregarHuesped(self):
         try:
-            nombre = self.vista.ent_nombre_huesped.get()
-            telefono = self.vista.ent_telefono_huesped.get()
+            nombre = self.vista.entradaNombreHuesped.get()
+            telefono = self.vista.entradaTelefonoHuesped.get()
 
-            if not nombre or telefono:
+            if not nombre or not telefono:
                 self.vista.mostrarMensajes('Debe de completar los campos antes de guardar')
             else:
-                if not telefono:
-                    self.vista.mostrarMensajes('Debe de completar los campos antes de guardar')
-                else:
                     nuevoRegistro = HuespedModel(self.obtenerId(), nombre, telefono)
                     exito = data.agregarListado(nuevoRegistro)
-                    self.vista.cargarNuevoDato(self.obtenerId(), nombre, telefono)
+                    self.vista.cargarNuevoDato(nuevoRegistro.ide, nombre, telefono)
 
         except Exception as error:
             self.errorLogs(f'IN | AGREGAR |: {error}')
             self.vista.mostrarMensajes(f'Hubo un error, revisa el cuadro de errores')
-            self.vista.mensaje(f'IN | AGREGAR |: {error}')
+            self.vista.mostrarMensajes(f'IN | AGREGAR |: {error}')
 
-        
     
     def buscarHuesped(self):
         try:
 
-            nombre = self.vista.ent_nombre_huesped.get()
+            nombre = self.vista.entradaNombreHuesped.get()
             arreglo = data.searchName(nombre)
             self.vista.limpiarTabla()
             self.vista.cargarDatos(arreglo)
@@ -66,12 +61,10 @@ class HuespedController:
             self.vista.mostrarMensajes(f'Hubo un error, revisa el cuadro de errores')
             self.vista.mensaje(f'IN | BUSCAR |: {error}')
 
-
     def EliminarHuesped(self):
         try:
-
             self.vista.limpiarTabla()
-            nombre = self.vista.ent_nombre_huesped.get()
+            nombre = self.vista.entradaNombreHuesped.get()
             huespedEncontrado = data.searchName(nombre)
             self.vista.cargarDatos(huespedEncontrado)
             respuesta = self.vista.mostrarConfirmacion('Manejo Huesped', '¿Desea continuar?')

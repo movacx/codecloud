@@ -8,7 +8,7 @@ class HuespedGUI:
         self.manejoController = controller
         self.ventanaHuesped = tk.Toplevel(root)
         self.ventanaHuesped.title("Registro de Huespedes")
-        self.ventanaHuesped.geometry("300x300")
+        self.ventanaHuesped.geometry("900x500")
         
         self.contenedor = tk.Frame(self.ventanaHuesped)
         self.contenedor.grid(row=0, column=0, padx=20, pady=20)
@@ -23,11 +23,11 @@ class HuespedGUI:
         tk.Label(self.contenedor, text="Telefono de Contacto:").grid(row=1, column=0, sticky="e", pady=5)
 
     def entry(self):
-        self.ent_nombre_huesped = tk.Entry(self.contenedor, width=20)
-        self.ent_nombre_huesped.grid(row=0, column=1, sticky="w")
+        self.entradaNombreHuesped = tk.Entry(self.contenedor, width=20)
+        self.entradaNombreHuesped.grid(row=0, column=1, sticky="w")
 
-        self.ent_telefono_huesped = tk.Entry(self.contenedor, width=40)
-        self.ent_telefono_huesped.grid(row=1, column=1, sticky="w")
+        self.entradaTelefonoHuesped = tk.Entry(self.contenedor, width=40)
+        self.entradaTelefonoHuesped.grid(row=1, column=1, sticky="w")
 
     def buttons(self):
         tk.Button(self.contenedor, text="Registrar Huesped", 
@@ -41,6 +41,8 @@ class HuespedGUI:
         
         tk.Button(self.contenedor, text="Mostrar Registros", 
                   command=lambda: self.manejoController.cargarHuespedes()).grid(row=3, column=1, sticky="w")
+        tk.Button(self.contenedor, text="Limpiar", 
+                  command=lambda: self.limpiarTabla()).grid(row=5, column=3, sticky="e")
 
     def table(self):
         self.columnas = ['id', 'nombre', 'telefono']
@@ -49,10 +51,7 @@ class HuespedGUI:
             self.tabla.heading(items, text=items)
             self.tabla.column(items, width=120)
             
-        self.tabla.grid(row=4, column=1, columnspan=2, pady=20)
-        
-        tk.Button(self.contenedor, text="Limpiar", 
-                  command=lambda: self.limpiarInputs()).grid(row=5, column=1, sticky="e")
+        self.tabla.grid(row=4, column=3, columnspan=2, pady=20)
 
     def cargarDatos(self, arreglo):
         for items in arreglo:
@@ -66,9 +65,8 @@ class HuespedGUI:
         for items in self.tabla.get_children():
             self.tabla.delete(items)
 
-    def limpiarInputs(self):
-        self.ent_nombre_huesped.delete(0, tk.END)
-        self.ent_telefono_huesped.delete(0, tk.END)
+        self.entradaNombreHuesped.delete(0,tk.END)
+        self.entradaTelefonoHuesped.delete(0,tk.END)
 
     def mostrarMensajes(self, mensaje):
         messagebox.showerror('Dialog', f'{mensaje}', parent=self.ventanaHuesped)

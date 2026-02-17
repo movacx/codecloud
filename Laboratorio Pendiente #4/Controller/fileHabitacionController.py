@@ -19,8 +19,13 @@ class HabitacionController():
         tipo = self.GUI.comboboxTipoHabitacion.get()
         precio = self.GUI.entradaPrecioHabitacion.get()
         estado = self.GUI.comboboxEstadoHabitacion.get()
-        nuevoRegistro = HabitacionModel(self.obtenerUltimoId(), numero, tipo, precio, estado)
+        nuevoRegistro = HabitacionModel(0, numero, tipo, precio, estado)
         data.registrarHabitacion(nuevoRegistro)
+        
+    def ordenarHabitacionPrecio(self):
+	arreglo = data.ordenarPrecio()
+	self.GUI.limpiarTabla()
+	self.GUI.actualizarTabla(arreglo)
     
     def listarHabitacion(self):
         arreglo = data.listarHabitaciones()
@@ -42,8 +47,6 @@ class HabitacionController():
         numeroEliminar = self.GUI.entradaNumeroHabitacion.get()
         habitacionEliminar = data.eliminarHabitacion(numeroEliminar)
         messagebox.showinfo("Info", "Modificado correctamente")
-        
-    
         
     def botonClick(self, boton):
         if boton == "x":

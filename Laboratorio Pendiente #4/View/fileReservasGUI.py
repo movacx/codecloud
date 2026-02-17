@@ -8,7 +8,7 @@ class ReservaGUI:
         self.manejoController = controller
 
         self.ventana = tk.Toplevel(root)
-        self.ventana.geometry('300x300')
+        self.ventana.geometry("900x500")
         self.ventana.title('Reservas')
         
         self.contenedor = tk.Frame(self.ventana)
@@ -30,11 +30,11 @@ class ReservaGUI:
         self.fechaSalida = tk.Entry(self.contenedor, width=25)
         self.fechaSalida.grid(row = 3, column = 1, sticky = 'w')
 
-        tk.Button(self.contenedor, text = 'Crear una reserva').grid(row = 4, column = 0, pady=10)
-        tk.Button(self.contenedor, text = 'Ver reservas').grid(row = 4, column = 1, sticky="w")
+        tk.Button(self.contenedor, text = "Crear una reserva",command = lambda: self.manejoController.crearReserva()).grid(row = 4, column = 0, pady=10)
+        tk.Button(self.contenedor, text = "Ver reservas", command = lambda: self.manejoController.verReservas()).grid(row = 4, column = 1, sticky="w")
+        tk.Button(self.contenedor, text = "Eliminar Reservacion", command = lambda: self.manejoController.eliminarReserva()).grid(row = 5, column = 1, sticky="w")
+
         
-        tk.Button(self.contenedor, text = 'Modificar Estado').grid(row = 5, column = 0)
-        tk.Button(self.contenedor, text = 'Eliminar Reservacion').grid(row = 5, column = 1, sticky="w")
 
         columnas = ['id', 'N° Habitacion', 'id Huesped', 'Entrada', 'Salida']
         self.tablee = ttk.Treeview(self.contenedor, column = columnas, show = 'headings', height=12)
