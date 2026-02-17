@@ -72,3 +72,21 @@
 2026-02-16 19:03:42 ===> IN | CARGAR |: 'HuespedGUI' object has no attribute 'entradaNumeroHabitacion'
 2026-02-16 19:05:08 ===> IN | CARGAR |: 'HuespedGUI' object has no attribute 'limpiarTabla'
 2026-02-16 19:07:39 ===> IN | CARGAR |: 'HuespedGUI' object has no attribute 'limpiarTabla'
+2026-02-16 21:34:06 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 21:34:07 ===> Error al eliminar habitacion: list index out of range
+2026-02-16 21:34:10 ===> Error al modificar estado habitacion: list index out of range
+2026-02-16 22:04:29 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 22:07:15 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 22:07:18 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 22:07:48 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 22:13:06 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 22:27:19 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 22:37:15 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 22:39:44 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 23:10:43 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 23:10:45 ===> Error al buscar habitacion por ID: list index out of range
+2026-02-16 23:13:39 ===> Error al ordenar habitaciones: list index out of range
+2026-02-16 23:14:03 ===> Error al modificar estado habitacion: list index out of range
+2026-02-16 23:14:28 ===> Error al modificar estado habitacion: list index out of range
+2026-02-16 23:15:52 ===> Error al modificar estado habitacion: list index out of range
+2026-02-16 23:18:11 ===> Error al buscar habitacion por ID: list index out of range

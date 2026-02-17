@@ -19,7 +19,7 @@ def main():
         tkGUI.Button(contenedor, text = 'Reservas', command = lambda: ReservaController(root)).grid(row = 0, column = 1)
         tkGUI.Button(contenedor, text = 'Reportes', command = lambda: ReportesController(root)).grid(row = 1, column = 0)
         tkGUI.Button(contenedor, text = 'Habitacion', command = lambda: HabitacionController(root)).grid(row = 1, column = 1)
-
+        
         root.mainloop()
 
     except Exception as error:

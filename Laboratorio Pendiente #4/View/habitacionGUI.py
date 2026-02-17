@@ -43,14 +43,14 @@ class HabitacionGUI:
         self.btnGuardarHabitacion.grid(row=4, column = 0, pady=15, ipadx=1)
         self.btnBuscarHabitacion = tk.Button(self.frameContenedor, text ="Buscar Habitacion", command = lambda: self.manejoController.buscarHabitacion())
         self.btnBuscarHabitacion.grid(row=5, column=0, pady=15, ipadx=1)
-        self.btnModificarHabitacion = tk.Button(self.frameContenedor, text ="Modificar Estado", command = lambda: self.manejoController.modificarHabitacion())
+        self.btnModificarHabitacion = tk.Button(self.frameContenedor, text ="Modificar Estado", command = lambda: self.manejoController.modificarEstadoHabitacion())
         self.btnModificarHabitacion.grid(row=4, column=1, pady=15, ipadx=1)
         self.btnEliminarHabitacion= tk.Button(self.frameContenedor, text= "Eliminar Habitacion", command = lambda: self.manejoController.eliminarHabitacion())
         self.btnEliminarHabitacion.grid(row=5, column= 1)
         self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Listar habitaciones", command = lambda: self.manejoController.listarHabitacion())
         self.btnListarHabitaciones.grid(row = 5 , column= 2)
-        self.btnListarHabitaciones = tk.Button(self.frameContenedor, text = "Ordenar por precio", command = lambda: self.manejoController.ordenarHabitacionPrecio())
-        self.btnListarHabitaciones.grid(row=4, column=2)
+        self.btnOrdenarPorPrecio = tk.Button(self.frameContenedor, text = "Ordenar por precio", command = lambda: self.manejoController.ordenarHabitacionPrecio())
+        self.btnOrdenarPorPrecio.grid(row=4, column=2)
         self.btnLimpiarTabla = tk.Button(self.frameContenedor, text = "Limpiar", command = lambda: self.limpiarTabla())
         self.btnLimpiarTabla.grid(row = 10 , column= 5)
 
@@ -64,10 +64,11 @@ class HabitacionGUI:
             
             
     def actualizarTabla(self, arreglo):
-        for item in arreglo:
-            self.tabla.insert("",tk.END,value=(item[0], item[1], item[2], item[3], item[4]))
+     for item in arreglo:
+      if len(item) >= 5:
+       self.tabla.insert("",tk.END,values=(item[0], item[1], item[2], item[3], item[4]))
+       print(item)
             
-            print(item)
             
     
     def limpiarTabla(self):

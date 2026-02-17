@@ -22,26 +22,30 @@ class HabitacionController():
         nuevoRegistro = HabitacionModel(0, numero, tipo, precio, estado)
         data.registrarHabitacion(nuevoRegistro)
         
-    #def ordenarHabitacionPrecio(self):
-	#arreglo = data.ordenarPrecio()
-	#self.GUI.limpiarTabla()
-	#self.GUI.actualizarTabla(arreglo)
-    
+    def ordenarHabitacionPrecio(self):
+        arreglo = data.ordenarPrecio()
+        print("Ordenado:", arreglo)
+        self.GUI.limpiarTabla()
+        self.GUI.actualizarTabla(arreglo)
+		
     def listarHabitacion(self):
         arreglo = data.listarHabitaciones()
+        self.GUI.limpiarTabla()
         self.GUI.actualizarTabla(arreglo)
         
         
     def buscarHabitacion(self):
         numero = self.GUI.entradaNumeroHabitacion.get()
         encontrado = data.buscarHabitacionId(numero)
+        self.GUI.limpiarTabla()
         self.GUI.actualizarTabla(encontrado)
         
         
-    def modificarHabitacion(self):
+    def modificarEstadoHabitacion(self):
         seleccion = self.GUI.entradaNumeroHabitacion.get()
         estado = self.GUI.comboboxEstadoHabitacion.get()
-        data.modificar(seleccion, estado) 
+        data.modificar(seleccion, estado)
+        self.listarHabitacion()
             
     def eliminarHabitacion(self):
         numeroEliminar = self.GUI.entradaNumeroHabitacion.get()
