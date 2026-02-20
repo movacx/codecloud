@@ -15,4 +15,6 @@ class UsuarioModel:
     def setCorreo(self, nuevoCorreo):
         self.correo = nuevoCorreo
         
+    def importar(self):
+        return ([self.id, self.nombre, self.password, self.password, self.rol])
     
