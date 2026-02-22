@@ -2,7 +2,7 @@ import tkinter as tkGUI
 from tkinter import messagebox
 from View.cuentaAhorroGUI import CuentaAhorroGUI
 import data.baseCuenta as data
-from Model.cuentaAhorro import CuentaAhorro
+from Model.cuentaAhorroModel import CuentaAhorro
 
 class CuentaAhorroController():
     def __init__(self, root):

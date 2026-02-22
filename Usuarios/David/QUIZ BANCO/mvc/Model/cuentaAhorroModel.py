@@ -1,4 +1,4 @@
-from cuentaModel import CuentaModel
+from Model.cuentaModel import CuentaModel
 
 class CuentaAhorro(CuentaModel):
 	def __init__(self, numeroCuenta, dniCliente, saldo, interesAnual):

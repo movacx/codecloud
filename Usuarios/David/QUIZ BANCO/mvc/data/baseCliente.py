@@ -18,24 +18,14 @@ def guardarError(errorTexto):
 	except Exception as error:
 		print("Error Critico en el log: ", error)
 		
-def guardarCliente():
-	try:
-		if not os.path.exists(ARCHIVO):
-			return False
-		
-		if buscarCliente(cliente.dni):
-			return False
-		
-		with open(ARCHIVO, "a", newline="", encoding="utf-8") as archivoParaGuardar:
-			writer = csv.writer(archivoParaGuardar)
-			writer.writerow(cliente.importarToCsv())
-			return True
-	
-	except Exception as error:
-		guardarError(f"Error al registrar cliente: {error}")
+def guardarCliente(cliente):
+	if buscarCliente(cliente.dni):
 		return False
-	
-	
+		
+	with open(ARCHIVO, "a", newline="", encoding="utf-8") as archivoParaGuardar:
+		writer = csv.writer(archivoParaGuardar)
+		writer.writerow(cliente.importToCsv())
+		return True
 def listarClientes():
 	try:
 		if not os.path.exists(ARCHIVO):
@@ -65,7 +55,7 @@ def buscarCliente(dniCliente):
 			reader = csv.reader(aarchivoParaLeer)
 			
 			for item in reader:
-				if int(item[0]) == dniCliente:
+				if item[0] == dniCliente:
 					encontrado.append(item)
 					
 			return encontrado
@@ -87,7 +77,7 @@ def eliminarCliente(dniCliente):
 			reader = csv.reader(archivoParaLeer)
 			
 			for item in reader:
-				if int(item[0]) == dniCliente:
+				if item[0] == dniCliente:
 					encontrado = True
 				else:
 					arregloVacio.append(item)

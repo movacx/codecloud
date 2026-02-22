@@ -83,7 +83,7 @@ class CreditoController():
     def verDeuda(self):
         idCredito = self.GUI.entradaIdCredito.get()
 
-        creditoEncontrado = data.buscarCreditoPorId(idCredito)
+        creditoEncontrado = data.buscarCreditoId(idCredito)
 
         if len(creditoEncontrado) == 0:
             messagebox.showinfo("Info", "Credito no encontrado")
