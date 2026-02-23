@@ -14,8 +14,8 @@ def leerResenas():
                 if items: 
                     lista.append(items)
         return lista
-    except Exception as e:
-        print(f"Error leer resenas: {e}")
+    except Exception as error:
+        print(f"Error leer resenas: {error}")
         return []
 
 def guardarResena(objResena):
@@ -24,6 +24,6 @@ def guardarResena(objResena):
             writer = csv.writer(file)
             writer.writerow(objResena.importarToCsv())
         return True
-    except Exception as e:
-        print(f"Error guardar resena: {e}")
+    except Exception as error:
+        print(f"Error guardar resena: {error}")
         return False
