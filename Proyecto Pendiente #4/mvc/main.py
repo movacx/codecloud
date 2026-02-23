@@ -4,7 +4,6 @@ from Controller.authController import AuthController
 def main():
     try:
         root = tk.Tk()
-        
         controladorAcceso = AuthController(root)
         root.mainloop()
     except Exception as error:
