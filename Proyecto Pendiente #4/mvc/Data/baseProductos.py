@@ -14,8 +14,8 @@ def listarProductos():
                 if items: 
                     lista.append(items)
         return lista
-    except Exception as e:
-        print(f"Error listar productos: {e}")
+    except Exception as error:
+        print(f"Error listar productos: {error}")
         return []
 
 def guardarProducto(objPro):
@@ -30,8 +30,8 @@ def guardarProducto(objPro):
             writer = csv.writer(file)
             writer.writerow(objPro.importarToCsv())
         return True
-    except Exception as e:
-        print(f"Error guardar producto: {e}")
+    except Exception as error:
+        print(f"Error guardar producto: {error}")
         return False
 
 def eliminarProducto(idPro):
@@ -46,8 +46,8 @@ def eliminarProducto(idPro):
         with open(ARCHIVO, "w", newline="", encoding="utf-8") as file:
             csv.writer(file).writerows(nuevoArreglo)
         return True
-    except Exception as e:
-        print(f"Error eliminar: {e}")
+    except Exception as error:
+        print(f"Error eliminar: {error}")
         return False
 
 def restarStock(idPro, cantidad):
@@ -60,6 +60,6 @@ def restarStock(idPro, cantidad):
         with open(ARCHIVO, "w", newline="", encoding="utf-8") as file:
             csv.writer(file).writerows(productos)
         return True
-    except Exception as e:
-        print(f"Error stock: {e}")
+    except Exception as error:
+        print(f"Error stock: {error}")
         return False

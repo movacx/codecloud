@@ -66,6 +66,6 @@ def listarTodos():
                 if items:
                     listaCompleta.append(items)
         return listaCompleta
-    except Exception as e:
-        print(f"Error al listar: {e}")
+    except Exception as error:
+        print(f"Error al listar: {error}")
         return []

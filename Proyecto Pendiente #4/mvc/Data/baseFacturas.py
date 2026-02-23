@@ -7,15 +7,15 @@ ARCHIVO = os.path.join(dirData, "csv", "facturas.csv")
 def leerFacturas():
     try:
         if not os.path.exists(ARCHIVO): return []
-        datos = []
+        datos = [ ]
         with open(ARCHIVO, "r", newline="", encoding="utf-8") as file:
             reader = csv.reader(file)
             for items in reader:
                 if items: 
                     datos.append(items)
         return datos
-    except Exception as e:
-        print(f"Error leer facturas: {e}")
+    except Exception as error:
+        print(f"Error leer facturas: {error}")
         return []
 
 def guardarFactura(fila):
@@ -24,8 +24,8 @@ def guardarFactura(fila):
         with open(ARCHIVO, "a", newline="", encoding="utf-8") as file:
             csv.writer(file).writerow(fila)
         return True
-    except Exception as e:
-        print(f"Error guardar factura: {e}")
+    except Exception as error:
+        print(f"Error guardar factura: {error}")
         return False
 
 def cambiarEstadoFactura(idFac, nuevoEstado):
@@ -38,6 +38,6 @@ def cambiarEstadoFactura(idFac, nuevoEstado):
         with open(ARCHIVO, "w", newline="", encoding="utf-8") as file:
             csv.writer(file).writerows(facturas)
         return True
-    except Exception as e:
-        print(f"Error estado factura: {e}")
+    except Exception as error:
+        print(f"Error estado factura: {error}")
         return False
