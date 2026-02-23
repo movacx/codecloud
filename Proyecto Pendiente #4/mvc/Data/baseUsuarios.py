@@ -1,0 +1,71 @@
+import os
+import csv
+
+dirData = os.path.dirname(os.path.abspath(__file__))
+ARCHIVO = os.path.join(dirData, "csv", "usuarios.csv")
+
+def validarUltimoId():
+    try:
+        if not os.path.exists(ARCHIVO):
+            return 0
+            
+        ultimoId = 0
+        with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoLeer:
+            reader = csv.reader(archivoLeer)
+            for items in reader:
+                if items:
+                    try:
+                        idActual = int(items[0])
+                        if idActual > ultimoId:
+                            ultimoId = idActual
+                    except ValueError:
+                        continue
+        return ultimoId
+    except Exception as errorFallo:
+        print(f"Error al buscar ID: {errorFallo}")
+        return 0
+
+def registrarUsuario(objUsuario):
+    try: 
+        idNuevo = validarUltimoId() + 1
+        objUsuario.ide = idNuevo
+        
+        with open(ARCHIVO, "a", newline="", encoding="utf-8") as archivoEscribir:
+            writer = csv.writer(archivoEscribir)
+            writer.writerow(objUsuario.importarToCsv()) 
+        return True
+    except Exception as errorFallo:
+        print(f"Error al registrar: {errorFallo}")
+        return False
+
+def validarLogin(correoUsr, passUsr):
+    try: 
+        if not os.path.exists(ARCHIVO):
+            return None
+            
+        with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoLeer:
+            reader = csv.reader(archivoLeer)
+            for items in reader:
+                if items:
+                    if items[1] == correoUsr and items[2] == passUsr: 
+                        return items 
+        return None
+    except Exception as errorFallo:
+        print(f"Error en login: {errorFallo}")
+        return None
+
+def listarTodos():
+    try:
+        if not os.path.exists(ARCHIVO):
+            return []
+            
+        listaCompleta = []
+        with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoCsv:
+            reader = csv.reader(archivoCsv)
+            for items in reader:
+                if items:
+                    listaCompleta.append(items)
+        return listaCompleta
+    except Exception as e:
+        print(f"Error al listar: {e}")
+        return []
