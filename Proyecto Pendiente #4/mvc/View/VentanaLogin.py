@@ -10,18 +10,22 @@ class VentanaLogin:
         self.ventana.title('Login Intelek')
         self.ventana.geometry('1080x720')
         self.ventana.configure(bg="#0D5577")
-        
+        #---------------------------------------------------------------------------------------------------------------------------------------
+        #Contenedor 
         self.contenedor = tk.Frame(self.ventana, padx=20, pady=20, bg="#FFFFFF")
         self.contenedor.place(anchor='center', relx=0.5, rely=0.5)
-
+        #----------------------------------------------------------------------------------------------------------------------------------------
+	#Label mas entry
         tk.Label(self.contenedor, text='INTELEK', font=sans12, bg='white').pack()
         self.txtCorreo = tk.Entry(self.contenedor, width=40)
         self.txtCorreo.pack(pady=5)
         self.txtClave = tk.Entry(self.contenedor, width=40, show="*")
         self.txtClave.pack(pady=5)
-
+	#----------------------------------------------------------------------------------------------------------------------------------------
+	#Buttons
         tk.Button(self.contenedor, text='Ingresar', command=lambda: self.manejoController.ejecutarLogin()).pack(pady=5)
         tk.Button(self.contenedor, text='Crear Cuenta', command=lambda: self.manejoController.abrirRegistro()).pack()
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Mostrar error 
     def mostrarError(self, mensaje):
         messagebox.showerror('Error', mensaje, parent=self.ventana)

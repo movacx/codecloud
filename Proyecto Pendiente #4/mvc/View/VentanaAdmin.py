@@ -17,9 +17,10 @@ class VentanaAdmin:
         self.ventana.configure(bg = 'white')
 
         self.paneles()
-        self.botones()
+        self.buttons()
         self.entradas()
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Paneles 
     def paneles(self):
         self.contenedor = tk.Frame(self.ventana, bg = "#4b4242")
         self.contenedor.grid(row = 0, column = 0, sticky = 'ns')
@@ -28,8 +29,9 @@ class VentanaAdmin:
 
         self.areaCentral = tk.Frame(self.ventana, bg='white', padx=40, pady=40)
         self.areaCentral.grid(row=0, column=1, sticky='nsew')
-
-    def botones(self):
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Buttons 
+    def buttons(self):
         tk.Button(self.contenedor, text="Ver Ventas Totales", command=lambda: self.manejoController.verVentas(), bd=0, bg="#D9D9D9", width=20).grid(row=1, column=0, sticky='nswe', pady=5, padx=(10,10))
         tk.Button(self.contenedor, text="Ver Total Cuentas", command=lambda: self.manejoController.verCuentas(), bd=0, bg="#D9D9D9", width=20).grid(row=2, column=0, sticky='nswe', pady=5, padx=(10,10))
         
@@ -37,7 +39,8 @@ class VentanaAdmin:
         self.txtIdFac = tk.Entry(self.contenedor, width=20)
         self.txtIdFac.grid(row=5, column=0, pady=5, padx=(10,10))
         tk.Button(self.contenedor, text="Aceptar Reembolso", command=lambda: self.manejoController.reembolsar("Reembolsado"), bd=0, bg="#E74C3C", fg="white", width=20).grid(row=6, column=0, sticky='nswe', pady=5, padx=(10,10))
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Entry
     def entradas(self):
         tk.Label(self.areaCentral, text="MANTENIMIENTO DE PRODUCTOS", font=sans12, bg='white').pack(anchor='w', pady=(10, 10))
 
@@ -69,9 +72,12 @@ class VentanaAdmin:
         self.txtRamPro.grid(row=5, column=1, pady=5, padx=10)
 
         tk.Button(self.frameForm, text="Guardar Producto en CSV", command=lambda: self.manejoController.guardarNuevoPro(), bg="#27AE60", fg="white", bd=0, padx=20, pady=5).grid(row=6, column=0, columnspan=2, pady=20)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Mostrar mensaje
     def mostrarMensaje(self, mensaje):
         messagebox.showinfo('Intelek', mensaje, parent=self.ventana)
-
+    #Mostrar error
     def mostrarError(self, mensaje):
         messagebox.showerror('Error', mensaje, parent=self.ventana)
+        
+        

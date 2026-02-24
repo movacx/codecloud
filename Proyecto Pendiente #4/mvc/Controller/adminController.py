@@ -7,7 +7,8 @@ import Data.baseUsuarios as dataUsuarios
 class AdminController:
     def __init__(self, root):
         self.GUI = VentanaAdmin(root, self)
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Ver ventas 
     def verVentas(self):
         try:
             listaFacturas = dataFac.leerFacturas()
@@ -19,7 +20,8 @@ class AdminController:
             self.GUI.mostrarMensaje(f"INGRESOS BRUTOS: ₡{totalVentas}")
         except Exception as error:
             self.GUI.mostrarError(f"Error al calcular: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Ver cuentas 
     def verCuentas(self):
         try:
             todosUsr = dataUsuarios.listarTodos()
@@ -27,7 +29,8 @@ class AdminController:
             self.GUI.mostrarMensaje(f"TOTAL CUENTAS REGISTRADAS: {total}")
         except Exception as error:
             self.GUI.mostrarError(f"Error al leer cuentas: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Reembolsar
     def reembolsar(self, estado):
         try:
             idF = self.GUI.txtIdFac.get()
@@ -43,7 +46,8 @@ class AdminController:
                 self.GUI.mostrarError("No se pudo cambiar el estado")
         except Exception as error:
             self.GUI.mostrarError(f"Error al procesar reembolso: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------}
+    #Guardar nuevo producto 
     def guardarNuevoPro(self):
         try:
             nom = self.GUI.txtNomPro.get()

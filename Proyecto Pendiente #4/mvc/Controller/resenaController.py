@@ -1,4 +1,4 @@
-from View.VentanaResena import VentanaResena
+from View.ventanaResena import VentanaResena
 from Model.ResenaModel import ResenaModel
 import Data.baseResenas as dataRes
 
@@ -8,7 +8,8 @@ class ResenaController:
         self.listaProductosComprados = listaProductosComprados
         self.GUI = VentanaResena(root, self)
         self.cargarProductos()
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Cargar productos 
     def cargarProductos(self):
         try:
             if self.listaProductosComprados:
@@ -16,7 +17,8 @@ class ResenaController:
                 self.GUI.comboProductos.current(0)
         except Exception as error:
             self.GUI.mostrarError(f"Error al cargar productos: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Enviar reseña 
     def enviarResena(self, cantidadEstrellas):
         try:
             idProducto = self.GUI.comboProductos.get()
@@ -38,3 +40,5 @@ class ResenaController:
                 self.GUI.mostrarError("No se pudo guardar la reseña")
         except Exception as error:
             self.GUI.mostrarError(f"Error al enviar reseña: {error}")
+            
+            

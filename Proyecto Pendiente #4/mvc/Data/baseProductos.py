@@ -4,20 +4,7 @@ import csv
 dirData = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.join(dirData, "csv", "productos.csv")
 
-def listarProductos():
-    try:
-        if not os.path.exists(ARCHIVO): return []
-        lista = []
-        with open(ARCHIVO, "r", newline="", encoding="utf-8") as file:
-            reader = csv.reader(file)
-            for items in reader:
-                if items: 
-                    lista.append(items)
-        return lista
-    except Exception as error:
-        print(f"Error listar productos: {error}")
-        return []
-
+#Guardar producto
 def guardarProducto(objPro):
     try:
         idNuevo = 1
@@ -30,14 +17,35 @@ def guardarProducto(objPro):
             writer = csv.writer(file)
             writer.writerow(objPro.importarToCsv())
         return True
+    
     except Exception as error:
         print(f"Error guardar producto: {error}")
         return False
-
+#-----------------------------------------------------------------------------------------------------------------------
+#Listar productos 
+def listarProductos():
+    try:
+        if not os.path.exists(ARCHIVO): return []
+        lista = [ ]
+        
+        with open(ARCHIVO, "r", newline="", encoding="utf-8") as file:
+            reader = csv.reader(file)
+            
+            for items in reader:
+                if items: 
+                    lista.append(items)
+        return lista
+    
+    except Exception as error:
+        print(f"Error listar productos: {error}")
+        return [ ]
+#-----------------------------------------------------------------------------------------------------------------------
+#Eliminar producto
 def eliminarProducto(idPro):
     try:
         productos = listarProductos()
-        nuevoArreglo = []
+        nuevoArreglo = [ ]
+        
         for items in productos:
             if items:
                 if items[0] != str(idPro):
@@ -46,20 +54,27 @@ def eliminarProducto(idPro):
         with open(ARCHIVO, "w", newline="", encoding="utf-8") as file:
             csv.writer(file).writerows(nuevoArreglo)
         return True
+    
     except Exception as error:
         print(f"Error eliminar: {error}")
         return False
-
+#-----------------------------------------------------------------------------------------------------------------------
+#Reducir stock 
 def restarStock(idPro, cantidad):
     try:
         productos = listarProductos()
+        
         for items in productos:
             if items:
                 if items[0] == str(idPro):
                     items[4] = str(int(items[4]) - cantidad)
+                    
         with open(ARCHIVO, "w", newline="", encoding="utf-8") as file:
             csv.writer(file).writerows(productos)
         return True
+    
     except Exception as error:
         print(f"Error stock: {error}")
         return False
+    
+    

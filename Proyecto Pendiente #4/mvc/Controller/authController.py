@@ -12,7 +12,8 @@ class AuthController:
         self.root = root
         self.idLogueado = 0
         self.GUI = VentanaLogin(self.root, self)
-
+#-----------------------------------------------------------------------------------------------------------------------
+     #Ejecutar login 
     def ejecutarLogin(self):
         try:
             correo = self.GUI.txtCorreo.get()
@@ -28,10 +29,12 @@ class AuthController:
                 self.GUI.mostrarError("Credenciales invalidas")
         except Exception as error:
             self.GUI.mostrarError(f"Error interno: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+     #Abrir registro
     def abrirRegistro(self):
         self.registroGUI = VentanaRegistro(self.root, self)
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Registrar
     def registrar(self):
         try:
             nombre = self.registroGUI.txtNombre.get()
@@ -52,16 +55,20 @@ class AuthController:
                 self.registroGUI.mostrarError("Error al registrar")
         except Exception as error:
             self.registroGUI.mostrarError(f"Error interno: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+     #Abrir la tienda
     def abrirTienda(self):
         TiendaController(self.root, self.idLogueado)
-
+#-----------------------------------------------------------------------------------------------------------------------
+     #Abrir el armador de la pc
     def abrirArmador(self):
         ArmadorController(self.root)
-
+#-----------------------------------------------------------------------------------------------------------------------
+     #Abrir admin
     def abrirAdmin(self):
         AdminController(self.root)
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Cerrar el programa
     def cerrarApp(self):
         self.menuGUI.ventana.destroy()
         self.root.deiconify()

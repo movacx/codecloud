@@ -8,14 +8,15 @@ class VentanaResena:
         self.manejoController = controller
         self.ventana = tk.Toplevel(root)
         self.ventana.title("Reseña del Producto")
-        self.ventana.geometry("420x300")
+        self.ventana.geometry("650x450")
         self.ventana.configure(bg="white")
 
         self.frameContenedor = tk.Frame(self.ventana, bg="white", padx=20, pady=20)
         self.frameContenedor.pack(fill="both", expand=True)
 
         self.armarFormulario()
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     #Armar formulario
     def armarFormulario(self):
         tk.Label(self.frameContenedor, text="Producto:", bg="white", font=sans12).grid(row=0, column=0, sticky="w", pady=(0, 8))
         self.comboProductos = ttk.Combobox(self.frameContenedor, state="readonly", width=30)
@@ -26,27 +27,35 @@ class VentanaResena:
         self.txtComentario.grid(row=3, column=0, columnspan=2, sticky="we", pady=(0, 14))
 
         tk.Label(self.frameContenedor, text="Calificación:", bg="white", font=sans12).grid(row=4, column=0, sticky="w", pady=(0, 8))
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #Label + boton/1 estrella
         tk.Label(self.frameContenedor, text="1 estrella", bg="white").grid(row=5, column=0, sticky="w", pady=2)
         tk.Button(self.frameContenedor, text="Enviar reseña", command=lambda: self.manejoController.enviarResena(1)).grid(row=5, column=1, sticky="e", pady=2)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #Label + boton/2 estrellas 
         tk.Label(self.frameContenedor, text="2 estrellas", bg="white").grid(row=6, column=0, sticky="w", pady=2)
         tk.Button(self.frameContenedor, text="Enviar reseña", command=lambda: self.manejoController.enviarResena(2)).grid(row=6, column=1, sticky="e", pady=2)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #Label + boton/3 estrellas 
         tk.Label(self.frameContenedor, text="3 estrellas", bg="white").grid(row=7, column=0, sticky="w", pady=2)
         tk.Button(self.frameContenedor, text="Enviar reseña", command=lambda: self.manejoController.enviarResena(3)).grid(row=7, column=1, sticky="e", pady=2)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #Label + boton/4 estrellas 
         tk.Label(self.frameContenedor, text="4 estrellas", bg="white").grid(row=8, column=0, sticky="w", pady=2)
         tk.Button(self.frameContenedor, text="Enviar reseña", command=lambda: self.manejoController.enviarResena(4)).grid(row=8, column=1, sticky="e", pady=2)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #Label + boton/5 estrellas 
         tk.Label(self.frameContenedor, text="5 estrellas", bg="white").grid(row=9, column=0, sticky="w", pady=2)
         tk.Button(self.frameContenedor, text="Enviar reseña", command=lambda: self.manejoController.enviarResena(5)).grid(row=9, column=1, sticky="e", pady=2)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #Contenedores configuracion 
         self.frameContenedor.columnconfigure(0, weight=1)
         self.frameContenedor.columnconfigure(1, weight=0)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Mostrar mensaje 
     def mostrarMensaje(self, mensaje):
         messagebox.showinfo("Intelek", mensaje, parent=self.ventana)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Mostrar error
     def mostrarError(self, mensaje):
         messagebox.showerror("Error", mensaje, parent=self.ventana)

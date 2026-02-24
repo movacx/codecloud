@@ -18,8 +18,9 @@ class MenuPrincipal:
         self.ventana.configure(bg = 'white')
         
         self.paneles()
-        self.botones()
-
+        self.buttons()
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     #Paneles
     def paneles(self):
         self.menuLateral = tk.Frame(self.ventana, bg = "#4b4242")
         self.menuLateral.grid(row = 0, column = 0, sticky = 'ns')
@@ -30,8 +31,9 @@ class MenuPrincipal:
         self.areaDerecha.grid(row=0, column=1, sticky='nsew')
         
         tk.Label(self.areaDerecha, text=f"Bienvenido a INTELEK\nPerfil activo: {self.rol}", font=sans12, bg='white', fg="#0D5577").pack(expand=True)
-
-    def botones(self):
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Buttons 
+    def buttons(self):
         tk.Button(self.menuLateral, bd=0, text='Tienda y Buscador', command=lambda: self.manejoController.abrirTienda(), bg="#D9D9D9", width=20).grid(row=1, column=0, sticky='nswe', pady=5, padx=(10,10))
         tk.Button(self.menuLateral, bd=0, text='Armador de PC', command=lambda: self.manejoController.abrirArmador(), bg="#D9D9D9", width=20).grid(row=2, column=0, sticky='nswe', pady=5, padx=(10,10))
 

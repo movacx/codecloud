@@ -15,7 +15,8 @@ class TiendaController:
         self.listaItemsCarrito = []
         self.totalPagar = 0
         self.buscarProductos() 
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Buscar producto
     def buscarProductos(self):
         try:
             texto = self.GUI.txtBusca.get().lower()
@@ -30,7 +31,8 @@ class TiendaController:
                         self.GUI.tablaInv.insert('', 'end', values=(items[0], items[1], items[3], items[4]))
         except Exception as error:
             self.GUI.mostrarError(f"Error en busqueda: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Agregar un producto 
     def agregarItem(self):
         try:
             seleccion = self.GUI.tablaInv.selection()
@@ -53,7 +55,8 @@ class TiendaController:
                 self.GUI.mostrarError("Sin stock suficiente")
         except Exception as error:
             self.GUI.mostrarError(f"Error al agregar: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Actualizar el carrito de compras 
     def actualizarCarritoVisual(self):
         try:
             for items in self.GUI.tablaCarro.get_children():
@@ -70,7 +73,8 @@ class TiendaController:
             self.GUI.lblTotal.config(text=f"Total: ₡{self.totalPagar}")
         except Exception as error:
             self.GUI.mostrarError(f"Error al actualizar: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Aplicar los descuentos 
     def aplicarDescuento(self):
         try:
             suerte = random.randint(1, 100) 
@@ -82,7 +86,8 @@ class TiendaController:
                 self.GUI.lblTotal.config(text=f"Total con promo: ₡{self.totalPagar} (25% rebajado!)")
         except Exception as error:
             self.GUI.mostrarError(f"Error de cupon: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Ver estrellas 
     def verEstrellas(self):
         try:
             seleccion = self.GUI.tablaInv.selection()
@@ -104,7 +109,8 @@ class TiendaController:
                 self.GUI.mostrarMensaje(f"Calificacion promedio: {suma / cant} estrellas")
         except Exception as error:
             self.GUI.mostrarError(f"Error al leer estrellas: {error}")
-
+#-----------------------------------------------------------------------------------------------------------------------
+    #Pagar factura 
     def pagarFactura(self):
         try:
             direccion = self.GUI.txtDir.get()
@@ -126,11 +132,11 @@ class TiendaController:
 
             filaNueva = [idFactura, self.idCliente, fechaActual, self.totalPagar, direccion, "Completado"]
             dataFac.guardarFactura(filaNueva)
-            
+
             listaProductosComprados = []
             for items in self.listaItemsCarrito:
                 if items:
-		 listaProductosComprados.append(items.producto.ide)
+                    listaProductosComprados.append(items.producto.ide)
             
             self.listaItemsCarrito = []
             self.actualizarCarritoVisual()
@@ -138,7 +144,3 @@ class TiendaController:
             ResenaController(self.GUI.ventana, self.idCliente, listaProductosComprados)
         except Exception as error:
             self.GUI.mostrarError(f"Error al pagar: {error}")
-
-
-
-

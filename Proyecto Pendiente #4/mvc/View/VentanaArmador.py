@@ -14,7 +14,7 @@ class VentanaArmador:
         self.ventana.configure(bg='white')
         self.paneles()
         self.entradas()
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     def paneles(self):
         self.menuLateral = tk.Frame(self.ventana, bg="#4b4242", width=200)
         self.menuLateral.grid(row=0, column=0, sticky='ns')
@@ -22,7 +22,7 @@ class VentanaArmador:
 
         self.areaCentral = tk.Frame(self.ventana, bg='white', padx=40, pady=20)
         self.areaCentral.grid(row=0, column=1, sticky='nsew')
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     def entradas(self):
         frameBusqueda = tk.Frame(self.areaCentral, bg='white')
         frameBusqueda.pack(fill='x', pady=5)
@@ -59,9 +59,11 @@ class VentanaArmador:
         self.entradaDireccion.grid(row=1, column=0, pady=5)
         
         tk.Button(self.areaCentral, text="Finalizar Compra", command=lambda: self.manejoController.finalizar()).pack(pady=10)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Mostrar error
     def mostrarError(self, mensaje):
         messagebox.showerror('Error', mensaje, parent=self.ventana)
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #Mostrar info
     def mostrarInfo(self, mensaje):
         messagebox.showinfo('Intelek', mensaje, parent=self.ventana)

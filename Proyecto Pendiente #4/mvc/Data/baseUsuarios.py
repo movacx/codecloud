@@ -4,6 +4,7 @@ import csv
 dirData = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO = os.path.join(dirData, "csv", "usuarios.csv")
 
+#Validar ultimo id
 def validarUltimoId():
     try:
         if not os.path.exists(ARCHIVO):
@@ -24,7 +25,8 @@ def validarUltimoId():
     except Exception as errorFallo:
         print(f"Error al buscar ID: {errorFallo}")
         return 0
-
+#-----------------------------------------------------------------------------------------------------------------------
+#Registrar Usuario
 def registrarUsuario(objUsuario):
     try: 
         idNuevo = validarUltimoId() + 1
@@ -37,7 +39,8 @@ def registrarUsuario(objUsuario):
     except Exception as errorFallo:
         print(f"Error al registrar: {errorFallo}")
         return False
-
+#-----------------------------------------------------------------------------------------------------------------------
+#Validar login 
 def validarLogin(correoUsr, passUsr):
     try: 
         if not os.path.exists(ARCHIVO):
@@ -53,7 +56,8 @@ def validarLogin(correoUsr, passUsr):
     except Exception as errorFallo:
         print(f"Error en login: {errorFallo}")
         return None
-
+#-----------------------------------------------------------------------------------------------------------------------
+#Listar 
 def listarTodos():
     try:
         if not os.path.exists(ARCHIVO):
