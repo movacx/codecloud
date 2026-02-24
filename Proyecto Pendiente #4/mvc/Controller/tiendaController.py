@@ -1,5 +1,6 @@
 from View.VentanaTienda import VentanaTienda
 from Model.ProductoModel import ProductoModel
+from Controller.resenaController import ResenaController
 from Model.ItemCarrito import ItemCarrito
 import Data.baseProductos as dataPro
 import Data.baseFacturas as dataFac
@@ -126,8 +127,18 @@ class TiendaController:
             filaNueva = [idFactura, self.idCliente, fechaActual, self.totalPagar, direccion, "Completado"]
             dataFac.guardarFactura(filaNueva)
             
+            listaProductosComprados = []
+            for items in self.listaItemsCarrito:
+                if items:
+		 listaProductosComprados.append(items.producto.ide)
+            
             self.listaItemsCarrito = []
             self.actualizarCarritoVisual()
             self.GUI.mostrarMensaje("Compra exitosa")
+            ResenaController(self.GUI.ventana, self.idCliente, listaProductosComprados)
         except Exception as error:
             self.GUI.mostrarError(f"Error al pagar: {error}")
+
+
+
+
