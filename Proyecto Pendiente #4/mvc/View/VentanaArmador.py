@@ -1,50 +1,67 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-sans12 = ("Open Sans Extrabold", 12)
+estiloTexto = ("Open Sans Extrabold", 12)
 
 class VentanaArmador:
     def __init__(self, root, controller):
         self.manejoController = controller
         self.ventana = tk.Toplevel(root)
-        self.ventana.title("Armador de PC VIRTUAL - INTELEK")
-        self.ventana.geometry("1100x700")
-
-        self.ventana.columnconfigure(0, weight = 0)
-        self.ventana.columnconfigure(1, weight = 1)
-        self.ventana.rowconfigure(0, weight = 1)
-        self.ventana.configure(bg = 'white')
-
+        self.ventana.title("Pedido Personalizado - INTELEK")
+        self.ventana.geometry("1100x850")
+        self.ventana.columnconfigure(1, weight=1)
+        self.ventana.rowconfigure(0, weight=1)
+        self.ventana.configure(bg='white')
         self.paneles()
-        self.botones()
         self.entradas()
 
     def paneles(self):
-        self.menuLateral = tk.Frame(self.ventana, bg = "#4b4242")
-        self.menuLateral.grid(row = 0, column = 0, sticky = 'ns')
-        for item in range(8):
-            self.menuLateral.rowconfigure(item, weight = 1)
+        self.menuLateral = tk.Frame(self.ventana, bg="#4b4242", width=200)
+        self.menuLateral.grid(row=0, column=0, sticky='ns')
+        tk.Button(self.menuLateral, text="Limpiar Pedido", command=lambda: self.manejoController.limpiarTodo(), width=20).pack(pady=20, padx=10)
 
-        self.areaCentral = tk.Frame(self.ventana, bg='white', padx=40, pady=40)
+        self.areaCentral = tk.Frame(self.ventana, bg='white', padx=40, pady=20)
         self.areaCentral.grid(row=0, column=1, sticky='nsew')
 
-    def botones(self):
-        tk.Button(self.menuLateral, text="Buscar Compatibles", command=lambda: self.manejoController.buscarCompatibilidad(), bd=0, bg="#D9D9D9", width=20).grid(row=1, column=0, sticky='nswe', pady=5, padx=(10,10))
-        tk.Button(self.menuLateral, text="Limpiar", command=lambda: self.manejoController.cargarProcesadores(), bd=0, bg="#E74C3C", fg="white", width=20).grid(row=2, column=0, sticky='nswe', pady=5, padx=(10,10))
-
     def entradas(self):
-        tk.Label(self.areaCentral, text="Paso 1: Seleccione su Procesador (CPU)", font=sans12, bg='white').pack(anchor='w', pady=5)
-        self.cbxCpu = ttk.Combobox(self.areaCentral, state='readonly', width=80)
-        self.cbxCpu.pack(pady=5)
-
-        tk.Label(self.areaCentral, text="Paso 2: Tarjetas Madre Compatibles", font=sans12, bg='white').pack(anchor='w', pady=(20, 5))
+        frameBusqueda = tk.Frame(self.areaCentral, bg='white')
+        frameBusqueda.pack(fill='x', pady=5)
         
-        # Tabla de Tarjetas Madre
-        columnasMadre = ['ID', 'Nombre', 'Precio']
-        self.tablaMadres = ttk.Treeview(self.areaCentral, columns=columnasMadre, show='headings', height=10)
-        self.tablaMadres.pack(fill='both', expand=True, pady=5)
-        for col in columnasMadre:
-            self.tablaMadres.heading(col, text=col)
+        tk.Label(frameBusqueda, text="Selección del procesador", font=estiloTexto, bg='white').grid(row=0, column=0, sticky='w')
+        self.selectorProcesador = ttk.Combobox(frameBusqueda, state='readonly', width=40)
+        self.selectorProcesador.grid(row=1, column=0, pady=5, sticky='w')
+        
+        tk.Label(frameBusqueda, text="Buscar por piezas", font=estiloTexto, bg='white').grid(row=0, column=1, padx=(20,0), sticky='w')
+        self.selectorCategoria = ttk.Combobox(frameBusqueda, values=['Procesador', 'Motherboard', 'Ram', 'Case', 'Ventilador', 'Discos', 'GPU'], state='readonly', width=30)
+        self.selectorCategoria.grid(row=1, column=1, padx=(20,0), pady=5, sticky='w')
+        
+        tk.Button(frameBusqueda, text="Buscar", command=lambda: self.manejoController.buscarOtrasPiezas()).grid(row=1, column=2, padx=10)
+        
+        tk.Label(self.areaCentral, text="Opciones Disponibles", font=estiloTexto, bg='white').pack(anchor='w', pady=(10, 5))
+        columnas = ['ID', 'Categoria', 'Nombre', 'Precio']
+        self.tablaOpciones = ttk.Treeview(self.areaCentral, columns=columnas, show='headings', height=8)
+        self.tablaOpciones.pack(fill='both', expand=True, pady=5)
+        for col in columnas:
+            self.tablaOpciones.heading(col, text=col)
+            
+        tk.Button(self.areaCentral, text="Agregar al Pedido", command=lambda: self.manejoController.meterAlCarrito()).pack(pady=10)
+        
+        tk.Label(self.areaCentral, text="PC Personalizada:", font=estiloTexto, bg='white').pack(anchor='w', pady=(10, 5))
+        self.tablaCarrito = ttk.Treeview(self.areaCentral, columns=columnas, show='headings', height=8)
+        self.tablaCarrito.pack(fill='both', expand=True, pady=5)
+        for col in columnas:
+            self.tablaCarrito.heading(col, text=col)
+            
+        frameEnvio = tk.Frame(self.areaCentral, bg='white')
+        frameEnvio.pack(fill='x', pady=20)
+        tk.Label(frameEnvio, text="Dirección de entrega:", font=estiloTexto, bg='white').grid(row=0, column=0, sticky='w')
+        self.entradaDireccion = tk.Entry(frameEnvio, width=80)
+        self.entradaDireccion.grid(row=1, column=0, pady=5)
+        
+        tk.Button(self.areaCentral, text="Finalizar Compra", command=lambda: self.manejoController.finalizar()).pack(pady=10)
 
     def mostrarError(self, mensaje):
         messagebox.showerror('Error', mensaje, parent=self.ventana)
+
+    def mostrarInfo(self, mensaje):
+        messagebox.showinfo('Intelek', mensaje, parent=self.ventana)

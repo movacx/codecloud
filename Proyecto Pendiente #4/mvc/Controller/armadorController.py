@@ -1,56 +1,79 @@
+import tkinter as tk
+import random
+from datetime import datetime
 from View.VentanaArmador import VentanaArmador
 import Data.baseProductos as dataPro
+import Data.baseFacturas as dataFacturas
 
 class ArmadorController:
     def __init__(self, root):
+        self.root = root
         self.GUI = VentanaArmador(root, self)
-        self.listaCpusDisponibles = []
+        self.carrito = []
         self.cargarProcesadores()
 
     def cargarProcesadores(self):
-        try:
-            inventario = dataPro.listarProductos()
-            cpusFormateados = []
-            self.listaCpusDisponibles = []
+        inventario = dataPro.listarProductos()
+        nombresProcesadores = []
+        for items in inventario:
+            if items and items[2] == "Procesador":
+                nombresProcesadores.append(f"{items[1]} (Socket: {items[5]})")
+        self.GUI.selectorProcesador['values'] = nombresProcesadores
 
-            for items in inventario:
-                if items:
-                    if items[2] == "Procesador":
-                        self.listaCpusDisponibles.append(items)
-                        cpusFormateados.append(f"{items[1]} (Socket: {items[5]})")
-            
-            self.GUI.cbxCpu['values'] = cpusFormateados
-            
-            for items in self.GUI.tablaMadres.get_children():
-                self.GUI.tablaMadres.delete(items)
-        except Exception as error:
-            self.GUI.mostrarError(f"Error al cargar CPU: {error}")
+    def buscarOtrasPiezas(self):
+        categoria = self.GUI.selectorCategoria.get()
+        if not categoria:
+            self.GUI.mostrarError('Seleccione una categoria')
+            return
+        for items in self.GUI.tablaOpciones.get_children():
+            self.GUI.tablaOpciones.delete(items)
+        inventario = dataPro.listarProductos()
+        for items in inventario:
+            if items and items[2] == categoria:
+                self.GUI.tablaOpciones.insert('', tk.END, values=(items[0], items[2], items[1], items[3]))
 
-    def buscarCompatibilidad(self):
-        try:
-            indiceSeleccionado = self.GUI.cbxCpu.current()
-            
-            if indiceSeleccionado == -1:
-                self.GUI.mostrarError("Seleccione un procesador primero")
-                return
+    def meterAlCarrito(self):
+        seleccion = self.GUI.tablaOpciones.selection()
+        if not seleccion:
+            self.GUI.mostrarError('Selecciona un producto primero')
+            return
+        datos = self.GUI.tablaOpciones.item(seleccion)['values']
+        self.carrito.append(datos)
+        self.GUI.tablaCarrito.insert('', tk.END, values=datos)
 
-            cpuElegido = self.listaCpusDisponibles[indiceSeleccionado]
-            socketCpu = cpuElegido[5]
+    def limpiarTodo(self):
+        self.carrito = []
+        self.GUI.selectorCategoria.set('')
+        self.GUI.selectorProcesador.set('')
+        self.GUI.entradaDireccion.delete(0, tk.END)
+        for items in self.GUI.tablaOpciones.get_children():
+            self.GUI.tablaOpciones.delete(items)
+        for items in self.GUI.tablaCarrito.get_children():
+            self.GUI.tablaCarrito.delete(items)
 
-            inventario = dataPro.listarProductos()
-            
-            for items in self.GUI.tablaMadres.get_children():
-                self.GUI.tablaMadres.delete(items)
+    def finalizar(self):
+        direccion = self.GUI.entradaDireccion.get()
+        if not self.carrito or not direccion:
+            self.GUI.mostrarError("Complete el pedido y la dirección")
+            return
 
-            encontrado = False
-            for items in inventario:
-                if items:
-                    if items[2] == "Motherboard":
-                        if items[5] == socketCpu:
-                            self.GUI.tablaMadres.insert('', 'end', values=(items[0], items[1], items[3]))
-                            encontrado = True
-                    
-            if not encontrado:
-                self.GUI.mostrarError("No hay tarjetas madre compatibles en inventario")
-        except Exception as error:
-            self.GUI.mostrarError(f"Error al buscar compatibles: {error}")
+        totalCompra = 0
+        listaIds = []
+        
+        for items in self.carrito:
+            totalCompra += float(items[3])
+            listaIds.append(str(items[0]))
+
+            dataPro.restarStock(items[0], 1)
+
+        idFactura = "FAC-" + str(random.randint(10, 99))
+        fechaHoy = datetime.now().strftime("%d/%m/%Y")
+        unirIds = "-".join(listaIds)
+        filaFactura = [idFactura, unirIds, fechaHoy, totalCompra, direccion]
+
+        if dataFacturas.guardarFactura(filaFactura):
+            self.GUI.mostrarInfo(f"Pedido Guardado: {idFactura}\nTotal: ₡{totalCompra}")
+            self.limpiarTodo()
+            self.GUI.ventana.destroy()
+        else:
+            self.GUI.mostrarError("No se pudo guardar la factura")
