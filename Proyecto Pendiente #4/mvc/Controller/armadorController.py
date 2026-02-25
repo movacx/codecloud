@@ -6,10 +6,12 @@ import Data.baseProductos as dataPro
 import Data.baseFacturas as dataFacturas
 
 class ArmadorController:
-    def __init__(self, root):
+    def __init__(self, root, idUsr):
         self.root = root
+        self.idCliente = idUsr
         self.GUI = VentanaArmador(root, self)
         self.carrito = [ ]
+        self.mapaProcesadores = { }
         self.cargarProcesadores()
 #-----------------------------------------------------------------------------------------------------------------------
     #Cargar procesadores 
@@ -19,7 +21,9 @@ class ArmadorController:
         
         for items in inventario:
             if items and items[2] == "Procesador":
-                nombresProcesadores.append(f"{items[1]} (Socket: {items[5]})")
+                textoMostrar = f"{items[1]} (Socket: {items[5]})"
+                nombresProcesadores.append(textoMostrar)
+                self.mapaProcesadores[textoMostrar] = items
                 
         self.GUI.selectorProcesador['values'] = nombresProcesadores
 #-----------------------------------------------------------------------------------------------------------------------
@@ -64,14 +68,39 @@ class ArmadorController:
 #-----------------------------------------------------------------------------------------------------------------------
      #Finalizar compra 
     def finalizar(self):
+        nombreCompleto = self.GUI.entradaNombre.get()
         direccion = self.GUI.entradaDireccion.get()
+        procesadorSeleccionado = self.GUI.selectorProcesador.get()
         
-        if not self.carrito or not direccion:
-            self.GUI.mostrarError("Complete el pedido y la dirección")
+        if not (nombreCompleto):
+            self.GUI.mostrarError("Digite su nombre completo")
+            return
+        
+        if not procesadorSeleccionado:
+            self.GUI.mostrarError("Seleccione un procesador")
+            return
+        
+        if not direccion:
+            self.GUI.mostrarError("Digite la dirección")
+            return
+
+        itemProcesador = self.mapaProcesadores.get(procesadorSeleccionado)
+        if itemProcesador:
+            datosProcesador = [itemProcesador[0], itemProcesador[2], itemProcesador[1], itemProcesador[3]]
+            existe = False
+            for items in self.carrito:
+                if items and str(items[0]) == str(itemProcesador[0]):
+                    existe = True
+            if not existe:
+                self.carrito.append(datosProcesador)
+                self.GUI.tablaCarrito.insert('', tk.END, values=datosProcesador)
+
+        if not self.carrito:
+            self.GUI.mostrarError("Complete el pedido")
             return
 
         totalCompra = 0
-        listaIds = []
+        listaIds = [ ]
         
         for items in self.carrito:
             totalCompra += float(items[3])
@@ -80,9 +109,8 @@ class ArmadorController:
             dataPro.restarStock(items[0], 1)
 
         idFactura = "FAC-" + str(random.randint(10, 99))
-        fechaHoy = datetime.now().strftime("%d/%m/%Y")
-        unirIds = "-".join(listaIds)
-        filaFactura = [idFactura, unirIds, fechaHoy, totalCompra, direccion]
+        fechaHoy = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        filaFactura = [idFactura, self.idCliente, nombreCompleto, fechaHoy, totalCompra, direccion]
 
         if dataFacturas.guardarFactura(filaFactura):
             self.GUI.mostrarInfo(f"Pedido Guardado: {idFactura}\nTotal: ₡{totalCompra}")

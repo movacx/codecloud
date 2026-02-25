@@ -8,20 +8,20 @@ class AdminController:
     def __init__(self, root):
         self.GUI = VentanaAdmin(root, self)
 #-----------------------------------------------------------------------------------------------------------------------
-    #Ver ventas 
+    #Ver las ventas
     def verVentas(self):
         try:
             listaFacturas = dataFac.leerFacturas()
             totalVentas = 0
             for items in listaFacturas:
                 if items:
-                    totalVentas = totalVentas + float(items[3])
-            
+                    totalVentas = totalVentas + float(items[4])
+
             self.GUI.mostrarMensaje(f"INGRESOS BRUTOS: ₡{totalVentas}")
         except Exception as error:
             self.GUI.mostrarError(f"Error al calcular: {error}")
 #-----------------------------------------------------------------------------------------------------------------------
-    #Ver cuentas 
+    #Ver las cuentas 
     def verCuentas(self):
         try:
             todosUsr = dataUsuarios.listarTodos()

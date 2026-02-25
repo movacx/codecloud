@@ -51,12 +51,17 @@ class VentanaArmador:
         self.tablaCarrito.pack(fill='both', expand=True, pady=5)
         for col in columnas:
             self.tablaCarrito.heading(col, text=col)
-            
+
         frameEnvio = tk.Frame(self.areaCentral, bg='white')
         frameEnvio.pack(fill='x', pady=20)
-        tk.Label(frameEnvio, text="Dirección de entrega:", font=estiloTexto, bg='white').grid(row=0, column=0, sticky='w')
+
+        tk.Label(frameEnvio, text="Nombre completo:", font=estiloTexto, bg='white').grid(row=0, column=0, sticky='w')
+        self.entradaNombre = tk.Entry(frameEnvio, width=80)
+        self.entradaNombre.grid(row=1, column=0, pady=5)
+
+        tk.Label(frameEnvio, text="Dirección de entrega:", font=estiloTexto, bg='white').grid(row=2, column=0, sticky='w')
         self.entradaDireccion = tk.Entry(frameEnvio, width=80)
-        self.entradaDireccion.grid(row=1, column=0, pady=5)
+        self.entradaDireccion.grid(row=3, column=0, pady=5)
         
         tk.Button(self.areaCentral, text="Finalizar Compra", command=lambda: self.manejoController.finalizar()).pack(pady=10)
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

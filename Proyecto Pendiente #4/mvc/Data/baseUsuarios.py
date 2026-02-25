@@ -61,15 +61,49 @@ def validarLogin(correoUsr, passUsr):
 def listarTodos():
     try:
         if not os.path.exists(ARCHIVO):
-            return []
+            return [ ]
             
-        listaCompleta = []
+        listaCompleta = [ ]
         with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoCsv:
             reader = csv.reader(archivoCsv)
+            
             for items in reader:
                 if items:
                     listaCompleta.append(items)
         return listaCompleta
+    
     except Exception as error:
         print(f"Error al listar: {error}")
-        return []
+        return [ ]
+#-----------------------------------------------------------------------------------------------------------------------
+#Actualizar contraseña
+def actualizarClavePorCorreo(correoUsuario, claveNueva):
+    try:
+        if not os.path.exists(ARCHIVO):
+            return False
+
+        listaUsuarios = []
+        usuarioEncontrado = False
+
+        with open(ARCHIVO, "r", newline="", encoding="utf-8") as archivoLeer:
+            reader = csv.reader(archivoLeer)
+            for items in reader:
+                if items:
+                    if items[1] == correoUsuario:
+                        items[2] = claveNueva
+                        usuarioEncontrado = True
+                    listaUsuarios.append(items)
+
+        if not usuarioEncontrado:
+            return False
+
+        with open(ARCHIVO, "w", newline="", encoding="utf-8") as archivoEscribir:
+            writer = csv.writer(archivoEscribir)
+            for items in listaUsuarios:
+                if items:
+                    writer.writerow(items)
+
+        return True
+    except Exception as errorFallo:
+        print(f"Error al actualizar clave: {errorFallo}")
+        return False

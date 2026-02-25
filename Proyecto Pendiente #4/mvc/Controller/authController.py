@@ -2,6 +2,7 @@ from View.VentanaLogin import VentanaLogin
 from View.VentanaRegistro import VentanaRegistro
 from View.MenuPrincipal import MenuPrincipal
 from Model.Cliente import Cliente
+from View.ventanaRecuperar import VentanaRecuperar
 import Data.baseUsuarios as dataUsuarios
 from Controller.tiendaController import TiendaController
 from Controller.armadorController import ArmadorController
@@ -62,12 +63,40 @@ class AuthController:
 #-----------------------------------------------------------------------------------------------------------------------
      #Abrir el armador de la pc
     def abrirArmador(self):
-        ArmadorController(self.root)
+        ArmadorController(self.root, self.idLogueado)
 #-----------------------------------------------------------------------------------------------------------------------
      #Abrir admin
     def abrirAdmin(self):
         AdminController(self.root)
 #-----------------------------------------------------------------------------------------------------------------------
+    def abrirRecuperar(self):
+        self.recuperarGUI = VentanaRecuperar(self.root, self)
+#-----------------------------------------------------------------------------------------------------------------------
+    #Actualizar clave
+    def actualizarClave(self):
+        try:
+            correo = self.recuperarGUI.txtCorreo.get()
+            claveNueva = self.recuperarGUI.txtClaveNueva.get()
+            claveConfirmar = self.recuperarGUI.txtClaveConfirmar.get()
+
+            if not (correo and claveNueva and claveConfirmar):
+                self.recuperarGUI.mostrarError("Faltan datos por completar")
+                return
+
+            if claveNueva != claveConfirmar:
+                self.recuperarGUI.mostrarError("Las contrasenas no coinciden")
+                return
+
+            exito = dataUsuarios.actualizarClavePorCorreo(correo, claveNueva)
+
+            if exito:
+                self.recuperarGUI.mostrarMensaje("Contrasena actualizada")
+                self.recuperarGUI.ventana.destroy()
+            else:
+                self.recuperarGUI.mostrarError("Correo no encontrado")
+        except Exception as error:
+            self.recuperarGUI.mostrarError(f"Error interno: {error}")
+#-----------------------------------------------------------------------------------------------------------------------            
     #Cerrar el programa
     def cerrarApp(self):
         self.menuGUI.ventana.destroy()

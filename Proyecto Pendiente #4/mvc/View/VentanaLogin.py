@@ -25,6 +25,7 @@ class VentanaLogin:
 	#Buttons
         tk.Button(self.contenedor, text='Ingresar', command=lambda: self.manejoController.ejecutarLogin()).pack(pady=5)
         tk.Button(self.contenedor, text='Crear Cuenta', command=lambda: self.manejoController.abrirRegistro()).pack()
+        tk.Button(self.contenedor, text="Recuperar Contrasena", command=lambda: self.manejoController.abrirRecuperar()).pack(pady=5)
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     #Mostrar error 
     def mostrarError(self, mensaje):
