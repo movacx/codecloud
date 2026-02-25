@@ -11,15 +11,15 @@ class VentanaRecuperar:
         self.ventana.title("Recuperar Contrasena")
         self.ventana.geometry("320x260")
         
-	#Label/input
+    #Label/input
         tk.Label(self.ventana, text="Correo Electronico:").pack(pady=(15, 0))
         self.txtCorreo = tk.Entry(self.ventana, width=35)
         self.txtCorreo.pack(pady=5)
-	#Label/input
+    #Label/input
         tk.Label(self.ventana, text="Nueva Contrasena:").pack(pady=(10, 0))
         self.txtClaveNueva = tk.Entry(self.ventana, width=35, show="*")
         self.txtClaveNueva.pack(pady=5)
-	#Label/input
+    #Label/input
         tk.Label(self.ventana, text="Confirmar Contrasena:").pack(pady=(10, 0))
         self.txtClaveConfirmar = tk.Entry(self.ventana, width=35, show="*")
         self.txtClaveConfirmar.pack(pady=5)

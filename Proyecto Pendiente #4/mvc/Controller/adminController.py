@@ -46,7 +46,7 @@ class AdminController:
                 self.GUI.mostrarError("No se pudo cambiar el estado")
         except Exception as error:
             self.GUI.mostrarError(f"Error al procesar reembolso: {error}")
-#-----------------------------------------------------------------------------------------------------------------------}
+#-----------------------------------------------------------------------------------------------------------------------
     #Guardar nuevo producto 
     def guardarNuevoPro(self):
         try:
