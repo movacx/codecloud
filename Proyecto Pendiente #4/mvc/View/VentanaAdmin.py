@@ -35,7 +35,7 @@ class VentanaAdmin:
         tk.Button(self.contenedor, text="Ver Ventas Totales", command=lambda: self.manejoController.verVentas(), bd=0, bg="#D9D9D9", width=20).grid(row=1, column=0, sticky='nswe', pady=5, padx=(10,10))
         tk.Button(self.contenedor, text="Ver Total Cuentas", command=lambda: self.manejoController.verCuentas(), bd=0, bg="#D9D9D9", width=20).grid(row=2, column=0, sticky='nswe', pady=5, padx=(10,10))
         
-        tk.Label(self.contenedor, text="--- REEMBOLSOS ---", bg="#4b4242", fg="white", font=sans9).grid(row=4, column=0, pady=(20, 5))
+        tk.Label(self.contenedor, text="REEMBOLSOS", bg="#4b4242", fg="white", font=sans9).grid(row=4, column=0, pady=(20, 5))
         self.txtIdFac = tk.Entry(self.contenedor, width=20)
         self.txtIdFac.grid(row=5, column=0, pady=5, padx=(10,10))
         tk.Button(self.contenedor, text="Aceptar Reembolso", command=lambda: self.manejoController.reembolsar("Reembolsado"), bd=0, bg="#E74C3C", fg="white", width=20).grid(row=6, column=0, sticky='nswe', pady=5, padx=(10,10))
