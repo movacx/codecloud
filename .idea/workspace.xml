@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79aa1690-b03e-49a0-bbd2-8c255ac51c18" name="Changes" comment="asd">
-      <change beforePath="$PROJECT_DIR$/.idea/miNube.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/miNube.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/sistema de fletes/mvc/Controller/controlador.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/sistema de fletes/mvc/Controller/controlador.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/sistema de fletes/mvc/Model/repositorio.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/sistema de fletes/mvc/Model/repositorio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/sistema de fletes/mvc/View/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/sistema de fletes/mvc/View/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -9,7 +9,7 @@ class Vista:
         print("5. Consultar Cliente")
         print("6. Consultar Flete")
         print('0. Salir')
-        return input('Seleccione una opcion: ')
+        return int(input('Seleccione una opcion: '))
 
     def pedir_cliente(self):
         codigo=input('Ingrese el codigo del cliente: ')
@@ -25,9 +25,10 @@ class Vista:
 
         return numero, destino, monto, indice_cliente
 
-    def mostrar_lista(self):
+    def mostrar_lista(self, lista):
         if not lista:
-            print("no hay datos")
+            print("No hay datos")
         else:
-            for i, obj, in enumerate(lista):
-                print(i, '-', obj)
+            for i, obj in enumerate(lista):
+                # Usamos f-strings para mostrarlo limpio
+                print(f"{i} - {obj}")

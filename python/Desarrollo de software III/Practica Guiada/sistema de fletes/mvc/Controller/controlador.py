@@ -1,5 +1,8 @@
 
-from mvc.
+from Model.clienteModel import Cliente
+from Model.fleteModel import Flete
+from Model.repositorio import Repositorio
+
 class Controlador:
     """Clase controlador MVC
     coordina la comnicacion entre vista y modelo"""
