@@ -18,6 +18,12 @@ class Controlador:
 
     def consultar_clientes(self):
         return self.repo_clientes.consultar()
+
+
+    def consultar(self):
+        for items in self.repo_clientes.consultar():
+            print(items)
+
     def modificar_cliente(self, indice, codigo, nombre, telefono):
         nuevo = Cliente(codigo, nombre, telefono)
         return self.repo_clientes.modificar(indice, nuevo)

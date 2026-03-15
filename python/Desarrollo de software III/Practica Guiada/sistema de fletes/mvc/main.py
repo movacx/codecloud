@@ -26,7 +26,8 @@ def main():
         elif opcion == 4:
             'Modificar flete'
         elif opcion == 5:
-            'consultar cliente'
+            print(controlador.consultar_clientes())
+            controlador.consultar()
         elif opcion == 6:
             'consultar flete'
         elif opcion == 7:
