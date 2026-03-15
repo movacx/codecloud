@@ -1,5 +1,5 @@
 
-from Model.
+from mvc.
 class Controlador:
     """Clase controlador MVC
     coordina la comnicacion entre vista y modelo"""
