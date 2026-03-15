@@ -1,0 +1,20 @@
+17022026 %:H%:M%:S: Hubo un error, valide la clase DataClientes: exists() missing 1 required positional argument: 'path' in listCliente
+17022026 %:H%:M%:S: Hubo un error, valide la clase DataClientes: list.append() takes exactly one argument (4 given) in if modificar
+17022026 %:H%:M%:S: Hubo un error, valide la clase DataClientes: list.append() takes exactly one argument (4 given) in if modificar
+17022026 %:H%:M%:S: Hubo un error, valide la clase DataClientes: list.append() takes exactly one argument (4 given) in if modificar
+17022026 %:H%:M%:S: Hubo un error, valide la clase DataClientes: list.append() takes exactly one argument (4 given) in if modificar
+17022026 %:H%:M%:S: Hubo un error, valide la clase DataClientes: list.append() takes exactly one argument (4 given) in if modificar
+17022026 %:H%:M%:S: Hubo un error, valide la clase DataClientes: list.append() takes exactly one argument (4 given) in if modificar
+17022026 %:H%:M%:S: Hubo un error, valide la clase DataClientes: cannot access local variable 'writer' where it is not associated with a value
+17022026 18:52:02: Hubo un error, valide la clase DataClientes: RegistroCuentas.mostrarTabla() takes 1 positional argument but 2 were given
+17022026 18:53:57: Hubo un error, valide la clase DataClientes: RegistroCuentas.mostrarTabla() takes 1 positional argument but 2 were given
+18022026 20:04:38: Hubo un error, valide la clase DataClientes: name 'ARCHIO' is not defined in saveCliente
+18022026 20:04:47: Hubo un error, valide la clase DataClientes: 'RegistroCuentas' object has no attribute 'mostrarError'
+18022026 20:04:57: Hubo un error, valide la clase DataClientes: name 'ARCHIO' is not defined in saveCliente
+18022026 20:04:58: Hubo un error, valide la clase DataClientes: 'RegistroCuentas' object has no attribute 'mostrarError'
+18022026 20:05:02: Hubo un error, valide la clase DataClientes: name 'ARHIVO' is not defined in searchCliente
+18022026 20:05:03: Hubo un error, valide la clase DataClientes: 'NoneType' object is not iterable
+18022026 %:H%:M%:S: Hubo un error, valide la clase DataCuentas!!!!: name 'ARHIVO' is not defined in saveCuenta
+18022026 %:H%:M%:S: Hubo un error, valide la clase DataCuentas!!!!: name 'ARHIVO' is not defined in searchCuenta
+21022026 %:H%:M%:S: Hubo un error, valide la clase DataCuentas!!!!: list index out of range in searchCuenta
+21022026 %:H%:M%:S: Hubo un error, valide la clase DataCuentas!!!!: list index out of range in searchCuenta

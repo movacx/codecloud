@@ -1,0 +1,76 @@
+2026-02-03 11:34:17 ===> Error al mostrar los datos: name 'newline' is not defined
+2026-02-03 11:34:21 ===> Error al mostrar los datos: name 'newline' is not defined
+2026-02-03 11:34:29 ===> Error al mostrar los datos: name 'newline' is not defined
+2026-02-14 16:13:51 ===> Hubo un error: name 'HuesedModel' is not defined
+2026-02-14 16:15:01 ===> Hubo un error: name 'HuesedModel' is not defined
+2026-02-14 16:15:52 ===> Hubo un error: name 'HuesedModel' is not defined
+2026-02-14 16:15:54 ===> Hubo un error: name 'HuesedModel' is not defined
+2026-02-14 16:16:37 ===> Hubo un error: name 'HuesedModel' is not defined
+2026-02-14 16:17:04 ===> Hubo un error: name 'HuesedModel' is not defined
+2026-02-14 16:17:21 ===> Hubo un error: name 'HuesedModel' is not defined
+2026-02-14 16:17:22 ===> Hubo un error: name 'HuesedModel' is not defined
+2026-02-14 16:21:38 ===> IN | AGREGAR |: name 'HuesedModel' is not defined
+2026-02-14 16:21:46 ===> IN | AGREGAR |: name 'HuesedModel' is not defined
+2026-02-14 16:22:08 ===> IN | AGREGAR |: name 'HuesedModel' is not defined
+2026-02-14 16:23:49 ===> IN | AGREGAR |: name 'HuesedModel' is not defined
+2026-02-14 16:25:26 ===> IN | AGREGAR |: name 'HuesedModel' is not defined
+2026-02-14 22:21:43 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 22:21:43 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 22:25:39 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 22:25:39 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 00:28:08 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 00:28:08 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 00:28:58 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 00:28:58 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 00:29:08 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 00:29:08 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 00:55:38 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 00:55:38 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 01:14:20 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 01:14:20 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 01:14:24 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 01:14:24 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 23:29:55 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 23:29:55 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 23:30:30 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-14 23:30:30 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 09:04:12 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 09:04:12 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 14:49:07 ===> expected integer but got ""
+2026-02-15 14:49:11 ===> expected integer but got ""
+2026-02-15 14:50:02 ===> Treeview.insert() missing 1 required positional argument: 'index'
+2026-02-15 14:52:10 ===> list index out of range
+2026-02-15 14:53:12 ===> list index out of range
+2026-02-15 14:54:01 ===> list index out of range
+2026-02-15 14:54:11 ===> list index out of range
+2026-02-15 14:54:17 ===> list index out of range
+2026-02-15 14:54:51 ===> list index out of range
+2026-02-15 14:57:28 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:57:33 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:57:35 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:57:37 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:58:22 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:58:51 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:58:55 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 14:59:33 ===> listarHabitaciones() takes 0 positional arguments but 1 was given
+2026-02-15 15:01:29 ===> list index out of range
+2026-02-15 15:02:17 ===> list index out of range
+2026-02-15 15:02:29 ===> list index out of range
+2026-02-15 15:35:40 ===> 'Combobox' object has no attribute 'append'
+2026-02-15 15:35:50 ===> 'Combobox' object has no attribute 'append'
+2026-02-15 15:37:32 ===> 'Combobox' object has no attribute 'append'
+2026-02-15 15:55:35 ===> 'HabitacionGUI' object has no attribute 'listaHabitaciones'
+2026-02-15 15:55:40 ===> 'HabitacionGUI' object has no attribute 'listaHabitaciones'
+2026-02-15 20:47:03 ===> [Errno 22] Invalid argument
+2026-02-15 20:56:05 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-15 20:56:05 ===> Dentro del case Huesped: 'ReporteeGUI' object has no attribute 'tasblas'
+2026-02-16 15:52:27 ===> module 'Data.baseHabitacion' has no attribute 'listarReservas'
+2026-02-16 15:52:35 ===> module 'Data.baseHabitacion' has no attribute 'listarReservas'
+2026-02-16 15:52:37 ===> module 'Data.baseHabitacion' has no attribute 'listarReservas'
+2026-02-16 16:14:18 ===> unknown option "-value"
+2026-02-16 16:14:22 ===> unknown option "-value"
+2026-02-16 16:19:00 ===> 'ReservaGUI' object has no attribute 'tablee'
+2026-02-16 16:34:58 ===> 'ReservaGUI' object has no attribute 'tablee'
+2026-02-16 16:35:00 ===> 'ReservaGUI' object has no attribute 'tablee'
+2026-02-16 16:36:30 ===> 'ReservaGUI' object has no attribute 'tablaHabitacion'
+2026-02-16 16:37:01 ===> ReservaGUI.tabla() takes 1 positional argument but 2 were given
