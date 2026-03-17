@@ -32,3 +32,16 @@ class Vista:
         else:
             for items in diccionario.values():
                 print(items)
+
+    def mostrar_cliente(self, diccionario):
+        if not diccionario:
+            print("No hay clientes almacenados")
+        else:
+            """
+            Dado que el codigo del cliente se guarda como llave, se extraen los valores. 
+            Esto difiere de la firma de extraer los fletes
+            """
+            for clave, valor in diccionario.items():
+                print(clave, '-', valor)
+
+                
