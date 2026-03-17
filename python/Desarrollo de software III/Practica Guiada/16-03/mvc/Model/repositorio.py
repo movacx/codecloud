@@ -1,19 +1,30 @@
-from typing import TypeVar, Generic, List
-
-tipoGen = TypeVar('tipoGen')
-
-class Repositorio(Generic[tipoGen]):
+class Repositorio():
+    """clase que permite almacenar objetos en un diccionario"""
     def __init__(self):
-        self.lista = []
+        'Inicializa el diccionario'
+        self.diccionario = {}
 
-    def agregar(self, obj: tipoGen):
-        self.lista.append(obj)
+    def agregar(self, clave, valor):
+        '''Agrega un objeto al diccionario
+        Parametros:
+            clave (cualquiera, puede ser String, int): la clave que se usara en el diccionario
+            valor (cualquiera): el valor asociado a la clave anterior dentro del diccionario
 
-    def consultar(self) -> List[tipoGen]:
-        return self.lista
+        '''
 
-    def modificar(self, indice: int, nuevoObjeto: tipoGen) -> bool:
-        if 0 <= indice < len(self.lista):
-            self.lista[indice] = nuevoObjeto
-            return True
-        return False
+        self.diccionario.update({clave: valor})
+
+    def consultar(self):
+        """retorna los elementos almacenados en el diccionario
+
+            Retorna: un diccionario
+            """
+        return self.diccionario
+
+    def modificar(self, clave, nuevoValor):
+        if clave in self.diccionario:
+            self.diccionario[clave] = nuevoValor
+            return "Modificado correctamente"
+        else:
+            return "Clave no encontrada"
+
