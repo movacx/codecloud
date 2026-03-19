@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Javaa/Programas" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/Javaa" />
-    <orderEntry type="jdk" jdkName="openjdk-26" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="Python 3.14" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

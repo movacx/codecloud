@@ -17,7 +17,7 @@ class Controlador:
         y agrega el resto de datos a una tupla para incluirlos como valor asociado a dicha clave en el diccionario"""
 
         tupla = (nombre, telefono)
-        self.repo_clientes(codigo, tupla)
+        self.repo_clientes.agregar(codigo, tupla)
 
     def consultar_clientes(self):
         """Retorna el diccionario de clientes"""
