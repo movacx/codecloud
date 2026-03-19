@@ -44,4 +44,5 @@ class Vista:
             for clave, valor in diccionario.items():
                 print(clave, '-', valor)
 
-                
+    def mostrar_Messaje(self, mensaje):
+        print(mensaje)

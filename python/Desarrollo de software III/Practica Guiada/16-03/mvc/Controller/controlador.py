@@ -41,6 +41,9 @@ class Controlador:
             flete = Flete(numero, destino, monto, cliente)
             self.repo_fletes.agregar(numero, flete)
 
+        else:
+            print("No se encontro ningun cliente asociado, vuelva intentarlo")
+
 
     def consultar_fletes(self):
         "Retorna el diccionario de fletes"

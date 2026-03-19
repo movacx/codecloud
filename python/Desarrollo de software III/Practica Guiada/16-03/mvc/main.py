@@ -18,13 +18,14 @@ def main():
         elif opcion == 3:
             print('\n Clientes disponibles')
             vista.mostrar_cliente(controlador.consultar_clientes())
-            datos = vista.pedir_flete()
-            controlador.agregar_flete(*datos)
             pass
         elif opcion == 4:
             print('\n Fletes disponibles')
             vista.mostrar_fletes(controlador.consultar_fletes())
             pass
+        elif opcion == 0:
+            vista.mostrar_Messaje("Saliendo del sistema...")
+            break
 
 
 if __name__ == '__main__':
