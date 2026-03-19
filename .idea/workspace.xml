@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79aa1690-b03e-49a0-bbd2-8c255ac51c18" name="Changes" comment="asd">
+      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/cursoModel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/estudianteModel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/matriculaModel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/repositorio.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/mvc/Controller/controlador.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/mvc/Controller/controlador.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/mvc/View/vista.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/mvc/View/vista.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/mvc/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/mvc/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
