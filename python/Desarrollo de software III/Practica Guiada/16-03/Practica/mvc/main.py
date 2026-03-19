@@ -34,6 +34,9 @@ def main():
         elif opcion == 6:
             manejo.consultar_matriculas()
             pass
+        elif opcion == 7:
+            carnet = input('Ingrese el carnet: ')
+            manejo.buscarEstudiante(carnet)
         elif opcion == 0:
             vista.mostrar_mensaje("Saliendo del sistema")
             SystemExit(0)

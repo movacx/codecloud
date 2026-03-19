@@ -52,3 +52,8 @@ class Controlador:
 
     def consultar_matriculas(self):
         self.vista.mostrar_datos(self.repo_matricula.consultar())
+
+    def buscarEstudiante(self, carnet):
+        for items in self.repo_estudiantes.consultar():
+            if items.carnet == carnet:
+                print(items)
