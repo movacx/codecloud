@@ -39,7 +39,7 @@ class Repositorio(Generic[T]):
             return True
         return False
 
-    def buscar(self, objPosUno) -> str:
+"""    def buscar(self, objPosUno) -> str:
         for items in self.lista:
             if str(items[0]) == str(objPosUno):
                 return items
@@ -48,3 +48,4 @@ class Repositorio(Generic[T]):
         for items in self.lista:
             if items == buscar:
                 return items
+"""

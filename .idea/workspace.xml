@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79aa1690-b03e-49a0-bbd2-8c255ac51c18" name="Changes" comment="asd">
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/cursoModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/estudianteModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/matriculaModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/repositorio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Controller/controlador.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/View/vista.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/12-03/sistema de fletes/mvc/Controller/controlador.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/12-03/sistema de fletes/mvc/Controller/controlador.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/repositorio.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Model/repositorio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,30 +61,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Java.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Prueba.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Application.holaMundo.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.controlador.executor&quot;: &quot;Run&quot;,
-    &quot;Python.holamundo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.repositorio.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/estudiante.sp/Documents/GitHub/codecloud&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Java.executor": "Run",
+    "Application.Prueba.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "Application.holaMundo.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.controlador.executor": "Run",
+    "Python.holamundo.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.repositorio.executor": "Run",
+    "Python.vista.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/estudiante.sp/Documents/GitHub/codecloud",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "proofread",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Prueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Prueba" />
@@ -135,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773421820778</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="asd">
+      <option name="closed" value="true" />
+      <created>1773936752868</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773936752868</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

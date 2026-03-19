@@ -16,6 +16,7 @@ class Controlador:
         cliente = Cliente(codigo, nombre, telefono)
         self.repo_clientes.agregar(cliente)
 
+
     def consultar_clientes(self):
         return self.repo_clientes.consultar()
 
