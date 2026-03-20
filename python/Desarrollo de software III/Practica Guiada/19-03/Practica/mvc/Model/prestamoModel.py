@@ -1,5 +1,5 @@
 class Prestamo:
-    def __init__(self, numeroPrestamo, estudianteAsociado, libroAsociado, fecha)
+    def __init__(self, numeroPrestamo, estudianteAsociado, libroAsociado, fecha):
         self.numeroPrestamo = numeroPrestamo
         self.estudianteAsociado = estudianteAsociado
         self.libroAsociado = libroAsociado
