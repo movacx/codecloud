@@ -9,7 +9,7 @@ class Vista:
 5. Consultar libros
 6. Consultar préstamos
 7. Consultar categorías
-8. Salir
+0. Salir
 
 input: """))
         return opcion
