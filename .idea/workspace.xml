@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79aa1690-b03e-49a0-bbd2-8c255ac51c18" name="Changes" comment="asd">
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/estudianteModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/libroModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/prestamoModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/View/vista.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/repositorio.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/repositorio.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
