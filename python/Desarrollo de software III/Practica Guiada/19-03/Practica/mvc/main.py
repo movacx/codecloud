@@ -42,6 +42,9 @@ def main():
             vista.mostrar_mensaje("Saliendo del sistema...")
             break
 
+#Participantes:
+#Herlin Fabian Chavarria Beita C5E187
+#MALCOLM ARIEL MENDEZ VARGA
 
 if __name__ == '__main__':
     main()

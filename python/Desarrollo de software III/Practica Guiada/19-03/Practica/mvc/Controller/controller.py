@@ -58,4 +58,3 @@ class Controller:
             arreglo.append(libro.categoria)
 
         self.vista.mostrar_datos(f'Categirias encontradas: {arreglo}')
-        
