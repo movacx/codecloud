@@ -26,4 +26,4 @@ class Repositorio:
         return self.diccionarioPrestamos
 
 
-    #Busquedas
+    #Busquedas personalizadas en el controller

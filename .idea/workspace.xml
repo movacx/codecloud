@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79aa1690-b03e-49a0-bbd2-8c255ac51c18" name="Changes" comment="asd">
+      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Controller/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/repositorio.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/repositorio.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
