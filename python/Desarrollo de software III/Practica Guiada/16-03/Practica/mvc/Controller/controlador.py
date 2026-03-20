@@ -57,3 +57,4 @@ class Controlador:
         for items in self.repo_estudiantes.consultar():
             if items.carnet == carnet:
                 print(items)
+
