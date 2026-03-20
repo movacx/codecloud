@@ -4,7 +4,7 @@ class Repositorio:
         self.diccionarioLibros = {}
         self.diccionarioPrestamos = {}
 
-
+    #Registrar
     def agregarEstudiantes(self, clave, valor):
         self.diccionarioEstudiantes.update({clave: valor})
 
@@ -13,8 +13,9 @@ class Repositorio:
 
     def agregarPrestamos(self, clave, valor):
         self.diccionarioPrestamos.update({clave: valor})
-        
 
+
+    #Consultas
     def consultarEstudiantes(self):
         return self.diccionarioEstudiantes
 
@@ -24,3 +25,5 @@ class Repositorio:
     def consultarPrestamos(self):
         return self.diccionarioPrestamos
 
+
+    #Busquedas
