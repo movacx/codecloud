@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="79aa1690-b03e-49a0-bbd2-8c255ac51c18" name="Changes" comment="asd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Controller/controlador.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/Controller/controlador.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/View/vista.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/Practica/mvc/View/vista.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Controller/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Controller/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/libroModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/libroModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/prestamoModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/Model/prestamoModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/View/vista.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/View/vista.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica/mvc/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

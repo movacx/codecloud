@@ -17,6 +17,3 @@ input: """))
     def mostrar_mensaje(self, mensaje):
         print(mensaje)
 
-    def mostrar_datos(self, arreglo):
-        for items in arreglo:
-            print(items)
