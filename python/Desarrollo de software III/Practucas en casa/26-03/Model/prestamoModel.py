@@ -1,4 +1,4 @@
-class Prestamo:
+class PrestamoModel:
     def __init__(self, numeroPrestamo, estudianteAsociado, libroAsociado, fecha):
         self.numeroPrestamo = numeroPrestamo
         self.estudianteAsociado = estudianteAsociado
