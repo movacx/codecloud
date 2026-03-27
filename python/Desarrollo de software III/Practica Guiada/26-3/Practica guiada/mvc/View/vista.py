@@ -35,3 +35,4 @@ Input: ''')
 
     @staticmethod
     def mostrar_error(error:str) -> None:
+        print(f'\n Error: {error}')
