@@ -25,3 +25,13 @@ class VistaConsola:
 0. salir
 Input: ''')
     
+    @staticmethod
+    def solicitar_monto() -> float:
+        return float(input('Ingresar el monto a ingresar: '))
+    
+    @staticmethod
+    def mostrar_resultado(mensaje:str) -> None:
+        print(f'\n Resultado: {mensaje}')
+
+    @staticmethod
+    def mostrar_error(error:str) -> None:
