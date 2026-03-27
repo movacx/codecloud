@@ -22,6 +22,7 @@ from Model.metodo_pago import MetodoPago
 from Model.metodo_pago import PagoEfectivo
 from Model.metodo_pago import PagoTarjeta
 from Model.metodo_pago import PagoTransferencia
+from Model.validaciones import validar_monto
 
 
 class Procesador_pago:
@@ -45,3 +46,23 @@ class Procesador_pago:
         elif opcion == '3':
             return PagoTransferencia
         raise ValueError('Opcion invalida. Debe seleccionar una opcion del 1 al 4')
+    
+
+    def procesar_pago(self, opcion:str, monto:float) -> str:
+        '''
+        Procesa el pago seleccionado por el usuario
+        :param opcion:  
+        return 
+
+        flujo:
+        1. Validar monto
+        2. Crear metodo pago
+        3. Ejecutar mensaje resultante
+
+        SOLID:
+        SRP: Coordina el proceso, no hace UI ni define algoritmos concretos
+        DIP: Usa el contrato MetodoPago
+        '''
+        validar_monto(monto)
+        metodo_pago = self.crear_metodo_pago(opcion)
+        return metodo_pago.pagar(monto)
