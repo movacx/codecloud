@@ -28,7 +28,7 @@ class Repositorio():
         else:
             return "Clave no encontrada"
 
-    def eliminar(self, clave, nuevoValor):
+    def eliminar(self, clave):
         if clave in self.diccionario:
             del self.diccionario[clave]
             return "Eliminado correctamente"
