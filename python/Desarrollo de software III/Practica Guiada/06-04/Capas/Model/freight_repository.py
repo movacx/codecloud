@@ -44,4 +44,31 @@ class FreightRepository:
             #luego se agrega el flete a la lista del cliente correspondiente
             self._freights_by_customer_id[freight.customer_id].append(freight)
 
+    #Guarda en el archivo los fletes atuales
+
+    def _save(self):
+        data = [Freight.to_dict() for freight in self._freights]
+
+        with open(self.filename, 'w', encoding = 'utf-8') as file:
+            json.dump(data, file, indent=4, ensure_ascii=False)
+
+    #agrega un flete nuevo al repositorio
+    def add(self, freight: Freight):
+        self._freights.append(freight)
+
+        if freight.customer_id not in self._freights_by_customer_id:
+            self._freights_by_customer_id[freight.customer_id] = []
+
+        self._freights_by_customer_id[freight.customer_id].append(freight)
+        self._save()
+
+    #Devuelve todos los fletes
+
+    def get_all(self):
+        return list(self._freights)
+    
+    #devuelve todos los fletes asociados a un cliente especifico
+
+    def get_by_customer_id(self, customer_id):
+        pass
     
