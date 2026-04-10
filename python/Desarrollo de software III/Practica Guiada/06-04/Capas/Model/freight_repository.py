@@ -23,7 +23,7 @@ class FreightRepository:
         self._freights_by_customer_id = {}
 
         #Se intenta cargar la informacion ya guardada
-        #self._load() por el momento no existe
+        self._load()
 
     def _load(self):
         if not os.path.exists(self.filename):
@@ -70,5 +70,6 @@ class FreightRepository:
     #devuelve todos los fletes asociados a un cliente especifico
 
     def get_by_customer_id(self, customer_id):
-        pass
+        return list(self._freights_by_customer_id.get(customer_id))
+    
     
