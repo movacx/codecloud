@@ -68,4 +68,4 @@ class CarreraController:
             time.sleep(Random.uniform(0.08, 0.25))
 
             with self.lock:
-                #Si se solicito denter o ya existe un ganador el hilo termina.
+                return #imcompleto

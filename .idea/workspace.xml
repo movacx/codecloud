@@ -5,66 +5,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79aa1690-b03e-49a0-bbd2-8c255ac51c18" name="Changes" comment="asd">
-      <change afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/16-abril/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/miNube.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/miNube.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/Model/customer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/Model/custommer_repository.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/Model/dato.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/Model/freight.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/Model/freight_repository.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/12-03/sistema de fletes/mvc/Controller/controlador.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/12-03/sistema de fletes/mvc/Model/clienteModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/12-03/sistema de fletes/mvc/Model/fleteModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/12-03/sistema de fletes/mvc/Model/repositorio.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/12-03/sistema de fletes/mvc/View/view.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/12-03/sistema de fletes/mvc/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/estructura de datos/mvc/Controller/controlador.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/estructura de datos/mvc/Model/clienteModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/estructura de datos/mvc/Model/fleteModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/estructura de datos/mvc/Model/repositorio.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/estructura de datos/mvc/View/vista.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/estructura de datos/mvc/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/genericos/mvc/Controller/controlador.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/genericos/mvc/Model/cursoModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/genericos/mvc/Model/estudianteModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/genericos/mvc/Model/matriculaModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/genericos/mvc/Model/repositorio.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/genericos/mvc/View/vista.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/16-03/genericos/mvc/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica en clase 2/mvc/Controller/controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica en clase 2/mvc/Model/estudianteModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica en clase 2/mvc/Model/libroModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica en clase 2/mvc/Model/prestamoModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica en clase 2/mvc/Model/repositorio.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica en clase 2/mvc/View/vista.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/19-03/Practica en clase 2/mvc/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/23-03/Practica Guiada 3/mvc/Controller/procesador_pago.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/23-03/Practica Guiada 3/mvc/Model/metodo_pago.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/23-03/Practica Guiada 3/mvc/View/vista.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/23-03/Practica Guiada 3/mvc/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/26-3/Practica guiada/mvc/Controller/controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/26-3/Practica guiada/mvc/Model/metodo_pago.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/26-3/Practica guiada/mvc/Model/validaciones.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/26-3/Practica guiada/mvc/View/vista.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/26-3/Practica guiada/mvc/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/31-03/mvc/Controller/estudianteController.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/31-03/mvc/Model/Data/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/31-03/mvc/Model/Data/csv/registroEstudiante.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/31-03/mvc/Model/estudianteModel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/31-03/mvc/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Tarea C5E187.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Tarea/Controller/gestor_notificaciones.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Tarea/Model/mensaje.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Tarea/Model/notificador.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Tarea/PARTE 1 INCORRECTA SOLID/xd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Tarea/View/consola.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Tarea/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tarea yherland/ciclofor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tarea yherland/control_acceso.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tarea yherland/control_ahorro.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tarea yherland/conversion_unidades.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tarea yherland/registro_paquetes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/controller/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/controller/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/model/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/model/customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/model/customer_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/model/customer_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/model/dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/model/dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/model/freight.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/model/freight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/model/freight_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/model/freight_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/service/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/service/freight_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/service/freight_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/view/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/view/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/view/customer_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/view/customer_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/view/freight_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/view/freight_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/view/main_windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/view/main_windows.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/Capas/view/query_frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas/view/query_frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04/services/freight_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/services/freight_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/13-04/Controller/carrera_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Guiada/13-04/Controller/carrera_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/.idea/Tarea Sistema de Gestión Académica.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/.idea/pySourceRootDetection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/C5E187 NCapas.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/data/cursos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/data/estudiante.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/data/matricula.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Controller/cursoController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Controller/estudianteController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Controller/matriculaController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Model/cursoModel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Model/estudianteModel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Model/matricula.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Repositorio/cursoRepository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Repositorio/estudianteRepository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Repositorio/matriculaRepository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Services/cursoService.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Services/estudianteService.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/Services/matriculaService.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/View/cargadorPrograma.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/View/cursoView.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/View/estudianteView.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/View/matriculaView.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Desarrollo N-Capas/mvc/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/Data/juegos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/Controller/controlador.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/Model/videojuego.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/Repository/juego_repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/View/vista.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/service/juego_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/test/controlador.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/test/juego_repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/test/juego_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/test/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/test/videojuego.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 01/mvc/test/vista.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 02/Data/perifericos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 02/mvc/Controller/periferico_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 02/mvc/Model/periferico.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 02/mvc/Repository/periferico_repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 02/mvc/Services/periferico_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 02/mvc/View/perifericos_view.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 02/mvc/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 03/Data/platillos.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 03/mvc/Controller/platilloController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 03/mvc/Model/platilloModel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 03/mvc/Repository/platilloRepository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 03/mvc/Service/platilloService.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 03/mvc/View/vistaPlatillos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/Desarrollo de software III/Practica Propia/N-Capas Practicas/Practica Gemini 03/mvc/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,33 +128,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Java.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Prueba.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Application.holaMundo.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.controlador.executor&quot;: &quot;Run&quot;,
-    &quot;Python.holamundo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.metodo_pago.executor&quot;: &quot;Run&quot;,
-    &quot;Python.procesador_pago.executor&quot;: &quot;Run&quot;,
-    &quot;Python.repositorio.executor&quot;: &quot;Run&quot;,
-    &quot;Python.vista.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/movacx/Documentos/GitHub/Tarea Sistema de Gestión Académica&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Java.executor": "Run",
+    "Application.Prueba.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "Application.holaMundo.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.carrera_controller.executor": "Run",
+    "Python.controlador.executor": "Run",
+    "Python.holamundo.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.metodo_pago.executor": "Run",
+    "Python.procesador_pago.executor": "Run",
+    "Python.repositorio.executor": "Run",
+    "Python.vista.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/movacx/Documentos/GitHub/Tarea Sistema de Gestión Académica",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\usuario\Documents\GitHub\codecloud\python\Desarrollo de software III\Practica Guiada\19-03\Practica\mvc\View" />
