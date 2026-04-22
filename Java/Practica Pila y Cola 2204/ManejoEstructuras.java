@@ -1,33 +1,20 @@
-import Math.ranbd
 
 public class ManejoEstructuras
 {
-	private Pila cima;
-	
-	private Cola frente;
-	private Cola finalCola;
-	
-	public ManejoEstructuras()
-	{
-		this.cima = null;
-		this.frente = null;
-		this.finalCola = null;
-	}
-	
-	public void ingresarPila()
-	{
-		int valorAleatorio;
-		cima = null;
-		
-		for (int indice=0; indice<5; indice++)
-		{
-			valorAleatorio = (int) (Math.random() * 100) + 1;
-			
-			Pila nuevo = new Pila(valorAleatorio);
-			
-			nuevo.sig = cima;
-			cima = nuevo;
-		}
-	}
-	
+	/**
+	 * Llena la pila con 5 numeros aleatorios.
+	 * Si la pila tiene datos, los borra primero.
+	 */
+	 
+	 public void ingresarPila(Pila miPila)
+	 {
+		 
+		 miPila.cima = null;
+		 
+		 for (int indice=0; indice<5; indice++)
+		 {
+			 int num = new
+		 }
+		 
+	 }
 }

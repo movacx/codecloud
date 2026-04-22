@@ -1,12 +1,12 @@
 public class Cola
 {
-	int numero;
-	Cola sig;
+	Nodo primero;
+	Nodo ultimo;
 	
-	public Cola(int numero)
+	public Cola()
 	{
-		this.numero = numero;
-		this.sig = null;
+		this.primero = null;
+		this.ultimo = null;
 	}
 	
 }

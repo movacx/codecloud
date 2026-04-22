@@ -1,12 +1,10 @@
 public class Pila
 {
-	int numero;
-	Pila sig;
+	Nodo cima;
 	
-	public Pila(int numero)
+	public Pila()
 	{
-		this.numero = numero;
-		this.sig = null;
+		this.cima = null;
 	}
 
 }
