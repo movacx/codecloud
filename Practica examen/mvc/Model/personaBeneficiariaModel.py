@@ -10,4 +10,11 @@ class Beneficiaria:
         return self.id, self.nombre, self.comunidad, self.cantidadIntegrantes, self.prioridadSocial
 
     def to_dict(self):
-        return 
+        return {
+            'Cedula':self.id,
+            'Nombre':self.nombre,
+            'Comunidad':self.comunidad,
+            'Cantidad Integrantes':self.cantidadIntegrantes,
+            'Prioridad Social':self.prioridadSocial
+        }
+
