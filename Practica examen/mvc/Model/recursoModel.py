@@ -1,5 +1,5 @@
 class Recurso:
-    def __init__(self, codigoRecurso:int, nombre, categoria, cantidadDisponible, costoUnitario) -> None:
+    def __init__(self, codigoRecurso, nombre, categoria, cantidadDisponible, costoUnitario):
         self.codigoRecurso = codigoRecurso
         self.nombre = nombre
         self.categoria = categoria

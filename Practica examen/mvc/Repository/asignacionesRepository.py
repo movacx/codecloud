@@ -1,15 +1,16 @@
+
 import json
 import os
 
 dir_data = os.path.dirname(os.path.abspath(__file__))
-archivo = os.path.abspath(os.path.join(dir_data, '..','..','data','personas.json'))
+archivo = os.path.abspath(os.path.join(dir_data, '..','..','data','asignaciones.json'))
 
-from Model.personaBeneficiariaModel import Beneficiaria
+from Model.asignacionesModel import Asignaciones
 
 
-class PersonaRepository:
+class AsignacionesRepository:
     def __init__(self):
-        self.listaPersonasBeneficiarias = []
+        self.listaAsignaciones = []
         self._load()
 
     def _load(self):
@@ -19,15 +20,15 @@ class PersonaRepository:
         with open(archivo, 'r', encoding='utf-8') as file:
             data = json.load(file)
             for items in data:
-                nuevoBeneficiario = Beneficiaria(items['id'], items['comunidad'], items['cantidadIntegrantes'], items['prioridadSocial'])
+                nueva_asignacion = Asignaciones(items['codigoAsignacion'], items['beneficiario'], items['recurso'], items['cantidadEntregada'], items['fecha'], items['responsableEntrega'])
 
-                self.listaPersonasBeneficiarias.append(nuevoBeneficiario)
+                self.listaAsignaciones.append(nueva_asignacion)
 
     def _save(self):
         os.makedirs(os.path.dirname(archivo), exist_ok=True)
         datoParaGuardar = []
 
-        for items in self.listaPersonasBeneficiarias:
+        for items in self.listaAsignaciones:
             diccionario = items.to_dict()
             datoParaGuardar.append(diccionario)
 
@@ -36,19 +37,17 @@ class PersonaRepository:
             return True
 
     def guardar(self, objeto):
-        self.listaPersonasBeneficiarias.append(objeto)
+        self.listaAsignaciones.append(objeto)
         return self._save()
 
     def listar(self):
-        return self.listaPersonasBeneficiarias
+        return self.listaAsignaciones
 
-    def buscarBeneficiario(self, id):
+    def buscarBeneficiario(self, codigoAsignacion):
         resultado = []
-        for items in self.listaPersonasBeneficiarias:
-            if id.lower() == items.id.lower():
+        for items in self.listaAsignaciones:
+            if codigoAsignacion.lower() == items.id.codigoAsignacion():
                 resultado.append(items)
 
         return resultado
-
-
 
