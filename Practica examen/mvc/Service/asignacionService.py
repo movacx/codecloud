@@ -1,5 +1,6 @@
 from Model.asignacionesModel import Asignaciones
 
+
 class AsignacionService:
     def __init__(self, repository):
         self.repo = repository
@@ -19,6 +20,7 @@ class AsignacionService:
             raise ValueError('El campo en blanco es necesario favor de rellenarlo.')
         
         nueva_asignacion = Asignaciones(codigoAsignacion, beneficiario, recurso, cantidadEntregada, fecha, responsableEntrega)
+
 
         exito = self.repo.agregar(nueva_asignacion)
         if exito:

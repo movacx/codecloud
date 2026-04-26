@@ -12,6 +12,9 @@ from Controller.recursoController import ControllerRecurso
 
 def main():
     root = tk.Tk()
+    #no tengo btn en el main ni nada porque hare un cargador de programa para no tener los botones en el main osea otro view que se encargara de ejecutar la ventana principal
+    #y mostrarlo sin que en el main haya alguna interfaz solo el root que se manda por parametros entonces para ver las demas descomenta repo, service,control y comenta lo de abajo
+
     #============================================ 
     # repo = PersonaRepository()
     # service = PersonaService(repo)
