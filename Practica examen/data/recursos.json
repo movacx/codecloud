@@ -1,0 +1,9 @@
+[
+    {
+        "Codigo": "123",
+        "Nombre": "Fabian",
+        "Categoria": "Alimentacion",
+        "Cantidad disponible": 33,
+        "Costo Unitario": 1200
+    }
+]

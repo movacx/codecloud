@@ -20,7 +20,7 @@ class PersonaService:
 
         nueva_persona = Beneficiaria(id, nombre, comunidad, cantidadIntegrantes, prioridadSocial)
 
-        exito = self.repository.agregar(nueva_persona)
+        exito = self.repository.guardar(nueva_persona)
         if exito:
             return True
         else:

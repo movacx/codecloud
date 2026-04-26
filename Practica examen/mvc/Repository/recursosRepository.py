@@ -17,7 +17,7 @@ class RecursosRepository:
         with open(archivo, 'r', encoding='utf-8') as file:
             data = json.load(file)
             for items in data:
-                nuevo_recurso = Recurso(items['codigoRecurso'], items['nombre'], items['categoria'], items['cantidadDisponible'], items['costoUnitario'])
+                nuevo_recurso = Recurso(items['Codigo'], items['Nombre'], items['Categoria'], items['Cantidad disponible'], items['Costo Unitario'])
 
                 self.lista_recursos.append(nuevo_recurso)
 
