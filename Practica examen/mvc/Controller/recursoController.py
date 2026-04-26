@@ -1,12 +1,12 @@
 from View.recursoView import RecursoView
 
 class ControllerRecurso:
-    def __init__(self, root, service):
+    def __init__(self, root, service)->None:
         self.GUI = RecursoView(root, self)
         self.service = service
         self.imprimir_tabla()
 
-    def registrar_recurso(self):
+    def registrar_recurso(self)->None:
         try:
             cod = self.GUI.codigo.get()
             nom =self.GUI.nombre.get()
@@ -22,7 +22,7 @@ class ControllerRecurso:
         except Exception as error:
             self.GUI.mostrar_advertencia(f'Ha ocurrido un error {error}')
             
-    def imprimir_tabla(self):
+    def imprimir_tabla(self)->None:
         try:
             self.GUI.limpiar_tabla()
             arreglo = self.service.listarRecursos()
