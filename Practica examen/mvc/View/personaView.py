@@ -60,7 +60,7 @@ class PersonView:
         self.btn_listar = tk.Button(self.ventana, text = 'Listar', command = lambda: self.controlador.imprimir_tabla())
         self.btn_listar.grid(row = 5, column = 1, sticky = 'w')
         #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-        self.btn_buscar = tk.Button(self.ventana, text = 'Buscar')
+        self.btn_buscar = tk.Button(self.ventana, text = 'Buscar', command = lambda: self.limpiar_tabla())
         self.btn_buscar.grid(row = 5, column = 1, sticky = 'e' )
 
     def table(self):

@@ -28,6 +28,7 @@ class ControladorPersona:
             
     def imprimir_tabla(self)->None:
         try:
+            self.GUI.limpiar_tabla()
             arreglo = self.service.mostrar_beneficiarios()
             self.GUI.cargar_tabla(arreglo)
             

@@ -43,10 +43,10 @@ class AsignacionesRepository:
     def listar(self) -> list[Asignaciones]:
         return self.listaAsignaciones
 
-    def buscarBeneficiario(self, codigoAsignacion) -> list[Asignaciones]:
+    def buscar_asignacion(self, codigoAsignacion) -> list[Asignaciones]:
         resultado = []
         for items in self.listaAsignaciones:
-            if codigoAsignacion.lower() == items.id.codigoAsignacion():
+            if codigoAsignacion.lower() == items.codigoAsignacion.lower():
                 resultado.append(items)
 
         return resultado

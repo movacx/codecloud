@@ -39,7 +39,7 @@ def main():
     def cargarAsignacion():
         AsignacionController(root, service_asignacion)
 
-    app = Cargador(root, cargarPersona,cargarRecurso,cargarAsignacion)
+    Cargador(root, cargarPersona,cargarRecurso,cargarAsignacion)
 
     root.mainloop()
 

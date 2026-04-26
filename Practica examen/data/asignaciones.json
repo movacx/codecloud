@@ -1,0 +1,42 @@
+[
+    {
+        "Codigo": "1577",
+        "Beneficiario": "604800208",
+        "Recurso": "17850",
+        "Cantidad entregada": 2,
+        "Fecha": "17/02/2026",
+        "Responsable entrega": "Juan Manuel"
+    },
+    {
+        "Codigo": "1674",
+        "Beneficiario": "703702203",
+        "Recurso": "17850",
+        "Cantidad entregada": 2,
+        "Fecha": "01/01/2026",
+        "Responsable entrega": "Juan Santa Maria"
+    },
+    {
+        "Codigo": "18993",
+        "Beneficiario": "890437833",
+        "Recurso": "17848",
+        "Cantidad entregada": 1,
+        "Fecha": "03/03/2026",
+        "Responsable entrega": "Marcos Venegas"
+    },
+    {
+        "Codigo": "0029",
+        "Beneficiario": "904800303",
+        "Recurso": "17849",
+        "Cantidad entregada": 3,
+        "Fecha": "22/04/2026",
+        "Responsable entrega": "Joaquin Quiroz"
+    },
+    {
+        "Codigo": "9803",
+        "Beneficiario": "509400392",
+        "Recurso": "17845",
+        "Cantidad entregada": 4,
+        "Fecha": "29/02/2026",
+        "Responsable entrega": "Edwin Porras"
+    }
+]

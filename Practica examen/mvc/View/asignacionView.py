@@ -1,7 +1,7 @@
 from tkinter import ttk, messagebox
 import tkinter as tk
 
-#View universal #pendiente de modificacion.....
+
 
 class AsignacionView:
     def __init__(self, root, controller):

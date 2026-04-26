@@ -15,6 +15,8 @@ class RecursoService:
             raise ValueError('La cantidad no puede ser igual o menor a cero')
         if costoUnitario <=0:
             raise ValueError('El costo unitario no puede ser igual o menor a cero')
+        if self.repo.buscar_recurso(codigoRecurso):
+            raise ValueError('Ya existe un recurso con el mismo codigo')
         
         nuevo_recurso = Recurso(codigoRecurso, nombre, categoria, cantidadDisponible, costoUnitario)
         exito = self.repo.guardar(nuevo_recurso)

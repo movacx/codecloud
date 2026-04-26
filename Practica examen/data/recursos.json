@@ -3,7 +3,28 @@
         "Codigo": "17849",
         "Nombre": "Arroz",
         "Categoria": "Alimentacion",
-        "Cantidad disponible": 33,
+        "Cantidad disponible": 30,
         "Costo Unitario": 1200
+    },
+    {
+        "Codigo": "17845",
+        "Nombre": "bolso totto",
+        "Categoria": "útiles escolares",
+        "Cantidad disponible": 29,
+        "Costo Unitario": 14000
+    },
+    {
+        "Codigo": "17848",
+        "Nombre": "Agua",
+        "Categoria": "agua potable",
+        "Cantidad disponible": 69,
+        "Costo Unitario": 800
+    },
+    {
+        "Codigo": "17850",
+        "Nombre": "Acetaminofen",
+        "Categoria": "medicamentos",
+        "Cantidad disponible": 15,
+        "Costo Unitario": 1375
     }
 ]

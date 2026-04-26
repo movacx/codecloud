@@ -23,11 +23,12 @@ class AsignacionController:
                     self.GUI.mostrar_advertencia('Ha ocurrido un error')
 
         except Exception as error:
-            self.GUI.mostrar_advertencia('Ha ocurrido un error')
+            self.GUI.mostrar_advertencia(f'{error}')
             
             
     def imprimir_tabla(self)->None:
         try:
+            self.GUI.limpiar_tabla()
             arreglo = self.service.listarAsignaciones()
             self.GUI.cargar_tabla(arreglo)
             

@@ -22,18 +22,26 @@ class AsignacionService:
             raise ValueError('Ingrese la fecha para continuar.')
         if not responsableEntrega.strip():
             raise ValueError('El campo en blanco es necesario favor de rellenarlo.')
+        if self.repo_asignacion.buscar_asignacion(codigoAsignacion):
+            raise ValueError('Ya existe una asignacion con ese identificador')
         
         #=-=-=-=-=-=-=-=- Validaciones de existencia =-=-=-=-=-=-=-=-buscarBeneficiario buscar_recurso
         if not self.repo_persona.buscarBeneficiario(beneficiario):
             raise ValueError('No se encontro ningun beneficiario registrado')
-        if not self.repo_recurso.buscar_recurso(recurso):
+        recursos_encontrados = self.repo_recurso.buscar_recurso(recurso)
+        if not recursos_encontrados:
             raise ValueError('No se encontro ningun recurso con ese id')
-
-
         
+        #=-=-=-=-=-=-= Restar de inventario Recurso =-=-=-=-=-=-=-=-
+        recursos = recursos_encontrados[0]
+        if int(cantidadEntregada) > int(recursos.cantidadDisponible):
+            raise ValueError(f'Stock insuficiente, solo hay {recursos.cantidadDisponible} en inventario')
+        
+        recursos.cantidadDisponible = int(recursos.cantidadDisponible) - int(cantidadEntregada)
+        self.repo_recurso._save() #recargar
+
+        #=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         nueva_asignacion = Asignaciones(codigoAsignacion, beneficiario, recurso, cantidadEntregada, fecha, responsableEntrega)
-
-
         exito = self.repo_asignacion.guardar(nueva_asignacion)
         if exito:
             return True

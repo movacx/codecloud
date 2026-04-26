@@ -24,6 +24,7 @@ class ControllerRecurso:
             
     def imprimir_tabla(self):
         try:
+            self.GUI.limpiar_tabla()
             arreglo = self.service.listarRecursos()
             self.GUI.cargar_tabla(arreglo)
             

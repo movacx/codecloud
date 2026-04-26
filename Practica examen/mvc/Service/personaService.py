@@ -17,6 +17,9 @@ class PersonaService:
             raise ValueError('La cantidad de integrantes es necesaria')
         if not prioridadSocial.strip():
             raise ValueError('El campo de prioridad social es necesaria')
+        
+        if self.repository.buscarBeneficiario(id):
+            raise ValueError('Ya existe una persona con ese numero de cedula')
 
         nueva_persona = Beneficiaria(id, nombre, comunidad, cantidadIntegrantes, prioridadSocial)
 
