@@ -1,12 +1,12 @@
 from Model.personaBeneficiariaModel import Beneficiaria
 
 class PersonaService:
-    def __init__(self, repository):
+    def __init__(self, repository)->None:
         self.repository = repository
 
 
 
-    def registrar(self, id, nombre, comunidad, cantidadIntegrantes, prioridadSocial):
+    def registrar(self, id, nombre, comunidad, cantidadIntegrantes, prioridadSocial)->bool:
         if not id.strip():
             raise ValueError('El id es obligatorio')
         if not nombre.strip():
@@ -26,7 +26,7 @@ class PersonaService:
         else:
             return False
 
-    def mostrar_beneficiarios(self):
+    def mostrar_beneficiarios(self)->list[Beneficiaria]:
         return self.repository.listar()
 
 

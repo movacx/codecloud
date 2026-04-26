@@ -1,10 +1,10 @@
 from Model.recursoModel import Recurso
 
 class RecursoService:
-    def __init__(self, repository):
+    def __init__(self, repository)->None:
         self.repo = repository
 
-    def registrarRecurso(self, codigoRecurso, nombre, categoria, cantidadDisponible, costoUnitario):
+    def registrarRecurso(self, codigoRecurso, nombre, categoria, cantidadDisponible, costoUnitario)->bool:
         if not codigoRecurso.strip():
             raise ValueError('El codigo recurso es obligatorio')
         if not nombre.strip():
@@ -23,7 +23,7 @@ class RecursoService:
         else:
             return False
         
-    def listarRecursos(self):
+    def listarRecursos(self)->list[Recurso]:
         return self.repo.listar()
     
      

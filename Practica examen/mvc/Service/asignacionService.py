@@ -1,11 +1,15 @@
 from Model.asignacionesModel import Asignaciones
 
 
-class AsignacionService:
-    def __init__(self, repository):
-        self.repo = repository
 
-    def agregar(self, codigoAsignacion, beneficiario, recurso, cantidadEntregada, fecha, responsableEntrega):
+class AsignacionService:
+    def __init__(self, repPersona,repRecurso,repAsignacion)->None:
+        self.repo_asignacion = repAsignacion
+        self.repo_recurso = repRecurso
+        self.repo_persona = repPersona
+
+
+    def agregar(self, codigoAsignacion, beneficiario, recurso, cantidadEntregada, fecha, responsableEntrega)->bool:
         if not codigoAsignacion.strip():
             raise ValueError('El codigo es necesario, favor de ingresarlo!')
         if not beneficiario.strip():
@@ -19,14 +23,22 @@ class AsignacionService:
         if not responsableEntrega.strip():
             raise ValueError('El campo en blanco es necesario favor de rellenarlo.')
         
+        #=-=-=-=-=-=-=-=- Validaciones de existencia =-=-=-=-=-=-=-=-buscarBeneficiario buscar_recurso
+        if not self.repo_persona.buscarBeneficiario(beneficiario):
+            raise ValueError('No se encontro ningun beneficiario registrado')
+        if not self.repo_recurso.buscar_recurso(recurso):
+            raise ValueError('No se encontro ningun recurso con ese id')
+
+
+        
         nueva_asignacion = Asignaciones(codigoAsignacion, beneficiario, recurso, cantidadEntregada, fecha, responsableEntrega)
 
 
-        exito = self.repo.agregar(nueva_asignacion)
+        exito = self.repo_asignacion.guardar(nueva_asignacion)
         if exito:
             return True
         else:
             return False
         
-    def listarAsignaciones(self):
-        return self.repo.listar()
+    def listarAsignaciones(self)->list[Asignaciones]:
+        return self.repo_asignacion.listar()

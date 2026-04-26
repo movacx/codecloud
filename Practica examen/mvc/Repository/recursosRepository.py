@@ -6,11 +6,11 @@ archivo = os.path.abspath(os.path.join(dir_data, '..','..','data','recursos.json
 from Model.recursoModel import Recurso
 
 class RecursosRepository:
-    def __init__(self):
+    def __init__(self)->None:
         self.lista_recursos = []
         self._load()
 
-    def _load(self):
+    def _load(self)->None:
         if not os.path.exists(archivo):
             return
 
@@ -21,7 +21,7 @@ class RecursosRepository:
 
                 self.lista_recursos.append(nuevo_recurso)
 
-    def _save(self):
+    def _save(self)->bool:
         os.makedirs(os.path.dirname(archivo), exist_ok=True)
         dato_para_guardar = []
 
@@ -33,14 +33,14 @@ class RecursosRepository:
             json.dump(dato_para_guardar, file, indent=4, ensure_ascii=False)
             return True
 
-    def guardar(self, objeto):
+    def guardar(self, objeto)->bool:
         self.lista_recursos.append(objeto)
         return self._save()
 
-    def listar(self):
+    def listar(self)->list[Recurso]:
         return self.lista_recursos
 
-    def buscar_recurso(self, codigo):
+    def buscar_recurso(self, codigo)->list[Recurso]:
         resultado = []
         for items in self.lista_recursos:
             if codigo.lower() == items.codigoRecurso.lower():

@@ -4,6 +4,7 @@ class ControllerRecurso:
     def __init__(self, root, service):
         self.GUI = RecursoView(root, self)
         self.service = service
+        self.imprimir_tabla()
 
     def registrar_recurso(self):
         try:

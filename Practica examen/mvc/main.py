@@ -8,22 +8,38 @@ from Repository.recursosRepository import RecursosRepository
 from Service.recursoService import RecursoService
 from Controller.recursoController import ControllerRecurso
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+from Repository.asignacionesRepository import AsignacionesRepository
+from Service.asignacionService import AsignacionService
+from Controller.asignacionController import AsignacionController
 
+from View.pantalla_principal import Cargador
 
 def main():
     root = tk.Tk()
-    #no tengo btn en el main ni nada porque hare un cargador de programa para no tener los botones en el main osea otro view que se encargara de ejecutar la ventana principal
-    #y mostrarlo sin que en el main haya alguna interfaz solo el root que se manda por parametros entonces para ver las demas descomenta repo, service,control y comenta lo de abajo
 
     #============================================ 
-    # repo = PersonaRepository()
-    # service = PersonaService(repo)
-    # control = ControladorPersona(root, service)
+    repo = PersonaRepository()
+    service = PersonaService(repo)
+    #control = ControladorPersona(root, service)
     #============================================
     repo_recurso = RecursosRepository()
     service_recurso = RecursoService(repo_recurso)
-    controller_recurso = ControllerRecurso(root,service_recurso)
+    #controller_recurso = ControllerRecurso(root,service_recurso)
     #============================================
+    repo_asignacion = AsignacionesRepository()
+    service_asignacion = AsignacionService(repo,repo_recurso,repo_asignacion)
+    
+
+    def cargarPersona():
+        ControladorPersona(root, service)
+
+    def cargarRecurso():
+        ControllerRecurso(root,service_recurso)
+
+    def cargarAsignacion():
+        AsignacionController(root, service_asignacion)
+
+    app = Cargador(root, cargarPersona,cargarRecurso,cargarAsignacion)
 
     root.mainloop()
 

@@ -1,13 +1,14 @@
 from View.personaView import PersonView
 
 class ControladorPersona:
-    def __init__(self, root, service):
+    def __init__(self, root, service)->None:
         self.GUI = PersonView(root, self)
         self.service = service
+        self.imprimir_tabla()
 
     #id, nombre, comunidad, cantidadIntegrantes, prioridadSocial
         
-    def registrar_persona(self):
+    def registrar_persona(self)->None:
         try:
             id = self.GUI.id.get()
             nom = self.GUI.nombre.get()
@@ -25,7 +26,7 @@ class ControladorPersona:
             self.GUI.mostrar_advertencia(f'{error}')
             
             
-    def imprimir_tabla(self):
+    def imprimir_tabla(self)->None:
         try:
             arreglo = self.service.mostrar_beneficiarios()
             self.GUI.cargar_tabla(arreglo)
