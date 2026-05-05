@@ -28,4 +28,62 @@ class ServidorChat:
         if not data:
             return None
         
+        size = struct.unpack('!I', data)[0]
+        data = 'b'
 
+        while len(data)<size:
+            fragmento = el_socket.recv(4096)
+
+            if not fragmento:
+                return None
+        
+            data += fragmento
+        
+        return json.loads(data.decode())
+
+    #=-=-=-=-=-=-=-=-=-=-= Comunicacion -=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+    def broadcast(self, objeto):
+        for c in list(self.clientes):
+            try:
+                self.enviar_objeto(c,objeto)
+            except:
+                return
+                #self._desconectar(c)
+
+    def enviar_lista(self):
+        self.broadcast({
+            'tipo':'usuarios',
+            'lista':self.gestor.listar()
+        })
+
+
+    #=-=-=-=-=-=-=-=-=-=-= Clientes -=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+
+    #manejar_clientes
+
+
+    def _desconectar(self, el_socket):
+        session = self.sockets_a_sessiones.pop(el_socket)
+        nombre = None
+
+        if session:
+            nombre=self.gestor.eliminar_session(session)
+
+        with self.lock:
+            if el_socket in self.clientes:
+                self.clientes.remove(el_socket)
+
+        try:
+            el_socket.close()
+        except:
+            pass
+
+        if nombre:
+            self.broadcast({
+                'tipo':'sistema',
+                'texto':f'{nombre} salio'
+            })
+        self.enviar_lista()
