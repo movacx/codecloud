@@ -1,0 +1,22 @@
+[
+    {
+        "Codigo": "IF-3001",
+        "Curso": "Algoritmos y estructuras de datos",
+        "Creditos": 4
+    },
+    {
+        "Codigo": "IF-0007",
+        "Curso": "Bases de Datos I ",
+        "Creditos": 3
+    },
+    {
+        "Codigo": "IF-0006",
+        "Curso": "Desarrollo_de_Software_III",
+        "Creditos": 4
+    },
+    {
+        "Codigo": "EG-0323",
+        "Curso": "Apreciación musical",
+        "Creditos": 2
+    }
+]
