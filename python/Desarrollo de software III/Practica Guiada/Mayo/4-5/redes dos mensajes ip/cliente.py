@@ -6,7 +6,7 @@ puerto = 80
 
 socket_Cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 socket_Cliente.connect((direccion_ip, puerto))
-socket_Cliente.sendall(bytes("David Mora saluda a Herlin", 'utf-8'))
+socket_Cliente.sendall(bytes("Fabian se ha conectado", 'utf-8'))
 
 while True:
     in_data = socket_Cliente.recv(1024)
