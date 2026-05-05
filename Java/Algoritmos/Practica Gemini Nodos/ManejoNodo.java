@@ -44,7 +44,7 @@ public class ManejoNodo
             if (anterior != null)
             {
                 nuevoNodo.setSiguiente(anterior.getSiguiente());
-                anterior.setSiguiente(nuevoNodo)
+                anterior.setSiguiente(nuevoNodo);
             }
         }
     }

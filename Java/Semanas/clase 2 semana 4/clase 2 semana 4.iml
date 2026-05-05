@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/TDA Cola con empleado" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TDA Cola con entero" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TDA Pila con empleado" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TDA Pila con entero" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

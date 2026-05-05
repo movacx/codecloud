@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java/Algoritmos/Algoritmos.iml" filepath="$PROJECT_DIR$/Java/Algoritmos/Algoritmos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/Semanas/Semanas.iml" filepath="$PROJECT_DIR$/Java/Semanas/Semanas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/Semanas/clase 2 semana 4/clase 2 semana 4.iml" filepath="$PROJECT_DIR$/Java/Semanas/clase 2 semana 4/clase 2 semana 4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/miNube.iml" filepath="$PROJECT_DIR$/.idea/miNube.iml" />
+    </modules>
+  </component>
+</project>
