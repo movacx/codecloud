@@ -29,3 +29,4 @@ class GestorUsuarios:
     
     def existe(self, nombre):
         return nombre in self._usuarios.values()
+    d
