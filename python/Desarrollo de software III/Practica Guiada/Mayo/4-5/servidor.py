@@ -22,7 +22,7 @@ class AtenderCliente(threading.Thread):
         self.socket_cliente.close()
         print('Cliente ', self.direccion_cliente, 'desconectado')
 
-direccion_ip = '10.35.118.152'
+direccion_ip = "10.35.118.211"
 puerto = 80
     
 #163.178.107.97

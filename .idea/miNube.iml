@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/python/Desarrollo de software III/Practica Guiada/06-04 hilos/Capas" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/Javaa" />
-    <orderEntry type="jdk" jdkName="Python 3.14" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 2.7" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
