@@ -28,7 +28,10 @@ class ChatControlador:
         if tipo == 'mensaje':
             self.vista.mostrar(f'{objeto['usuario']}:{objeto['texto']}')
         elif tipo == 'sistema':
-
-        elif tipo == 'mensaje':
-        elif tipo == 'mensaje':
-        elif tipo == 'mensaje':
+            self.vista.mostrar(f'[Sistema]{objeto['texto']}')
+        elif tipo == 'usuarios':
+            self.vista.actualizacion_usuarios(objeto['lista'])
+        elif tipo == 'error':
+            self.vista.mostrar(f'[Error]{objeto['texto']}')
+            self.vista.cerrar()
+        
