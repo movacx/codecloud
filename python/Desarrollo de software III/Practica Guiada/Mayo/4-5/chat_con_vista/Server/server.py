@@ -1,7 +1,7 @@
 import socket
 import threading
 import json
-from server.gestor_usuarios import GestorUsuarios
+from Server.gestor_usuarios import GestorUsuarios
 import struct
 
 
@@ -29,7 +29,7 @@ class ServidorChat:
             return None
         
         size = struct.unpack('!I', data)[0]
-        data = 'b'
+        data = b""
 
         while len(data)<size:
             fragmento = el_socket.recv(4096)
@@ -48,8 +48,9 @@ class ServidorChat:
             try:
                 self.enviar_objeto(c,objeto)
             except:
+                self._desconectar(c)
                 return
-                #self._desconectar(c)
+                
 
     def enviar_lista(self):
         self.broadcast({
@@ -62,7 +63,48 @@ class ServidorChat:
 
 
 
-    #manejar_clientes
+    def manejar_cliente(self, el_socket, direccion_ip):
+        print("conectado", direccion_ip)
+        try:
+            objeto = self.recibir_objeto(el_socket)
+            if not objeto or objeto.get('tipo') != 'login':
+                return
+            nombre = objeto['usuario']
+
+            if self.gestor.exists(nombre):
+                self.enviar_objeto(el_socket, {
+                    'tipo':'error',
+                    'texto':'Nombre en uso'
+                })
+
+            session_id = self.gestir.crear_session(nombre)
+            self.sockets_a_sessiones[el_socket]=session_id
+            self.broadcast({
+                'tipo':'sistema',
+                'texto':f'{nombre} se unio'
+            })
+
+            #LOOP
+
+            while True:
+                objeto=self.recibir_objeto(el_socket)
+                if objeto is None:
+                    break
+
+                if objeto.get('tipo')=='mensaje':
+                    nombre=self.gestor.obtener_nombre(session_id)
+                    self.broadcast({
+                        'tipo':'mensaje',
+                        'usuario':nombre,
+                        'texto': objeto.get('texto', '')
+                    })
+
+        finally:
+            self._desconectar()
+            print('desconectado: ', self._desconectar)
+
+        
+
 
 
     def _desconectar(self, el_socket):
@@ -87,3 +129,20 @@ class ServidorChat:
                 'texto':f'{nombre} salio'
             })
         self.enviar_lista()
+
+
+    def iniciar(self):
+        self.socket_servidor.bind(self.direccion_ip, self.puerto)
+        self.socket_servidor.listen()
+        print(f'Servidor en {self.direccion_ip, self.puerto}')
+
+        while True:
+            socket_cliente, direccion_cliente = self.socket_servidor.accept()
+            with self.lock:
+                self.clientes.append(socket_cliente)
+
+            threading.Thread(
+                target=self.manejar_cliente,
+                args=(socket_cliente,direccion_cliente),
+                daemon=True
+            ).start()
