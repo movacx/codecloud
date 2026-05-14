@@ -1,11 +1,8 @@
-drop dataBase Curso;
-
---Crear el curso
 create database curso;
---Usar el curso
+drop dataBase curso;
 USE curso;
 
--- crear base de datos
+--crear base de datos
 create table empleado
 (idEmpleado int,
 nombre varchar(40),
@@ -13,25 +10,25 @@ salario int,
 provincia varchar(20),
 idDepartamento int, primary key(idEmpleado));
 
--- borrar tablas
-drop table empleado;
 
---tipos de datos comunes
---int, char, varchar, date
 
---insertar registros
 
-insert into empleado(idEmpleado, nombre, salario, provincia, idDepartamento)
-values(1, 'juan',100,'Puntarenas',1);
 
-insert into empleado(idEmpleado, nombre, salario, provincia, idDepartamento)
-values(2, 'maria',200,'Puntarenas',1);
+INSERT INTO empleado(idEmpleado, nombre, salario, provincia, idDepartamento)
+values(1, 'juan', 100, 'puntarenas', 1);
+
+INSERT INTO empleado(idEmpleado, nombre, salario, provincia, idDepartamento)
+values(2, 'fabian', 150, 'san jose', 2);
+
 
 insert into empleado(idEmpleado, nombre, salario, provincia, idDepartamento)
-values(3, 'Ana',150,'Alajuela',2);
+values(3, 'maria',200,'Puntarenas',1);
 
 insert into empleado(idEmpleado, nombre, salario, provincia, idDepartamento)
-values(4, 'Jose',150,'Puntarenas',2);
+values(4, 'Ana',150,'Alajuela',2);
+
+insert into empleado(idEmpleado, nombre, salario, provincia, idDepartamento)
+values(5, 'Jose',150,'Puntarenas',2);
 
 
 select * from empleado;
@@ -42,7 +39,7 @@ from --> Tablas
 where --> Condiciones
 
 
---> nota: Las condiciones se aplcian de manera individual registro por registro
+--> nota: Las condiciones se aplican de manera individual registro por registro
 -- mostrar el codigo y el nombre de todos los empleados
 
 Select idEmpleado, nombre
@@ -196,4 +193,4 @@ where idDepartamento = (select idDepartamento from empleado where nombre = 'juan
 select *
 from empleado
 where idDepartamento = (select idDepartamento from empleado where nombre = 'juan' and nombre <> 'juan');
-	
+
