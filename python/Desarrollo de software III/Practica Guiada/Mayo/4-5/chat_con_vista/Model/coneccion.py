@@ -58,4 +58,7 @@ class ClienteConexion:
         Inicia el hilo de recepcion de datos param callback return funcion para procesar mensajes
         '''
         self.callback=callback
-        
+        threading.Thread(
+            target=self.recibir_loop,
+            daemon=True
+        ).start()
