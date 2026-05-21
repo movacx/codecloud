@@ -114,4 +114,4 @@ where sal >= 2000 AND sal <= 3000;
 --12. Seleccionar los empleados que trabajan en el mismo departamento que 'CLARK';
 SELECT ename
 from emp
-where 
+where job = (SELECT ename from emp where job = 'CLARK');
