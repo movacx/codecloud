@@ -67,4 +67,51 @@ select * from dept;
 select * from emp;
 
 --3. Seleccionar aquellos empleados que sean 'salesman'
-select emp
+SELECT ename
+FROM emp
+where job='SALESMAN' 
+
+--4. Seleccionar aquellos empleados que no trabajen en el departamento 30.
+SELECT ename
+from emp
+where deptno <> 30;
+
+--5. Seleccionar aquellos empleados que ganen mas de 2000.
+SELECT ename
+FROM emp
+where sal > 2000;
+
+--6. Seleccionar aquellos empleados que hayan entrado antes del 1/1/82
+SELECT ename
+FROM emp
+where hiredate < '1982-01-01';
+
+--7. Seleccionar el nombre de los vendedores que ganen mas de 1600
+SELECT ename
+FROM emp
+where sal > 1500;
+
+--8. Seleccionar el nombre de aquellos que sear 'CLERK' o trabajen en el departamento 30.
+SELECT ename
+FROM emp
+where job = 'CLERK' or deptno = 30;
+
+--9. Seleccionar aquellos que se llamen SMITH, ALLEN o SCOTT
+SELECT ename
+FROM emp
+where ename = 'SMITH' or ename = 'ALLEN' or ename='SCOTT';
+
+--10. Seleccionar aquellos que no se llamen SMITH, ALLEN o SCOTT
+SELECT ename
+FROM emp
+where ename NOT IN ('SMITH', 'ALLEN','SCOTT');
+
+--11. Seleccionar aquellos que cuyo salario este entre los 2000 y 3000.
+SELECT ename
+FROM emp
+where sal >= 2000 AND sal <= 3000;
+
+--12. Seleccionar los empleados que trabajan en el mismo departamento que 'CLARK';
+SELECT ename
+from emp
+where 
