@@ -1,5 +1,5 @@
 import mysql.connector
-import mysql.connector import Error
+from mysql.connector import Error
 
 def obtener_conexion():
     try:
