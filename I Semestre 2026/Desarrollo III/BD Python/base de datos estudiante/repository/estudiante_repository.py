@@ -7,7 +7,7 @@
     DELETE
 """
 
-from database.conexion import obtener_conexion
+from Database import conexion
 from model.estudiante import Estudiante
 
 
@@ -21,7 +21,7 @@ class EstudianteRepository:
         Registra un estudiante en la base de datos
         """
 
-        conexion = obtener_conexion()
+        conexion = conexion()
         cursor = conexion.cursor()
 
         sql = """
@@ -46,7 +46,7 @@ class EstudianteRepository:
 
     def consultar_todos(self):
 
-        conexion = obtener_conexion()
+        conexion = conexion()
         cursor = conexion.cursor()
 
         sql = 'SELECT id, nombre, correo, carrera FROM estudiante'
@@ -78,7 +78,7 @@ class EstudianteRepository:
         Busca un estudiante por ID
         '''
 
-        conexion = obtener_conexion()
+        conexion = conexion()
         cursor = conexion.cursor()
 
         sql = '''
@@ -109,7 +109,7 @@ class EstudianteRepository:
         Actualiza un estudiante existente
         '''
 
-        conexion = obtener_conexion()
+        conexion = conexion()
         cursor = conexion.cursor()
 
         sql = '''
@@ -140,7 +140,7 @@ class EstudianteRepository:
 
     def eliminar(self, id_estudiante):
 
-        conexion = obtener_conexion()
+        conexion = conexion()
         cursor = conexion.cursor()
 
         sql = 'DELETE FROM estudiante WHERE id=%s'
@@ -161,7 +161,7 @@ class EstudianteRepository:
         Verifica si ya existe un correo
         '''
 
-        conexion = obtener_conexion()
+        conexion = conexion()
         cursor = conexion.cursor()
 
         sql = 'SELECT id FROM estudiante WHERE correo=%s'
