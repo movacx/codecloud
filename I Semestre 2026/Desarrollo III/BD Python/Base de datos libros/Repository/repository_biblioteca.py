@@ -4,12 +4,12 @@ from Model.libro_model import Libro
 
 class BibliotecaRepository:
     def __init__(self, conexion):
-        self.obtener_conexion = conexion
+        self.database = conexion
 
     # -=-==--=-==-=--==-=-=-=-=-==-=--==--==--=-=-==-=--==-=--==-=-=-=-=-=-=--==-=-=-=-=-=--=#
     def registrar(self, obj_libro):
-        conexion = self.obtener_conexion
-        cursor = self.obtener_conexion.cursor
+        conexion = self.database.obtener_conexion()
+        cursor = conexion.cursor()
 
         sql = '''
             INSERT INTO libros(codigo,titulo,autor,categoria)
@@ -33,8 +33,8 @@ class BibliotecaRepository:
     #-=-==--=-==-=--==-=-=-=-=-==-=--==--==--=-=-==-=--==-=--==-=-=-=-=-=-=--==-=-=-=-=-=--=#
 
     def consultar_datos(self):
-        conexion = self.obtener_conexion
-        cursor = self.obtener_conexion.cursor
+        conexion = self.database.obtener_conexion()
+        cursor = conexion.cursor()
 
         sql = '''
             SELECT *
@@ -63,11 +63,57 @@ class BibliotecaRepository:
 
     # -=-==--=-==-=--==-=-=-=-=-==-=--==--==--=-=-==-=--==-=--==-=-=-=-=-=-=--==-=-=-=-=-=--=#
 
+    def consultar_libro(self, codigo):
+        conexion = self.database.obtener_conexion()
+        cursor = conexion.cursor()
+
+        sql = '''
+            SELECT *
+            FROM libros
+            WHERE codigo=%s
+        '''
+
+        cursor.execute(sql, (codigo,))
+        registro = cursor.fetchall()
+
+        cursor.close()
+        conexion.close()
+
+        if registro is None:
+            return None
+        
+        lista_libros = []
+
+        for items in registro:
+            lista_libros.append(items)
 
 
+        return lista_libros
+    # -=-==--=-==-=--==-=-=-=-=-==-=--==--==--=-=-==-=--==-=--==-=-=-=-=-=-=--==-=-=-=-=-=--=#
+
+    def filtrar_categoria(self, categoria):
+        resultado = []
+
+        conexion = self.database.obtener_conexion()
+        cursor = conexion.cursor()
+
+        sql = '''
+            SELECT *
+            FROM libros
+            where categoria=%s
+        '''
+
+        cursor.execute(sql, (categoria,))
+        
+        registro = cursor.fetchone()
+
+        cursor.close()
+        conexion.close()
+
+        for items in registro:
+            resultado.append(items)
+
+        return resultado
 
 
-
-
-
-
+    # -=-==--=-==-=--==-=-=-=-=-==-=--==--==--=-=-==-=--==-=--==-=-=-=-=-=-=--==-=-=-=-=-=--=#

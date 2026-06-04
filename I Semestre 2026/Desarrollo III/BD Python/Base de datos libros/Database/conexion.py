@@ -9,7 +9,7 @@ class DataBaseConection:
                 host = 'localhost',
                 user = 'root',
                 password = 'Skull_fab@19',
-                database = 'Biblioteca',
+                database = 'biblioteca',
                 port = 3306
             )
             return conexion

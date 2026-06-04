@@ -1,16 +1,21 @@
-# This is a sample Python script.
+from Repository.repository_biblioteca import BibliotecaRepository
+from Service.biblioteca_service import Service
+from Controller.biblioteca_controller import BibliotecaController
 
-# Press Ctrl+F5 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from Database.conexion import DataBaseConection
+
+def main():
+    database = DataBaseConection()
+    repositorio_biblioteca = BibliotecaRepository(database)
+    service_biblioteca = Service(repositorio_biblioteca)
+    controlador_biblioteca = BibliotecaController(service_biblioteca)
+    
+
+    controlador_biblioteca.cargar_interfaz()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('Imbecil')
+    main()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+

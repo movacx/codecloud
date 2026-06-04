@@ -8,7 +8,7 @@ class Libro:
     def get_codigo(self):
         return self.codigo
 
-    def __str__(self):
+    def __str__(self)->str:
         return f'Codigo: {self.codigo} | Titulo: {self.titulo} | Autor: {self.autor} | Categoria: {self.categoria}'
 
 
