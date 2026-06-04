@@ -117,3 +117,56 @@ class BibliotecaRepository:
 
 
     # -=-==--=-==-=--==-=-=-=-=-==-=--==--==--=-=-==-=--==-=--==-=-=-=-=-=-=--==-=-=-=-=-=--=#
+
+    def actualizar_datos(self, obj_libro):
+        conexion = self.database.obtener_conexion()
+        cursor = conexion.cursor()
+
+        sql = '''
+            UPDATE libro
+            SET codigo=%s,
+                titulo=%s,
+                autor=%s,
+                categoria=%s
+            WHERE codigo=%s
+        '''
+
+        valores = (
+            obj_libro.codigo,
+            obj_libro.titulo,
+            obj_libro.autor,
+            obj_libro.categoria
+        )
+
+        cursor.execute(sql, valores)
+        conexion.commit()
+
+        filas_afectadas = cursor.rowcount
+
+        cursor.close
+        conexion.close()
+
+        return filas_afectadas > 0
+    
+    # -=-==--=-==-=--==-=-=-=-=-==-=--==--==--=-=-==-=--==-=--==-=-=-=-=-=-=--==-=-=-=-=-=--=#
+
+    def eliminar(self, codigo):
+        conexion = self.database.obtener_conexion()
+        cursor = conexion.cursor()
+
+        sql = '''
+            DELETE FROM libro
+            WHERE codigo=%s
+        '''
+
+        cursor.execute(sql, (codigo,))
+
+        conexion.commit()
+        
+        filas_afectadas = cursor.rowcount
+        cursor.close()
+        conexion.close()
+
+        return filas_afectadas>0
+    
+    
