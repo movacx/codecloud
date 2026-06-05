@@ -2,8 +2,10 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/I Semestre 2026/Desarrollo III/BD Python/Base de datos libros" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/I Semestre 2026/Desarrollo III/BD Python/base de datos estudiante" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/I Semestre 2026/Desarrollo III/BD Python/Base de datos libros/.venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.14 (codecloud)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

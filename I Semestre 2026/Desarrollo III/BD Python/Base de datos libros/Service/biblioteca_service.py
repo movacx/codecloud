@@ -45,5 +45,43 @@ class Service:
         
         return self.repo_biblioteca.filtrar_categoria(categoria)
     
+
+    #=--==--=-==--=-=-=-=--=-=-=-=-==-=-=-=-=--=-==-=-=-=-=--==-=--=-==--=-=-==-=--==-=-=--=-=-=
+    def actualizar_libro(self, codigo, titulo, autor, categoria):
+        if not codigo.strip():
+            raise ValueError('El campo es obligatorio')
+        if not titulo.strip():
+            raise ValueError('El titulo es obligatorio debe de completarlo!')
+        if not autor.strip():
+            raise ValueError('El autor es obligatorio debe de completarlo!')
+        if not categoria.strip():
+            raise ValueError('La categoria es obligatorio debe de completarlo!')
     
+
+        libro_existente = self.repo_biblioteca.consultar_libro(codigo)
+
+        if libro_existente is None:
+            raise ValueError('Error, no se encontro ningun estudiante')
+        
+        nuevo = Libro(
+            codigo = codigo,
+            titulo = titulo,
+            autor = autor,
+            categoria = categoria
+        )
+
+        actualizado = self.repo_biblioteca.actualizar_datos(nuevo)
+        if actualizado:
+            return 'Actualizado con exito'
+        else: 
+            return 'No pudo actualizar!'
+    
+    
+    #=--==--=-==--=-=-=-=--=-=-=-=-==-=-=-=-=--=-==-=-=-=-=--==-=--=-==--=-=-==-=--==-=-=--=-=-=
+    def eliminar_libro(self, codigo):
+        libro_eliminado = self.repo_biblioteca.eliminar(codigo)
+        if libro_eliminado:
+            return 'Eliminado con exito'
+        
+        return 'Hubo un error al intentar eliminar'
         

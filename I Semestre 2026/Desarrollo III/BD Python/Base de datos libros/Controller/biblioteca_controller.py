@@ -23,6 +23,12 @@ class BibliotecaController:
             elif opcion == 4:
                 self.interfaz.mostrar_mensaje(self.service_biblioteca.buscar_categoria(self.buscar_por_categoria()))
 
+            elif opcion == 5:
+                datos = self.interfaz.pedir_datos()
+                self.interfaz.mostrar_mensaje(self.service_biblioteca.actualizar_libro(*datos))
+
+            elif opcion == 6:
+                self.interfaz.mostrar_mensaje(self.service_biblioteca.eliminar_libro(self.buscar_por_codigo()))
             elif opcion == 7:
                 break
 
@@ -33,4 +39,5 @@ class BibliotecaController:
     def buscar_por_categoria(self):
         categoria = self.interfaz.pedir_categoria()
         return categoria
+
 

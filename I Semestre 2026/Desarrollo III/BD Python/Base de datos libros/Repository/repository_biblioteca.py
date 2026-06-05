@@ -123,7 +123,7 @@ class BibliotecaRepository:
         cursor = conexion.cursor()
 
         sql = '''
-            UPDATE libro
+            UPDATE libros
             SET codigo=%s,
                 titulo=%s,
                 autor=%s,
@@ -135,7 +135,8 @@ class BibliotecaRepository:
             obj_libro.codigo,
             obj_libro.titulo,
             obj_libro.autor,
-            obj_libro.categoria
+            obj_libro.categoria,
+            obj_libro.codigo  # ← este es para el WHERE
         )
 
         cursor.execute(sql, valores)
@@ -143,7 +144,7 @@ class BibliotecaRepository:
 
         filas_afectadas = cursor.rowcount
 
-        cursor.close
+        cursor.close()
         conexion.close()
 
         return filas_afectadas > 0
@@ -155,7 +156,7 @@ class BibliotecaRepository:
         cursor = conexion.cursor()
 
         sql = '''
-            DELETE FROM libro
+            DELETE FROM libros
             WHERE codigo=%s
         '''
 
