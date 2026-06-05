@@ -136,7 +136,7 @@ class BibliotecaRepository:
             obj_libro.titulo,
             obj_libro.autor,
             obj_libro.categoria,
-            obj_libro.codigo  # ← este es para el WHERE
+            obj_libro.codigo  
         )
 
         cursor.execute(sql, valores)
