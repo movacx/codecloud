@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from app.service.student_service import StudentService
-from app.schemas.student_schema import StudentSchema
+from service.student_service import StudentService
+from schemas.student_schema import StudentSchema
 
 router = APIRouter(prefix="/students", tags=["Students"])
 service = StudentService()

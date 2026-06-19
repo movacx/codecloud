@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.controller.student_controller_api import router as student_router
-from app.config.database import init_db
+from controller.student_controller_api import router as student_router
+from config.database import init_db
 
 app = FastAPI(title="Student API")
 

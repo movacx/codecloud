@@ -1,4 +1,4 @@
-from app.repository.student_repository import StudentRepository
+from repository.student_repository import StudentRepository
 
 class StudentService:
 
